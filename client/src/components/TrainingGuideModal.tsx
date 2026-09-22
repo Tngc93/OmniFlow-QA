@@ -74,7 +74,7 @@ export const TrainingGuideModal: React.FC<TrainingGuideModalProps> = ({
                 <Sparkles className="w-3.5 h-3.5 text-indigo-400" /> [SMART_URL_SCANNER_v2]
               </span>
               <span className="px-2 py-0.5 bg-emerald-950 text-emerald-400 text-[10px] rounded-full border border-emerald-800">
-                7 ROTA EŞLEŞTİ (100% COVERAGE)
+                {isTr ? '7 ROTA EŞLEŞTİ (100% COVERAGE)' : '7 ROUTES MATCHED (100% COVERAGE)'}
               </span>
             </div>
 
@@ -85,23 +85,23 @@ export const TrainingGuideModal: React.FC<TrainingGuideModalProps> = ({
               </div>
               <div className="p-2 rounded-lg bg-slate-800/80 border border-slate-700">
                 <span className="text-slate-400 block text-[9px]">SEARCH:</span>
-                <span className="text-emerald-300">/arama?q=horizon</span>
+                <span className="text-emerald-300">/search?q=headphones</span>
               </div>
               <div className="p-2 rounded-lg bg-slate-800/80 border border-slate-700">
                 <span className="text-slate-400 block text-[9px]">CATEGORY (PLP):</span>
-                <span className="text-sky-300">/oyun-bilgisayarlari</span>
+                <span className="text-sky-300">/audio-gear/</span>
               </div>
               <div className="p-2 rounded-lg bg-slate-800/80 border border-slate-700">
                 <span className="text-slate-400 block text-[9px]">PRODUCT (PDP):</span>
-                <span className="text-amber-300">/horizon-x15/</span>
+                <span className="text-amber-300">/products/studio-wireless/</span>
               </div>
               <div className="p-2 rounded-lg bg-slate-800/80 border border-slate-700">
                 <span className="text-slate-400 block text-[9px]">CART:</span>
-                <span className="text-rose-300">/sepet/</span>
+                <span className="text-rose-300">/cart/</span>
               </div>
               <div className="p-2 rounded-lg bg-slate-800/80 border border-slate-700">
                 <span className="text-slate-400 block text-[9px]">AUTH / LOGIN:</span>
-                <span className="text-purple-300">/uye-girisi/</span>
+                <span className="text-purple-300">/login/</span>
               </div>
             </div>
           </div>
@@ -263,11 +263,11 @@ export const TrainingGuideModal: React.FC<TrainingGuideModalProps> = ({
             <div className="space-y-1.5 text-[11px]">
               <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300 font-medium">
                 <Check className="w-3.5 h-3.5 text-emerald-600" />
-                <span>NovaTech TR: Horizon X15 E2E Arama ve İnceleme</span>
+                <span>NovaTech TR: Studio Wireless E2E Flow</span>
               </div>
               <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300 font-medium">
                 <Check className="w-3.5 h-3.5 text-emerald-600" />
-                <span>NovaTech TR: Oyun Bilgisayarları Kategori & Filtre</span>
+                <span>NovaTech TR: Audio Gear Category & Filters</span>
               </div>
               <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300 font-medium">
                 <Check className="w-3.5 h-3.5 text-emerald-600" />
@@ -306,10 +306,10 @@ export const TrainingGuideModal: React.FC<TrainingGuideModalProps> = ({
                 <span className="text-slate-400 text-[10px]">BOARD-104 QA Sprint</span>
               </div>
               <h5 className="font-bold text-xs text-slate-900 dark:text-white">
-                [E2E QA] NovaTech PDP: Renk Varyant Seçiminde Sepet Senkronizasyon Gecikmesi
+                [E2E QA] NovaTech PDP: Active ANC Hybrid Toggle Latency on Studio Wireless
               </h5>
               <p className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-2">
-                Playwright E2E Otomasyonu sırasında Titan X17 modelinde donanım seçildiğinde DOM sepet güncellemesi 2500ms üzerinde sürdü.
+                During Playwright E2E automation on FlowShop Studio Wireless, DOM cart state update exceeded 2500ms threshold.
               </p>
             </div>
 
@@ -355,8 +355,9 @@ export const TrainingGuideModal: React.FC<TrainingGuideModalProps> = ({
           </div>
 
           <button 
+            data-testid="training-guide-close"
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors"
+            className="p-1.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>

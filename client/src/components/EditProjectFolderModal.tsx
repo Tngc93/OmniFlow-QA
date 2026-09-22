@@ -303,7 +303,7 @@ export const EditProjectFolderModal: React.FC<EditProjectFolderModalProps> = ({
                   <h4 className="text-xs font-black text-slate-900 dark:text-white flex items-center gap-2">
                     {isTr ? '2. Test Müşterisi Kimlik Kasası (Auth Vault)' : '2. Test Customer Auth Vault'}
                     <span className="px-2 py-0.2 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 text-[9px] font-bold">
-                      Canlı Test Koruması
+                      {isTr ? 'Canlı Test Koruması' : 'Live Test Protected'}
                     </span>
                   </h4>
                   <p className="text-[11px] text-slate-500 dark:text-slate-400">

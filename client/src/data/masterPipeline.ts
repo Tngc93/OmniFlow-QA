@@ -28,10 +28,10 @@ export const MASTER_DOMAINS: MasterDomainOption[] = [
   },
   {
     id: 'all',
-    name: 'Bütünleşik Multi-Store',
+    name: 'Multi-Store Global Pipeline',
     domain: 'Global E2E (TR & DE)',
     flag: '🌐',
-    badge: 'Çoklu Mağaza Karşılaştırma',
+    badge: 'Multi-Store Comparison',
     baseUrl: 'https://www.novatech.com.tr / https://www.novatech.de'
   }
 ];

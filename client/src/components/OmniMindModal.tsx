@@ -54,15 +54,21 @@ export const OmniMindModal: React.FC<OmniMindModalProps> = ({
   const quickPrompts = [
     {
       title: isTr ? 'NovaTech TR: Sepet, Kupon (NOVAPRO20) & 3D Secure' : 'NovaTech TR: Cart, Coupon & 3D Secure Checkout',
-      prompt: 'NovaTech TR üzerinde Horizon X15 ürününü sepete ekleyen, NOVAPRO20 kupon kodunu doğrulayan ve İyziPay 3D Secure ödeme adımına ilerleyen uçtan uca senaryo oluştur.'
+      prompt: isTr
+        ? 'NovaTech TR üzerinde FlowShop Studio Wireless kulaklık ürününü sepete ekleyen, NOVAPRO20 kupon kodunu doğrulayan ve 3D Secure ödeme adımına ilerleyen uçtan uca senaryo oluştur.'
+        : 'Create an end-to-end scenario on NovaTech TR that adds FlowShop Studio Wireless Headphones to cart, verifies promo code NOVAPRO20, and proceeds to 3D Secure checkout.'
     },
     {
-      title: isTr ? 'NovaTech DE: Titan X17 Konfigüratör & Klarna Pay' : 'NovaTech DE: Titan X17 Configurator & Klarna Pay',
-      prompt: 'NovaTech DE mağazasında Titan X17 için 32GB RAM ve 2TB SSD konfigürasyonu seçip, Klarna Später Bezahlen ve DSGVO çerez onayını doğrulayan pipeline oluştur.'
+      title: isTr ? 'NovaTech DE: Active ANC Seçimi & Klarna Pay' : 'NovaTech DE: Active ANC & Klarna Pay',
+      prompt: isTr
+        ? 'NovaTech DE mağazasında Active ANC kulaklık seçip Klarna Später Bezahlen ve DSGVO çerez onayını doğrulayan pipeline oluştur.'
+        : 'Create a pipeline on NovaTech DE selecting Active ANC headphones, verifying Klarna Pay Later and DSGVO cookie compliance.'
     },
     {
       title: isTr ? 'Global E-Ticaret: Lighthouse & 404 Kırık Link Denetimi' : 'Global E-Com: Lighthouse & Broken Link Audit',
-      prompt: 'Ana sayfa ve kategori sayfalarında Core Web Vitals (LCP < 2.5s, CLS < 0.1) ve kırık link HTTP 404 denetimi yapan sentetik performans boru hattı çiz.'
+      prompt: isTr
+        ? 'Ana sayfa ve kategori sayfalarında Core Web Vitals (LCP < 2.5s, CLS < 0.1) ve kırık link HTTP 404 denetimi yapan sentetik performans boru hattı çiz.'
+        : 'Design a synthetic performance pipeline performing Core Web Vitals (LCP < 2.5s, CLS < 0.1) and broken link HTTP 404 audits on home and category pages.'
     }
   ];
 
@@ -490,11 +496,11 @@ await page.locator('[data-testid="add-to-cart"]:not([disabled])').click({ timeou
                         >
                           {copiedKey === key ? (
                             <span className="text-emerald-400 font-bold flex items-center gap-1">
-                              <CheckCircle2 className="w-3.5 h-3.5" /> Kopyalandı
+                              <CheckCircle2 className="w-3.5 h-3.5" /> {isTr ? 'Kopyalandı' : 'Copied'}
                             </span>
                           ) : (
                             <>
-                              <Copy className="w-3.5 h-3.5" /> Kopyala
+                              <Copy className="w-3.5 h-3.5" /> {isTr ? 'Kopyala' : 'Copy'}
                             </>
                           )}
                         </button>

@@ -48,14 +48,14 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
     },
     {
       id: 'obj-2',
-      title: 'Horizon & Titan Search',
+      title: 'Headphones & Earbuds Search',
       subtitle: 'Query & Validate PLP Cards',
       pills: { task: 14, time: '1.8s', passed: 27, automated: 41 }
     },
     {
       id: 'obj-3',
-      title: 'PDP Specs & Hardware',
-      subtitle: 'RTX 4070 / i7 Spec Audit',
+      title: 'Studio Wireless PDP Specs',
+      subtitle: 'Hybrid ANC & Sound Tuning',
       pills: { task: 91, time: '2.4s', passed: 18, automated: 20 }
     },
     {
@@ -67,7 +67,7 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
     {
       id: 'obj-5',
       title: 'Mobile Viewport Test',
-      subtitle: 'iPhone 14 Responsive Flow',
+      subtitle: 'iPhone 15 Responsive Flow',
       pills: { task: 12, time: '2.0s', passed: 28, automated: 34 }
     }
   ];
@@ -226,7 +226,7 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
           <div className="flex items-center justify-between">
             <div>
               <h5 className="font-extrabold text-slate-900 dark:text-white text-xs">
-                {metrics?.workflowB.title || 'Workflow B (Kategori & Filtre)'}
+                {metrics?.workflowB.title || (isTr ? 'Workflow B (Kategori & Filtre)' : 'Workflow B (Category & Filters)')}
               </h5>
               <span className="text-[10px] text-slate-400">
                 {isTr ? 'Planlı E-Ticaret Otomasyonu' : 'Scheduled E-Commerce Automation'}
@@ -333,9 +333,9 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
               onClick={() => onOpenScreenshotModal('/screenshots/novatech_pdp.png')}
               className="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 aspect-video cursor-pointer hover:opacity-90 relative group"
             >
-              <img src="/screenshots/novatech_pdp.png" alt="Horizon PDP" className="w-full h-full object-cover" />
+              <img src="/screenshots/novatech_pdp.png" alt="Studio Wireless PDP" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-[10px] text-white font-bold">
-                {isTr ? 'Horizon Ürün Detay' : 'Horizon PDP'}
+                {isTr ? 'Kablosuz Kulaklık Detay' : 'Wireless Headphone PDP'}
               </div>
             </div>
           </div>

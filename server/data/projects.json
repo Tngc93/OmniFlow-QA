@@ -1,21 +1,21 @@
 [
   {
     "id": "proj-novatech-tr",
-    "name": "NovaTech Türkiye Resmi Mağazası",
+    "name": "NovaTech Store (TR)",
     "baseUrl": "https://www.novatech.com.tr",
-    "description": "NovaTech Türkiye resmi e-ticaret platformu uçtan uca otomasyon test klasörü.",
-    "category": "Gaming & PC Electronics",
+    "description": "NovaTech Türkiye official audio gear e-commerce platform end-to-end automation suite.",
+    "category": "High-End Audio Gear & Electronics",
     "testCustomerEmail": "qa.testuser@novatech.com.tr",
     "testCustomerPassword": "NovaTechQA!2026Secure",
     "scannedEndpoints": {
       "storefront": "https://www.novatech.com.tr/",
-      "search": "https://www.novatech.com.tr/arama?q=horizon",
-      "category": "https://www.novatech.com.tr/oyun-bilgisayarlari",
-      "pdp": "https://www.novatech.com.tr/horizon-x15-intel-core-i7-14700hx-16gb-ram-1tb-ssd-rtx4070-15-6-fhd-144hz/",
-      "cart": "https://www.novatech.com.tr/sepet/",
-      "checkout": "https://www.novatech.com.tr/odeme/",
-      "login": "https://www.novatech.com.tr/uye-girisi/",
-      "account": "https://www.novatech.com.tr/hesabim/siparislerim/"
+      "search": "https://www.novatech.com.tr/search?q=headphones",
+      "category": "https://www.novatech.com.tr/audio-gear/",
+      "pdp": "https://www.novatech.com.tr/products/studio-wireless/",
+      "cart": "https://www.novatech.com.tr/cart/",
+      "checkout": "https://www.novatech.com.tr/checkout/",
+      "login": "https://www.novatech.com.tr/login/",
+      "account": "https://www.novatech.com.tr/account/orders/"
     },
     "scenariosCount": 20,
     "lastAuditPassRate": "100%",
@@ -23,14 +23,14 @@
     "sessionToken": "Bearer novatech_tr_session_jwt_2026",
     "otpCode": "123456",
     "autoLogin": true,
-    "updatedAt": "2026-09-21T12:19:34.427Z"
+    "updatedAt": "2026-09-22T14:50:00.000Z"
   },
   {
     "id": "proj-novatech-de",
-    "name": "NovaTech Deutschland (Europe)",
+    "name": "NovaTech Deutschland (EU)",
     "baseUrl": "https://www.novatech.de",
-    "description": "NovaTech Almanya ve Avrupa Birliği resmi e-ticaret platformu (EUR & DSGVO uyumlu) uçtan uca otomasyon test klasörü.",
-    "category": "Gaming Laptops & PC (DACH & EU)",
+    "description": "NovaTech Germany and EU official audio store (EUR & GDPR/DSGVO compliant) end-to-end automation suite.",
+    "category": "High-End Audio Gear (DACH & EU)",
     "testCustomerEmail": "qa.testuser@novatech.de",
     "testCustomerPassword": "NovaTech2026!SecureDE",
     "otpCode": "849201",
@@ -39,9 +39,9 @@
     "currency": "EUR (€)",
     "scannedEndpoints": {
       "storefront": "https://www.novatech.de/",
-      "search": "https://www.novatech.de/search?q=titan",
-      "category": "https://www.novatech.de/gaming-laptops/",
-      "pdp": "https://www.novatech.de/titan-x17-gaming-laptop/",
+      "search": "https://www.novatech.de/search?q=headphones",
+      "category": "https://www.novatech.de/audio-gear/",
+      "pdp": "https://www.novatech.de/products/studio-wireless/",
       "cart": "https://www.novatech.de/cart/",
       "checkout": "https://www.novatech.de/checkout/",
       "login": "https://www.novatech.de/my-account/",
@@ -50,6 +50,6 @@
     "scenariosCount": 18,
     "lastAuditPassRate": "100%",
     "createdAt": "2026-09-21T12:24:54.914Z",
-    "updatedAt": "2026-09-21T12:28:13.708Z"
+    "updatedAt": "2026-09-22T14:50:00.000Z"
   }
 ]

@@ -64,7 +64,7 @@ export const IntegrationsView: React.FC<ViewProps> = ({ lang }) => {
       desc: isTr ? 'Başarısız testlerde başlık, ekran görüntüsü ve hata dökümüyle otomatik bilet açma' : 'Auto-log defect tickets on payment or checkout failures with live screenshots', 
       active: true,
       badge: 'MCP Active',
-      stat: `${jiraIssues.length} Aktif Bilet`
+      stat: isTr ? `${jiraIssues.length} Aktif Bilet` : `${jiraIssues.length} Active Tickets`
     },
     { 
       id: 'github',
@@ -206,9 +206,9 @@ export const IntegrationsView: React.FC<ViewProps> = ({ lang }) => {
                     {issue.description}
                   </p>
                   <div className="flex items-center gap-3 mt-2 text-[10px] text-slate-400 font-semibold">
-                    <span>Hedef Pano: <strong className="text-slate-700 dark:text-slate-300">{issue.board}</strong></span>
+                    <span>{isTr ? 'Hedef Pano:' : 'Board:'} <strong className="text-slate-700 dark:text-slate-300">{issue.board}</strong></span>
                     <span>•</span>
-                    <span>Durum: <strong className="text-emerald-600 dark:text-emerald-400">{issue.status}</strong></span>
+                    <span>{isTr ? 'Durum:' : 'Status:'} <strong className="text-emerald-600 dark:text-emerald-400">{issue.status}</strong></span>
                     <span>•</span>
                     <span>{issue.createdAt}</span>
                   </div>
@@ -223,7 +223,7 @@ export const IntegrationsView: React.FC<ViewProps> = ({ lang }) => {
                     className="w-20 h-14 rounded-xl object-cover border border-slate-200 dark:border-slate-700 shadow-2xs"
                   />
                   <span className="text-[9px] font-bold text-slate-400 flex items-center gap-0.5">
-                    <Camera className="w-2.5 h-2.5 text-indigo-500" /> Ekran Görüntüsü
+                    <Camera className="w-2.5 h-2.5 text-indigo-500" /> {isTr ? 'Ekran Görüntüsü' : 'Screenshot'}
                   </span>
                 </div>
               )}
@@ -254,7 +254,7 @@ export const RepositoryView: React.FC<ViewProps> = ({ lang }) => {
       type: isTr ? 'Full HD Canlı Ekran Görüntüsü' : 'Full HD Live Screenshot',
       size: '507 KB',
       time: 'Bugün 13:43',
-      scenarioTitle: 'NovaTech TR: Horizon X15 E2E Arama ve İnceleme',
+      scenarioTitle: isTr ? 'NovaTech TR: FlowShop Studio Wireless E2E Arama ve İnceleme' : 'NovaTech TR: Studio Wireless E2E Flow',
       stepName: isTr ? 'Ana Sayfa Yükleme & Başlık Doğrulama' : 'Storefront Landing & Title Verification',
       url: 'https://www.novatech.com.tr/',
       status: 'passed',
@@ -264,51 +264,51 @@ export const RepositoryView: React.FC<ViewProps> = ({ lang }) => {
         ? 'Playwright Chromium motoruyla NovaTech TR ana sayfası yüklendi. Sayfa başlığı (<title>) ve navigasyon bileşenleri başarıyla doğrulandı.' 
         : 'NovaTech TR storefront rendered with Chromium engine. Page title and top navigation elements verified successfully.',
       assertions: [
-        { text: 'HTTP 200 OK yanıtı alındı', passed: true },
-        { text: 'DOM Başlığı: "NovaTech TR | Performans Tutkunlarına Özel Notebook\'lar" doğrulandı', passed: true },
-        { text: 'Çerez onay bannerı tespit edildi ve tıklandı', passed: true },
-        { text: 'Arama kutusu (.search-bar) görünür ve aktif', passed: true }
+        { text: isTr ? 'HTTP 200 OK yanıtı alındı' : 'HTTP 200 OK response received', passed: true },
+        { text: isTr ? 'DOM Başlığı: "NovaTech Audio Store | FlowShop Gear"' : 'DOM Title: "NovaTech Audio Store | FlowShop Gear"', passed: true },
+        { text: isTr ? 'Çerez onay bannerı tespit edildi ve onaylandı' : 'Cookie consent banner detected and accepted', passed: true },
+        { text: isTr ? 'Arama kutusu (.search-bar) görünür ve aktif' : 'Search input (.search-bar) visible and active', passed: true }
       ]
     },
     {
       name: 'novatech_pdp.png',
-      type: isTr ? 'NovaTech Horizon Ürün Detayı (PDP) Ekranı' : 'NovaTech Product Detail Page (PDP)',
+      type: isTr ? 'FlowShop Studio Wireless Ürün Detayı (PDP) Ekranı' : 'FlowShop Studio Wireless PDP View',
       size: '408 KB',
       time: 'Bugün 13:43',
-      scenarioTitle: 'NovaTech TR: Horizon X15 E2E Arama ve İnceleme',
-      stepName: isTr ? 'Horizon X15 Donanım & Fiyat Doğrulama (PDP)' : 'Horizon Hardware & Pricing Verification (PDP)',
-      url: 'https://www.novatech.com.tr/horizon/',
+      scenarioTitle: isTr ? 'NovaTech TR: Studio Wireless E2E Akışı' : 'NovaTech TR: Studio Wireless E2E Flow',
+      stepName: isTr ? 'Studio Wireless Donanım & Fiyat Doğrulama (PDP)' : 'Studio Wireless Specs & Pricing (PDP)',
+      url: 'https://www.novatech.com.tr/products/studio-wireless/',
       status: 'passed',
       duration: '1.9s',
       screenshotUrl: '/screenshots/novatech_pdp.png',
       description: isTr 
-        ? 'NovaTech Horizon serisi oyuncu laptopu PDP sayfası tarandı. Intel Core i7 işlemci, RTX 4070 ekran kartı donanımı, ürün fiyatı ve Sepete Ekle butonu teyit edildi.' 
-        : 'NovaTech gaming laptop product detail page inspected. Hardware specifications, price tag, and Add to Cart button verified.',
+        ? 'NovaTech FlowShop kablosuz kulaklık PDP sayfası tarandı. Hibrit Aktif Gürültü Engelleme (ANC), 40mm dinamik sürücüler, ürün fiyatı ve Sepete Ekle butonu teyit edildi.' 
+        : 'NovaTech FlowShop wireless headphone product detail page inspected. Hybrid ANC, 40mm drivers, pricing, and Add to Cart button verified.',
       assertions: [
-        { text: 'Ürün başlığı (#product-name) görünür', passed: true },
-        { text: 'Donanım özellikleri: Intel Core i7 & RTX 4070 teyit edildi', passed: true },
-        { text: 'Stok durumu "Hemen Teslim" doğrulandı', passed: true },
-        { text: 'Sepete Ekle butonu tıklanabilir durumda', passed: true }
+        { text: isTr ? 'Ürün başlığı (#product-name) görünür' : 'Product heading (#product-name) visible', passed: true },
+        { text: isTr ? 'Donanım özellikleri: Hibrit ANC & 40mm Sürücü teyit edildi' : 'Hardware specs: Hybrid ANC & 40mm Drivers verified', passed: true },
+        { text: isTr ? 'Stok durumu "Hemen Teslim" doğrulandı' : 'Stock status "In Stock" verified', passed: true },
+        { text: isTr ? 'Sepete Ekle butonu tıklanabilir durumda' : 'Add to Cart CTA clickable', passed: true }
       ]
     },
     {
       name: 'novatech_category.png',
-      type: isTr ? 'Oyun Bilgisayarları Kategori Ekranı' : 'Gaming Laptops Category Grid',
+      type: isTr ? 'Ses Sistemleri Kategori Ekranı' : 'Audio Gear Category Grid',
       size: '413 KB',
       time: 'Bugün 13:43',
-      scenarioTitle: 'NovaTech TR: Kategori ve Filtreleme Testi',
-      stepName: isTr ? 'Oyun Bilgisayarları Ürün Listelemesi & Filtreleme' : 'Gaming Laptops Listing & Filter Assertions',
-      url: 'https://www.novatech.com.tr/oyun-bilgisayarlari/',
+      scenarioTitle: isTr ? 'NovaTech TR: Kategori ve Filtreleme Testi' : 'NovaTech TR: Category & Filter Suite',
+      stepName: isTr ? 'Ses Sistemleri Ürün Listelemesi & Filtreleme' : 'Audio Gear Listing & Filter Assertions',
+      url: 'https://www.novatech.com.tr/audio-gear/',
       status: 'passed',
       duration: '2.4s',
       screenshotUrl: '/screenshots/novatech_category.png',
       description: isTr 
-        ? 'Oyun Bilgisayarları kategorisinde 24 adet laptop kartı listelendi, RTX 4060 filtresi uygulandı ve fiyat sıralaması doğrulandı.' 
-        : 'Gaming laptops catalog grid rendered with 24 items. Filters and price sorting verified.',
+        ? 'Ses Sistemleri kategorisinde kulaklık ve hoparlör kartları listelendi, Kablosuz filtresi uygulandı ve fiyat sıralaması doğrulandı.' 
+        : 'Audio Gear catalog grid rendered. Wireless filter and price sorting verified.',
       assertions: [
-        { text: 'Kategori ızgarasında 24 ürün kartı listelendi', passed: true },
-        { text: 'RTX 4060 GPU filtresi uygulandı', passed: true },
-        { text: 'Sayfalama (Pagination) bileşeni hazır', passed: true }
+        { text: isTr ? 'Kategori ızgarasında ürün kartları listelendi' : 'Product cards listed in catalog grid', passed: true },
+        { text: isTr ? 'Kablosuz & Bluetooth 5.3 filtresi uygulandı' : 'Wireless & Bluetooth 5.3 filter applied', passed: true },
+        { text: isTr ? 'Sayfalama (Pagination) bileşeni hazır' : 'Pagination component verified', passed: true }
       ]
     },
     {

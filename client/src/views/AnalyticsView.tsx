@@ -67,27 +67,27 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
     {
       runId: 'RUN-2026-0921-01',
       scenarioId: 'scenario-novatech-tr-e2e',
-      scenarioTitle: 'NovaTech TR: Horizon X15 E2E Arama ve İnceleme',
-      category: 'PDP & Arama',
+      scenarioTitle: isTr ? 'NovaTech TR: FlowShop Studio Wireless E2E Arama ve İnceleme' : 'NovaTech TR: Studio Wireless E2E Flow',
+      category: isTr ? 'PDP & Arama' : 'PDP & Search',
       status: 'passed',
       totalDuration: '11.4s',
       stepsTotal: 7,
       stepsPassed: 7,
       stepsFailed: 0,
-      completedAt: 'Bugün 14:12',
+      completedAt: isTr ? 'Bugün 14:12' : 'Today 14:12',
       dateKey: '2026-09-21',
       summaryText: isTr 
-        ? 'Ana sayfa, NovaTech araması, ürün detay ve sepet rotası tüm assertion kontrollerinden tam puanla geçti.' 
-        : 'Storefront, search query, PDP hardware verification, and cart actions passed all assertions.',
+        ? 'Ana sayfa, kulaklık araması, ürün detay ve sepet rotası tüm assertion kontrollerinden tam puanla geçti.' 
+        : 'Storefront, audio search query, PDP acoustic specs verification, and cart actions passed all assertions.',
       screenshotUrl: '/screenshots/novatech_home_live.png',
       stepResults: [
-        { name: 'Tarayıcı Oturumu Başlatma', status: 'passed', duration: '0.6s' },
-        { name: 'Ana Sayfa & Başlık Doğrulama', status: 'passed', duration: '2.5s' },
-        { name: 'Horizon Arama Sorgusu', status: 'passed', duration: '1.4s' },
-        { name: 'Oyun Bilgisayarları Kategori Filtresi', status: 'passed', duration: '2.2s' },
-        { name: 'Horizon PDP Donanım Teyidi', status: 'passed', duration: '1.4s' },
-        { name: 'Sepet & Rozet Teyidi', status: 'passed', duration: '0.8s' },
-        { name: 'Test Başarı Kapanışı', status: 'passed', duration: '0.6s' }
+        { name: isTr ? 'Tarayıcı Oturumu Başlatma' : 'Launch Chromium Session', status: 'passed', duration: '0.6s' },
+        { name: isTr ? 'Ana Sayfa & Başlık Doğrulama' : 'Storefront Landing & Title Check', status: 'passed', duration: '2.5s' },
+        { name: isTr ? 'Kulaklık Arama Sorgusu' : 'Search Query: Wireless Headphones', status: 'passed', duration: '1.4s' },
+        { name: isTr ? 'Ses Sistemleri Kategori Filtresi' : 'Filter by Audio Gear', status: 'passed', duration: '2.2s' },
+        { name: isTr ? 'Studio Wireless PDP Teyidi' : 'Studio Wireless PDP Specs Check', status: 'passed', duration: '1.4s' },
+        { name: isTr ? 'Sepet & Rozet Teyidi' : 'Cart Badge & Total Assertion', status: 'passed', duration: '0.8s' },
+        { name: isTr ? 'Test Başarı Kapanışı' : 'Graceful Teardown', status: 'passed', duration: '0.6s' }
       ]
     },
     {

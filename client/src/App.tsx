@@ -48,13 +48,13 @@ export function App() {
   const [projects, setProjects] = useState<any[]>([
     {
       id: 'proj-novatech-tr',
-      name: 'NovaTech Türkiye Resmi Mağazası',
+      name: 'NovaTech Store (TR)',
       baseUrl: 'https://www.novatech.com.tr',
       scenariosCount: 20
     },
     {
       id: 'proj-novatech-de',
-      name: 'NovaTech Deutschland (Europe)',
+      name: 'NovaTech Deutschland (EU)',
       baseUrl: 'https://www.novatech.de',
       scenariosCount: 18
     }
@@ -63,7 +63,7 @@ export function App() {
 
   // Language & Dark Mode Theme State
   const [lang, setLang] = useState<Language>(() => {
-    return (localStorage.getItem('omniflow_lang') as Language) || 'tr';
+    return (localStorage.getItem('omniflow_lang') as Language) || 'en';
   });
 
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {

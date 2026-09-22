@@ -202,7 +202,7 @@ export const PlaywrightCodeModal: React.FC<PlaywrightCodeModalProps> = ({
               title="Komutu Kopyala"
             >
               {isCmdCopied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
-              <span>{isCmdCopied ? 'Kopyalandı' : 'Kopyala'}</span>
+              <span>{isCmdCopied ? (isTr ? 'Kopyalandı' : 'Copied') : (isTr ? 'Kopyala' : 'Copy')}</span>
             </button>
           </div>
 

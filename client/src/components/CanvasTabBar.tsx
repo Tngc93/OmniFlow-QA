@@ -89,7 +89,7 @@ export const CanvasTabBar: React.FC<CanvasTabBarProps> = ({
               ? 'bg-white/20 text-white' 
               : 'bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400'
           }`}>
-            14 Faz
+            {isTr ? '14 Faz' : '14 Phases'}
           </span>
         </button>
 

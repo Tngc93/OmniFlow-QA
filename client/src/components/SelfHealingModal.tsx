@@ -63,10 +63,10 @@ export const SelfHealingModal: React.FC<SelfHealingModalProps> = ({
     },
     {
       id: 'heal-2',
-      title: isTr ? 'NovaTech DE QWERTZ Klavye Konfigüratörü' : 'NovaTech DE QWERTZ Keyboard Selector',
+      title: isTr ? 'NovaTech DE Aktif Gürültü Engelleme (ANC) Seçimi' : 'NovaTech DE Active ANC Toggle Option',
       store: '🇩🇪 novatech.de',
-      brokenSelector: 'div.configurator-step-keyboard > div:nth-child(3)',
-      healedSelector: '[data-qa="spec-option-qwertz"], label:has-text("Deutsches Tastaturlayout")',
+      brokenSelector: 'div.configurator-anc-toggle > div:nth-child(2)',
+      healedSelector: '[data-qa="spec-anc-hybrid"], label:has-text("Active Noise Cancelling")',
       reason: isTr ? 'A/B test varyantı ile DOM kapsayıcı hiyerarşisinin yer değiştirmesi' : 'Container layout shifted due to A/B test marketing variant',
       strategy: isTr ? 'Semantik Dil Etiketi + Bileşen Varlık Özniteliği' : 'Semantic Language Label + Component Attribute match',
       confidence: 97.9,

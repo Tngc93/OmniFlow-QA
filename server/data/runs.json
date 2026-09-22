@@ -1,0 +1,1004 @@
+[
+  {
+    "runId": "run-8f577944",
+    "scenarioId": "scenario-tulpar-de-klarna-sofort",
+    "scenarioTitle": "Tulpar DE: Klarna Sofort, PayPal & EU Kart Doğrulaması",
+    "status": "passed",
+    "totalDuration": "11.7s",
+    "stepsTotal": 5,
+    "stepsPassed": 5,
+    "stepsFailed": 0,
+    "completedAt": "2026-09-22T06:48:43.493Z",
+    "stepResults": [
+      {
+        "nodeId": "node-kl-init",
+        "name": "User Initializing",
+        "status": "passed",
+        "duration": "0.61s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: User Initializing"
+        ],
+        "timestamp": "09:48:35"
+      },
+      {
+        "nodeId": "node-kl-select",
+        "name": "Klarna Sofortüberweisung Seçimi",
+        "status": "passed",
+        "duration": "2.67s",
+        "screenshotUrl": "/screenshots/run-8f577944_node-kl-select.png",
+        "logs": [
+          "Tulpar Notebook Deutschland mağazasına bağlanılıyor: https://www.tulparnotebook.de/checkout/",
+          "HTTP 200 OK alındı. Sayfa: Tulpar Gaming Notebooks Germany",
+          "DSGVO / GDPR Çerez Onayı: Cookie banner kabul edildi, OneTrust scripti yüklendi.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-8f577944_node-kl-select.png"
+        ],
+        "timestamp": "09:48:38"
+      },
+      {
+        "nodeId": "node-kl-paypal",
+        "name": "PayPal Express Checkout & SEPA Entegrasyonu",
+        "status": "passed",
+        "duration": "1.56s",
+        "screenshotUrl": "/screenshots/run-8f577944_node-kl-paypal.png",
+        "logs": [
+          "Gaming Laptops arama ve kategori kataloğu taranıyor: query=\"Tulpar T7\"",
+          "RTX 4070 ve Core i7 Gaming Laptop listesi ve Euro (€) fiyatları doğrulandı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-8f577944_node-kl-paypal.png"
+        ],
+        "timestamp": "09:48:40"
+      },
+      {
+        "nodeId": "node-kl-sca",
+        "name": "PSD2 Strong Customer Authentication (SCA)",
+        "status": "passed",
+        "duration": "0.99s",
+        "screenshotUrl": "/screenshots/run-8f577944_node-kl-sca.png",
+        "logs": [
+          "Tulpar T7 Ürün Detay Sayfası (PDP) ve Euro fiyat matrahı inceleniyor...",
+          "€1.899,00 KDV Dahil (Inkl. MwSt.) fiyatı ve QWERTZ Almanca klavye seçeneği teyit edildi.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-8f577944_node-kl-sca.png"
+        ],
+        "timestamp": "09:48:41"
+      },
+      {
+        "nodeId": "node-kl-end",
+        "name": "Action Completion",
+        "status": "passed",
+        "duration": "0.60s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: Action Completion"
+        ],
+        "timestamp": "09:48:42"
+      }
+    ]
+  },
+  {
+    "runId": "run-bda23acb",
+    "scenarioId": "scenario-tulpar-de-configurator",
+    "scenarioTitle": "Tulpar DE: Donanım Konfigüratörü (RAM, SSD & QWERTZ Klavye)",
+    "status": "passed",
+    "totalDuration": "8.8s",
+    "stepsTotal": 5,
+    "stepsPassed": 5,
+    "stepsFailed": 0,
+    "completedAt": "2026-09-21T13:51:47.027Z",
+    "stepResults": [
+      {
+        "nodeId": "node-cfg-init",
+        "name": "User Initializing",
+        "status": "passed",
+        "duration": "0.61s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: User Initializing"
+        ],
+        "timestamp": "16:51:40"
+      },
+      {
+        "nodeId": "node-cfg-ram",
+        "name": "RAM Yükseltme (+€99,00)",
+        "status": "passed",
+        "duration": "1.75s",
+        "screenshotUrl": "/screenshots/run-bda23acb_node-cfg-ram.png",
+        "logs": [
+          "Tulpar Notebook Deutschland mağazasına bağlanılıyor: https://www.tulparnotebook.de/gaming-laptops/",
+          "HTTP 200 OK alındı. Sayfa: Tulpar Gaming Notebooks Germany",
+          "DSGVO / GDPR Çerez Onayı: Cookie banner kabul edildi, OneTrust scripti yüklendi.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-bda23acb_node-cfg-ram.png"
+        ],
+        "timestamp": "16:51:42"
+      },
+      {
+        "nodeId": "node-cfg-ssd",
+        "name": "İkinci M.2 SSD Yuvası (+€120,00)",
+        "status": "passed",
+        "duration": "1.42s",
+        "screenshotUrl": "/screenshots/run-bda23acb_node-cfg-ssd.png",
+        "logs": [
+          "Gaming Laptops arama ve kategori kataloğu taranıyor: query=\"Tulpar T7\"",
+          "RTX 4070 ve Core i7 Gaming Laptop listesi ve Euro (€) fiyatları doğrulandı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-bda23acb_node-cfg-ssd.png"
+        ],
+        "timestamp": "16:51:44"
+      },
+      {
+        "nodeId": "node-cfg-kb",
+        "name": "Alman QWERTZ RGB Klavye",
+        "status": "passed",
+        "duration": "0.77s",
+        "screenshotUrl": "/screenshots/run-bda23acb_node-cfg-kb.png",
+        "logs": [
+          "Tulpar T7 Ürün Detay Sayfası (PDP) ve Euro fiyat matrahı inceleniyor...",
+          "€1.899,00 KDV Dahil (Inkl. MwSt.) fiyatı ve QWERTZ Almanca klavye seçeneği teyit edildi.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-bda23acb_node-cfg-kb.png"
+        ],
+        "timestamp": "16:51:45"
+      },
+      {
+        "nodeId": "node-cfg-end",
+        "name": "Action Completion",
+        "status": "passed",
+        "duration": "0.60s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: Action Completion"
+        ],
+        "timestamp": "16:51:46"
+      }
+    ]
+  },
+  {
+    "runId": "run-2b1205ed",
+    "scenarioId": "scenario-tulpar-de-e2e",
+    "scenarioTitle": "Tulpar DE: E2E Gaming Laptop Arama & Sepet (EUR Fiyat & 19% MwSt.)",
+    "status": "passed",
+    "totalDuration": "12.1s",
+    "stepsTotal": 6,
+    "stepsPassed": 6,
+    "stepsFailed": 0,
+    "completedAt": "2026-09-21T13:15:34.146Z",
+    "stepResults": [
+      {
+        "nodeId": "node-tde-init",
+        "name": "User Initializing",
+        "status": "passed",
+        "duration": "0.60s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: User Initializing"
+        ],
+        "timestamp": "16:15:26"
+      },
+      {
+        "nodeId": "node-tde-home",
+        "name": "Ana Sayfa & DSGVO Çerez Onayı",
+        "status": "passed",
+        "duration": "1.95s",
+        "screenshotUrl": "/screenshots/run-2b1205ed_node-tde-home.png",
+        "logs": [
+          "Tulpar Notebook Deutschland mağazasına bağlanılıyor: https://www.tulparnotebook.de/",
+          "HTTP 200 OK alındı. Sayfa: Tulpar Gaming Notebooks Germany",
+          "DSGVO / GDPR Çerez Onayı: Cookie banner kabul edildi, OneTrust scripti yüklendi.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-2b1205ed_node-tde-home.png"
+        ],
+        "timestamp": "16:15:28"
+      },
+      {
+        "nodeId": "node-tde-search",
+        "name": "Gaming Laptops Arama & PLP Kataloğu",
+        "status": "passed",
+        "duration": "1.43s",
+        "screenshotUrl": "/screenshots/run-2b1205ed_node-tde-search.png",
+        "logs": [
+          "Gaming Laptops arama ve kategori kataloğu taranıyor: query=\"Tulpar T7\"",
+          "RTX 4070 ve Core i7 Gaming Laptop listesi ve Euro (€) fiyatları doğrulandı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-2b1205ed_node-tde-search.png"
+        ],
+        "timestamp": "16:15:30"
+      },
+      {
+        "nodeId": "node-tde-pdp",
+        "name": "Tulpar T7 PDP Euro Fiyatı & Donanım Teyidi",
+        "status": "passed",
+        "duration": "0.81s",
+        "screenshotUrl": "/screenshots/run-2b1205ed_node-tde-pdp.png",
+        "logs": [
+          "Tulpar T7 Ürün Detay Sayfası (PDP) ve Euro fiyat matrahı inceleniyor...",
+          "€1.899,00 KDV Dahil (Inkl. MwSt.) fiyatı ve QWERTZ Almanca klavye seçeneği teyit edildi.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-2b1205ed_node-tde-pdp.png"
+        ],
+        "timestamp": "16:15:31"
+      },
+      {
+        "nodeId": "node-tde-cart",
+        "name": "Sepete Ekleme & %19 MwSt. Vergi Hesabı",
+        "status": "passed",
+        "duration": "0.86s",
+        "screenshotUrl": "/screenshots/run-2b1205ed_node-tde-cart.png",
+        "logs": [
+          "Sepete ekleme ve %19 Alman KDV (MwSt.) vergi hesabı kontrol ediliyor...",
+          "Net Tutar: €1.595,80 + %19 MwSt.: €303,20 = €1.899,00 hesaplandı.",
+          "Almanya test kimlik kasası ile oturum doğrulandı: qa.testuser@tulparnotebook.de",
+          "Ekran görüntüsü yakalandı: /screenshots/run-2b1205ed_node-tde-cart.png"
+        ],
+        "timestamp": "16:15:32"
+      },
+      {
+        "nodeId": "node-tde-end",
+        "name": "Action Completion",
+        "status": "passed",
+        "duration": "0.60s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: Action Completion"
+        ],
+        "timestamp": "16:15:33"
+      }
+    ]
+  },
+  {
+    "runId": "run-098612d1",
+    "scenarioId": "scenario-tulpar-de-e2e",
+    "scenarioTitle": "Tulpar DE: E2E Gaming Laptop Arama & Sepet (EUR Fiyat & 19% MwSt.)",
+    "status": "passed",
+    "totalDuration": "13.7s",
+    "stepsTotal": 6,
+    "stepsPassed": 6,
+    "stepsFailed": 0,
+    "completedAt": "2026-09-21T12:28:30.297Z",
+    "stepResults": [
+      {
+        "nodeId": "node-tde-init",
+        "name": "User Initializing",
+        "status": "passed",
+        "duration": "0.61s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: User Initializing"
+        ],
+        "timestamp": "15:28:22"
+      },
+      {
+        "nodeId": "node-tde-home",
+        "name": "Ana Sayfa & DSGVO Çerez Onayı",
+        "status": "passed",
+        "duration": "2.16s",
+        "screenshotUrl": "/screenshots/run-098612d1_node-tde-home.png",
+        "logs": [
+          "Tulpar Notebook Deutschland mağazasına bağlanılıyor: https://www.tulparnotebook.de/",
+          "HTTP 200 OK alındı. Sayfa: Tulpar Gaming Notebooks Germany",
+          "DSGVO / GDPR Çerez Onayı: Cookie banner kabul edildi, OneTrust scripti yüklendi.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-098612d1_node-tde-home.png"
+        ],
+        "timestamp": "15:28:24"
+      },
+      {
+        "nodeId": "node-tde-search",
+        "name": "Gaming Laptops Arama & PLP Kataloğu",
+        "status": "passed",
+        "duration": "1.40s",
+        "screenshotUrl": "/screenshots/run-098612d1_node-tde-search.png",
+        "logs": [
+          "Gaming Laptops arama ve kategori kataloğu taranıyor: query=\"Tulpar T7\"",
+          "RTX 4070 ve Core i7 Gaming Laptop listesi ve Euro (€) fiyatları doğrulandı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-098612d1_node-tde-search.png"
+        ],
+        "timestamp": "15:28:26"
+      },
+      {
+        "nodeId": "node-tde-pdp",
+        "name": "Tulpar T7 PDP Euro Fiyatı & Donanım Teyidi",
+        "status": "passed",
+        "duration": "0.83s",
+        "screenshotUrl": "/screenshots/run-098612d1_node-tde-pdp.png",
+        "logs": [
+          "Tulpar T7 Ürün Detay Sayfası (PDP) ve Euro fiyat matrahı inceleniyor...",
+          "€1.899,00 KDV Dahil (Inkl. MwSt.) fiyatı ve QWERTZ Almanca klavye seçeneği teyit edildi.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-098612d1_node-tde-pdp.png"
+        ],
+        "timestamp": "15:28:27"
+      },
+      {
+        "nodeId": "node-tde-cart",
+        "name": "Sepete Ekleme & %19 MwSt. Vergi Hesabı",
+        "status": "passed",
+        "duration": "0.85s",
+        "screenshotUrl": "/screenshots/run-098612d1_node-tde-cart.png",
+        "logs": [
+          "Sepete ekleme ve %19 Alman KDV (MwSt.) vergi hesabı kontrol ediliyor...",
+          "Net Tutar: €1.595,80 + %19 MwSt.: €303,20 = €1.899,00 hesaplandı.",
+          "Almanya test kimlik kasası ile oturum doğrulandı: qa.testuser@tulparnotebook.de",
+          "Ekran görüntüsü yakalandı: /screenshots/run-098612d1_node-tde-cart.png"
+        ],
+        "timestamp": "15:28:28"
+      },
+      {
+        "nodeId": "node-tde-end",
+        "name": "Action Completion",
+        "status": "passed",
+        "duration": "0.60s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: Action Completion"
+        ],
+        "timestamp": "15:28:29"
+      }
+    ]
+  },
+  {
+    "runId": "run-0a75bda6",
+    "scenarioId": "scenario-tulpar-de-e2e",
+    "scenarioTitle": "Tulpar DE: E2E Gaming Laptop Arama & Sepet (EUR Fiyat & 19% MwSt.)",
+    "status": "passed",
+    "totalDuration": "12.0s",
+    "stepsTotal": 6,
+    "stepsPassed": 6,
+    "stepsFailed": 0,
+    "completedAt": "2026-09-21T12:26:55.411Z",
+    "stepResults": [
+      {
+        "nodeId": "node-tde-init",
+        "name": "User Initializing",
+        "status": "passed",
+        "duration": "0.60s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: User Initializing"
+        ],
+        "timestamp": "15:26:47"
+      },
+      {
+        "nodeId": "node-tde-home",
+        "name": "Ana Sayfa & DSGVO Çerez Onayı",
+        "status": "passed",
+        "duration": "1.97s",
+        "screenshotUrl": "/screenshots/run-0a75bda6_node-tde-home.png",
+        "logs": [
+          "Tulpar Notebook Deutschland mağazasına bağlanılıyor: https://www.tulparnotebook.de/",
+          "HTTP 200 OK alındı. Sayfa: Tulpar Gaming Notebooks Germany",
+          "DSGVO / GDPR Çerez Onayı: Cookie banner kabul edildi, OneTrust scripti yüklendi.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-0a75bda6_node-tde-home.png"
+        ],
+        "timestamp": "15:26:49"
+      },
+      {
+        "nodeId": "node-tde-search",
+        "name": "Gaming Laptops Arama & PLP Kataloğu",
+        "status": "passed",
+        "duration": "1.38s",
+        "screenshotUrl": "/screenshots/run-0a75bda6_node-tde-search.png",
+        "logs": [
+          "Gaming Laptops arama ve kategori kataloğu taranıyor: query=\"Tulpar T7\"",
+          "RTX 4070 ve Core i7 Gaming Laptop listesi ve Euro (€) fiyatları doğrulandı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-0a75bda6_node-tde-search.png"
+        ],
+        "timestamp": "15:26:51"
+      },
+      {
+        "nodeId": "node-tde-pdp",
+        "name": "Tulpar T7 PDP Euro Fiyatı & Donanım Teyidi",
+        "status": "passed",
+        "duration": "0.79s",
+        "screenshotUrl": "/screenshots/run-0a75bda6_node-tde-pdp.png",
+        "logs": [
+          "Tulpar T7 Ürün Detay Sayfası (PDP) ve Euro fiyat matrahı inceleniyor...",
+          "€1.899,00 KDV Dahil (Inkl. MwSt.) fiyatı ve QWERTZ Almanca klavye seçeneği teyit edildi.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-0a75bda6_node-tde-pdp.png"
+        ],
+        "timestamp": "15:26:52"
+      },
+      {
+        "nodeId": "node-tde-cart",
+        "name": "Sepete Ekleme & %19 MwSt. Vergi Hesabı",
+        "status": "passed",
+        "duration": "0.80s",
+        "screenshotUrl": "/screenshots/run-0a75bda6_node-tde-cart.png",
+        "logs": [
+          "Sepete ekleme ve %19 Alman KDV (MwSt.) vergi hesabı kontrol ediliyor...",
+          "Net Tutar: €1.595,80 + %19 MwSt.: €303,20 = €1.899,00 hesaplandı.",
+          "Almanya test kimlik kasası ile oturum doğrulandı: qa.testuser@tulparnotebook.de",
+          "Ekran görüntüsü yakalandı: /screenshots/run-0a75bda6_node-tde-cart.png"
+        ],
+        "timestamp": "15:26:53"
+      },
+      {
+        "nodeId": "node-tde-end",
+        "name": "Action Completion",
+        "status": "passed",
+        "duration": "0.60s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: Action Completion"
+        ],
+        "timestamp": "15:26:54"
+      }
+    ]
+  },
+  {
+    "runId": "run-ed69a402",
+    "scenarioId": "scenario-monster-e2e",
+    "scenarioTitle": "Monster Notebook: Tulpar E2E Arama ve İnceleme",
+    "status": "passed",
+    "totalDuration": "12.5s",
+    "stepsTotal": 7,
+    "stepsPassed": 7,
+    "stepsFailed": 0,
+    "completedAt": "2026-09-21T12:06:27.474Z",
+    "stepResults": [
+      {
+        "nodeId": "node-init",
+        "name": "User Initializing",
+        "status": "passed",
+        "duration": "0.60s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: User Initializing"
+        ],
+        "timestamp": "15:06:17"
+      },
+      {
+        "nodeId": "node-collect",
+        "name": "Data Collection",
+        "status": "passed",
+        "duration": "2.39s",
+        "screenshotUrl": "/screenshots/run-ed69a402_node-collect.png",
+        "logs": [
+          "Monster Notebook ana sayfasına bağlanılıyor: https://www.monsternotebook.com.tr/",
+          "HTTP 200 OK alındı. Sayfa Başlığı: Monster Notebook | Performans Tutkunlarına Özel Notebook'lar",
+          "Ekran görüntüsü yakalandı: /screenshots/run-ed69a402_node-collect.png"
+        ],
+        "timestamp": "15:06:20"
+      },
+      {
+        "nodeId": "node-trigger",
+        "name": "Trigger Automation",
+        "status": "passed",
+        "duration": "1.44s",
+        "screenshotUrl": "/screenshots/run-ed69a402_node-trigger.png",
+        "logs": [
+          "Arama kutusu tetikleniyor: query=\"Tulpar\"",
+          "Arama inputuna 'Tulpar' yazıldı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-ed69a402_node-trigger.png"
+        ],
+        "timestamp": "15:06:22"
+      },
+      {
+        "nodeId": "node-validate",
+        "name": "Data Validation",
+        "status": "passed",
+        "duration": "1.20s",
+        "screenshotUrl": "/screenshots/run-ed69a402_node-validate.png",
+        "logs": [
+          "Oyun Bilgisayarları kategorisi kontrol ediliyor...",
+          "Kategori listelemesi ve fiyat etiketleri doğrulandı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-ed69a402_node-validate.png"
+        ],
+        "timestamp": "15:06:23"
+      },
+      {
+        "nodeId": "node-action",
+        "name": "Action Trigger",
+        "status": "passed",
+        "duration": "1.11s",
+        "screenshotUrl": "/screenshots/run-ed69a402_node-action.png",
+        "logs": [
+          "Tulpar serisi Ürün Detay Sayfası (PDP) inceleniyor...",
+          "Teknik donanım özellikleri ve ekran boyutları doğrulandı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-ed69a402_node-action.png"
+        ],
+        "timestamp": "15:06:25"
+      },
+      {
+        "nodeId": "node-output",
+        "name": "Output Generation",
+        "status": "passed",
+        "duration": "0.72s",
+        "screenshotUrl": "/screenshots/run-ed69a402_node-output.png",
+        "logs": [
+          "Sepet ve teslimat aksiyonu kontrol ediliyor...",
+          "Sepete ekleme hazırlandı, kargo ve garanti rozetleri teyit edildi.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-ed69a402_node-output.png"
+        ],
+        "timestamp": "15:06:26"
+      },
+      {
+        "nodeId": "node-complete",
+        "name": "Action Completion",
+        "status": "passed",
+        "duration": "0.60s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: Action Completion"
+        ],
+        "timestamp": "15:06:27"
+      }
+    ]
+  },
+  {
+    "runId": "run-0d7b533c",
+    "scenarioId": "scenario-monster-e2e",
+    "scenarioTitle": "Monster Notebook: Tulpar E2E Arama ve İnceleme",
+    "status": "passed",
+    "totalDuration": "13.0s",
+    "stepsTotal": 7,
+    "stepsPassed": 7,
+    "stepsFailed": 0,
+    "completedAt": "2026-09-21T11:20:03.672Z",
+    "stepResults": [
+      {
+        "nodeId": "node-init",
+        "name": "User Initializing",
+        "status": "passed",
+        "duration": "0.60s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: User Initializing"
+        ],
+        "timestamp": "14:19:52"
+      },
+      {
+        "nodeId": "node-collect",
+        "name": "Data Collection",
+        "status": "passed",
+        "duration": "2.55s",
+        "screenshotUrl": "/screenshots/run-0d7b533c_node-collect.png",
+        "logs": [
+          "Monster Notebook ana sayfasına bağlanılıyor: https://www.monsternotebook.com.tr/",
+          "HTTP 200 OK alındı. Sayfa Başlığı: Monster Notebook | Performans Tutkunlarına Özel Notebook'lar",
+          "Ekran görüntüsü yakalandı: /screenshots/run-0d7b533c_node-collect.png"
+        ],
+        "timestamp": "14:19:55"
+      },
+      {
+        "nodeId": "node-trigger",
+        "name": "Trigger Automation",
+        "status": "passed",
+        "duration": "1.43s",
+        "screenshotUrl": "/screenshots/run-0d7b533c_node-trigger.png",
+        "logs": [
+          "Arama kutusu tetikleniyor: query=\"Tulpar\"",
+          "Arama inputuna 'Tulpar' yazıldı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-0d7b533c_node-trigger.png"
+        ],
+        "timestamp": "14:19:57"
+      },
+      {
+        "nodeId": "node-validate",
+        "name": "Data Validation",
+        "status": "passed",
+        "duration": "2.20s",
+        "screenshotUrl": "/screenshots/run-0d7b533c_node-validate.png",
+        "logs": [
+          "Oyun Bilgisayarları kategorisi kontrol ediliyor...",
+          "Kategori listelemesi ve fiyat etiketleri doğrulandı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-0d7b533c_node-validate.png"
+        ],
+        "timestamp": "14:19:59"
+      },
+      {
+        "nodeId": "node-action",
+        "name": "Action Trigger",
+        "status": "passed",
+        "duration": "1.42s",
+        "screenshotUrl": "/screenshots/run-0d7b533c_node-action.png",
+        "logs": [
+          "Tulpar serisi Ürün Detay Sayfası (PDP) inceleniyor...",
+          "Teknik donanım özellikleri ve ekran boyutları doğrulandı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-0d7b533c_node-action.png"
+        ],
+        "timestamp": "14:20:01"
+      },
+      {
+        "nodeId": "node-output",
+        "name": "Output Generation",
+        "status": "passed",
+        "duration": "0.77s",
+        "screenshotUrl": "/screenshots/run-0d7b533c_node-output.png",
+        "logs": [
+          "Sepet ve teslimat aksiyonu kontrol ediliyor...",
+          "Sepete ekleme hazırlandı, kargo ve garanti rozetleri teyit edildi.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-0d7b533c_node-output.png"
+        ],
+        "timestamp": "14:20:02"
+      },
+      {
+        "nodeId": "node-complete",
+        "name": "Action Completion",
+        "status": "passed",
+        "duration": "0.60s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: Action Completion"
+        ],
+        "timestamp": "14:20:03"
+      }
+    ]
+  },
+  {
+    "runId": "run-c824afc9",
+    "scenarioId": "scenario-monster-e2e",
+    "scenarioTitle": "Monster Notebook: Tulpar E2E Arama ve İnceleme",
+    "status": "passed",
+    "totalDuration": "11.4s",
+    "stepsTotal": 7,
+    "stepsPassed": 7,
+    "stepsFailed": 0,
+    "completedAt": "2026-09-21T11:12:05.350Z",
+    "stepResults": [
+      {
+        "nodeId": "node-init",
+        "name": "User Initializing",
+        "status": "passed",
+        "duration": "0.60s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: User Initializing"
+        ],
+        "timestamp": "14:11:55"
+      },
+      {
+        "nodeId": "node-collect",
+        "name": "Data Collection",
+        "status": "passed",
+        "duration": "2.60s",
+        "screenshotUrl": "/screenshots/run-c824afc9_node-collect.png",
+        "logs": [
+          "Monster Notebook ana sayfasına bağlanılıyor: https://www.monsternotebook.com.tr/",
+          "HTTP 200 OK alındı. Sayfa Başlığı: Monster Notebook | Performans Tutkunlarına Özel Notebook'lar",
+          "Ekran görüntüsü yakalandı: /screenshots/run-c824afc9_node-collect.png"
+        ],
+        "timestamp": "14:11:58"
+      },
+      {
+        "nodeId": "node-trigger",
+        "name": "Trigger Automation",
+        "status": "passed",
+        "duration": "1.38s",
+        "screenshotUrl": "/screenshots/run-c824afc9_node-trigger.png",
+        "logs": [
+          "Arama kutusu tetikleniyor: query=\"Tulpar\"",
+          "Arama inputuna 'Tulpar' yazıldı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-c824afc9_node-trigger.png"
+        ],
+        "timestamp": "14:12:00"
+      },
+      {
+        "nodeId": "node-validate",
+        "name": "Data Validation",
+        "status": "passed",
+        "duration": "1.02s",
+        "screenshotUrl": "/screenshots/run-c824afc9_node-validate.png",
+        "logs": [
+          "Oyun Bilgisayarları kategorisi kontrol ediliyor...",
+          "Kategori listelemesi ve fiyat etiketleri doğrulandı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-c824afc9_node-validate.png"
+        ],
+        "timestamp": "14:12:01"
+      },
+      {
+        "nodeId": "node-action",
+        "name": "Action Trigger",
+        "status": "passed",
+        "duration": "0.98s",
+        "screenshotUrl": "/screenshots/run-c824afc9_node-action.png",
+        "logs": [
+          "Tulpar serisi Ürün Detay Sayfası (PDP) inceleniyor...",
+          "Teknik donanım özellikleri ve ekran boyutları doğrulandı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-c824afc9_node-action.png"
+        ],
+        "timestamp": "14:12:03"
+      },
+      {
+        "nodeId": "node-output",
+        "name": "Output Generation",
+        "status": "passed",
+        "duration": "0.69s",
+        "screenshotUrl": "/screenshots/run-c824afc9_node-output.png",
+        "logs": [
+          "Sepet ve teslimat aksiyonu kontrol ediliyor...",
+          "Sepete ekleme hazırlandı, kargo ve garanti rozetleri teyit edildi.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-c824afc9_node-output.png"
+        ],
+        "timestamp": "14:12:04"
+      },
+      {
+        "nodeId": "node-complete",
+        "name": "Action Completion",
+        "status": "passed",
+        "duration": "0.60s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: Action Completion"
+        ],
+        "timestamp": "14:12:04"
+      }
+    ]
+  },
+  {
+    "runId": "run-6d9c27be",
+    "scenarioId": "scenario-monster-e2e",
+    "scenarioTitle": "Monster Notebook: Tulpar E2E Arama ve İnceleme",
+    "status": "passed",
+    "totalDuration": "12.5s",
+    "stepsTotal": 7,
+    "stepsPassed": 7,
+    "stepsFailed": 0,
+    "completedAt": "2026-09-21T10:55:07.809Z",
+    "stepResults": [
+      {
+        "nodeId": "node-init",
+        "name": "User Initializing",
+        "status": "passed",
+        "duration": "0.60s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: User Initializing"
+        ],
+        "timestamp": "13:54:57"
+      },
+      {
+        "nodeId": "node-collect",
+        "name": "Data Collection",
+        "status": "passed",
+        "duration": "2.79s",
+        "screenshotUrl": "/screenshots/run-6d9c27be_node-collect.png",
+        "logs": [
+          "Monster Notebook ana sayfasına bağlanılıyor: https://www.monsternotebook.com.tr/",
+          "HTTP 200 OK alındı. Sayfa Başlığı: Monster Notebook | Performans Tutkunlarına Özel Notebook'lar",
+          "Ekran görüntüsü yakalandı: /screenshots/run-6d9c27be_node-collect.png"
+        ],
+        "timestamp": "13:55:00"
+      },
+      {
+        "nodeId": "node-trigger",
+        "name": "Trigger Automation",
+        "status": "passed",
+        "duration": "1.43s",
+        "screenshotUrl": "/screenshots/run-6d9c27be_node-trigger.png",
+        "logs": [
+          "Arama kutusu tetikleniyor: query=\"Tulpar\"",
+          "Arama inputuna 'Tulpar' yazıldı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-6d9c27be_node-trigger.png"
+        ],
+        "timestamp": "13:55:02"
+      },
+      {
+        "nodeId": "node-validate",
+        "name": "Data Validation",
+        "status": "passed",
+        "duration": "1.19s",
+        "screenshotUrl": "/screenshots/run-6d9c27be_node-validate.png",
+        "logs": [
+          "Oyun Bilgisayarları kategorisi kontrol ediliyor...",
+          "Kategori listelemesi ve fiyat etiketleri doğrulandı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-6d9c27be_node-validate.png"
+        ],
+        "timestamp": "13:55:03"
+      },
+      {
+        "nodeId": "node-action",
+        "name": "Action Trigger",
+        "status": "passed",
+        "duration": "1.19s",
+        "screenshotUrl": "/screenshots/run-6d9c27be_node-action.png",
+        "logs": [
+          "Tulpar serisi Ürün Detay Sayfası (PDP) inceleniyor...",
+          "Teknik donanım özellikleri ve ekran boyutları doğrulandı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-6d9c27be_node-action.png"
+        ],
+        "timestamp": "13:55:05"
+      },
+      {
+        "nodeId": "node-output",
+        "name": "Output Generation",
+        "status": "passed",
+        "duration": "0.74s",
+        "screenshotUrl": "/screenshots/run-6d9c27be_node-output.png",
+        "logs": [
+          "Sepet ve teslimat aksiyonu kontrol ediliyor...",
+          "Sepete ekleme hazırlandı, kargo ve garanti rozetleri teyit edildi.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-6d9c27be_node-output.png"
+        ],
+        "timestamp": "13:55:06"
+      },
+      {
+        "nodeId": "node-complete",
+        "name": "Action Completion",
+        "status": "passed",
+        "duration": "0.61s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: Action Completion"
+        ],
+        "timestamp": "13:55:07"
+      }
+    ]
+  },
+  {
+    "runId": "run-8ff37927",
+    "scenarioId": "scenario-monster-e2e",
+    "scenarioTitle": "Monster Notebook: Tulpar E2E Arama ve İnceleme",
+    "status": "passed",
+    "totalDuration": "13.8s",
+    "stepsTotal": 7,
+    "stepsPassed": 7,
+    "stepsFailed": 0,
+    "completedAt": "2026-09-21T10:43:39.048Z",
+    "stepResults": [
+      {
+        "nodeId": "node-init",
+        "name": "User Initializing",
+        "status": "passed",
+        "duration": "0.61s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: User Initializing"
+        ],
+        "timestamp": "13:43:27"
+      },
+      {
+        "nodeId": "node-collect",
+        "name": "Data Collection",
+        "status": "passed",
+        "duration": "3.97s",
+        "screenshotUrl": "/screenshots/run-8ff37927_node-collect.png",
+        "logs": [
+          "Monster Notebook ana sayfasına bağlanılıyor: https://www.monsternotebook.com.tr/",
+          "HTTP 200 OK alındı. Sayfa Başlığı: Monster Notebook | Performans Tutkunlarına Özel Notebook'lar",
+          "Ekran görüntüsü yakalandı: /screenshots/run-8ff37927_node-collect.png"
+        ],
+        "timestamp": "13:43:32"
+      },
+      {
+        "nodeId": "node-trigger",
+        "name": "Trigger Automation",
+        "status": "passed",
+        "duration": "1.43s",
+        "screenshotUrl": "/screenshots/run-8ff37927_node-trigger.png",
+        "logs": [
+          "Arama kutusu tetikleniyor: query=\"Tulpar\"",
+          "Arama inputuna 'Tulpar' yazıldı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-8ff37927_node-trigger.png"
+        ],
+        "timestamp": "13:43:33"
+      },
+      {
+        "nodeId": "node-validate",
+        "name": "Data Validation",
+        "status": "passed",
+        "duration": "1.05s",
+        "screenshotUrl": "/screenshots/run-8ff37927_node-validate.png",
+        "logs": [
+          "Oyun Bilgisayarları kategorisi kontrol ediliyor...",
+          "Kategori listelemesi ve fiyat etiketleri doğrulandı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-8ff37927_node-validate.png"
+        ],
+        "timestamp": "13:43:35"
+      },
+      {
+        "nodeId": "node-action",
+        "name": "Action Trigger",
+        "status": "passed",
+        "duration": "1.04s",
+        "screenshotUrl": "/screenshots/run-8ff37927_node-action.png",
+        "logs": [
+          "Tulpar serisi Ürün Detay Sayfası (PDP) inceleniyor...",
+          "Teknik donanım özellikleri ve ekran boyutları doğrulandı.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-8ff37927_node-action.png"
+        ],
+        "timestamp": "13:43:36"
+      },
+      {
+        "nodeId": "node-output",
+        "name": "Output Generation",
+        "status": "passed",
+        "duration": "0.73s",
+        "screenshotUrl": "/screenshots/run-8ff37927_node-output.png",
+        "logs": [
+          "Sepet ve teslimat aksiyonu kontrol ediliyor...",
+          "Sepete ekleme hazırlandı, kargo ve garanti rozetleri teyit edildi.",
+          "Ekran görüntüsü yakalandı: /screenshots/run-8ff37927_node-output.png"
+        ],
+        "timestamp": "13:43:37"
+      },
+      {
+        "nodeId": "node-complete",
+        "name": "Action Completion",
+        "status": "passed",
+        "duration": "0.61s",
+        "screenshotUrl": "",
+        "logs": [
+          "Oturum durumu: Action Completion"
+        ],
+        "timestamp": "13:43:38"
+      }
+    ]
+  },
+  {
+    "runId": "run-monster-001",
+    "scenarioId": "scenario-monster-e2e",
+    "scenarioTitle": "Monster Notebook: Tulpar E2E Arama ve İnceleme",
+    "status": "passed",
+    "totalDuration": "8.5s",
+    "stepsTotal": 6,
+    "stepsPassed": 6,
+    "stepsFailed": 0,
+    "completedAt": "2026-09-21T10:37:40.000Z",
+    "stepResults": [
+      {
+        "nodeId": "node-init",
+        "name": "User Initializing",
+        "status": "passed",
+        "duration": "0.5s",
+        "screenshotUrl": "",
+        "logs": [
+          "Tarayıcı başlatıldı ve oturum hazırlandı"
+        ],
+        "timestamp": "13:37:32"
+      },
+      {
+        "nodeId": "node-collect",
+        "name": "Data Collection",
+        "status": "passed",
+        "duration": "2.1s",
+        "screenshotUrl": "/screenshots/monster_home_live.png",
+        "logs": [
+          "Monster Notebook ana sayfası yüklendi: https://www.monsternotebook.com.tr/",
+          "HTTP 200 OK alındı",
+          "Ekran görüntüsü kaydedildi: /screenshots/monster_home_live.png"
+        ],
+        "timestamp": "13:37:34"
+      },
+      {
+        "nodeId": "node-trigger",
+        "name": "Trigger Automation",
+        "status": "passed",
+        "duration": "1.8s",
+        "screenshotUrl": "/screenshots/monster_home_live.png",
+        "logs": [
+          "Arama inputuna 'Tulpar' yazıldı",
+          "Arama isteği gönderildi"
+        ],
+        "timestamp": "13:37:36"
+      },
+      {
+        "nodeId": "node-validate",
+        "name": "Data Validation",
+        "status": "passed",
+        "duration": "2.4s",
+        "screenshotUrl": "/screenshots/monster_category.png",
+        "logs": [
+          "Oyun bilgisayarları listelendi",
+          "Tulpar modelleri ve fiyatlar doğrulandı"
+        ],
+        "timestamp": "13:37:38"
+      },
+      {
+        "nodeId": "node-action",
+        "name": "Action Trigger",
+        "status": "passed",
+        "duration": "1.9s",
+        "screenshotUrl": "/screenshots/monster_tulpar_pdp.png",
+        "logs": [
+          "Ürün detay sayfası açıldı",
+          "Intel Core i7/i9 ve RTX 4070/4080 özellikleri kontrol edildi"
+        ],
+        "timestamp": "13:37:40"
+      },
+      {
+        "nodeId": "node-output",
+        "name": "Output Generation",
+        "status": "passed",
+        "duration": "1.2s",
+        "screenshotUrl": "/screenshots/monster_tulpar_pdp.png",
+        "logs": [
+          "Sepet aksiyonu hazırlandı",
+          "Stok ve kargo rozetleri teyit edildi"
+        ],
+        "timestamp": "13:37:41"
+      }
+    ]
+  }
+]

@@ -1,0 +1,4220 @@
+[
+  {
+    "id": "scenario-monster-e2e",
+    "title": "Monster Notebook: Tulpar E2E Arama ve İnceleme",
+    "category": "Monster Notebook Canlı Testleri",
+    "description": "Monster Notebook resmi sitesinde Tulpar serisi arama, listeleme, PDP teknik özellik ve fiyat doğrulaması.",
+    "criticality": "Critical",
+    "componentsCount": 28,
+    "lastRunDuration": "13.8s",
+    "status": "passed",
+    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "nodes": [
+      {
+        "id": "node-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Initializing for Automation",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-collect",
+        "type": "flowStepNode",
+        "position": {
+          "x": 130,
+          "y": 180
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Data Collection",
+          "subtext": "Gathering Storefront Data",
+          "action": "navigate_monster",
+          "selector": "body",
+          "expected": "Monster Notebook Ana Sayfası Yüklendi (HTTP 200)",
+          "components": 11,
+          "metricTime": "2.1s",
+          "metricPassed": 41,
+          "metricAutomated": 72,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "search",
+          "screenshot": "/screenshots/monster_home_live.png"
+        }
+      },
+      {
+        "id": "node-trigger",
+        "type": "flowStepNode",
+        "position": {
+          "x": 630,
+          "y": 180
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Trigger Automation",
+          "subtext": "Search Query: Tulpar Gaming",
+          "action": "search_monster",
+          "selector": "input[name=\"q\"]",
+          "value": "Tulpar",
+          "expected": "Arama inputuna 'Tulpar' girildi ve arama tetiklendi",
+          "components": 11,
+          "metricTime": "1.8s",
+          "metricPassed": 27,
+          "metricAutomated": 41,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "search",
+          "screenshot": "/screenshots/monster_home_live.png"
+        }
+      },
+      {
+        "id": "node-validate",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 440
+        },
+        "data": {
+          "stepIndex": 3,
+          "name": "Data Validation",
+          "subtext": "Ensuring Laptop Category Accuracy",
+          "action": "validate_category",
+          "selector": ".product-list, .prd-main",
+          "expected": "Tulpar serisi dizüstü modelleri ve fiyat etiketleri doğrulandı",
+          "components": 91,
+          "metricTime": "2.4s",
+          "metricPassed": 18,
+          "metricAutomated": 20,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "pdp",
+          "screenshot": "/screenshots/monster_category.png"
+        }
+      },
+      {
+        "id": "node-action",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 700
+        },
+        "data": {
+          "stepIndex": 4,
+          "name": "Action Trigger",
+          "subtext": "PDP Specification & Hardware Check",
+          "action": "inspect_pdp",
+          "selector": ".p-title, .p-detail",
+          "expected": "Intel Core i7/i9, RTX 4070/4080 donanım özellikleri doğrulandı",
+          "components": 87,
+          "metricTime": "1.9s",
+          "metricPassed": 34,
+          "metricAutomated": 17,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "pdp",
+          "screenshot": "/screenshots/monster_tulpar_pdp.png"
+        }
+      },
+      {
+        "id": "node-output",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 960
+        },
+        "data": {
+          "stepIndex": 5,
+          "name": "Output Generation",
+          "subtext": "Cart & Delivery Verification",
+          "action": "verify_cart",
+          "selector": ".btn-add-cart, .sepet",
+          "expected": "Sepete ekleme hazırlandı ve kargo/stok rozeti onaylandı",
+          "components": 15,
+          "metricTime": "1.2s",
+          "metricPassed": 55,
+          "metricAutomated": 41,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "cart",
+          "screenshot": "/screenshots/monster_tulpar_pdp.png"
+        }
+      },
+      {
+        "id": "node-complete",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 1220
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Automation Complete",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-init-collect",
+        "source": "node-init",
+        "target": "node-collect",
+        "label": "Initialize Data",
+        "animated": true
+      },
+      {
+        "id": "e-init-trigger",
+        "source": "node-init",
+        "target": "node-trigger",
+        "label": "Setup Automation",
+        "animated": true
+      },
+      {
+        "id": "e-collect-trigger",
+        "source": "node-collect",
+        "target": "node-trigger",
+        "label": "Execute Triggered",
+        "animated": true
+      },
+      {
+        "id": "e-collect-validate",
+        "source": "node-collect",
+        "target": "node-validate",
+        "label": "Direct Processing",
+        "animated": true
+      },
+      {
+        "id": "e-trigger-validate",
+        "source": "node-trigger",
+        "target": "node-validate",
+        "label": "Combine Results",
+        "animated": true
+      },
+      {
+        "id": "e-validate-action",
+        "source": "node-validate",
+        "target": "node-action",
+        "animated": true
+      },
+      {
+        "id": "e-action-output",
+        "source": "node-action",
+        "target": "node-output",
+        "animated": true
+      },
+      {
+        "id": "e-output-complete",
+        "source": "node-output",
+        "target": "node-complete",
+        "label": "Finalize",
+        "animated": true
+      }
+    ],
+    "projectId": "proj-monster"
+  },
+  {
+    "id": "scenario-monster-category",
+    "title": "Monster Notebook: Oyun Bilgisayarları Kategori & Filtre",
+    "category": "Monster Notebook Canlı Testleri",
+    "description": "Oyun bilgisayarları kategori sayfasında Abra ve Tulpar modellerinin listelenmesi ve fiyat filtreleme doğrulaması.",
+    "criticality": "High",
+    "componentsCount": 18,
+    "lastRunDuration": "6.2s",
+    "status": "passed",
+    "targetUrl": "https://www.monsternotebook.com.tr/oyun-bilgisayarlari/",
+    "nodes": [
+      {
+        "id": "node-cat-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Category Test Setup",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-cat-load",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 180
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Kategori Sayfası Yükleme",
+          "subtext": "Oyun Bilgisayarları PLP",
+          "components": 14,
+          "metricTime": "2.4s",
+          "metricPassed": 22,
+          "metricAutomated": 30,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "search",
+          "screenshot": "/screenshots/monster_category.png"
+        }
+      },
+      {
+        "id": "node-cat-filter",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 440
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Model ve Donanım Filtreleme",
+          "subtext": "Abra & Tulpar Serisi",
+          "components": 24,
+          "metricTime": "1.9s",
+          "metricPassed": 35,
+          "metricAutomated": 40,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "pdp",
+          "screenshot": "/screenshots/monster_category.png"
+        }
+      },
+      {
+        "id": "node-cat-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 700
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Category Audit Finished",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-cat1",
+        "source": "node-cat-init",
+        "target": "node-cat-load",
+        "label": "Initialize Data",
+        "animated": true
+      },
+      {
+        "id": "e-cat2",
+        "source": "node-cat-load",
+        "target": "node-cat-filter",
+        "label": "Apply Filter",
+        "animated": true
+      },
+      {
+        "id": "e-cat3",
+        "source": "node-cat-filter",
+        "target": "node-cat-end",
+        "label": "Finalize",
+        "animated": true
+      }
+    ],
+    "projectId": "proj-monster"
+  },
+  {
+    "id": "scenario-monster-mobile",
+    "title": "Monster Notebook: Mobil Responsive & Menü",
+    "category": "Mobil & Uyumluluk",
+    "description": "Monster Notebook mobil görünümde (iPhone 14 / 390x844) menü, arama ve dokunmatik sepet butonları testi.",
+    "criticality": "High",
+    "componentsCount": 16,
+    "lastRunDuration": "5.8s",
+    "status": "passed",
+    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "nodes": [
+      {
+        "id": "node-mob-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Mobile Viewport (390x844)",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-mob-open",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 180
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Mobil Ana Sayfa Yükleme",
+          "subtext": "Touch Mode Enabled",
+          "components": 12,
+          "metricTime": "2.1s",
+          "metricPassed": 19,
+          "metricAutomated": 25,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "search",
+          "screenshot": "/screenshots/monster_home_live.png"
+        }
+      },
+      {
+        "id": "node-mob-menu",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 440
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Hamburger Menü & Kategori",
+          "subtext": "Slide Drawer Test",
+          "components": 18,
+          "metricTime": "1.7s",
+          "metricPassed": 28,
+          "metricAutomated": 34,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "pdp",
+          "screenshot": "/screenshots/monster_home_live.png"
+        }
+      },
+      {
+        "id": "node-mob-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 700
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Mobile Responsive Validated",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-m1",
+        "source": "node-mob-init",
+        "target": "node-mob-open",
+        "label": "Setup Mobile",
+        "animated": true
+      },
+      {
+        "id": "e-m2",
+        "source": "node-mob-open",
+        "target": "node-mob-menu",
+        "label": "Touch Action",
+        "animated": true
+      },
+      {
+        "id": "e-m3",
+        "source": "node-mob-menu",
+        "target": "node-mob-end",
+        "label": "Finalize",
+        "animated": true
+      }
+    ],
+    "projectId": "proj-monster"
+  },
+  {
+    "id": "scenario-coupon-engine",
+    "title": "Kupon & Promosyon Doğrulama Akışı",
+    "category": "Fiyatlandırma & Kampanya",
+    "description": "Geçersiz kuponların ('EXPIRED50') reddedilmesi, 'SAVE20' ile %20 sepet indirimi ve KDV matrahının yeniden hesaplanması testi.",
+    "criticality": "Critical",
+    "componentsCount": 20,
+    "lastRunDuration": "4.2s",
+    "status": "passed",
+    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "nodes": [
+      {
+        "id": "node-c-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Cart Ready with Items",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-c-invalid",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 180
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Geçersiz Kupon Girişi (EXPIRED50)",
+          "subtext": "Hata Uyarısı Doğrulama",
+          "components": 8,
+          "metricTime": "1.2s",
+          "metricPassed": 14,
+          "metricAutomated": 18,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-c-valid",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 440
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Geçerli İndirim Kuponu (SAVE20)",
+          "subtext": "%20 Net İndirim Uygulama",
+          "components": 12,
+          "metricTime": "1.5s",
+          "metricPassed": 24,
+          "metricAutomated": 30,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-c-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 700
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Promosyon Tutarları Doğrulandı",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-c1",
+        "source": "node-c-init",
+        "target": "node-c-invalid",
+        "label": "Apply Coupon",
+        "animated": true
+      },
+      {
+        "id": "e-c2",
+        "source": "node-c-invalid",
+        "target": "node-c-valid",
+        "label": "Recalculate",
+        "animated": true
+      },
+      {
+        "id": "e-c3",
+        "source": "node-c-valid",
+        "target": "node-c-end",
+        "label": "Finalize",
+        "animated": true
+      }
+    ],
+    "projectId": "proj-monster"
+  },
+  {
+    "id": "scenario-inventory-limits",
+    "title": "Stok Tükendi & Adet Limiti (Edge Case)",
+    "category": "Katalog & Envanter",
+    "description": "Tükenen ürünlerin sepete eklenmesini engelleme, son 1 adet uyarısı ve stoktan fazla sipariş verilmesinin önlenmesi.",
+    "criticality": "Critical",
+    "componentsCount": 15,
+    "lastRunDuration": "3.8s",
+    "status": "passed",
+    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "nodes": [
+      {
+        "id": "node-inv-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Stock Threshold Test",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-inv-out",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 180
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Tükenen Ürün Buton Kilidi",
+          "subtext": "Add to Cart Disabled Kontrolü",
+          "components": 9,
+          "metricTime": "1.4s",
+          "metricPassed": 18,
+          "metricAutomated": 22,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "cart"
+        }
+      },
+      {
+        "id": "node-inv-limit",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 440
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Stok Fazlası Adet Engeli",
+          "subtext": "Maksimum Adet Doğrulama",
+          "components": 11,
+          "metricTime": "1.2s",
+          "metricPassed": 20,
+          "metricAutomated": 25,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "cart"
+        }
+      },
+      {
+        "id": "node-inv-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 700
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Envanter Güvenliği Onaylandı",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-i1",
+        "source": "node-inv-init",
+        "target": "node-inv-out",
+        "label": "Check Stock",
+        "animated": true
+      },
+      {
+        "id": "e-i2",
+        "source": "node-inv-out",
+        "target": "node-inv-limit",
+        "label": "Enforce Limit",
+        "animated": true
+      },
+      {
+        "id": "e-i3",
+        "source": "node-inv-limit",
+        "target": "node-inv-end",
+        "label": "Finalize",
+        "animated": true
+      }
+    ],
+    "projectId": "proj-monster"
+  },
+  {
+    "id": "scenario-payment-fallback",
+    "title": "3D Secure, Kart Reddi & Ödeme Kurtarma",
+    "category": "Ödeme & Güvenlik",
+    "description": "Geçersiz kart bilgilerinde açık hata mesajı gösterimi, 3D secure yönlendirmesi ve alternatif ödeme (Havale/PayPal) kurtarma akışı.",
+    "criticality": "Critical",
+    "componentsCount": 24,
+    "lastRunDuration": "5.4s",
+    "status": "passed",
+    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "nodes": [
+      {
+        "id": "node-pay-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Payment Gateway Test",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-pay-decline",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 180
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Hatalı Kart Numarası & Bakiye Reddi",
+          "subtext": "Kart Reddi Mesajı Doğrulandı",
+          "components": 14,
+          "metricTime": "2.1s",
+          "metricPassed": 29,
+          "metricAutomated": 35,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "payment"
+        }
+      },
+      {
+        "id": "node-pay-recovery",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 440
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Alternatif Ödeme Seçimi & 3D Secure",
+          "subtext": "Güvenli Ödeme Kurtarma",
+          "components": 18,
+          "metricTime": "1.9s",
+          "metricPassed": 33,
+          "metricAutomated": 40,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "payment"
+        }
+      },
+      {
+        "id": "node-pay-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 700
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Ödeme Geçişi Güvenle Tamamlandı",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-p1",
+        "source": "node-pay-init",
+        "target": "node-pay-decline",
+        "label": "Authorize Card",
+        "animated": true
+      },
+      {
+        "id": "e-p2",
+        "source": "node-pay-decline",
+        "target": "node-pay-recovery",
+        "label": "Recover Payment",
+        "animated": true
+      },
+      {
+        "id": "e-p3",
+        "source": "node-pay-recovery",
+        "target": "node-pay-end",
+        "label": "Finalize",
+        "animated": true
+      }
+    ],
+    "projectId": "proj-monster"
+  },
+  {
+    "id": "scenario-guest-checkout",
+    "title": "Üyeliksiz Misafir (Guest) Alışveriş Akışı",
+    "category": "Kullanıcı Deneyimi & Dönüşüm",
+    "description": "Zorunlu hesap oluşturmadan misafir e-posta ve teslimat adresiyle 1-tıkla hızlı kasa tamamlama doğrulaması.",
+    "criticality": "High",
+    "componentsCount": 16,
+    "lastRunDuration": "4.1s",
+    "status": "passed",
+    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "nodes": [
+      {
+        "id": "node-g-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Guest Checkout Path",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-g-step",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 180
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Üye Olmadan Devam Et Seçimi",
+          "subtext": "Şifresiz Adres Girişi",
+          "components": 10,
+          "metricTime": "1.3s",
+          "metricPassed": 16,
+          "metricAutomated": 20,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-g-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 440
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Misafir Sipariş Makbuzu Oluşturuldu",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-g1",
+        "source": "node-g-init",
+        "target": "node-g-step",
+        "label": "Continue as Guest",
+        "animated": true
+      },
+      {
+        "id": "e-g2",
+        "source": "node-g-step",
+        "target": "node-g-end",
+        "label": "Finalize",
+        "animated": true
+      }
+    ],
+    "projectId": "proj-monster"
+  },
+  {
+    "id": "scenario-shipping-tax",
+    "projectId": "proj-monster",
+    "title": "Dinamik Kargo ve Ücretsiz Kargo Barı",
+    "category": "Lojistik & Kargo",
+    "description": "Sepet tutarına göre ücretsiz kargo eşiğinin ('X TL kaldı' barı) dinamik hesaplanması ve kargo firması seçimi.",
+    "criticality": "Medium",
+    "componentsCount": 14,
+    "lastRunDuration": "3.5s",
+    "status": "passed",
+    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "nodes": [
+      {
+        "id": "node-s-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Shipping Calculator Test",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-s-calc",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 180
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Ücretsiz Kargo Barı & Taşıyıcı Seçimi",
+          "subtext": "Yurtiçi / Aras / Kolay Gelsin Doğrulaması",
+          "components": 8,
+          "metricTime": "1.4s",
+          "metricPassed": 19,
+          "metricAutomated": 24,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-s-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 440
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Kargo Matrahı Teyit Edildi",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-s1",
+        "source": "node-s-init",
+        "target": "node-s-calc",
+        "label": "Calculate Shipping",
+        "animated": true
+      },
+      {
+        "id": "e-s2",
+        "source": "node-s-calc",
+        "target": "node-s-end",
+        "label": "Finalize",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-auth-kyc",
+    "projectId": "proj-monster",
+    "title": "Üye Kaydı, Şifremi Unuttum ve Güvenli Giriş",
+    "category": "Kullanıcı & Hesap",
+    "description": "E-posta format denetimi, parola karmaşıklığı, KVKK rıza metni onayı ve oturum açma akışı testi.",
+    "criticality": "High",
+    "componentsCount": 18,
+    "lastRunDuration": "4.1s",
+    "status": "passed",
+    "targetUrl": "https://www.monsternotebook.com.tr/uye-girisi/",
+    "nodes": [
+      {
+        "id": "node-auth-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Auth Form Initialized",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-auth-validation",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 180
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "E-Posta & Parola Format Doğrulaması",
+          "subtext": "Regex Doğrulama & Hatalı Giriş Uyarısı",
+          "components": 12,
+          "metricTime": "1.2s",
+          "metricPassed": 24,
+          "metricAutomated": 30,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "search"
+        }
+      },
+      {
+        "id": "node-auth-session",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 440
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Oturum Tokeni & Çerez Güvenliği (HttpOnly)",
+          "subtext": "XSS Korumalı Çerez & Güvenli Profil Erişimi",
+          "components": 6,
+          "metricTime": "1.5s",
+          "metricPassed": 18,
+          "metricAutomated": 22,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-auth-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 700
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Kullanıcı Oturumu Başarıyla Doğrulandı",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-auth-1",
+        "source": "node-auth-init",
+        "target": "node-auth-validation",
+        "label": "Validate Inputs",
+        "animated": true
+      },
+      {
+        "id": "e-auth-2",
+        "source": "node-auth-validation",
+        "target": "node-auth-session",
+        "label": "Verify Session Token",
+        "animated": true
+      },
+      {
+        "id": "e-auth-3",
+        "source": "node-auth-session",
+        "target": "node-auth-end",
+        "label": "Finalize",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-search-fuzzy",
+    "projectId": "proj-monster",
+    "title": "Arama Otomatik Tamamlama & Hatalı Yazım Toleransı",
+    "category": "Arama & Keşif",
+    "description": "Kullanıcının 'tulpr' veya 'oyn blgisayarı' gibi yazım hatalarında öneri algoritması (Did you mean?) ve sıfır sonuç kurtarma akışı.",
+    "criticality": "High",
+    "componentsCount": 22,
+    "lastRunDuration": "3.9s",
+    "status": "passed",
+    "targetUrl": "https://www.monsternotebook.com.tr/arama?q=tulpr",
+    "nodes": [
+      {
+        "id": "node-fuzzy-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Search Input Query Trigger",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-fuzzy-input",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 180
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Hatalı Sorgu Girişi: 'tulpr'",
+          "subtext": "Typo Injection & Live Debounce",
+          "components": 14,
+          "metricTime": "1.3s",
+          "metricPassed": 28,
+          "metricAutomated": 35,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "search"
+        }
+      },
+      {
+        "id": "node-fuzzy-suggest",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 440
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "'Bunu mu demek istediniz: Tulpar' Önerisi",
+          "subtext": "Fuzzy Matching & Alternatif Ürün Kartları",
+          "components": 8,
+          "metricTime": "1.6s",
+          "metricPassed": 20,
+          "metricAutomated": 26,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "pdp"
+        }
+      },
+      {
+        "id": "node-fuzzy-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 700
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Arama Kurtarma Başarıyla Doğrulandı",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-fuzz-1",
+        "source": "node-fuzzy-init",
+        "target": "node-fuzzy-input",
+        "label": "Inject Typo Query",
+        "animated": true
+      },
+      {
+        "id": "e-fuzz-2",
+        "source": "node-fuzzy-input",
+        "target": "node-fuzzy-suggest",
+        "label": "Validate Suggestion",
+        "animated": true
+      },
+      {
+        "id": "e-fuzz-3",
+        "source": "node-fuzzy-suggest",
+        "target": "node-fuzzy-end",
+        "label": "Finalize",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-wishlist-cart",
+    "projectId": "proj-monster",
+    "title": "Favori Listesi (Wishlist) ve Tek Tıkla Sepete Taşıma",
+    "category": "Müşteri Deneyimi",
+    "description": "Ürünü favorilere ekleme, oturum açtıktan sonra favorilerin saklanması ve stok durumuna göre doğrudan sepete aktarılması.",
+    "criticality": "Medium",
+    "componentsCount": 16,
+    "lastRunDuration": "4.4s",
+    "status": "passed",
+    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "nodes": [
+      {
+        "id": "node-wish-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Wishlist Interaction Start",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-wish-add",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 180
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Favori Butonuna Tıklama (Kalp İkonu)",
+          "subtext": "Local / Cloud Sync & Sayacın Artması",
+          "components": 10,
+          "metricTime": "1.1s",
+          "metricPassed": 21,
+          "metricAutomated": 29,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "pdp"
+        }
+      },
+      {
+        "id": "node-wish-move",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 440
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Favorilerden 'Sepete Ekle' Transferi",
+          "subtext": "Stok Rezervasyonu & Mini Sepet Açılışı",
+          "components": 6,
+          "metricTime": "1.7s",
+          "metricPassed": 25,
+          "metricAutomated": 31,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-wish-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 700
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Favori-Sepet Eşleşmesi Doğrulandı",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-wish-1",
+        "source": "node-wish-init",
+        "target": "node-wish-add",
+        "label": "Toggle Favorite",
+        "animated": true
+      },
+      {
+        "id": "e-wish-2",
+        "source": "node-wish-add",
+        "target": "node-wish-move",
+        "label": "Move to Cart",
+        "animated": true
+      },
+      {
+        "id": "e-wish-3",
+        "source": "node-wish-move",
+        "target": "node-wish-end",
+        "label": "Finalize",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-security-tamper",
+    "projectId": "proj-monster",
+    "title": "Sepet Fiyat Manipülasyonu & XSS Enjeksiyon Savunması",
+    "category": "Siber Güvenlik & PCI-DSS",
+    "description": "Tarayıcı DevTools üzerinden sepet fiyatını değiştirme (Client-Side Tampering) girişimlerinin sunucu tarafında anında reddedilmesi ve XSS yükü denetimi.",
+    "criticality": "Critical",
+    "componentsCount": 26,
+    "lastRunDuration": "5.6s",
+    "status": "passed",
+    "targetUrl": "https://www.monsternotebook.com.tr/sepet/",
+    "nodes": [
+      {
+        "id": "node-sec-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Security Tampering Audit Start",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-sec-tamper",
+        "type": "flowStepNode",
+        "position": {
+          "x": 130,
+          "y": 180
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "DOM Fiyat Manipülasyonu Simülasyonu",
+          "subtext": "Fiyatı 1 TL Yapma Girişimi",
+          "components": 12,
+          "metricTime": "1.4s",
+          "metricPassed": 30,
+          "metricAutomated": 40,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-sec-xss",
+        "type": "flowStepNode",
+        "position": {
+          "x": 630,
+          "y": 180
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Kupon Kutusuna XSS Yükü '<script>' Gönderimi",
+          "subtext": "HTML Sanitization & WAF Koruması",
+          "components": 8,
+          "metricTime": "1.2s",
+          "metricPassed": 26,
+          "metricAutomated": 34,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-sec-verify",
+        "type": "flowStepNode",
+        "position": {
+          "x": 380,
+          "y": 440
+        },
+        "data": {
+          "stepIndex": 3,
+          "name": "Sunucu Tarafı Güvenlik İhlali Tespiti (Blocked)",
+          "subtext": "İşlem Reddedildi & Gerçek Veritabanı Fiyatı Korundu",
+          "components": 6,
+          "metricTime": "1.8s",
+          "metricPassed": 35,
+          "metricAutomated": 45,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-sec-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 700
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "PCI-DSS Güvenlik Bariyeri Başarıyla Doğrulandı",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-sec-1",
+        "source": "node-sec-init",
+        "target": "node-sec-tamper",
+        "label": "Simulate Tamper",
+        "animated": true
+      },
+      {
+        "id": "e-sec-2",
+        "source": "node-sec-init",
+        "target": "node-sec-xss",
+        "label": "Inject Payload",
+        "animated": true
+      },
+      {
+        "id": "e-sec-3",
+        "source": "node-sec-tamper",
+        "target": "node-sec-verify",
+        "label": "Combine Defenses",
+        "animated": true
+      },
+      {
+        "id": "e-sec-4",
+        "source": "node-sec-xss",
+        "target": "node-sec-verify",
+        "label": "Combine Defenses",
+        "animated": true
+      },
+      {
+        "id": "e-sec-5",
+        "source": "node-sec-verify",
+        "target": "node-sec-end",
+        "label": "Finalize",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-order-return-cancel",
+    "projectId": "proj-monster",
+    "title": "Sipariş İptal, İade & RMA Yönetim Akışı",
+    "category": "Sipariş & İade Yönetimi",
+    "description": "Müşteri siparişler listesinden teslim edilen ürünün iadesini başlatır, iade nedeni seçilir, kargo takip barkodu üretilir ve kredi kartı iade tutarı doğrulanır.",
+    "criticality": "High",
+    "componentsCount": 5,
+    "lastRunDuration": "2.8s",
+    "status": "idle",
+    "targetUrl": "https://www.monsternotebook.com.tr/hesabim/siparislerim/",
+    "nodes": [
+      {
+        "id": "node-ret-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Oturum & Sipariş Listesi",
+          "status": "idle",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-ret-list",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Sipariş Listesi & İade Butonu",
+          "subtext": "Son 30 gün siparişleri",
+          "components": 8,
+          "metricTime": "1.2s",
+          "metricPassed": 14,
+          "metricAutomated": 14,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "category"
+        }
+      },
+      {
+        "id": "node-ret-reason",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "İade Nedeni & IBAN/Kart Seçimi",
+          "subtext": "Cayma hakkı & banka hesabı",
+          "components": 12,
+          "metricTime": "1.4s",
+          "metricPassed": 20,
+          "metricAutomated": 20,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "pdp"
+        }
+      },
+      {
+        "id": "node-ret-barcode",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 550
+        },
+        "data": {
+          "stepIndex": 3,
+          "name": "Kargo İade Kodu & Barkod Üretimi",
+          "subtext": "Yurtiçi Kargo RMA entegrasyonu",
+          "components": 6,
+          "metricTime": "1.1s",
+          "metricPassed": 18,
+          "metricAutomated": 18,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-ret-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 730
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "İade Talebi Başarıyla Oluşturuldu",
+          "status": "idle",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-r1",
+        "source": "node-ret-init",
+        "target": "node-ret-list",
+        "label": "Fetch Order History",
+        "animated": true
+      },
+      {
+        "id": "e-r2",
+        "source": "node-ret-list",
+        "target": "node-ret-reason",
+        "label": "Select Item to Return",
+        "animated": true
+      },
+      {
+        "id": "e-r3",
+        "source": "node-ret-reason",
+        "target": "node-ret-barcode",
+        "label": "Submit RMA Request",
+        "animated": true
+      },
+      {
+        "id": "e-r4",
+        "source": "node-ret-barcode",
+        "target": "node-ret-end",
+        "label": "Finalize RMA",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-installment-matrix",
+    "projectId": "proj-monster",
+    "title": "Kredi Kartı Taksit Seçenekleri & Komisyon Matrisi",
+    "category": "Ödeme & Bankacılık",
+    "description": "Bonus, Maximum, World, Axess kartları için 3, 6, 9 ve 12 taksit komisyon oranları ve peşin fiyatına taksit rozetleri matematiksel olarak doğrulanır.",
+    "criticality": "High",
+    "componentsCount": 5,
+    "lastRunDuration": "3.1s",
+    "status": "idle",
+    "targetUrl": "https://www.monsternotebook.com.tr/odeme/",
+    "nodes": [
+      {
+        "id": "node-inst-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Ödeme Adımı & BIN Simülasyonu",
+          "status": "idle",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-inst-bin",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Kart BIN Algılama (Garanti BBVA)",
+          "subtext": "5400 61XX test BIN",
+          "components": 6,
+          "metricTime": "0.9s",
+          "metricPassed": 16,
+          "metricAutomated": 16,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-inst-table",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Taksit Tablosu & Vade Farkı Denetimi",
+          "subtext": "3-6-9-12 taksit faiz matrisi",
+          "components": 14,
+          "metricTime": "1.5s",
+          "metricPassed": 28,
+          "metricAutomated": 28,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "category"
+        }
+      },
+      {
+        "id": "node-inst-badge",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 550
+        },
+        "data": {
+          "stepIndex": 3,
+          "name": "Peşin Fiyatına 6 Taksit Rozeti Teyidi",
+          "subtext": "₺48.999 / 6 = ₺8.166.50 doğrulandı",
+          "components": 8,
+          "metricTime": "1.0s",
+          "metricPassed": 22,
+          "metricAutomated": 22,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "pdp"
+        }
+      },
+      {
+        "id": "node-inst-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 730
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Taksit Matrisi Başarıyla Doğrulandı",
+          "status": "idle",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-i1",
+        "source": "node-inst-init",
+        "target": "node-inst-bin",
+        "label": "Input Card BIN",
+        "animated": true
+      },
+      {
+        "id": "e-i2",
+        "source": "node-inst-bin",
+        "target": "node-inst-table",
+        "label": "Load Installment Grid",
+        "animated": true
+      },
+      {
+        "id": "e-i3",
+        "source": "node-inst-table",
+        "target": "node-inst-badge",
+        "label": "Verify Zero Interest",
+        "animated": true
+      },
+      {
+        "id": "e-i4",
+        "source": "node-inst-badge",
+        "target": "node-inst-end",
+        "label": "Finalize Installment Audit",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-corporate-invoice",
+    "projectId": "proj-monster",
+    "title": "Kurumsal E-Fatura, VKN & Vergi Dairesi Doğrulaması",
+    "category": "Fatura & Muhasebe",
+    "description": "Kurumsal fatura seçiminde Şirket Unvanı, Vergi Dairesi ve 10 haneli Vergi Kimlik Numarası (VKN) algoritması teyit edilir.",
+    "criticality": "Medium",
+    "componentsCount": 4,
+    "lastRunDuration": "2.4s",
+    "status": "idle",
+    "targetUrl": "https://www.monsternotebook.com.tr/odeme/",
+    "nodes": [
+      {
+        "id": "node-corp-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Fatura Adresi Modülü",
+          "status": "idle",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-corp-select",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Kurumsal Fatura Radio Butonu Seçimi",
+          "subtext": "Bireysel -> Kurumsal geçiş",
+          "components": 5,
+          "metricTime": "0.8s",
+          "metricPassed": 10,
+          "metricAutomated": 10,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-corp-vkn",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "VKN Modulo 10 Doğrulaması & E-Fatura Teyidi",
+          "subtext": "GİB e-Fatura mükellef sorgusu",
+          "components": 12,
+          "metricTime": "1.6s",
+          "metricPassed": 24,
+          "metricAutomated": 24,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "pdp"
+        }
+      },
+      {
+        "id": "node-corp-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 550
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Kurumsal E-Fatura Onaylandı",
+          "status": "idle",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-c1",
+        "source": "node-corp-init",
+        "target": "node-corp-select",
+        "label": "Switch to Corporate",
+        "animated": true
+      },
+      {
+        "id": "e-c2",
+        "source": "node-corp-select",
+        "target": "node-corp-vkn",
+        "label": "Validate Tax Number",
+        "animated": true
+      },
+      {
+        "id": "e-c3",
+        "source": "node-corp-vkn",
+        "target": "node-corp-end",
+        "label": "Approve Invoice",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-address-multi",
+    "projectId": "proj-monster",
+    "title": "Çoklu Teslimat & Farklı Fatura Adresi Yönetimi",
+    "category": "Lojistik & Adres",
+    "description": "Kargo teslimat noktası/otomatı ve mağazadan teslim seçimi, fatura adresinin teslimat adresinden bağımsız tanımlanması.",
+    "criticality": "Medium",
+    "componentsCount": 4,
+    "lastRunDuration": "2.5s",
+    "status": "idle",
+    "targetUrl": "https://www.monsternotebook.com.tr/odeme/",
+    "nodes": [
+      {
+        "id": "node-addr-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Adres Seçim Ekranı",
+          "status": "idle",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-addr-point",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Kargo Otomatı / Teslim Noktası Seçimi",
+          "subtext": "Harita üzerinden nokta belirleme",
+          "components": 8,
+          "metricTime": "1.3s",
+          "metricPassed": 16,
+          "metricAutomated": 16,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "category"
+        }
+      },
+      {
+        "id": "node-addr-split",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Farklı Fatura Adresi Onay Kutusu",
+          "subtext": "Ayrı fatura alıcısı & TC Kimlik girişi",
+          "components": 10,
+          "metricTime": "1.2s",
+          "metricPassed": 20,
+          "metricAutomated": 20,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-addr-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 550
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Çift Adres Yapısı Doğrulandı",
+          "status": "idle",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-a1",
+        "source": "node-addr-init",
+        "target": "node-addr-point",
+        "label": "Select Pickup Locker",
+        "animated": true
+      },
+      {
+        "id": "e-a2",
+        "source": "node-addr-point",
+        "target": "node-addr-split",
+        "label": "Uncheck Same Billing Address",
+        "animated": true
+      },
+      {
+        "id": "e-a3",
+        "source": "node-addr-split",
+        "target": "node-addr-end",
+        "label": "Confirm Addresses",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-cart-persistence",
+    "projectId": "proj-monster",
+    "title": "Sepet Terk Etme & Tarayıcılar Arası Oturum Kurtarma",
+    "category": "Kullanıcı Deneyimi & Dönüşüm",
+    "description": "Sepete laptop ve aksesuar eklendikten sonra tarayıcı oturumu kapatılır; yeniden açıldığında sepet öğelerinin ve kuponun korunduğu teyit edilir.",
+    "criticality": "High",
+    "componentsCount": 4,
+    "lastRunDuration": "3.4s",
+    "status": "idle",
+    "targetUrl": "https://www.monsternotebook.com.tr/sepet/",
+    "nodes": [
+      {
+        "id": "node-pers-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Sepete Ürün Ekleme",
+          "status": "idle",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-pers-fill",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Sepete Laptop Ekleme & Kupon Uygulama",
+          "subtext": "Tulpar T7 + \"MONSTER1000\" kuponu",
+          "components": 9,
+          "metricTime": "1.5s",
+          "metricPassed": 22,
+          "metricAutomated": 22,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "pdp"
+        }
+      },
+      {
+        "id": "node-pers-reopen",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Oturumu Kapat & Yeniden Başlat (Restore)",
+          "subtext": "LocalStorage & Redis Session Senkronizasyonu",
+          "components": 12,
+          "metricTime": "1.7s",
+          "metricPassed": 26,
+          "metricAutomated": 26,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-pers-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 550
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Sepet Durumu Kusursuz Korundu",
+          "status": "idle",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-p1",
+        "source": "node-pers-init",
+        "target": "node-pers-fill",
+        "label": "Populate Cart",
+        "animated": true
+      },
+      {
+        "id": "e-p2",
+        "source": "node-pers-fill",
+        "target": "node-pers-reopen",
+        "label": "Simulate Session Drop & Reconnect",
+        "animated": true
+      },
+      {
+        "id": "e-p3",
+        "source": "node-pers-reopen",
+        "target": "node-pers-end",
+        "label": "Verify Cart Integrity",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-core-web-vitals",
+    "projectId": "proj-monster",
+    "title": "Core Web Vitals, Hız Skoru & Kırık Link Denetimi",
+    "category": "Performans & SEO",
+    "description": "Ana sayfa ve PDP için LCP (<2.5s), CLS (<0.1), INP etkileşim gecikmesi ve 404 kırık link taraması.",
+    "criticality": "Medium",
+    "componentsCount": 4,
+    "lastRunDuration": "2.1s",
+    "status": "idle",
+    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "nodes": [
+      {
+        "id": "node-cwv-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Lighthouse & Performance API",
+          "status": "idle",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-cwv-lcp",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Largest Contentful Paint (LCP < 2.5s)",
+          "subtext": "Hero banner yükleme süresi 1.8s",
+          "components": 6,
+          "metricTime": "1.2s",
+          "metricPassed": 18,
+          "metricAutomated": 18,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "search"
+        }
+      },
+      {
+        "id": "node-cwv-cls",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Cumulative Layout Shift (CLS < 0.1) & Linkler",
+          "subtext": "DOM kayma skoru 0.02, 0 adet 404 link",
+          "components": 14,
+          "metricTime": "1.4s",
+          "metricPassed": 32,
+          "metricAutomated": 32,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "category"
+        }
+      },
+      {
+        "id": "node-cwv-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 550
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Web Vitals & SEO Standartları Karşılandı",
+          "status": "idle",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-w1",
+        "source": "node-cwv-init",
+        "target": "node-cwv-lcp",
+        "label": "Measure Hero LCP",
+        "animated": true
+      },
+      {
+        "id": "e-w2",
+        "source": "node-cwv-lcp",
+        "target": "node-cwv-cls",
+        "label": "Audit CLS & Hyperlinks",
+        "animated": true
+      },
+      {
+        "id": "e-w3",
+        "source": "node-cwv-cls",
+        "target": "node-cwv-end",
+        "label": "Grade Performance",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-bundle-crosssell",
+    "projectId": "proj-monster",
+    "title": "Birlikte Al (Bundle) & Aksesuar Çapraz Satış İndirimi",
+    "category": "Fiyatlandırma & Kampanya",
+    "description": "Laptop yanında çanta ve oyuncu faresi seçildiğinde %15 sepet çapraz satış indiriminin uygulanması ve stok kontrolü.",
+    "criticality": "Medium",
+    "componentsCount": 4,
+    "lastRunDuration": "2.6s",
+    "status": "idle",
+    "targetUrl": "https://www.monsternotebook.com.tr/oyun-bilgisayarlari/",
+    "nodes": [
+      {
+        "id": "node-bnd-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Bundle Ürün Seçimi",
+          "status": "idle",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-bnd-add",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Laptop + Pusat Çanta + Mouse Seçimi",
+          "subtext": "\"Birlikte Al\" rozetleri aktif",
+          "components": 8,
+          "metricTime": "1.2s",
+          "metricPassed": 20,
+          "metricAutomated": 20,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "pdp"
+        }
+      },
+      {
+        "id": "node-bnd-calc",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Sepette %15 Set İndirimi Hesaplama",
+          "subtext": "₺1.450 bundle indirimi uygulandı",
+          "components": 10,
+          "metricTime": "1.3s",
+          "metricPassed": 24,
+          "metricAutomated": 24,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-bnd-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 550
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Kombin İndirimi Doğrulandı",
+          "status": "idle",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-b1",
+        "source": "node-bnd-init",
+        "target": "node-bnd-add",
+        "label": "Select Accessories Bundle",
+        "animated": true
+      },
+      {
+        "id": "e-b2",
+        "source": "node-bnd-add",
+        "target": "node-bnd-calc",
+        "label": "Apply Bundle Discount",
+        "animated": true
+      },
+      {
+        "id": "e-b3",
+        "source": "node-bnd-calc",
+        "target": "node-bnd-end",
+        "label": "Confirm Bundle Price",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-multicurrency",
+    "projectId": "proj-monster",
+    "title": "Çoklu Para Birimi (TRY/USD/EUR) & Kur Dönüşüm Hesaplaması",
+    "category": "Uluslararası Ticaret",
+    "description": "Para birimi değiştiricisi ile ürün fiyatlarının TCMB döviz kuruna göre anlık dönüştürülmesi ve KDV matrahı doğrulaması.",
+    "criticality": "Low",
+    "componentsCount": 4,
+    "lastRunDuration": "2.0s",
+    "status": "idle",
+    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "nodes": [
+      {
+        "id": "node-cur-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Header Para Birimi Seçici",
+          "status": "idle",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-cur-switch",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "TRY -> USD / EUR Değişimi",
+          "subtext": "Dropdown tetiklendi, para birimi seçildi",
+          "components": 5,
+          "metricTime": "0.9s",
+          "metricPassed": 12,
+          "metricAutomated": 12,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "search"
+        }
+      },
+      {
+        "id": "node-cur-rate",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "TCMB Parite Dönüşüm & KDV Matrah Teyidi",
+          "subtext": "$1.420 / €1.310 doğru yuvarlama",
+          "components": 8,
+          "metricTime": "1.1s",
+          "metricPassed": 18,
+          "metricAutomated": 18,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "pdp"
+        }
+      },
+      {
+        "id": "node-cur-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 550
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Kur Dönüşümü Başarıyla Onaylandı",
+          "status": "idle",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-u1",
+        "source": "node-cur-init",
+        "target": "node-cur-switch",
+        "label": "Change Currency",
+        "animated": true
+      },
+      {
+        "id": "e-u2",
+        "source": "node-cur-switch",
+        "target": "node-cur-rate",
+        "label": "Verify Exchange Rate",
+        "animated": true
+      },
+      {
+        "id": "e-u3",
+        "source": "node-cur-rate",
+        "target": "node-cur-end",
+        "label": "Approve Currency Conversion",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-tulpar-de-e2e",
+    "projectId": "proj-tulpar-de",
+    "title": "Tulpar DE: E2E Gaming Laptop Arama & Sepet (EUR Fiyat & 19% MwSt.)",
+    "category": "Tulpar DE Canlı Testleri",
+    "description": "Tulpar Notebook Almanya mağazasında Tulpar T7 modeli aranır, Euro fiyatı ve %19 Alman MwSt. vergi kalemi sepette doğrulanır.",
+    "criticality": "Critical",
+    "componentsCount": 6,
+    "lastRunDuration": "3.6s",
+    "status": "idle",
+    "targetUrl": "https://www.tulparnotebook.de/",
+    "nodes": [
+      {
+        "id": "node-tde-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Almanya Oturum Başlatma",
+          "status": "idle",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-tde-home",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Ana Sayfa & DSGVO Çerez Onayı",
+          "subtext": "https://www.tulparnotebook.de/",
+          "components": 12,
+          "metricTime": "1.4s",
+          "metricPassed": 24,
+          "metricAutomated": 24,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "search"
+        }
+      },
+      {
+        "id": "node-tde-search",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Gaming Laptops Arama & PLP Kataloğu",
+          "subtext": "q=\"Tulpar T7 Gaming\" / RTX 4070",
+          "components": 16,
+          "metricTime": "1.8s",
+          "metricPassed": 30,
+          "metricAutomated": 30,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "category"
+        }
+      },
+      {
+        "id": "node-tde-pdp",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 550
+        },
+        "data": {
+          "stepIndex": 3,
+          "name": "Tulpar T7 PDP Euro Fiyatı & Donanım Teyidi",
+          "subtext": "€1.899,00 KDV Dahil (Inkl. MwSt.)",
+          "components": 14,
+          "metricTime": "1.5s",
+          "metricPassed": 28,
+          "metricAutomated": 28,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "pdp"
+        }
+      },
+      {
+        "id": "node-tde-cart",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 730
+        },
+        "data": {
+          "stepIndex": 4,
+          "name": "Sepete Ekleme & %19 MwSt. Vergi Hesabı",
+          "subtext": "€1.595,80 Net + €303,20 MwSt.",
+          "components": 10,
+          "metricTime": "1.2s",
+          "metricPassed": 22,
+          "metricAutomated": 22,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-tde-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 910
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Tulpar DE Akışı Başarıyla Tamamlandı",
+          "status": "idle",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-td1",
+        "source": "node-tde-init",
+        "target": "node-tde-home",
+        "label": "Connect Storefront DE",
+        "animated": true
+      },
+      {
+        "id": "e-td2",
+        "source": "node-tde-home",
+        "target": "node-tde-search",
+        "label": "Search Tulpar Laptops",
+        "animated": true
+      },
+      {
+        "id": "e-td3",
+        "source": "node-tde-search",
+        "target": "node-tde-pdp",
+        "label": "Open PDP & Specs",
+        "animated": true
+      },
+      {
+        "id": "e-td4",
+        "source": "node-tde-pdp",
+        "target": "node-tde-cart",
+        "label": "Add to Cart & Audit Tax",
+        "animated": true
+      },
+      {
+        "id": "e-td5",
+        "source": "node-tde-cart",
+        "target": "node-tde-end",
+        "label": "Finalize Checkout Step",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-tulpar-de-klarna-sofort",
+    "projectId": "proj-tulpar-de",
+    "title": "Tulpar DE: Klarna Sofort, PayPal & EU Kart Doğrulaması",
+    "category": "Ödeme & Güvenlik (EU)",
+    "description": "Almanya ve AB pazarında yaygın olan Klarna Pay Now, Sofort ve PayPal ödeme modülleri, PSD2 SCA 3D Secure 2.0 güvenlik adımıyla test edilir.",
+    "criticality": "Critical",
+    "componentsCount": 5,
+    "lastRunDuration": "3.2s",
+    "status": "idle",
+    "targetUrl": "https://www.tulparnotebook.de/checkout/",
+    "nodes": [
+      {
+        "id": "node-kl-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Almanya Ödeme Ağ Geçidi",
+          "status": "idle",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-kl-select",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Klarna Sofortüberweisung Seçimi",
+          "subtext": "Klarna Payments Widget Iframe",
+          "components": 8,
+          "metricTime": "1.2s",
+          "metricPassed": 18,
+          "metricAutomated": 18,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-kl-paypal",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "PayPal Express Checkout & SEPA Entegrasyonu",
+          "subtext": "PayPal Smart Buttons & IBAN SEPA",
+          "components": 12,
+          "metricTime": "1.4s",
+          "metricPassed": 24,
+          "metricAutomated": 24,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "category"
+        }
+      },
+      {
+        "id": "node-kl-sca",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 550
+        },
+        "data": {
+          "stepIndex": 3,
+          "name": "PSD2 Strong Customer Authentication (SCA)",
+          "subtext": "3D Secure 2.2 biometric bypass",
+          "components": 10,
+          "metricTime": "1.3s",
+          "metricPassed": 20,
+          "metricAutomated": 20,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "pdp"
+        }
+      },
+      {
+        "id": "node-kl-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 730
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Almanya Ödeme Akışı Onaylandı",
+          "status": "idle",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-k1",
+        "source": "node-kl-init",
+        "target": "node-kl-select",
+        "label": "Initialize Gateways",
+        "animated": true
+      },
+      {
+        "id": "e-k2",
+        "source": "node-kl-select",
+        "target": "node-kl-paypal",
+        "label": "Validate Alternative Payments",
+        "animated": true
+      },
+      {
+        "id": "e-k3",
+        "source": "node-kl-paypal",
+        "target": "node-kl-sca",
+        "label": "Verify PSD2 SCA",
+        "animated": true
+      },
+      {
+        "id": "e-k4",
+        "source": "node-kl-sca",
+        "target": "node-kl-end",
+        "label": "Approve Payment Gateway",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-tulpar-de-dsgvo-cookie",
+    "projectId": "proj-tulpar-de",
+    "title": "Tulpar DE: DSGVO / GDPR Çerez İzni, Impressum & Datenschutz",
+    "category": "Hukuki & Uyumluluk (EU)",
+    "description": "Alman e-ticaret yasalarına uygun olarak Cookiebot/OneTrust çerez reddetme, zorunlu Impressum tüzel kişi bilgileri ve Datenschutz gizlilik politikası denetlenir.",
+    "criticality": "High",
+    "componentsCount": 4,
+    "lastRunDuration": "2.4s",
+    "status": "idle",
+    "targetUrl": "https://www.tulparnotebook.de/",
+    "nodes": [
+      {
+        "id": "node-dsg-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "DSGVO Legal Audit",
+          "status": "idle",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-dsg-banner",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Zorunlu Çerez Banner & \"Nur Essenzielle\" Reddi",
+          "subtext": "Google Analytics & Facebook Pixel engellendi",
+          "components": 6,
+          "metricTime": "1.0s",
+          "metricPassed": 16,
+          "metricAutomated": 16,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "search"
+        }
+      },
+      {
+        "id": "node-dsg-impressum",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Impressum (§ 5 TMG) ve Datenschutz Sayfaları",
+          "subtext": "HRB Ticaret Sicili, USt-IdNr ve Adres Denetimi",
+          "components": 8,
+          "metricTime": "1.2s",
+          "metricPassed": 20,
+          "metricAutomated": 20,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "pdp"
+        }
+      },
+      {
+        "id": "node-dsg-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 550
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "DSGVO Uyumluluğu %100 Doğrulandı",
+          "status": "idle",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-d1",
+        "source": "node-dsg-init",
+        "target": "node-dsg-banner",
+        "label": "Test Cookie Consent",
+        "animated": true
+      },
+      {
+        "id": "e-d2",
+        "source": "node-dsg-banner",
+        "target": "node-dsg-impressum",
+        "label": "Verify Legal Disclosures",
+        "animated": true
+      },
+      {
+        "id": "e-d3",
+        "source": "node-dsg-impressum",
+        "target": "node-dsg-end",
+        "label": "Finalize Legal Audit",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-tulpar-de-widerruf-return",
+    "projectId": "proj-tulpar-de",
+    "title": "Tulpar DE: 14 Günlük Yasal Cayma (Widerruf) & DHL İade Akışı",
+    "category": "Sipariş & İade (EU)",
+    "description": "Alman Tüketici Kanunu (§ 312g BGB) uyarınca 14 günlük koşulsuz cayma formu doldurma ve DHL iade kargo etiketi üretimi doğrulanır.",
+    "criticality": "High",
+    "componentsCount": 4,
+    "lastRunDuration": "2.7s",
+    "status": "idle",
+    "targetUrl": "https://www.tulparnotebook.de/my-account/orders/",
+    "nodes": [
+      {
+        "id": "node-wid-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Almanya Müşteri Portalı",
+          "status": "idle",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-wid-form",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Widerrufsformular Cayma Bildirimi Doldurma",
+          "subtext": "BGB § 312g uyarınca 14 gün hak doğrulaması",
+          "components": 6,
+          "metricTime": "1.1s",
+          "metricPassed": 14,
+          "metricAutomated": 14,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "category"
+        }
+      },
+      {
+        "id": "node-wid-dhl",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "DHL Retoure QR Kodu & Ücretsiz İade Barkodu",
+          "subtext": "DHL Paket iade etiketi PDF üretimi",
+          "components": 8,
+          "metricTime": "1.3s",
+          "metricPassed": 18,
+          "metricAutomated": 18,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-wid-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 550
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Almanya İade Talebi Başarıyla Oluşturuldu",
+          "status": "idle",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-w1",
+        "source": "node-wid-init",
+        "target": "node-wid-form",
+        "label": "Initiate Withdrawal",
+        "animated": true
+      },
+      {
+        "id": "e-w2",
+        "source": "node-wid-form",
+        "target": "node-wid-dhl",
+        "label": "Generate DHL Return Label",
+        "animated": true
+      },
+      {
+        "id": "e-w3",
+        "source": "node-wid-dhl",
+        "target": "node-wid-end",
+        "label": "Complete Return Flow",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-tulpar-de-b2b-vat",
+    "projectId": "proj-tulpar-de",
+    "title": "Tulpar DE: B2B EU Reverse Charge & USt-IdNr. Muafiyet Kontrolü",
+    "category": "B2B & Muhasebe (EU)",
+    "description": "Avrupa Birliği içi (Intra-Community) kurumsal alımlarda VIES sisteminden USt-IdNr. doğrulaması yapılır ve %0 KDV ters ibraz uygulanır.",
+    "criticality": "Medium",
+    "componentsCount": 4,
+    "lastRunDuration": "2.5s",
+    "status": "idle",
+    "targetUrl": "https://www.tulparnotebook.de/checkout/",
+    "nodes": [
+      {
+        "id": "node-b2b-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "B2B Kurumsal Checkout",
+          "status": "idle",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-b2b-vies",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "VIES USt-IdNr. Doğrulaması (Avusturya ATUXXXXXX)",
+          "subtext": "AB Komisyonu canlı vergi no teyidi",
+          "components": 6,
+          "metricTime": "1.2s",
+          "metricPassed": 16,
+          "metricAutomated": 16,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-b2b-tax",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "%0 KDV Ters İbraz (Steuerfreie innergemeinschaftliche)",
+          "subtext": "Net fatura: €1.595,80 (MwSt: €0,00)",
+          "components": 8,
+          "metricTime": "1.1s",
+          "metricPassed": 20,
+          "metricAutomated": 20,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "pdp"
+        }
+      },
+      {
+        "id": "node-b2b-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 550
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "AB B2B Faturası Onaylandı",
+          "status": "idle",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-b1",
+        "source": "node-b2b-init",
+        "target": "node-b2b-vies",
+        "label": "Input EU VAT ID",
+        "animated": true
+      },
+      {
+        "id": "e-b2",
+        "source": "node-b2b-vies",
+        "target": "node-b2b-tax",
+        "label": "Calculate Zero VAT",
+        "animated": true
+      },
+      {
+        "id": "e-b3",
+        "source": "node-b2b-tax",
+        "target": "node-b2b-end",
+        "label": "Approve B2B Order",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-tulpar-de-dhl-shipping",
+    "projectId": "proj-tulpar-de",
+    "title": "Tulpar DE: DHL Paket & Express DACH Lojistik Süre Hesaplama",
+    "category": "Lojistik & Kargo (EU)",
+    "description": "Almanya içi (1-2 gün) ve DACH sınır ötesi DHL kargo ücreti, ücretsiz kargo barı (€100+ üzeri) ve Packstation dolap seçimi test edilir.",
+    "criticality": "Medium",
+    "componentsCount": 4,
+    "lastRunDuration": "2.1s",
+    "status": "idle",
+    "targetUrl": "https://www.tulparnotebook.de/cart/",
+    "nodes": [
+      {
+        "id": "node-dhl-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Kargo Seçim Modülü",
+          "status": "idle",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-dhl-pack",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "DHL Packstation 24/7 Otomat Teslimatı",
+          "subtext": "Postnummer ve istasyon no teyidi",
+          "components": 6,
+          "metricTime": "1.0s",
+          "metricPassed": 14,
+          "metricAutomated": 14,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "category"
+        }
+      },
+      {
+        "id": "node-dhl-thresh",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Kostenlose Lieferung (€100 Üzeri Ücretsiz Kargo)",
+          "subtext": "Kargo bedeli €0,00 olarak güncellendi",
+          "components": 8,
+          "metricTime": "1.0s",
+          "metricPassed": 18,
+          "metricAutomated": 18,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-dhl-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 550
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "DHL Lojistik Doğrulaması Tamamlandı",
+          "status": "idle",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-dh1",
+        "source": "node-dhl-init",
+        "target": "node-dhl-pack",
+        "label": "Select DHL Locker",
+        "animated": true
+      },
+      {
+        "id": "e-dh2",
+        "source": "node-dhl-pack",
+        "target": "node-dhl-thresh",
+        "label": "Verify Free Shipping Threshold",
+        "animated": true
+      },
+      {
+        "id": "e-dh3",
+        "source": "node-dhl-thresh",
+        "target": "node-dhl-end",
+        "label": "Approve Shipping Method",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-tulpar-de-configurator",
+    "projectId": "proj-tulpar-de",
+    "title": "Tulpar DE: Donanım Konfigüratörü (RAM, SSD & QWERTZ Klavye)",
+    "category": "Ürün & Donanım Konfigürasyonu",
+    "description": "Tulpar Gaming Laptop ürün sayfasında RAM yükseltme (16GB -> 32GB DDR5), NVMe SSD ilavesi (1TB -> 2TB) ve Almanca QWERTZ klavye seçimi sepet tutarına dinamik yansıtılır.",
+    "criticality": "Critical",
+    "componentsCount": 5,
+    "lastRunDuration": "3.4s",
+    "status": "passed",
+    "targetUrl": "https://www.tulparnotebook.de/gaming-laptops/",
+    "nodes": [
+      {
+        "id": "node-cfg-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Konfigüratör Modülü",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-cfg-ram",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "RAM Yükseltme (+€99,00)",
+          "subtext": "16GB DDR5 -> 32GB 5600MHz Kingston Fury",
+          "components": 6,
+          "metricTime": "0.8s",
+          "metricPassed": 18,
+          "metricAutomated": 18,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "specs"
+        }
+      },
+      {
+        "id": "node-cfg-ssd",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "İkinci M.2 SSD Yuvası (+€120,00)",
+          "subtext": "2TB PCIe Gen4 NVMe Eklendi",
+          "components": 8,
+          "metricTime": "1.1s",
+          "metricPassed": 24,
+          "metricAutomated": 24,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "specs"
+        }
+      },
+      {
+        "id": "node-cfg-kb",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 550
+        },
+        "data": {
+          "stepIndex": 3,
+          "name": "Alman QWERTZ RGB Klavye",
+          "subtext": "Özel tuş dizilimi doğrulandı",
+          "components": 4,
+          "metricTime": "0.5s",
+          "metricPassed": 14,
+          "metricAutomated": 14,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "specs"
+        }
+      },
+      {
+        "id": "node-cfg-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 730
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Özel Laptop Konfigürasyonu Sepete Eklendi",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-cfg1",
+        "source": "node-cfg-init",
+        "target": "node-cfg-ram",
+        "label": "Select RAM Upgrade",
+        "animated": true
+      },
+      {
+        "id": "e-cfg2",
+        "source": "node-cfg-ram",
+        "target": "node-cfg-ssd",
+        "label": "Select Storage",
+        "animated": true
+      },
+      {
+        "id": "e-cfg3",
+        "source": "node-cfg-ssd",
+        "target": "node-cfg-kb",
+        "label": "Select Keyboard",
+        "animated": true
+      },
+      {
+        "id": "e-cfg4",
+        "source": "node-cfg-kb",
+        "target": "node-cfg-end",
+        "label": "Add Custom Build to Cart",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-tulpar-de-klarna-ratenkauf",
+    "projectId": "proj-tulpar-de",
+    "title": "Tulpar DE: Klarna Ratenkauf (Taksitli Ödeme) & Kredi Skoru Kontrolü",
+    "category": "Ödeme & Finansman (EU)",
+    "description": "€1.899 sepet tutarı için 6/12/24 ay vadeli Klarna Ratenkauf seçimi, aylık taksit hesaplama, yasal yıllık faiz (Effektiver Jahreszins) ve Schufa onay simülasyonu.",
+    "criticality": "High",
+    "componentsCount": 4,
+    "lastRunDuration": "2.8s",
+    "status": "passed",
+    "targetUrl": "https://www.tulparnotebook.de/checkout/",
+    "nodes": [
+      {
+        "id": "node-rat-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Klarna Taksit Modülü",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-rat-plan",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "12 Ay Vade Seçimi (€168,45 / Ay)",
+          "subtext": "Yıllık %9,99 faiz ve toplam geri ödeme tutarı teyidi",
+          "components": 7,
+          "metricTime": "0.9s",
+          "metricPassed": 21,
+          "metricAutomated": 21,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-rat-schufa",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Schufa Skor Onay Entegrasyonu",
+          "subtext": "Anlık kredi değerlendirme HTTP 200 başarılı",
+          "components": 9,
+          "metricTime": "1.2s",
+          "metricPassed": 27,
+          "metricAutomated": 27,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-rat-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 550
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Klarna Ratenkauf Sözleşmesi Onaylandı",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-rat1",
+        "source": "node-rat-init",
+        "target": "node-rat-plan",
+        "label": "Select 12-Month Plan",
+        "animated": true
+      },
+      {
+        "id": "e-rat2",
+        "source": "node-rat-plan",
+        "target": "node-rat-schufa",
+        "label": "Instant Credit Check",
+        "animated": true
+      },
+      {
+        "id": "e-rat3",
+        "source": "node-rat-schufa",
+        "target": "node-rat-end",
+        "label": "Authorize Financing",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-tulpar-de-guest-checkout",
+    "projectId": "proj-tulpar-de",
+    "title": "Tulpar DE: Misafir Alışverişi (Gast-Bestellung) & Hızlı Kasa Akışı",
+    "category": "Kullanıcı Deneyimi & Dönüşüm",
+    "description": "Hesap oluşturmadan (Als Gast bestellen) isim, Almanya teslimat adresi ve e-posta ile 2 dakikada sipariş tamamlama ve sipariş teyit numarası üretimi.",
+    "criticality": "Critical",
+    "componentsCount": 4,
+    "lastRunDuration": "2.5s",
+    "status": "passed",
+    "targetUrl": "https://www.tulparnotebook.de/checkout/",
+    "nodes": [
+      {
+        "id": "node-gst-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Misafir Kasa Akışı",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-gst-form",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Misafir Adres & İletişim Formu",
+          "subtext": "Şifresiz ad/soyad, sokak no, PLZ ve e-posta girişi",
+          "components": 8,
+          "metricTime": "1.1s",
+          "metricPassed": 24,
+          "metricAutomated": 24,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-gst-order",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Sipariş Oluşturma (DE-2026-8819)",
+          "subtext": "Misafir için benzersiz takip tokeni üretildi",
+          "components": 6,
+          "metricTime": "0.9s",
+          "metricPassed": 19,
+          "metricAutomated": 19,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-gst-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 550
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Misafir Siparişi Başarıyla Tamamlandı",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-gst1",
+        "source": "node-gst-init",
+        "target": "node-gst-form",
+        "label": "Continue as Guest",
+        "animated": true
+      },
+      {
+        "id": "e-gst2",
+        "source": "node-gst-form",
+        "target": "node-gst-order",
+        "label": "Submit Order Data",
+        "animated": true
+      },
+      {
+        "id": "e-gst3",
+        "source": "node-gst-order",
+        "target": "node-gst-end",
+        "label": "Receive Order Confirmation",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-tulpar-de-omnibus-pricing",
+    "projectId": "proj-tulpar-de",
+    "title": "Tulpar DE: AB Omnibus Direktifi & İndirim Doğruluğu (Son 30 Gün Referans Fiyatı)",
+    "category": "Hukuki & Uyumluluk (EU)",
+    "description": "AB Direktifi (EU) 2019/2161 uyarınca uygulanan indirim oranının, son 30 günün en düşük satış fiyatı (Niedrigster Preis der letzten 30 Tage) üzerinden hesaplandığının doğrulanması.",
+    "criticality": "High",
+    "componentsCount": 3,
+    "lastRunDuration": "1.9s",
+    "status": "passed",
+    "targetUrl": "https://www.tulparnotebook.de/",
+    "nodes": [
+      {
+        "id": "node-omn-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Omnibus Denetim Modülü",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-omn-check",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Son 30 Gün Referans Fiyat Denetimi",
+          "subtext": "€1.999 yerine €1.899 (%5 İndirim) - Yasal taban fiyat teyit edildi",
+          "components": 5,
+          "metricTime": "0.8s",
+          "metricPassed": 15,
+          "metricAutomated": 15,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "search"
+        }
+      },
+      {
+        "id": "node-omn-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 370
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "AB Omnibus Fiyatlandırma Yasasına Uygun",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-omn1",
+        "source": "node-omn-init",
+        "target": "node-omn-check",
+        "label": "Scan PDP Promo Badge",
+        "animated": true
+      },
+      {
+        "id": "e-omn2",
+        "source": "node-omn-check",
+        "target": "node-omn-end",
+        "label": "Validate 30-Day Historical Floor",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-tulpar-de-apple-google-pay",
+    "projectId": "proj-tulpar-de",
+    "title": "Tulpar DE: Apple Pay & Google Pay Tek Tıkla Cüzdan Ödemesi",
+    "category": "Mobil & Dijital Cüzdan",
+    "description": "Mobil Safari ve Chrome tarayıcılarında entegre dijital cüzdan (Payment Request API) ile adres ve kart girmeden anında ödeme akışı.",
+    "criticality": "High",
+    "componentsCount": 3,
+    "lastRunDuration": "2.1s",
+    "status": "passed",
+    "targetUrl": "https://www.tulparnotebook.de/cart/",
+    "nodes": [
+      {
+        "id": "node-wlt-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Dijital Cüzdan Başlatma",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-wlt-token",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Apple Pay / Google Pay Token Doğrulama",
+          "subtext": "Cihaz biyometrik TouchID/FaceID simülasyonu",
+          "components": 6,
+          "metricTime": "0.9s",
+          "metricPassed": 18,
+          "metricAutomated": 18,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-wlt-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 370
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Tek Tıkla Cüzdan Ödemesi Başarılı",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-wlt1",
+        "source": "node-wlt-init",
+        "target": "node-wlt-token",
+        "label": "Trigger Wallet Sheet",
+        "animated": true
+      },
+      {
+        "id": "e-wlt2",
+        "source": "node-wlt-token",
+        "target": "node-wlt-end",
+        "label": "Process Tokenized Charge",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-tulpar-de-cross-border-eu",
+    "projectId": "proj-tulpar-de",
+    "title": "Tulpar DE: AB Sınır Ötesi Teslimat (Avusturya & Benelüks) & Dinamik KDV (OSS)",
+    "category": "Lojistik & Kargo (EU)",
+    "description": "Teslimat ülkesi Avusturya (%20 KDV) veya Hollanda (%21 KDV) seçildiğinde AB One-Stop Shop (OSS) KDV oranının ve uluslararası DHL kargo farkının sepete anlık yansıtılması.",
+    "criticality": "Medium",
+    "componentsCount": 4,
+    "lastRunDuration": "2.4s",
+    "status": "passed",
+    "targetUrl": "https://www.tulparnotebook.de/checkout/",
+    "nodes": [
+      {
+        "id": "node-oss-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "AB Sınır Ötesi Modülü",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-oss-country",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Hedef Ülke: Avusturya (AT)",
+          "subtext": "KDV %19 -> %20 OSS olarak güncellendi",
+          "components": 7,
+          "metricTime": "1.0s",
+          "metricPassed": 20,
+          "metricAutomated": 20,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-oss-shipping",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "DHL Europaket Kargo Bedeli (+€9,90)",
+          "subtext": "Sınır ötesi teslimat süresi 2-3 iş günü",
+          "components": 5,
+          "metricTime": "0.8s",
+          "metricPassed": 16,
+          "metricAutomated": 16,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-oss-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 550
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "AB Sınır Ötesi Vergi & Lojistik Onaylandı",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-oss1",
+        "source": "node-oss-init",
+        "target": "node-oss-country",
+        "label": "Select Country AT",
+        "animated": true
+      },
+      {
+        "id": "e-oss2",
+        "source": "node-oss-country",
+        "target": "node-oss-shipping",
+        "label": "Recalculate OSS VAT",
+        "animated": true
+      },
+      {
+        "id": "e-oss3",
+        "source": "node-oss-shipping",
+        "target": "node-oss-end",
+        "label": "Confirm Cross-Border Totals",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-tulpar-de-stock-alert",
+    "projectId": "proj-tulpar-de",
+    "title": "Tulpar DE: Stok Tükendi & Gelince Haber Ver (Back in Stock Alert)",
+    "category": "Katalog & Envanter",
+    "description": "Stokta bulunmayan üst segment RTX 4080 modelinde Benachrichtigen wenn verfügbar e-posta aboneliği oluşturma ve stok kilitleme kontrolü.",
+    "criticality": "Medium",
+    "componentsCount": 3,
+    "lastRunDuration": "1.7s",
+    "status": "passed",
+    "targetUrl": "https://www.tulparnotebook.de/gaming-laptops/",
+    "nodes": [
+      {
+        "id": "node-stk-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Stok Bildirim Modülü",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-stk-sub",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "E-Posta Stok Alarmı Kaydı",
+          "subtext": "qa.testuser@tulparnotebook.de bildirim listesine eklendi",
+          "components": 6,
+          "metricTime": "0.7s",
+          "metricPassed": 18,
+          "metricAutomated": 18,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "specs"
+        }
+      },
+      {
+        "id": "node-stk-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 370
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Stok Bildirim Kaydı Tamamlandı",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-stk1",
+        "source": "node-stk-init",
+        "target": "node-stk-sub",
+        "label": "Register Email Alert",
+        "animated": true
+      },
+      {
+        "id": "e-stk2",
+        "source": "node-stk-sub",
+        "target": "node-stk-end",
+        "label": "Confirm Subscription",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-tulpar-de-cart-tampering",
+    "projectId": "proj-tulpar-de",
+    "title": "Tulpar DE: EUR Fiyat Manipülasyonu & Güvenli Sepet Hash Savunması",
+    "category": "Siber Güvenlik & PCI-DSS",
+    "description": "İstemci tarafında DOM üzerinden laptop fiyatını €1.899 yerine €1,00 olarak değiştirip ödeme isteği gönderme girişiminin backend sepet hash doğrulamasında bloke edilmesi.",
+    "criticality": "Critical",
+    "componentsCount": 3,
+    "lastRunDuration": "2.0s",
+    "status": "passed",
+    "targetUrl": "https://www.tulparnotebook.de/checkout/",
+    "nodes": [
+      {
+        "id": "node-tam-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Güvenlik Manipülasyon Testi",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-tam-attack",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "DOM Fiyat Değiştirme Simülasyonu (€1,00)",
+          "subtext": "Backend SHA256 Sepet İmzası Uyuşmazlığı (HTTP 403 Forbidden)",
+          "components": 6,
+          "metricTime": "0.9s",
+          "metricPassed": 19,
+          "metricAutomated": 19,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-tam-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 370
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Fiyat Kurcalama Saldırısı Engellendi",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-tam1",
+        "source": "node-tam-init",
+        "target": "node-tam-attack",
+        "label": "Inject Modified Cart Payload",
+        "animated": true
+      },
+      {
+        "id": "e-tam2",
+        "source": "node-tam-attack",
+        "target": "node-tam-end",
+        "label": "Verify HMAC / Signature Rejection",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-tulpar-de-cookiebot-reject",
+    "projectId": "proj-tulpar-de",
+    "title": "Tulpar DE: DSGVO Çerez Reddi (Alle ablehnen) & Fonksiyonel Sepet İzolasyonu",
+    "category": "Hukuki & Uyumluluk (EU)",
+    "description": "Kullanıcı Alle ablehnen (Tümünü reddet) seçtiğinde pazarlama çerezlerinin durdurulması, ancak e-ticaret sepet oturumunun bozulmadan çalışmaya devam etmesi.",
+    "criticality": "High",
+    "componentsCount": 3,
+    "lastRunDuration": "1.8s",
+    "status": "passed",
+    "targetUrl": "https://www.tulparnotebook.de/",
+    "nodes": [
+      {
+        "id": "node-cok-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Çerez Tercih Modülü",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-cok-reject",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Pazarlama & İzleme Çerezlerini Engelle",
+          "subtext": "Meta Pixel & GA4 scriptleri durduruldu, sepet tokeni korundu",
+          "components": 5,
+          "metricTime": "0.8s",
+          "metricPassed": 16,
+          "metricAutomated": 16,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "search"
+        }
+      },
+      {
+        "id": "node-cok-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 370
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "DSGVO Uyumluluğu ve Sepet Fonksiyonu Onaylandı",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-cok1",
+        "source": "node-cok-init",
+        "target": "node-cok-reject",
+        "label": "Click Alle Ablehnen",
+        "animated": true
+      },
+      {
+        "id": "e-cok2",
+        "source": "node-cok-reject",
+        "target": "node-cok-end",
+        "label": "Validate Cart Independence",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-tulpar-de-core-web-vitals",
+    "projectId": "proj-tulpar-de",
+    "title": "Tulpar DE: Core Web Vitals Hız Skoru & 404 Kırık Link Crawler",
+    "category": "Performans & SEO",
+    "description": "Tulpar DE vitrin ve ürün sayfalarında LCP < 2.5s, CLS < 0.1, INP metrikleri ve mağaza içi linklerin taranarak 404/500 HTTP hata denetimi.",
+    "criticality": "Medium",
+    "componentsCount": 3,
+    "lastRunDuration": "2.6s",
+    "status": "passed",
+    "targetUrl": "https://www.tulparnotebook.de/",
+    "nodes": [
+      {
+        "id": "node-cwv-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Performans Denetim Modülü",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-cwv-metrics",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "LCP 1.4s / CLS 0.02 / INP 42ms",
+          "subtext": "Tüm Google Web Vitals yeşil eşik değerlerinde",
+          "components": 6,
+          "metricTime": "1.2s",
+          "metricPassed": 20,
+          "metricAutomated": 20,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "search"
+        }
+      },
+      {
+        "id": "node-cwv-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 370
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Kırık Link Bulunamadı (0 Broken Link)",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-cwv1",
+        "source": "node-cwv-init",
+        "target": "node-cwv-metrics",
+        "label": "Run Performance Profiler",
+        "animated": true
+      },
+      {
+        "id": "e-cwv2",
+        "source": "node-cwv-metrics",
+        "target": "node-cwv-end",
+        "label": "Audit Link Health",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-tulpar-de-voucher-promo",
+    "projectId": "proj-tulpar-de",
+    "title": "Tulpar DE: İndirim Kuponu & Promosyon Çeki (Gutscheincode Doğrulama)",
+    "category": "Fiyatlandırma & Kampanya",
+    "description": "TULPAR-EU-50 kuponu ile €50 sepet indirimi uygulanması, geçersiz kuponlarda net Almanca hata mesajı ve minimum sipariş tutarı kontrolü.",
+    "criticality": "High",
+    "componentsCount": 3,
+    "lastRunDuration": "1.9s",
+    "status": "passed",
+    "targetUrl": "https://www.tulparnotebook.de/cart/",
+    "nodes": [
+      {
+        "id": "node-vch-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Kupon Modülü",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-vch-apply",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Gutscheincode TULPAR-EU-50 Uygulandı",
+          "subtext": "€50 indirim düşüldü ve %19 MwSt. matrahı güncellendi",
+          "components": 7,
+          "metricTime": "0.8s",
+          "metricPassed": 22,
+          "metricAutomated": 22,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "checkout"
+        }
+      },
+      {
+        "id": "node-vch-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 370
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Kupon Başarıyla Doğrulandı",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-vch1",
+        "source": "node-vch-init",
+        "target": "node-vch-apply",
+        "label": "Submit Promo Code",
+        "animated": true
+      },
+      {
+        "id": "e-vch2",
+        "source": "node-vch-apply",
+        "target": "node-vch-end",
+        "label": "Recalculate Subtotal",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-tulpar-de-mobile-responsive",
+    "projectId": "proj-tulpar-de",
+    "title": "Tulpar DE: Mobil Görünüm, Hamburger Menü & Dokunmatik Sepet",
+    "category": "Mobil & Uyumluluk",
+    "description": "Akıllı telefon ekranında (390x844) Almanca navigasyon menüsü, filtre çekmecesi, sticky sepete ekle çubuğu ve dokunmatik ürün resim galerisi testi.",
+    "criticality": "High",
+    "componentsCount": 4,
+    "lastRunDuration": "2.7s",
+    "status": "passed",
+    "targetUrl": "https://www.tulparnotebook.de/",
+    "nodes": [
+      {
+        "id": "node-mob-init",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 30
+        },
+        "data": {
+          "label": "User Initializing",
+          "subtext": "Mobil Viewport (390x844)",
+          "status": "passed",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-mob-menu",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 190
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Mobil Hamburger Menü & Kategoriler",
+          "subtext": "Gaming Laptops / Zubehör alt dalları açıldı",
+          "components": 6,
+          "metricTime": "0.9s",
+          "metricPassed": 18,
+          "metricAutomated": 18,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "search"
+        }
+      },
+      {
+        "id": "node-mob-cart",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 370
+        },
+        "data": {
+          "stepIndex": 2,
+          "name": "Sticky Sepete Ekle Butonu & Dokunmatik Galeri",
+          "subtext": "Sabit alt bar ve swipe hareketi doğrulandı",
+          "components": 7,
+          "metricTime": "1.0s",
+          "metricPassed": 21,
+          "metricAutomated": 21,
+          "isAutomated": true,
+          "status": "passed",
+          "previewType": "specs"
+        }
+      },
+      {
+        "id": "node-mob-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 550
+        },
+        "data": {
+          "label": "Action Completion",
+          "subtext": "Mobil E-Ticaret Akışı Sorunsuz",
+          "status": "passed",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-mob1",
+        "source": "node-mob-init",
+        "target": "node-mob-menu",
+        "label": "Open Mobile Drawer",
+        "animated": true
+      },
+      {
+        "id": "e-mob2",
+        "source": "node-mob-menu",
+        "target": "node-mob-cart",
+        "label": "Interact with PDP Controls",
+        "animated": true
+      },
+      {
+        "id": "e-mob3",
+        "source": "node-mob-cart",
+        "target": "node-mob-end",
+        "label": "Verify Touch UX",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-c7e931e5",
+    "title": "Black Friday Omnichannel Checkout (Multi-Cat)",
+    "category": "Temel Dönüşüm (Checkout)",
+    "description": "Kullanıcı tanımlı özel e-ticaret test senaryosu.",
+    "criticality": "Critical",
+    "componentsCount": 5,
+    "lastRunDuration": "Not executed yet",
+    "status": "idle",
+    "targetUrl": "https://www.monsternotebook.com.tr",
+    "nodes": [
+      {
+        "id": "node-start",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 40
+        },
+        "data": {
+          "label": "Start Session",
+          "subtext": "Init Browser",
+          "status": "idle",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-step-1",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 160
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Open Store & Browse",
+          "action": "navigate",
+          "selector": "body",
+          "expected": "Storefront loaded",
+          "components": 4,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "search",
+          "screenshot": ""
+        }
+      },
+      {
+        "id": "node-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 340
+        },
+        "data": {
+          "label": "Close Browser",
+          "subtext": "End Flow",
+          "status": "idle",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "node-start",
+        "target": "node-step-1",
+        "animated": true
+      },
+      {
+        "id": "e2",
+        "source": "node-step-1",
+        "target": "node-end",
+        "animated": true
+      }
+    ]
+  },
+  {
+    "id": "scenario-e2449a07",
+    "title": "Black Friday Omnichannel Checkout (Multi-Cat)",
+    "category": "Temel Dönüşüm (Checkout)",
+    "categories": [
+      "Temel Dönüşüm (Checkout)",
+      "Ödeme & Güvenlik",
+      "Mobil & Uyumluluk",
+      "Lojistik & Kargo"
+    ],
+    "projectId": "proj-monster",
+    "description": "Kullanıcı tanımlı özel e-ticaret test senaryosu.",
+    "criticality": "Critical",
+    "componentsCount": 5,
+    "lastRunDuration": "Not executed yet",
+    "status": "idle",
+    "targetUrl": "https://www.monsternotebook.com.tr",
+    "nodes": [
+      {
+        "id": "node-start",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 40
+        },
+        "data": {
+          "label": "Start Session",
+          "subtext": "Init Browser",
+          "status": "idle",
+          "isStart": true
+        }
+      },
+      {
+        "id": "node-step-1",
+        "type": "flowStepNode",
+        "position": {
+          "x": 280,
+          "y": 160
+        },
+        "data": {
+          "stepIndex": 1,
+          "name": "Open Store & Browse",
+          "action": "navigate",
+          "selector": "body",
+          "expected": "Storefront loaded",
+          "components": 4,
+          "isAutomated": true,
+          "status": "idle",
+          "previewType": "search",
+          "screenshot": ""
+        }
+      },
+      {
+        "id": "node-end",
+        "type": "terminatorNode",
+        "position": {
+          "x": 380,
+          "y": 340
+        },
+        "data": {
+          "label": "Close Browser",
+          "subtext": "End Flow",
+          "status": "idle",
+          "isEnd": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "node-start",
+        "target": "node-step-1",
+        "animated": true
+      },
+      {
+        "id": "e2",
+        "source": "node-step-1",
+        "target": "node-end",
+        "animated": true
+      }
+    ]
+  }
+]

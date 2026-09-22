@@ -1,0 +1,30 @@
+{
+  "jira": {
+    "name": "Jira MCP Defect Tracker",
+    "connected": true,
+    "domain": "https://monsternotebook.atlassian.net",
+    "email": "berk.arcak@monsternotebook-qa.com",
+    "projectKey": "MONS",
+    "boardId": "BOARD-104 (QA Automation Sprint)",
+    "issueType": "Bug",
+    "autoCreateOnFailure": false
+  },
+  "github": {
+    "repo": "monsternotebook/ecommerce-automation-suite",
+    "workflow": "playwright-e2e.yml",
+    "connected": true
+  },
+  "slack": {
+    "webhookUrl": "https://hooks.slack.com/services/T01234/B5678/XYZ9876",
+    "channel": "#qa-monsternotebook-alerts",
+    "connected": true
+  },
+  "playwright": {
+    "name": "Playwright CLI & Reporter",
+    "connected": true,
+    "headless": true,
+    "workers": 4,
+    "timeoutMs": 30000,
+    "reporter": "html, json, console"
+  }
+}

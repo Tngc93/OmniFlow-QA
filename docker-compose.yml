@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  omniflow-qa:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: omniflow_qa_engine
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      - VITE_API_BASE=/api
+    volumes:
+      - qa_data:/app/server/data
+      - qa_screenshots:/app/server/public/screenshots
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/scenarios"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  qa_data:
+    driver: local
+  qa_screenshots:
+    driver: local

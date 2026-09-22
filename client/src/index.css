@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .dark body {
+    background-color: #020617;
+    color: #f8fafc;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* React Flow handles */
+.react-flow__handle {
+  width: 12px;
+  height: 12px;
+  background: #6366f1;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 2px #cbd5e1;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.dark .react-flow__handle {
+  border-color: #0f172a;
+  box-shadow: 0 0 0 2px #334155;
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.4);
+  background: #4338ca;
+}
+
+/* Vibrant Animated Connection Line */
+@keyframes flowBeam {
+  from {
+    stroke-dashoffset: 36;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.react-flow__edge-path-animated {
+  animation: flowBeam 1.2s linear infinite;
+}
+
+.dark .react-flow__edge-path-animated {
+  stroke: #818cf8;
+}
+
+.dark .react-flow__edge-glow {
+  stroke: #4338ca;
+  stroke-opacity: 0.35;
+}
+
+.react-flow__node {
+  cursor: grab;
+}
+
+.react-flow__node:active {
+  cursor: grabbing;
+}

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlowShop - QA Automation Demo Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .sticky-buy-footer {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .sticky-buy-footer {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+  <!-- Top announcement bar -->
+  <div class="bg-indigo-600 text-white text-xs font-semibold py-1.5 px-4 text-center tracking-wide">
+    🚀 Flash Sale: Use code <span class="bg-white/20 px-1.5 py-0.5 rounded font-mono font-bold">SAVE20</span> for 20% OFF!
+  </div>
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <!-- Mobile hamburger -->
+        <button id="btn-mobile-nav" onclick="toggleMobileNav()" class="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+        <a href="#" class="flex items-center gap-2">
+          <div class="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-black text-lg shadow-sm">F</div>
+          <span class="font-bold text-xl tracking-tight text-slate-900">Flow<span class="text-indigo-600">Shop</span></span>
+        </a>
+      </div>
+
+      <!-- Search bar -->
+      <div class="flex-1 max-w-lg hidden sm:flex items-center relative">
+        <input id="search-input" type="text" placeholder="Search headphones, smartwatches, gear..." 
+               class="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 bg-slate-50 focus:bg-white"
+               onkeyup="handleSearch(this.value)">
+        <i class="fa-solid fa-magnifying-glass absolute left-3 text-slate-400 text-sm"></i>
+        <button id="btn-search" class="absolute right-2 px-2.5 py-1 text-xs bg-indigo-50 text-indigo-600 font-semibold rounded hover:bg-indigo-100">Search</button>
+      </div>
+
+      <!-- Right menu & Cart -->
+      <div class="flex items-center gap-4">
+        <div class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600">
+          <a href="#" class="hover:text-indigo-600">Shop</a>
+          <a href="#" class="hover:text-indigo-600">Categories</a>
+          <a href="#" class="hover:text-indigo-600">Deals</a>
+        </div>
+        <button onclick="toggleCart()" class="relative p-2 text-slate-700 hover:text-indigo-600">
+          <i class="fa-solid fa-bag-shopping text-xl"></i>
+          <span id="cart-badge-count" class="absolute -top-0.5 -right-0.5 bg-indigo-600 text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-nav-drawer" class="hidden md:hidden bg-white border-b border-slate-200 px-4 py-3 space-y-2">
+      <a href="#" class="block py-2 text-sm font-medium text-slate-700 hover:text-indigo-600">All Products</a>
+      <a href="#" class="block py-2 text-sm font-medium text-slate-700 hover:text-indigo-600">Audio & Gear</a>
+      <a href="#" class="block py-2 text-sm font-medium text-slate-700 hover:text-indigo-600">Special Promos</a>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+    <!-- Breadcrumb -->
+    <div class="text-xs text-slate-400 mb-6 flex items-center gap-2">
+      <span>Home</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
+      <span>Audio Devices</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
+      <span class="text-slate-700 font-semibold">Wireless Noise Cancelling Headphones</span>
+    </div>
+
+    <!-- Product Details Section (PDP) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+      <!-- Gallery Column -->
+      <div class="space-y-4">
+        <div class="relative bg-gradient-to-tr from-slate-100 to-indigo-50/50 rounded-xl overflow-hidden aspect-square flex items-center justify-center border border-slate-100">
+          <img id="main-product-img" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80" 
+               alt="Noise Cancelling Headphones" class="object-cover w-4/5 h-4/5 drop-shadow-xl transition-all duration-300">
+          <span class="absolute top-4 left-4 bg-emerald-50 text-emerald-700 text-xs font-bold px-2.5 py-1 rounded-full border border-emerald-200 flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> In Stock
+          </span>
+        </div>
+      </div>
+
+      <!-- Product Meta Column -->
+      <div class="flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <div class="flex text-amber-400 text-xs">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <span class="text-xs text-slate-500 font-medium">(1,482 verified reviews)</span>
+          </div>
+
+          <h1 id="product-title" class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
+            Noise Cancelling Headphones Pro
+          </h1>
+          <p class="text-sm text-slate-500 leading-relaxed mb-6">
+            Engineered with industry-leading Active Noise Cancellation (ANC), 40h battery endurance, spatial audio, and premium ultra-soft memory foam earcups.
+          </p>
+
+          <div class="flex items-baseline gap-3 mb-6">
+            <span id="product-price" class="text-3xl font-extrabold text-slate-900">$199.99</span>
+            <span class="text-sm text-slate-400 line-through font-medium">$249.99</span>
+            <span class="text-xs bg-rose-50 text-rose-600 font-bold px-2 py-0.5 rounded border border-rose-100">20% OFF</span>
+          </div>
+
+          <!-- Color Variant Selector -->
+          <div class="mb-6">
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Color Variant</label>
+            <div class="flex items-center gap-3">
+              <button onclick="selectVariant('Midnight Black', '#111827')" class="variant-color-black w-8 h-8 rounded-full bg-slate-900 border-2 border-indigo-600 ring-2 ring-indigo-200 transition-all"></button>
+              <button onclick="selectVariant('Silver Cloud', '#94a3b8')" class="variant-color-silver w-8 h-8 rounded-full bg-slate-300 border-2 border-white hover:ring-2 hover:ring-slate-300 transition-all"></button>
+              <button onclick="selectVariant('Navy Indigo', '#3730a3')" class="variant-color-navy w-8 h-8 rounded-full bg-indigo-900 border-2 border-white hover:ring-2 hover:ring-indigo-300 transition-all"></button>
+            </div>
+            <span id="selected-variant-label" class="text-xs text-slate-500 font-medium mt-1.5 block">Selected: Midnight Black</span>
+          </div>
+
+          <!-- Quantity Selector -->
+          <div class="mb-6">
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Quantity</label>
+            <div class="flex items-center gap-3">
+              <div class="flex items-center border border-slate-200 rounded-lg bg-slate-50">
+                <button onclick="changeQty(-1)" class="px-3 py-1.5 text-slate-600 hover:text-slate-900 font-bold">-</button>
+                <input id="qty-input" type="number" value="1" min="1" max="10" 
+                       class="w-12 text-center bg-transparent text-sm font-bold text-slate-800 border-none focus:outline-none"
+                       onchange="checkInventory(this.value)">
+                <button onclick="changeQty(1)" class="px-3 py-1.5 text-slate-600 hover:text-slate-900 font-bold">+</button>
+              </div>
+              <span id="stock-warning" class="text-xs text-amber-600 font-medium hidden">Only 2 items left in stock</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add to Cart CTA -->
+        <div class="pt-4 border-t border-slate-100 flex items-center gap-3">
+          <button id="btn-add-to-cart" onclick="addToCart()" 
+                  class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 px-6 rounded-xl shadow-md shadow-indigo-200 flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+          </button>
+          <button class="p-3.5 border border-slate-200 rounded-xl hover:bg-slate-50 text-slate-600">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Products Grid (For inventory & alternative scenarios) -->
+    <div class="mt-12">
+      <h2 class="text-lg font-bold text-slate-900 mb-4">Frequently Tested Products & Inventory Tests</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <!-- Item 1 (Low stock) -->
+        <div class="product-item-low-stock bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="h-36 bg-slate-100 rounded-lg mb-3 flex items-center justify-center overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&auto=format&fit=crop&q=80" alt="Watch" class="object-cover h-full">
+            </div>
+            <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">Only 1 SKU Left</span>
+            <h3 class="font-bold text-sm text-slate-800 mt-1">Smartwatch Sport Ultra</h3>
+            <p class="text-xs text-slate-500">$299.00</p>
+          </div>
+          <button onclick="selectProduct('Smartwatch Sport Ultra', 299.00, 1)" class="mt-3 text-xs bg-slate-100 hover:bg-indigo-50 hover:text-indigo-600 font-semibold py-2 rounded-lg transition-colors">Test Low Stock</button>
+        </div>
+
+        <!-- Item 2 (Standard) -->
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="h-36 bg-slate-100 rounded-lg mb-3 flex items-center justify-center overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=400&auto=format&fit=crop&q=80" alt="Earbuds" class="object-cover h-full">
+            </div>
+            <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">In Stock</span>
+            <h3 class="font-bold text-sm text-slate-800 mt-1">True Wireless Earbuds</h3>
+            <p class="text-xs text-slate-500">$79.99</p>
+          </div>
+          <button onclick="selectProduct('True Wireless Earbuds', 79.99, 50)" class="product-quick-add mt-3 text-xs bg-slate-100 hover:bg-indigo-50 hover:text-indigo-600 font-semibold py-2 rounded-lg transition-colors">Quick Add ($79.99)</button>
+        </div>
+
+        <!-- Item 3 (Out of stock) -->
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between opacity-80">
+          <div>
+            <div class="h-36 bg-slate-100 rounded-lg mb-3 flex items-center justify-center overflow-hidden grayscale">
+              <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400&auto=format&fit=crop&q=80" alt="Smartwatch" class="object-cover h-full">
+            </div>
+            <span class="text-[10px] font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Sold Out</span>
+            <h3 class="font-bold text-sm text-slate-800 mt-1">Vintage Chrono Edition</h3>
+            <p class="text-xs text-slate-500">$450.00</p>
+          </div>
+          <button disabled class="mt-3 text-xs bg-slate-100 text-slate-400 font-semibold py-2 rounded-lg cursor-not-allowed">Out of Stock</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Sticky Mobile Buy Bar -->
+  <div class="sticky-buy-footer md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-3 items-center justify-between z-30 shadow-lg">
+    <div>
+      <span class="text-xs text-slate-400 block">Total Price</span>
+      <span class="font-black text-slate-900">$199.99</span>
+    </div>
+    <button onclick="addToCart()" class="bg-indigo-600 text-white font-bold px-6 py-2.5 rounded-lg text-sm shadow-md">
+      Add to Cart
+    </button>
+  </div>
+
+  <!-- Shopping Cart Slide-Over Drawer -->
+  <div id="cart-drawer-backdrop" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 hidden transition-opacity" onclick="toggleCart()"></div>
+  <div id="cart-drawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="p-4 sm:p-6 border-b border-slate-100 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-bag-shopping text-indigo-600"></i>
+        <h2 class="font-bold text-lg text-slate-900">Your Cart</h2>
+      </div>
+      <button onclick="toggleCart()" class="p-2 text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <!-- Cart Items list -->
+    <div id="cart-items-container" class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
+      <div id="empty-cart-msg" class="text-center py-12 text-slate-400">
+        <i class="fa-solid fa-cart-shopping text-4xl mb-3 text-slate-300"></i>
+        <p class="text-sm">Your shopping bag is empty.</p>
+      </div>
+    </div>
+
+    <!-- Coupon & Summary section -->
+    <div class="p-4 sm:p-6 bg-slate-50 border-t border-slate-100 space-y-3">
+      <!-- Coupon input -->
+      <div>
+        <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Promo Code</label>
+        <div class="flex gap-2">
+          <input id="coupon-input" type="text" placeholder="e.g. SAVE20" 
+                 class="flex-1 px-3 py-2 border border-slate-200 rounded-lg text-sm uppercase font-mono focus:outline-none focus:border-indigo-500">
+          <button id="btn-apply-coupon" onclick="applyCoupon()" class="px-4 py-2 bg-slate-800 text-white font-semibold text-xs rounded-lg hover:bg-slate-900">Apply</button>
+        </div>
+        <p id="coupon-message" class="text-xs mt-1.5 hidden"></p>
+      </div>
+
+      <!-- Pricing Summary -->
+      <div class="space-y-1.5 pt-2 text-sm">
+        <div class="flex justify-between text-slate-500">
+          <span>Subtotal</span>
+          <span id="cart-subtotal" class="font-semibold text-slate-700">$0.00</span>
+        </div>
+        <div id="discount-row" class="hidden flex justify-between text-emerald-600">
+          <span>Promo Discount (20%)</span>
+          <span id="cart-discount" class="font-semibold">-$0.00</span>
+        </div>
+        <div class="flex justify-between text-slate-500">
+          <span>Estimated Tax</span>
+          <span id="cart-tax" class="font-semibold text-slate-700">$0.00</span>
+        </div>
+        <div class="flex justify-between text-base font-extrabold text-slate-900 pt-2 border-t border-slate-200">
+          <span>Grand Total</span>
+          <span id="cart-grand-total">$0.00</span>
+        </div>
+      </div>
+
+      <button id="btn-to-checkout" onclick="openCheckoutModal()" 
+              class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl shadow-md shadow-indigo-100 flex items-center justify-center gap-2 transition-all">
+        Proceed to Checkout <i class="fa-solid fa-arrow-right text-xs"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Checkout & Payment Modal -->
+  <div id="checkout-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 p-6 sm:p-8" id="checkout-container">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-sm">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h2 class="text-xl font-extrabold text-slate-900">Secure Checkout</h2>
+        </div>
+        <button onclick="closeCheckoutModal()" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <!-- Guest vs Member banner -->
+      <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-3.5 mb-6 flex items-center justify-between">
+        <div>
+          <p class="text-xs font-bold text-indigo-900">Checking out as Guest?</p>
+          <p class="text-xs text-indigo-700">No account required. Faster 1-click checkout.</p>
+        </div>
+        <button id="btn-continue-as-guest" class="text-xs bg-indigo-600 text-white font-bold px-3 py-1.5 rounded-lg shadow-sm">Continue as Guest</button>
+      </div>
+
+      <!-- Shipping Form -->
+      <form id="shipping-form" onsubmit="handlePlaceOrder(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Email Address</label>
+          <input id="guest-email" type="email" required placeholder="qa.tester@ecom-automation.com" 
+                 class="w-full px-3.5 py-2 border border-slate-200 rounded-lg text-sm focus:ring-1 focus:ring-indigo-500 focus:outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">First Name</label>
+            <input type="text" required placeholder="Alex" 
+                   class="w-full px-3.5 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Last Name</label>
+            <input type="text" required placeholder="QA Lead" 
+                   class="w-full px-3.5 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Shipping Address</label>
+          <input type="text" required placeholder="123 Automation Blvd, Suite 400" 
+                 class="w-full px-3.5 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none">
+        </div>
+
+        <!-- Payment Card Frame (Stripe Mock) -->
+        <div class="pt-4 border-t border-slate-100">
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Payment Details (Stripe Mock Gateway)</label>
+          <div id="payment-card-frame" class="p-4 border border-slate-200 rounded-xl bg-slate-50 space-y-3">
+            <div class="relative">
+              <input id="card-number" type="text" value="4242 4242 4242 4242" placeholder="Card Number" 
+                     class="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm font-mono focus:outline-none bg-white">
+              <i class="fa-brands fa-cc-stripe absolute right-3 top-3 text-indigo-600 text-lg"></i>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <input id="card-expiry" type="text" value="12/28" placeholder="MM/YY" class="px-3 py-2 border border-slate-200 rounded-lg text-sm font-mono bg-white focus:outline-none">
+              <input id="card-cvc" type="text" value="123" placeholder="CVC" class="px-3 py-2 border border-slate-200 rounded-lg text-sm font-mono bg-white focus:outline-none">
+            </div>
+          </div>
+        </div>
+
+        <!-- Recovery / Alt Payment -->
+        <div class="flex items-center justify-between text-xs text-slate-500 pt-2">
+          <span>Need PayPal or Apple Pay?</span>
+          <button type="button" id="btn-paypal-recovery" onclick="simulatePayPalRecovery()" class="text-indigo-600 font-bold hover:underline">Switch to PayPal Recovery</button>
+        </div>
+
+        <button type="submit" id="btn-place-order" 
+                class="w-full mt-4 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 rounded-xl shadow-lg shadow-emerald-100 flex items-center justify-center gap-2 transition-all">
+          <i class="fa-solid fa-lock"></i> Authorize & Place Order ($199.99)
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Upsell Offer Modal (Path T in Funnel) -->
+  <div id="upsell-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div id="upsell-banner" class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-indigo-100 text-center">
+      <div class="w-12 h-12 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center mx-auto mb-3 text-xl">
+        <i class="fa-solid fa-award"></i>
+      </div>
+      <h3 class="font-extrabold text-lg text-slate-900">Wait! Exclusive 1-Time Offer</h3>
+      <p class="text-xs text-slate-500 mt-1">Add 2-Year Full Accidental Damage & Battery Warranty for just $29.00 (Standard: $69)</p>
+      
+      <div class="mt-6 space-y-2">
+        <button onclick="acceptUpsell()" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-sm shadow-md">
+          Yes, Add Protection for $29!
+        </button>
+        <button onclick="skipUpsell()" class="w-full py-2 text-xs text-slate-400 font-medium hover:text-slate-600">
+          No thanks, continue to order receipt
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Confirmation View -->
+  <div id="order-confirmation-screen" class="fixed inset-0 bg-slate-50 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-8 shadow-xl border border-slate-200 text-center thank-you-view">
+      <div class="order-confirmation-badge w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4 text-2xl shadow-sm">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Order Confirmed!</span>
+      <h2 class="text-2xl font-black text-slate-900 mt-1">Thank You For Your Order</h2>
+      <p class="text-sm text-slate-500 mt-2">
+        Order confirmation number <span class="font-mono font-bold text-slate-800">#ORD-8921</span> has been placed and receipt emailed to customer.
+      </p>
+
+      <div class="my-6 p-4 bg-slate-50 rounded-xl border border-slate-100 text-left text-xs space-y-2">
+        <div class="flex justify-between"><span class="text-slate-500">Items:</span><span class="font-semibold text-slate-800">Noise Cancelling Headphones Pro (x1)</span></div>
+        <div class="flex justify-between"><span class="text-slate-500">Shipping:</span><span class="font-semibold text-slate-800">Express Priority (2-3 Days)</span></div>
+        <div class="flex justify-between"><span class="text-slate-500">Payment:</span><span class="font-semibold text-emerald-600">Stripe Card •••• 4242 (Captured)</span></div>
+      </div>
+
+      <button onclick="resetDemoShop()" class="px-6 py-2.5 bg-indigo-600 text-white font-bold text-sm rounded-xl hover:bg-indigo-700">
+        Start New Test Session
+      </button>
+    </div>
+  </div>
+
+  <!-- Client-side Logic for Mock Shop -->
+  <script>
+    let cart = [];
+    let discountApplied = false;
+    let currentQty = 1;
+    let selectedPrice = 199.99;
+
+    function selectVariant(color, hex) {
+      document.getElementById('selected-variant-label').innerText = 'Selected: ' + color;
+    }
+
+    function changeQty(delta) {
+      const input = document.getElementById('qty-input');
+      let val = parseInt(input.value) + delta;
+      if (val < 1) val = 1;
+      if (val > 10) val = 10;
+      input.value = val;
+      currentQty = val;
+      checkInventory(val);
+    }
+
+    function checkInventory(qty) {
+      const warning = document.getElementById('stock-warning');
+      if (qty > 2) {
+        warning.classList.remove('hidden');
+      } else {
+        warning.classList.add('hidden');
+      }
+    }
+
+    function addToCart() {
+      cart = [{
+        title: document.getElementById('product-title').innerText,
+        price: selectedPrice,
+        qty: currentQty
+      }];
+      updateCartUI();
+      toggleCart(true);
+    }
+
+    function updateCartUI() {
+      const badge = document.getElementById('cart-badge-count');
+      const container = document.getElementById('cart-items-container');
+      const emptyMsg = document.getElementById('empty-cart-msg');
+      const subtotalEl = document.getElementById('cart-subtotal');
+      const discountRow = document.getElementById('discount-row');
+      const discountEl = document.getElementById('cart-discount');
+      const taxEl = document.getElementById('cart-tax');
+      const grandTotalEl = document.getElementById('cart-grand-total');
+
+      badge.innerText = cart.reduce((sum, item) => sum + item.qty, 0);
+
+      if (cart.length === 0) {
+        emptyMsg.classList.remove('hidden');
+        subtotalEl.innerText = '$0.00';
+        taxEl.innerText = '$0.00';
+        grandTotalEl.innerText = '$0.00';
+        return;
+      }
+
+      emptyMsg.classList.add('hidden');
+      let subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      let discount = discountApplied ? subtotal * 0.20 : 0;
+      let tax = (subtotal - discount) * 0.08;
+      let grand = subtotal - discount + tax;
+
+      subtotalEl.innerText = '$' + subtotal.toFixed(2);
+      if (discountApplied) {
+        discountRow.classList.remove('hidden');
+        discountEl.innerText = '-$' + discount.toFixed(2);
+      } else {
+        discountRow.classList.add('hidden');
+      }
+      taxEl.innerText = '$' + tax.toFixed(2);
+      grandTotalEl.innerText = '$' + grand.toFixed(2);
+
+      container.innerHTML = cart.map((item, idx) => `
+        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200">
+          <div>
+            <h4 class="font-bold text-sm text-slate-800">${item.title}</h4>
+            <p class="text-xs text-slate-500">Qty: ${item.qty} × $${item.price.toFixed(2)}</p>
+          </div>
+          <button onclick="removeItem(${idx})" class="text-slate-400 hover:text-rose-500 text-xs p-1">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function removeItem(idx) {
+      cart.splice(idx, 1);
+      updateCartUI();
+    }
+
+    function applyCoupon() {
+      const code = document.getElementById('coupon-input').value.trim().toUpperCase();
+      const msg = document.getElementById('coupon-message');
+      msg.classList.remove('hidden');
+
+      if (code === 'SAVE20') {
+        discountApplied = true;
+        msg.innerText = '✓ Promo code SAVE20 applied! 20% discount granted.';
+        msg.className = 'text-xs mt-1.5 text-emerald-600 font-bold';
+      } else {
+        discountApplied = false;
+        msg.innerText = '✗ Invalid or expired coupon code: ' + code;
+        msg.className = 'text-xs mt-1.5 text-rose-600 font-semibold';
+      }
+      updateCartUI();
+    }
+
+    function toggleCart(forceOpen) {
+      const backdrop = document.getElementById('cart-drawer-backdrop');
+      const drawer = document.getElementById('cart-drawer');
+      const isOpen = !drawer.classList.contains('translate-x-full');
+
+      if (forceOpen || !isOpen) {
+        backdrop.classList.remove('hidden');
+        drawer.classList.remove('translate-x-full');
+      } else {
+        backdrop.classList.add('hidden');
+        drawer.classList.add('translate-x-full');
+      }
+    }
+
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobile-nav-drawer');
+      nav.classList.toggle('hidden');
+    }
+
+    function openCheckoutModal() {
+      toggleCart(false);
+      document.getElementById('checkout-modal').classList.remove('hidden');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkout-modal').classList.add('hidden');
+    }
+
+    function handlePlaceOrder(e) {
+      e.preventDefault();
+      closeCheckoutModal();
+      document.getElementById('upsell-modal').classList.remove('hidden');
+    }
+
+    function acceptUpsell() {
+      document.getElementById('upsell-modal').classList.add('hidden');
+      document.getElementById('order-confirmation-screen').classList.remove('hidden');
+    }
+
+    function skipUpsell() {
+      document.getElementById('upsell-modal').classList.add('hidden');
+      document.getElementById('order-confirmation-screen').classList.remove('hidden');
+    }
+
+    function simulatePayPalRecovery() {
+      alert('Redirecting to PayPal Sandbox Express Checkout...');
+      skipUpsell();
+    }
+
+    function resetDemoShop() {
+      cart = [];
+      discountApplied = false;
+      document.getElementById('order-confirmation-screen').classList.add('hidden');
+      updateCartUI();
+    }
+  </script>
+</body>
+</html>

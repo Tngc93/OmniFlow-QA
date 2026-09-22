@@ -66,8 +66,8 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
   const defaultHistoricalRuns: TestRunRecord[] = useMemo(() => [
     {
       runId: 'RUN-2026-0921-01',
-      scenarioId: 'scenario-monster-e2e',
-      scenarioTitle: 'Monster Notebook: Tulpar E2E Arama ve İnceleme',
+      scenarioId: 'scenario-novatech-tr-e2e',
+      scenarioTitle: 'NovaTech TR: Horizon X15 E2E Arama ve İnceleme',
       category: 'PDP & Arama',
       status: 'passed',
       totalDuration: '11.4s',
@@ -77,23 +77,23 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
       completedAt: 'Bugün 14:12',
       dateKey: '2026-09-21',
       summaryText: isTr 
-        ? 'Ana sayfa, Tulpar araması, ürün detay ve sepet rotası tüm assertion kontrollerinden tam puanla geçti.' 
+        ? 'Ana sayfa, NovaTech araması, ürün detay ve sepet rotası tüm assertion kontrollerinden tam puanla geçti.' 
         : 'Storefront, search query, PDP hardware verification, and cart actions passed all assertions.',
-      screenshotUrl: '/screenshots/monster_home_live.png',
+      screenshotUrl: '/screenshots/novatech_home_live.png',
       stepResults: [
         { name: 'Tarayıcı Oturumu Başlatma', status: 'passed', duration: '0.6s' },
         { name: 'Ana Sayfa & Başlık Doğrulama', status: 'passed', duration: '2.5s' },
-        { name: 'Tulpar Arama Sorgusu', status: 'passed', duration: '1.4s' },
+        { name: 'Horizon Arama Sorgusu', status: 'passed', duration: '1.4s' },
         { name: 'Oyun Bilgisayarları Kategori Filtresi', status: 'passed', duration: '2.2s' },
-        { name: 'Tulpar PDP Donanım Teyidi', status: 'passed', duration: '1.4s' },
+        { name: 'Horizon PDP Donanım Teyidi', status: 'passed', duration: '1.4s' },
         { name: 'Sepet & Rozet Teyidi', status: 'passed', duration: '0.8s' },
         { name: 'Test Başarı Kapanışı', status: 'passed', duration: '0.6s' }
       ]
     },
     {
       runId: 'RUN-2026-0921-02',
-      scenarioId: 'scenario-monster-cart',
-      scenarioTitle: 'Monster Notebook: Sepet, Kupon Kodu & Dinamik Fiyatlama',
+      scenarioId: 'scenario-novatech-tr-cart',
+      scenarioTitle: 'NovaTech TR: Sepet, Kupon Kodu & Dinamik Fiyatlama',
       category: 'Sepet & Kupon',
       status: 'passed',
       totalDuration: '9.8s',
@@ -105,7 +105,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
       summaryText: isTr 
         ? 'İndirim kuponu tanımlandı, sepet ara toplamı ve KDV tutarları matematiksel olarak doğrulandı.' 
         : 'Discount voucher applied, subtotal and tax amounts validated mathematically.',
-      screenshotUrl: '/screenshots/monster_tulpar_pdp.png',
+      screenshotUrl: '/screenshots/novatech_pdp.png',
       stepResults: [
         { name: 'Ürün Sepete Ekleme', status: 'passed', duration: '1.8s' },
         { name: 'Kupon Girişi (#voucher-input)', status: 'passed', duration: '1.2s' },
@@ -116,7 +116,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
     {
       runId: 'RUN-2026-0920-03',
       scenarioId: 'scenario-checkout-3ds',
-      scenarioTitle: 'Monster Notebook: 3D Secure Ödeme Ağ Geçidi Entegrasyonu',
+      scenarioTitle: 'NovaTech TR: 3D Secure Ödeme Ağ Geçidi Entegrasyonu',
       category: 'Ödeme & Güvenlik',
       status: 'failed',
       totalDuration: '5.4s',
@@ -136,7 +136,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
   waiting for locator("#payment-gateway-iframe") to be visible
   at CheckoutFlow.verifyPaymentGateway (engine.js:142:15)
   at async runScenarioStep (runner.js:89:9)`,
-      screenshotUrl: '/screenshots/monster_category.png',
+      screenshotUrl: '/screenshots/novatech_category.png',
       stepResults: [
         { name: 'Teslimat Adresi Seçimi', status: 'passed', duration: '1.2s' },
         { name: 'Fatura Bilgileri Doğrulama', status: 'passed', duration: '1.0s' },
@@ -147,7 +147,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
     {
       runId: 'RUN-2026-0919-04',
       scenarioId: 'scenario-auth-vault',
-      scenarioTitle: 'Monster Notebook: Müşteri Oturumu Açma & Auth Vault',
+      scenarioTitle: 'NovaTech TR: Müşteri Oturumu Açma & Auth Vault',
       category: 'Kimlik Doğrulama',
       status: 'passed',
       totalDuration: '7.2s',
@@ -159,12 +159,12 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
       summaryText: isTr 
         ? 'Test Müşterisi Kasasındaki (Auth Vault) şifreli kimlik bilgileriyle başarılı oturum açıldı.' 
         : 'Authenticated test customer session created using Auth Vault credentials.',
-      screenshotUrl: '/screenshots/monster_home_live.png'
+      screenshotUrl: '/screenshots/novatech_home_live.png'
     },
     {
       runId: 'RUN-2026-0918-05',
       scenarioId: 'scenario-category-filters',
-      scenarioTitle: 'Monster Notebook: RTX 40 Serisi Laptop Filtreleme',
+      scenarioTitle: 'NovaTech TR: RTX 40 Serisi Laptop Filtreleme',
       category: 'PDP & Arama',
       status: 'passed',
       totalDuration: '8.6s',
@@ -176,12 +176,12 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
       summaryText: isTr 
         ? 'Oyun bilgisayarları kategori listesinde RTX 4070 ve 32GB RAM filtreleri sorunsuz uygulandı.' 
         : 'Category grid filters applied: RTX 4070 & 32GB RAM, verified product cards count.',
-      screenshotUrl: '/screenshots/monster_category.png'
+      screenshotUrl: '/screenshots/novatech_category.png'
     },
     {
       runId: 'RUN-2026-0917-06',
       scenarioId: 'scenario-stock-badge',
-      scenarioTitle: 'Monster Notebook: Hızlı Teslimat & Stok Rozeti Doğrulama',
+      scenarioTitle: 'NovaTech TR: Hızlı Teslimat & Stok Rozeti Doğrulama',
       category: 'Stok & Lojistik',
       status: 'passed',
       totalDuration: '6.9s',
@@ -193,12 +193,12 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
       summaryText: isTr 
         ? 'Hemen Teslim rozetleri ve kargo süresi vaatleri DOM üzerinden teyit edildi.' 
         : 'Fast delivery badges and shipping timelines verified in DOM.',
-      screenshotUrl: '/screenshots/monster_tulpar_pdp.png'
+      screenshotUrl: '/screenshots/novatech_pdp.png'
     },
     {
       runId: 'RUN-2026-0916-07',
       scenarioId: 'scenario-checkout-guest',
-      scenarioTitle: 'Monster Notebook: Misafir Alışveriş Akışı & Adres Doğrulama',
+      scenarioTitle: 'NovaTech TR: Misafir Alışveriş Akışı & Adres Doğrulama',
       category: 'Ödeme & Güvenlik',
       status: 'passed',
       totalDuration: '10.1s',
@@ -210,7 +210,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
       summaryText: isTr 
         ? 'Üyeliksiz misafir checkout akışı il, ilçe ve vergi numarası validasyonlarını geçti.' 
         : 'Guest checkout flow completed with district and tax validation.',
-      screenshotUrl: '/screenshots/monster_home_live.png'
+      screenshotUrl: '/screenshots/novatech_home_live.png'
     }
   ], [isTr]);
 
@@ -223,8 +223,8 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
         // Map backend real runs and merge with historical runs
         const mapped: TestRunRecord[] = realRuns.map((r: any) => ({
           runId: r.runId?.startsWith('RUN-') ? r.runId : `RUN-${r.runId || 'LIVE'}`,
-          scenarioId: r.scenarioId || 'scenario-monster-e2e',
-          scenarioTitle: r.scenarioTitle || 'Monster Notebook: Canlı E2E Koşusu',
+          scenarioId: r.scenarioId || 'scenario-novatech-tr-e2e',
+          scenarioTitle: r.scenarioTitle || 'NovaTech TR: Canlı E2E Koşusu',
           category: 'Canlı Yürütme',
           status: r.status === 'failed' ? 'failed' : 'passed',
           totalDuration: r.totalDuration || '12.0s',
@@ -236,7 +236,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
           summaryText: isTr 
             ? `Playwright motoru tarafından icra edildi. ${r.stepsPassed || 7}/${r.stepsTotal || 7} adım doğrulandı.` 
             : `Executed with Playwright. ${r.stepsPassed || 7}/${r.stepsTotal || 7} steps verified.`,
-          screenshotUrl: r.stepResults?.find((s: any) => s.screenshotUrl)?.screenshotUrl || '/screenshots/monster_home_live.png',
+          screenshotUrl: r.stepResults?.find((s: any) => s.screenshotUrl)?.screenshotUrl || '/screenshots/novatech_home_live.png',
           stepResults: r.stepResults
         }));
 
@@ -308,7 +308,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
           scenarioTitle: run.scenarioTitle,
           stepName: run.errorTitle || 'Automated Step Execution Defect',
           errorMessage: run.errorDescription || run.summaryText,
-          screenshot: run.screenshotUrl || '/screenshots/monster_home_live.png'
+          screenshot: run.screenshotUrl || '/screenshots/novatech_home_live.png'
         }
       })
     );

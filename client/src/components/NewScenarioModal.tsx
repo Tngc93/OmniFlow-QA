@@ -16,7 +16,7 @@ export const NewScenarioModal: React.FC<NewScenarioModalProps> = ({
   onClose, 
   onCreate,
   lang,
-  defaultTargetUrl = 'https://www.monsternotebook.com.tr'
+  defaultTargetUrl = 'https://www.novatech.com.tr'
 }) => {
   const isTr = lang === 'tr';
   const [title, setTitle] = useState('');
@@ -39,8 +39,8 @@ export const NewScenarioModal: React.FC<NewScenarioModalProps> = ({
   ]);
   const [criticality, setCriticality] = useState<'Critical' | 'High' | 'Medium' | 'Low'>('Critical');
   const [targetUrl, setTargetUrl] = useState(defaultTargetUrl);
-  const [customerEmail, setCustomerEmail] = useState('berk.testuser@monsternotebook-qa.com');
-  const [customerPassword, setCustomerPassword] = useState('MonsterQA!2026Secure');
+  const [customerEmail, setCustomerEmail] = useState('qa.testuser@novatech.com.tr');
+  const [customerPassword, setCustomerPassword] = useState('NovaTechQA!2026Secure');
   const [description, setDescription] = useState('');
 
   const toggleCategory = (catName: string) => {
@@ -186,7 +186,7 @@ export const NewScenarioModal: React.FC<NewScenarioModalProps> = ({
               <input
                 type="url"
                 required
-                placeholder="https://www.monsternotebook.com.tr"
+                placeholder="https://www.novatech.com.tr"
                 value={targetUrl}
                 onChange={(e) => setTargetUrl(e.target.value)}
                 className="w-full pl-8 pr-3 py-2 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 rounded-xl font-mono focus:outline-none focus:border-indigo-500 text-slate-800 dark:text-slate-100"
@@ -215,7 +215,7 @@ export const NewScenarioModal: React.FC<NewScenarioModalProps> = ({
                   type="email"
                   value={customerEmail}
                   onChange={(e) => setCustomerEmail(e.target.value)}
-                  placeholder="berk.testuser@monsternotebook-qa.com"
+                  placeholder="qa.testuser@novatech.com.tr"
                   className="w-full px-2.5 py-1.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-800 dark:text-slate-100 font-mono text-[11px]"
                 />
               </div>

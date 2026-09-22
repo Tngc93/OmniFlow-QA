@@ -1,7 +1,7 @@
 import { Scenario } from '../types';
 
 export interface MasterDomainOption {
-  id: 'monster-tr' | 'tulpar-de' | 'all';
+  id: 'novatech-tr' | 'novatech-de' | 'all';
   name: string;
   domain: string;
   flag: string;
@@ -11,20 +11,20 @@ export interface MasterDomainOption {
 
 export const MASTER_DOMAINS: MasterDomainOption[] = [
   {
-    id: 'monster-tr',
-    name: 'Monster Notebook Türkiye',
-    domain: 'monsternotebook.com.tr',
+    id: 'novatech-tr',
+    name: 'NovaTech Türkiye',
+    domain: 'novatech.com.tr',
     flag: '🇹🇷',
     badge: 'TRY (₺) • KVKK',
-    baseUrl: 'https://www.monsternotebook.com.tr'
+    baseUrl: 'https://www.novatech.com.tr'
   },
   {
-    id: 'tulpar-de',
-    name: 'Tulpar Notebook Deutschland',
-    domain: 'tulparnotebook.de',
+    id: 'novatech-de',
+    name: 'NovaTech Deutschland',
+    domain: 'novatech.de',
     flag: '🇩🇪',
     badge: 'EUR (€) • DSGVO / MwSt',
-    baseUrl: 'https://www.tulparnotebook.de'
+    baseUrl: 'https://www.novatech.de'
   },
   {
     id: 'all',
@@ -32,30 +32,30 @@ export const MASTER_DOMAINS: MasterDomainOption[] = [
     domain: 'Global E2E (TR & DE)',
     flag: '🌐',
     badge: 'Çoklu Mağaza Karşılaştırma',
-    baseUrl: 'https://www.monsternotebook.com.tr / https://www.tulparnotebook.de'
+    baseUrl: 'https://www.novatech.com.tr / https://www.novatech.de'
   }
 ];
 
-// 1. Monster Notebook TR Master Pipeline (Spacious layout, Turkey-specific flows & real TR screenshots)
-export const MASTER_PIPELINE_MONSTER_TR: Scenario = {
-  id: 'master-pipeline-monster-tr',
-  title: 'Monster Notebook TR (monsternotebook.com.tr) - Genel Master Pipeline',
+// 1. NovaTech TR Master Pipeline (Spacious layout, Turkey-specific flows & real TR screenshots)
+export const MASTER_PIPELINE_NOVATECH_TR: Scenario = {
+  id: 'master-pipeline-novatech-tr',
+  title: 'NovaTech TR (novatech.com.tr) - Genel Master Pipeline',
   category: 'Bütünleşik Master Mimari',
   categories: ['Temel Dönüşüm (Checkout)', 'Ödeme & Güvenlik', 'Lojistik & Kargo', 'Siber Güvenlik & PCI-DSS'],
-  description: 'Monster Notebook Türkiye mağazasında mağaza açılışından arama motoruna, donanım özelleştirmeden ₺1000 sepet indirimi, üye kasası, Garanti/İş Bankası 3D Secure taksit ve Yurtiçi Kargo teslimatına kadar tam otomatik test döngüsü.',
+  description: 'NovaTech Türkiye mağazasında mağaza açılışından arama motoruna, donanım özelleştirmeden ₺1000 sepet indirimi, üye kasası, Garanti/İş Bankası 3D Secure taksit ve Yurtiçi Kargo teslimatına kadar tam otomatik test döngüsü.',
   criticality: 'Critical',
   componentsCount: 12,
   lastRunDuration: '24.2s',
   status: 'passed',
-  targetUrl: 'https://www.monsternotebook.com.tr',
+  targetUrl: 'https://www.novatech.com.tr',
   nodes: [
     {
       id: 'node-mp-tr-init',
       type: 'terminatorNode',
       position: { x: 520, y: 40 },
       data: {
-        label: 'Monster TR Test Initializer',
-        subtext: 'Playwright E2E Motoru (monsternotebook.com.tr)',
+        label: 'NovaTech TR Test Initializer',
+        subtext: 'Playwright E2E Motoru (novatech.com.tr)',
         status: 'passed',
         isStart: true
       }
@@ -75,7 +75,7 @@ export const MASTER_PIPELINE_MONSTER_TR: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/monster_home_live.png'
+        screenshot: '/screenshots/novatech_home_live.png'
       }
     },
     // Branch 1: Search
@@ -85,8 +85,8 @@ export const MASTER_PIPELINE_MONSTER_TR: Scenario = {
       position: { x: 140, y: 650 },
       data: {
         stepIndex: 2,
-        name: 'Monster Akıllı Arama & Fuzzy Search',
-        subtext: 'Tulpar, Semruk, Abra modelleri ve sıfır sonuç önleme',
+        name: 'NovaTech Akıllı Arama & Fuzzy Search',
+        subtext: 'Horizon, Titan, Apex Pro modelleri ve sıfır sonuç önleme',
         components: 9,
         metricTime: '0.8s',
         metricPassed: 27,
@@ -113,7 +113,7 @@ export const MASTER_PIPELINE_MONSTER_TR: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/monster_category.png'
+        screenshot: '/screenshots/novatech_category.png'
       }
     },
     // Convergence: PDP & Configurator
@@ -123,7 +123,7 @@ export const MASTER_PIPELINE_MONSTER_TR: Scenario = {
       position: { x: 520, y: 970 },
       data: {
         stepIndex: 4,
-        name: 'Tulpar T7 V20.8 Donanım Konfigüratörü',
+        name: 'Horizon X15 V20.8 Donanım Konfigüratörü',
         subtext: '16GB->32GB RAM, 1TB SSD, Türkçe Q Klavye & Canlı Stok Kontrolü',
         components: 16,
         metricTime: '1.3s',
@@ -132,7 +132,7 @@ export const MASTER_PIPELINE_MONSTER_TR: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'pdp',
-        screenshot: '/screenshots/monster_tulpar_pdp.png'
+        screenshot: '/screenshots/novatech_pdp.png'
       }
     },
     // Cart & Promotion
@@ -142,7 +142,7 @@ export const MASTER_PIPELINE_MONSTER_TR: Scenario = {
       position: { x: 520, y: 1390 },
       data: {
         stepIndex: 5,
-        name: 'Monster Sepet & Kupon İndirim Matrisi',
+        name: 'NovaTech Sepet & Kupon İndirim Matrisi',
         subtext: 'Promosyon kodu, ₺1.000 üzeri Ücretsiz Kargo Barı & Çapraz Satış',
         components: 11,
         metricTime: '0.9s',
@@ -151,7 +151,7 @@ export const MASTER_PIPELINE_MONSTER_TR: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'cart',
-        screenshot: '/screenshots/monster_cart_live.png'
+        screenshot: '/screenshots/novatech_cart_live.png'
       }
     },
     // Checkout: User Auth or Guest
@@ -161,7 +161,7 @@ export const MASTER_PIPELINE_MONSTER_TR: Scenario = {
       position: { x: 140, y: 1810 },
       data: {
         stepIndex: 6,
-        name: 'Monster Üye Girişi & Adres Kasası',
+        name: 'NovaTech Üye Girişi & Adres Kasası',
         subtext: 'Kayıtlı teslimat adresi veya şifresiz hızlı misafir alışverişi',
         components: 8,
         metricTime: '0.8s',
@@ -206,7 +206,7 @@ export const MASTER_PIPELINE_MONSTER_TR: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'payment',
-        screenshot: '/screenshots/monster_checkout_live.png'
+        screenshot: '/screenshots/novatech_checkout_live.png'
       }
     },
     // Logistics & Fulfillment
@@ -251,7 +251,7 @@ export const MASTER_PIPELINE_MONSTER_TR: Scenario = {
       type: 'terminatorNode',
       position: { x: 520, y: 2870 },
       data: {
-        label: 'Monster TR Master Pipeline Tamamlandı',
+        label: 'NovaTech TR Master Pipeline Tamamlandı',
         subtext: 'Tüm Türkiye Otomasyon Fazları Doğrulandı (%100 Başarılı)',
         status: 'passed',
         isEnd: true
@@ -277,25 +277,25 @@ export const MASTER_PIPELINE_MONSTER_TR: Scenario = {
 };
 
 // 2. Tulpar Notebook DE Master Pipeline (Spacious layout, Germany/EU-specific flows & authentic DE live screenshots)
-export const MASTER_PIPELINE_TULPAR_DE: Scenario = {
-  id: 'master-pipeline-tulpar-de',
-  title: 'Tulpar Notebook DE (tulparnotebook.de) - Genel Master Pipeline',
+export const MASTER_PIPELINE_NOVATECH_DE: Scenario = {
+  id: 'master-pipeline-novatech-de',
+  title: 'NovaTech DE (novatech.de) - Genel Master Pipeline',
   category: 'Bütünleşik Master Mimari',
   categories: ['Temel Dönüşüm (Checkout)', 'Ödeme & Güvenlik', 'Lojistik & Kargo', 'Siber Güvenlik & PCI-DSS'],
-  description: 'Tulpar Notebook Almanya ve Avrupa Birliği e-ticaret platformunda Cookiebot/DSGVO çerez izninden Almanca arama, GeForce RTX 50 PLP, QWERTZ konfigüratör, €100 kostenlose Lieferung, Klarna/PayPal, %19 MwSt. ve DHL Packstation 24/7 teslimatına kadar Avrupa odaklı otomasyon döngüsü.',
+  description: 'NovaTech Almanya ve Avrupa Birliği e-ticaret platformunda Cookiebot/DSGVO çerez izninden Almanca arama, GeForce RTX 50 PLP, QWERTZ konfigüratör, €100 kostenlose Lieferung, Klarna/PayPal, %19 MwSt. ve DHL Packstation 24/7 teslimatına kadar Avrupa odaklı otomasyon döngüsü.',
   criticality: 'Critical',
   componentsCount: 12,
   lastRunDuration: '26.8s',
   status: 'passed',
-  targetUrl: 'https://www.tulparnotebook.de',
+  targetUrl: 'https://www.novatech.de',
   nodes: [
     {
       id: 'node-tde-init',
       type: 'terminatorNode',
       position: { x: 520, y: 40 },
       data: {
-        label: 'Tulpar DE DACH/EU Test Initializer',
-        subtext: 'Playwright Browser Session (tulparnotebook.de)',
+        label: 'NovaTech DE DACH/EU Test Initializer',
+        subtext: 'Playwright Browser Session (novatech.de)',
         status: 'passed',
         isStart: true
       }
@@ -315,7 +315,7 @@ export const MASTER_PIPELINE_TULPAR_DE: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/tulpar_de_home_live.png'
+        screenshot: '/screenshots/novatech_de_home_live.png'
       }
     },
     // Branch 1: Search
@@ -325,8 +325,8 @@ export const MASTER_PIPELINE_TULPAR_DE: Scenario = {
       position: { x: 140, y: 650 },
       data: {
         stepIndex: 2,
-        name: 'Tulpar Suche & Autocomplete Engine',
-        subtext: "Almanca 'Tulpar' arama sorgusu, RTX 50-serisi önerileri",
+        name: 'NovaTech Suche & Autocomplete Engine',
+        subtext: "Almanca 'NovaTech' arama sorgusu, RTX 50-serisi önerileri",
         components: 9,
         metricTime: '0.8s',
         metricPassed: 27,
@@ -334,7 +334,7 @@ export const MASTER_PIPELINE_TULPAR_DE: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/tulpar_de_search_live.png'
+        screenshot: '/screenshots/novatech_de_search_live.png'
       }
     },
     // Branch 2: Category PLP
@@ -345,7 +345,7 @@ export const MASTER_PIPELINE_TULPAR_DE: Scenario = {
       data: {
         stepIndex: 3,
         name: 'Gaming Laptops PLP & Filter Drawer',
-        subtext: 'GeForce RTX 5050/5060/5070, Sortieren: Tulpars Wahl & Auf Lager',
+        subtext: 'GeForce RTX 5050/5060/5070, Sortieren: NovaTech Wahl & Auf Lager',
         components: 14,
         metricTime: '1.1s',
         metricPassed: 32,
@@ -353,7 +353,7 @@ export const MASTER_PIPELINE_TULPAR_DE: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/tulpar_de_plp_live.png'
+        screenshot: '/screenshots/novatech_de_plp_live.png'
       }
     },
     // Convergence: PDP & Configurator
@@ -363,7 +363,7 @@ export const MASTER_PIPELINE_TULPAR_DE: Scenario = {
       position: { x: 520, y: 970 },
       data: {
         stepIndex: 4,
-        name: 'Tulpar A7 V16.2 Gaming Laptop PDP',
+        name: 'NovaTech Titan X17 Gaming Laptop PDP',
         subtext: '1.089,00 € (inkl. MwSt.), 100,00 € Rabatt, QWERTZ Tastatur Layout',
         components: 16,
         metricTime: '1.4s',
@@ -372,7 +372,7 @@ export const MASTER_PIPELINE_TULPAR_DE: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'pdp',
-        screenshot: '/screenshots/tulpar_de_pdp_live.png'
+        screenshot: '/screenshots/novatech_de_pdp_live.png'
       }
     },
     // Cart & Promotion
@@ -383,7 +383,7 @@ export const MASTER_PIPELINE_TULPAR_DE: Scenario = {
       data: {
         stepIndex: 5,
         name: 'Warenkorb & Gutscheincode (€100 Barı)',
-        subtext: 'Warenkorb Validierung, TULPAR-EU-50 Gutschein & Versandkostenfrei ab €100',
+        subtext: 'Warenkorb Validierung, NOVATECH-EU-50 Gutschein & Versandkostenfrei ab €100',
         components: 11,
         metricTime: '1.0s',
         metricPassed: 30,
@@ -391,7 +391,7 @@ export const MASTER_PIPELINE_TULPAR_DE: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'cart',
-        screenshot: '/screenshots/tulpar_de_cart_live.png'
+        screenshot: '/screenshots/novatech_de_cart_live.png'
       }
     },
     // Checkout: User Auth or Guest
@@ -410,7 +410,7 @@ export const MASTER_PIPELINE_TULPAR_DE: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'checkout',
-        screenshot: '/screenshots/tulpar_de_auth_live.png'
+        screenshot: '/screenshots/novatech_de_auth_live.png'
       }
     },
     // Tax & Corporate Invoice
@@ -484,7 +484,7 @@ export const MASTER_PIPELINE_TULPAR_DE: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'confirmation',
-        screenshot: '/screenshots/tulpar_de_rma_live.png'
+        screenshot: '/screenshots/novatech_de_rma_live.png'
       }
     },
     // Finalization Terminator
@@ -493,7 +493,7 @@ export const MASTER_PIPELINE_TULPAR_DE: Scenario = {
       type: 'terminatorNode',
       position: { x: 520, y: 2870 },
       data: {
-        label: 'Tulpar DE Master Pipeline Tamamlandı',
+        label: 'NovaTech DE Master Pipeline Tamamlandı',
         subtext: 'Alle europäischen DACH/EU E-Commerce Flows Erfolgreich Verifiziert (%100 Pass)',
         status: 'passed',
         isEnd: true
@@ -524,12 +524,12 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
   title: 'Global E-Ticaret Master Pipeline (Tüm Mağazalar & Pazarlar)',
   category: 'Bütünleşik Master Mimari',
   categories: ['Temel Dönüşüm (Checkout)', 'Ödeme & Güvenlik', 'Lojistik & Kargo', 'Siber Güvenlik & PCI-DSS'],
-  description: 'Monster Notebook Türkiye (TRY ₺, KVKK, 3DS) ve Tulpar Notebook Almanya (EUR €, DSGVO, Klarna/DHL) platformlarının paralel dual-engine karşılaştırmalı uçtan uca otomasyon döngüsü.',
+  description: 'NovaTech Türkiye (TRY ₺, KVKK, 3DS) ve NovaTech Deutschland (EUR €, DSGVO, Klarna/DHL) platformlarının paralel dual-engine karşılaştırmalı uçtan uca otomasyon döngüsü.',
   criticality: 'Critical',
   componentsCount: 12,
   lastRunDuration: '31.5s',
   status: 'passed',
-  targetUrl: 'https://www.monsternotebook.com.tr / https://www.tulparnotebook.de',
+  targetUrl: 'https://www.novatech.com.tr / https://www.novatech.de',
   nodes: [
     {
       id: 'node-gbl-init',
@@ -549,8 +549,8 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
       position: { x: 160, y: 260 },
       data: {
         stepIndex: 1,
-        name: '🇹🇷 Monster TR Storefront & KVKK',
-        subtext: 'monsternotebook.com.tr, TRY (₺), KVKK & SSL 1.3',
+        name: '🇹🇷 NovaTech TR Storefront & KVKK',
+        subtext: 'novatech.com.tr, TRY (₺), KVKK & SSL 1.3',
         components: 12,
         metricTime: '1.1s',
         metricPassed: 38,
@@ -558,7 +558,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/monster_home_live.png'
+        screenshot: '/screenshots/novatech_home_live.png'
       }
     },
     {
@@ -567,8 +567,8 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
       position: { x: 880, y: 260 },
       data: {
         stepIndex: 2,
-        name: '🇩🇪 Tulpar DE Storefront & Cookiebot',
-        subtext: 'tulparnotebook.de, EUR (€), DSGVO & Cookiebot Consent',
+        name: '🇩🇪 NovaTech DE Storefront & Cookiebot',
+        subtext: 'novatech.de, EUR (€), DSGVO & Cookiebot Consent',
         components: 12,
         metricTime: '1.2s',
         metricPassed: 38,
@@ -576,7 +576,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/tulpar_de_home_live.png'
+        screenshot: '/screenshots/novatech_de_home_live.png'
       }
     },
     // Level 2: Catalogs side-by-side
@@ -586,7 +586,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
       position: { x: 160, y: 680 },
       data: {
         stepIndex: 3,
-        name: '🇹🇷 Monster TR Oyun Bilgisayarları',
+        name: '🇹🇷 NovaTech TR Oyun Bilgisayarları',
         subtext: '/oyun-bilgisayarlari, RTX 4070, Peşin Fiyatına 6 Taksit',
         components: 14,
         metricTime: '1.0s',
@@ -595,7 +595,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/monster_category.png'
+        screenshot: '/screenshots/novatech_category.png'
       }
     },
     {
@@ -604,7 +604,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
       position: { x: 880, y: 680 },
       data: {
         stepIndex: 4,
-        name: '🇩🇪 Tulpar DE Gaming Laptops PLP',
+        name: '🇩🇪 NovaTech DE Gaming Laptops PLP',
         subtext: '/gaming-laptops/, GeForce RTX 50-Serie, Auf Lager Filter',
         components: 14,
         metricTime: '1.1s',
@@ -613,7 +613,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/tulpar_de_plp_live.png'
+        screenshot: '/screenshots/novatech_de_plp_live.png'
       }
     },
     // Level 3: PDPs side-by-side
@@ -623,7 +623,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
       position: { x: 160, y: 1100 },
       data: {
         stepIndex: 5,
-        name: '🇹🇷 Monster Tulpar T7 PDP (₺)',
+        name: '🇹🇷 NovaTech Horizon X15 PDP (₺)',
         subtext: 'Türkçe Q Klavye, RGB Aydınlatma, Canlı Stok Kontrolü',
         components: 16,
         metricTime: '1.3s',
@@ -632,7 +632,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'pdp',
-        screenshot: '/screenshots/monster_tulpar_pdp.png'
+        screenshot: '/screenshots/novatech_pdp.png'
       }
     },
     {
@@ -641,7 +641,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
       position: { x: 880, y: 1100 },
       data: {
         stepIndex: 6,
-        name: '🇩🇪 Tulpar A7 Gaming Laptop (1.089€)',
+        name: '🇩🇪 NovaTech Titan X17 Laptop (1.089€)',
         subtext: 'Alman QWERTZ Tastatur, 100€ Rabatt, Konfigurieren & Kaufen',
         components: 16,
         metricTime: '1.4s',
@@ -650,7 +650,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'pdp',
-        screenshot: '/screenshots/tulpar_de_pdp_live.png'
+        screenshot: '/screenshots/novatech_de_pdp_live.png'
       }
     },
     // Level 4: Checkout side-by-side
@@ -669,7 +669,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'checkout',
-        screenshot: '/screenshots/monster_checkout_live.png'
+        screenshot: '/screenshots/novatech_checkout_live.png'
       }
     },
     {
@@ -687,7 +687,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'checkout',
-        screenshot: '/screenshots/tulpar_de_cart_live.png'
+        screenshot: '/screenshots/novatech_de_cart_live.png'
       }
     },
     // Convergence: Central BI & Analytics
@@ -736,14 +736,16 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
 };
 
 // Default export alias for backward compatibility
-export const MASTER_PIPELINE_SCENARIO = MASTER_PIPELINE_MONSTER_TR;
+export const MASTER_PIPELINE_SCENARIO = MASTER_PIPELINE_NOVATECH_TR;
+export const MASTER_PIPELINE_MONSTER_TR = MASTER_PIPELINE_NOVATECH_TR;
+export const MASTER_PIPELINE_TULPAR_DE = MASTER_PIPELINE_NOVATECH_DE;
 
-export function getMasterPipeline(domainId: string = 'monster-tr'): Scenario {
-  if (domainId === 'tulpar-de') {
-    return MASTER_PIPELINE_TULPAR_DE;
+export function getMasterPipeline(domainId: string = 'novatech-tr'): Scenario {
+  if (domainId === 'novatech-de' || domainId === 'tulpar-de') {
+    return MASTER_PIPELINE_NOVATECH_DE;
   }
   if (domainId === 'all') {
     return MASTER_PIPELINE_GLOBAL;
   }
-  return MASTER_PIPELINE_MONSTER_TR;
+  return MASTER_PIPELINE_NOVATECH_TR;
 }

@@ -50,7 +50,7 @@ router.post('/', (req, res) => {
     title: req.body.title || 'New Custom Test Scenario',
     category: req.body.category || 'Custom Scenarios',
     categories: req.body.categories || (req.body.category ? [req.body.category] : ['Custom Scenarios']),
-    projectId: req.body.projectId || 'proj-monster',
+    projectId: req.body.projectId || 'proj-novatech-tr',
     description: req.body.description || 'User-defined automated e-commerce test flow.',
     criticality: req.body.criticality || 'Medium',
     componentsCount: req.body.componentsCount || 5,

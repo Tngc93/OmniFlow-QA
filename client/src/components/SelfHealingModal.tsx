@@ -52,8 +52,8 @@ export const SelfHealingModal: React.FC<SelfHealingModalProps> = ({
   const healedRecords = [
     {
       id: 'heal-1',
-      title: isTr ? 'Monster TR Sepete Ekle Butonu' : 'Monster TR Add to Cart CTA',
-      store: '🇹🇷 monsternotebook.com.tr',
+      title: isTr ? 'NovaTech TR Sepete Ekle Butonu' : 'NovaTech TR Add to Cart CTA',
+      store: '🇹🇷 novatech.com.tr',
       brokenSelector: 'button#btn-add-cart-2026_x8a92',
       healedSelector: 'button[data-testid="pdp-add-to-cart"], button:has-text("Sepete Ekle")',
       reason: isTr ? 'Tailwind derlemesi sonrası dinamik hash ve React element ID değişimi' : 'Tailwind build CSS class hash mutation and dynamic React ID drift',
@@ -63,8 +63,8 @@ export const SelfHealingModal: React.FC<SelfHealingModalProps> = ({
     },
     {
       id: 'heal-2',
-      title: isTr ? 'Tulpar DE QWERTZ Klavye Konfigüratörü' : 'Tulpar DE QWERTZ Keyboard Selector',
-      store: '🇩🇪 tulparnotebook.de',
+      title: isTr ? 'NovaTech DE QWERTZ Klavye Konfigüratörü' : 'NovaTech DE QWERTZ Keyboard Selector',
+      store: '🇩🇪 novatech.de',
       brokenSelector: 'div.configurator-step-keyboard > div:nth-child(3)',
       healedSelector: '[data-qa="spec-option-qwertz"], label:has-text("Deutsches Tastaturlayout")',
       reason: isTr ? 'A/B test varyantı ile DOM kapsayıcı hiyerarşisinin yer değiştirmesi' : 'Container layout shifted due to A/B test marketing variant',
@@ -74,12 +74,12 @@ export const SelfHealingModal: React.FC<SelfHealingModalProps> = ({
     },
     {
       id: 'heal-3',
-      title: isTr ? 'Monster TR Yurtiçi Kargo Teslimat Seçimi' : 'Monster TR Yurtiçi Shipping Radio',
-      store: '🇹🇷 monsternotebook.com.tr',
+      title: isTr ? 'NovaTech TR Yurtiçi Kargo Teslimat Seçimi' : 'NovaTech TR Yurtiçi Shipping Radio',
+      store: '🇹🇷 novatech.com.tr',
       brokenSelector: 'input#cargo-provider-yurtici',
       healedSelector: 'input[name="shipping_method"][value*="yurtici"]',
       reason: isTr ? 'Ödeme altyapısı güncellemesi sonrası öznitelik isim değişikliği' : 'Checkout payment SDK vendor update renamed input ID attribute',
-      strategy: isTr ? 'Görsel Koordinat Yakınlığı + Bitişik Yurtiçi Logo Eşleşmesi' : 'Visual Geometry Proximity + Adjacent Logo Image OCR',
+      strategy: isTr ? 'Görsel Koordinat Yakınlığı + Bitişik Kargo Logo Eşleşmesi' : 'Visual Geometry Proximity + Adjacent Logo Image OCR',
       confidence: 99.1,
       status: 'Auto-Healed'
     }

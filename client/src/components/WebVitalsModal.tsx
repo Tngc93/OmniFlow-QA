@@ -19,21 +19,22 @@ interface WebVitalsModalProps {
   isOpen: boolean;
   onClose: () => void;
   lang?: Language;
-  initialStore?: 'monsterTr' | 'tulparDe';
+  initialStore?: 'novaTr' | 'novaDe' | 'monsterTr' | 'tulparDe';
 }
 
 export const WebVitalsModal: React.FC<WebVitalsModalProps> = ({
   isOpen,
   onClose,
   lang = 'tr',
-  initialStore = 'monsterTr'
+  initialStore = 'novaTr'
 }) => {
-  const [selectedStore, setSelectedStore] = useState<'monsterTr' | 'tulparDe'>(initialStore);
+  const normalizedInitial = (initialStore === 'tulparDe' || initialStore === 'novaDe') ? 'novaDe' : 'novaTr';
+  const [selectedStore, setSelectedStore] = useState<'novaTr' | 'novaDe'>(normalizedInitial);
   const [isAuditing, setIsAuditing] = useState(false);
   const isTr = lang === 'tr';
 
   useEffect(() => {
-    setSelectedStore(initialStore);
+    setSelectedStore((initialStore === 'tulparDe' || initialStore === 'novaDe') ? 'novaDe' : 'novaTr');
   }, [initialStore]);
 
   useEffect(() => {
@@ -54,9 +55,9 @@ export const WebVitalsModal: React.FC<WebVitalsModalProps> = ({
     }, 1200);
   };
 
-  const storeData = selectedStore === 'monsterTr' ? {
-    domain: 'monsternotebook.com.tr',
-    name: 'Monster Notebook Türkiye',
+  const storeData = selectedStore === 'novaTr' ? {
+    domain: 'novatech.com.tr',
+    name: 'NovaTech Türkiye',
     flag: '🇹🇷',
     currency: 'TRY (₺)',
     scores: {
@@ -77,8 +78,8 @@ export const WebVitalsModal: React.FC<WebVitalsModalProps> = ({
       ? 'Mevcut LCP ve CLS hız puanı sepet terk oranını %14 azaltmakta, dönüşüm oranını ise tahmini %8.2 artırmaktadır.'
       : 'Current LCP and CLS scores reduce cart abandonment by ~14% and improve checkout conversion by +8.2%.'
   } : {
-    domain: 'tulparnotebook.de',
-    name: 'Tulpar Notebook Deutschland',
+    domain: 'novatech.de',
+    name: 'NovaTech Deutschland',
     flag: '🇩🇪',
     currency: 'EUR (€)',
     scores: {
@@ -88,7 +89,7 @@ export const WebVitalsModal: React.FC<WebVitalsModalProps> = ({
       seo: 99
     },
     vitals: [
-      { key: 'LCP', name: isTr ? 'En Büyük İçerikli Boyama' : 'Largest Contentful Paint', value: '1.12s', target: '< 2.5s', status: 'good', score: 99, desc: isTr ? 'Tulpar A7 V16.2 ürün görseli & WebP' : 'Tulpar A7 visual & WebP asset load' },
+      { key: 'LCP', name: isTr ? 'En Büyük İçerikli Boyama' : 'Largest Contentful Paint', value: '1.12s', target: '< 2.5s', status: 'good', score: 99, desc: isTr ? 'NovaTech Titan X17 ürün görseli & WebP' : 'NovaTech Titan X17 visual & WebP load' },
       { key: 'INP', name: isTr ? 'Sonraki Boyamayla Etkileşim' : 'Interaction to Next Paint', value: '68ms', target: '< 200ms', status: 'good', score: 98, desc: isTr ? 'Konfigüratör RAM/SSD seçim tepkisi' : 'Configurator RAM/SSD switch latency' },
       { key: 'CLS', name: isTr ? 'Kümülatif Düzen Kayması' : 'Cumulative Layout Shift', value: '0.008', target: '< 0.10', status: 'good', score: 100, desc: isTr ? 'Cookiebot DSGVO & sepet çekmecesi' : 'Cookiebot DSGVO & cart drawer stability' },
       { key: 'FCP', name: isTr ? 'İlk İçerikli Boyama' : 'First Contentful Paint', value: '0.65s', target: '< 1.8s', status: 'good', score: 98, desc: isTr ? 'Avrupa AWS Frankfurt Edge noktası' : 'Frankfurt AWS CloudFront Edge point' },
@@ -109,23 +110,25 @@ export const WebVitalsModal: React.FC<WebVitalsModalProps> = ({
         className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-4xl w-full max-h-[92vh] flex flex-col overflow-hidden shadow-2xl cursor-default"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header */}
-        <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-900/50">
+        {/* Modal Header */}
+        <div className="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/40">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500">
-              <Zap className="w-5 h-5 fill-amber-500" />
+            <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white shadow-md shadow-amber-500/20">
+              <Gauge className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="text-base font-black text-slate-900 dark:text-white">
-                  Google Core Web Vitals & Lighthouse
+                <h3 className="text-lg font-black text-slate-900 dark:text-white">
+                  {isTr ? 'Google Core Web Vitals & E-Ticaret Hız Skoru' : 'Google Core Web Vitals & E-Com Speed Scorecard'}
                 </h3>
-                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
-                  {isTr ? 'Canlı Denetim' : 'Live E-Com Audit'}
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                  Lighthouse 11.4
                 </span>
               </div>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
-                {isTr ? 'E-Ticaret Hız, Düzen Stabilitesi & Dönüşüm Karnesi' : 'E-Commerce Speed, Layout Stability & Conversion Scorecard'}
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                {isTr 
+                  ? 'Kullanıcı deneyimi, LCP render hızı ve sepet dönüşüm metrikleri'
+                  : 'Real user experience, LCP paint velocity and checkout conversion metrics'}
               </p>
             </div>
           </div>
@@ -134,26 +137,28 @@ export const WebVitalsModal: React.FC<WebVitalsModalProps> = ({
             {/* Store Toggle */}
             <div className="flex items-center bg-slate-200/80 dark:bg-slate-800 p-1 rounded-xl text-xs font-bold">
               <button
-                onClick={() => setSelectedStore('monsterTr')}
+                data-testid="store-vitals-tr"
+                onClick={() => setSelectedStore('novaTr')}
                 className={`px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 ${
-                  selectedStore === 'monsterTr'
+                  selectedStore === 'novaTr'
                     ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-xs'
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
                 }`}
               >
                 <span>🇹🇷</span>
-                <span>Monster TR</span>
+                <span>NovaTech TR</span>
               </button>
               <button
-                onClick={() => setSelectedStore('tulparDe')}
+                data-testid="store-vitals-de"
+                onClick={() => setSelectedStore('novaDe')}
                 className={`px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 ${
-                  selectedStore === 'tulparDe'
+                  selectedStore === 'novaDe'
                     ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-xs'
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
                 }`}
               >
                 <span>🇩🇪</span>
-                <span>Tulpar DE</span>
+                <span>NovaTech DE</span>
               </button>
             </div>
 

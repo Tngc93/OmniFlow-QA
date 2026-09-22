@@ -67,9 +67,9 @@ app.get('/api/vitals', (req, res) => {
     timestamp: new Date().toISOString(),
     globalScore: 96,
     stores: {
-      monsterTr: {
-        domain: 'monsternotebook.com.tr',
-        name: 'Monster Notebook Türkiye',
+      novaTr: {
+        domain: 'novatech.com.tr',
+        name: 'NovaTech Türkiye',
         flag: '🇹🇷',
         lighthouse: {
           performance: 94,
@@ -91,9 +91,9 @@ app.get('/api/vitals', (req, res) => {
           { type: 'info', text: 'Sepet ve ödeme adımlarında layout shift riski minimum (CLS: 0.014).' }
         ]
       },
-      tulparDe: {
-        domain: 'tulparnotebook.de',
-        name: 'Tulpar Notebook Deutschland',
+      novaDe: {
+        domain: 'novatech.de',
+        name: 'NovaTech Deutschland',
         flag: '🇩🇪',
         lighthouse: {
           performance: 97,
@@ -118,6 +118,10 @@ app.get('/api/vitals', (req, res) => {
     }
   };
 
+  // Aliases for backward compatibility
+  vitalsData.stores.monsterTr = vitalsData.stores.novaTr;
+  vitalsData.stores.tulparDe = vitalsData.stores.novaDe;
+
   res.json(vitalsData);
 });
 
@@ -134,16 +138,16 @@ function smartScanUrl(rawUrl) {
   }
   base = base.replace(/\/+$/, '');
 
-  const isMonster = base.includes('monsternotebook');
+  const isNovaTech = base.includes('novatech');
   const isTr = base.includes('.tr') || base.includes('hepsiburada') || base.includes('trendyol');
 
-  if (isMonster) {
+  if (isNovaTech) {
     return {
       baseUrl: base,
       storefront: `${base}/`,
-      search: `${base}/arama?q=tulpar`,
+      search: `${base}/arama?q=horizon`,
       category: `${base}/oyun-bilgisayarlari`,
-      pdp: `${base}/tulpar-t7-v20-8-1-intel-core-i7-14700hx-16gb-ram-1tb-ssd-rtx4070-freedos-17-3-fhd-144hz/`,
+      pdp: `${base}/horizon-x15-intel-core-i7-14700hx-16gb-ram-1tb-ssd-rtx4070-15-6-fhd-144hz/`,
       cart: `${base}/sepet/`,
       checkout: `${base}/odeme/`,
       login: `${base}/uye-girisi/`
@@ -209,8 +213,8 @@ app.post('/api/projects', (req, res) => {
       baseUrl: scannedEndpoints.baseUrl,
       description: description || `${scannedEndpoints.baseUrl} için otomatik taranmış e-ticaret test klasörü.`,
       category: category || 'E-Commerce Storefront',
-      testCustomerEmail: testCustomerEmail || 'qa.testuser@monsternotebook.com.tr',
-      testCustomerPassword: testCustomerPassword || 'MonsterQA!2026Secure',
+      testCustomerEmail: testCustomerEmail || 'qa.testuser@novatech.com.tr',
+      testCustomerPassword: testCustomerPassword || 'NovaTechQA!2026Secure',
       scannedEndpoints,
       scenariosCount: 6,
       lastAuditPassRate: '100%',
@@ -423,13 +427,13 @@ app.get('/api/metrics', (req, res) => {
     flowObjectives: [
       {
         id: 'obj-1',
-        title: 'Monster Storefront Init',
+        title: 'NovaTech Storefront Init',
         subtitle: 'Connect & Accept Cookies',
         pills: { task: 11, time: '2.1s', passed: 41, automated: 72 }
       },
       {
         id: 'obj-2',
-        title: 'Tulpar & Abra Search',
+        title: 'Horizon & Titan Search',
         subtitle: 'Query & Validate PLP Cards',
         pills: { task: 14, time: '1.8s', passed: 27, automated: 41 }
       },
@@ -504,22 +508,22 @@ app.post('/api/integrations/jira/issue', (req, res) => {
     const jiraConfig = integrations.jira || {};
 
     const issueNumber = Math.floor(420 + Math.random() * 80);
-    const pKey = projectKey || jiraConfig.projectKey || 'MONS';
+    const pKey = projectKey || jiraConfig.projectKey || 'NOVA';
 
     const newIssue = {
       id: `jira-${Date.now()}`,
       key: `${pKey}-${issueNumber}`,
       summary: `[E-Commerce QA] ${scenarioTitle || 'Canlı Test'} - ${stepName || 'Doğrulama'} Hatası`,
       description: `Playwright E2E Otomasyonu sırasında tespit edilen hata kaydı:\n\n` +
-        `• Senaryo: ${scenarioTitle || 'Monster E2E'}\n` +
+        `• Senaryo: ${scenarioTitle || 'NovaTech E2E'}\n` +
         `• Hatalı Adım: ${stepName || 'Bilinmeyen Adım'}\n` +
         `• Hata Detayı: ${errorMessage || 'Doğrulama (Assertion) başarısız oldu'}\n` +
-        `• Hedef URL: https://www.monsternotebook.com.tr/\n` +
+        `• Hedef URL: https://www.novatech.com.tr/\n` +
         `• Tarayıcı: Playwright Chromium Headless\n` +
-        `• Ekran Görüntüsü Ekli: ${screenshot || '/screenshots/monster_home_live.png'}\n` +
+        `• Ekran Görüntüsü Ekli: ${screenshot || '/screenshots/novatech_home_live.png'}\n` +
         `• Raporlayan: OmniFlow Jira MCP Köprüsü\n` +
         `• Tarih: ${new Date().toLocaleString('tr-TR')}`,
-      screenshotUrl: screenshot || '/screenshots/monster_home_live.png',
+      screenshotUrl: screenshot || '/screenshots/novatech_home_live.png',
       projectKey: pKey,
       board: boardId || jiraConfig.boardId || 'BOARD-104 (QA Automation Sprint)',
       issueType: issueType || jiraConfig.issueType || 'Bug',
@@ -564,7 +568,7 @@ app.post('/api/integrations/test', (req, res) => {
   } else if (type === 'slack') {
     return res.json({
       success: true,
-      message: 'Slack Incoming Webhook testi başarılı: #qa-monsternotebook-alerts'
+      message: 'Slack Incoming Webhook testi başarılı: #qa-novatech-alerts'
     });
   }
   res.json({ success: true, message: 'Entegrasyon bağlantısı aktif.' });
@@ -601,5 +605,5 @@ if (fs.existsSync(clientDist)) {
 
 server.listen(PORT, () => {
   console.log(`[OmniFlow QA Server] Running on http://localhost:${PORT}`);
-  console.log(`[OmniFlow QA Server] Target: Monster Notebook (https://www.monsternotebook.com.tr/)`);
+  console.log(`[OmniFlow QA Server] Target: NovaTech Dual-Engine (https://www.novatech.com.tr / https://www.novatech.de)`);
 });

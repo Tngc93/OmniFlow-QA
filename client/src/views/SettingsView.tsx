@@ -17,12 +17,12 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
   onToggleTheme
 }) => {
   const isTr = lang === 'tr';
-  const [testEmail, setTestEmail] = useState('berk.testuser@monsternotebook-qa.com');
-  const [testPassword, setTestPassword] = useState('MonsterQA!2026Secure');
+  const [testEmail, setTestEmail] = useState('qa.testuser@novatech.com.tr');
+  const [testPassword, setTestPassword] = useState('NovaTechQA!2026Secure');
   const [showPw, setShowPw] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [savedSuccess, setSavedSuccess] = useState(false);
-  const [activeProjectId, setActiveProjectId] = useState('proj-monster');
+  const [activeProjectId, setActiveProjectId] = useState('proj-novatech-tr');
 
   useEffect(() => {
     fetch(`${API_BASE}/projects`)
@@ -252,7 +252,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
             </div>
             <div className="flex justify-between p-2.5 bg-slate-50 dark:bg-slate-900/60 rounded-xl">
               <span>Default Target:</span>
-              <strong className="text-indigo-600 dark:text-indigo-400">https://www.monsternotebook.com.tr/</strong>
+              <strong className="text-indigo-600 dark:text-indigo-400">https://www.novatech.com.tr/</strong>
             </div>
             <div className="flex justify-between p-2.5 bg-slate-50 dark:bg-slate-900/60 rounded-xl">
               <span>Telemetry:</span>

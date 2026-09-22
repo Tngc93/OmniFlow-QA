@@ -85,11 +85,11 @@ export const Header: React.FC<HeaderProps> = ({
           className="flex flex-col items-center text-center px-4 py-1.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors cursor-pointer group"
         >
           <div className="flex items-center gap-1.5 font-bold text-sm text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-            <span>{activeScenario?.title || 'Monster Notebook E2E Flow'}</span>
+            <span>{activeScenario?.title || 'NovaTech TR E2E Flow'}</span>
             <ChevronDown className="w-3.5 h-3.5 text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-transform" />
           </div>
           <span className="text-[11px] text-slate-400 font-medium">
-            {activeScenario?.targetUrl || 'https://www.monsternotebook.com.tr'}
+            {activeScenario?.targetUrl || 'https://www.novatech.com.tr'}
           </span>
         </button>
 
@@ -171,11 +171,11 @@ export const Header: React.FC<HeaderProps> = ({
         <button
           onClick={onOpenLiveSite}
           className="px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/30 rounded-xl flex items-center gap-1.5 transition-colors border border-slate-200 dark:border-slate-800"
-          title={`Canlı Mağazayı Aç: ${activeProject?.baseUrl || 'https://www.monsternotebook.com.tr'}`}
+          title={`Canlı Mağazayı Aç: ${activeProject?.baseUrl || 'https://www.novatech.com.tr'}`}
         >
           <div className="w-2 h-2 rounded-full bg-emerald-500 animate-ping mr-0.5" />
           <span className="hidden sm:inline font-bold">
-            {activeProject?.name ? (activeProject.name.includes('Tulpar') ? 'Tulpar Notebook (DE)' : 'Monster Notebook (TR)') : 'Canlı Mağaza'}
+            {activeProject?.name ? (activeProject.name.includes('Deutschland') || activeProject.name.includes('(DE)') ? 'NovaTech (DE)' : 'NovaTech (TR)') : 'Canlı Mağaza'}
           </span>
           <ExternalLink className="w-3 h-3 text-slate-400" />
         </button>

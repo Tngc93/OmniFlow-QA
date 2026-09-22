@@ -10,7 +10,7 @@ interface DemoStoreModalProps {
 export const DemoStoreModal: React.FC<DemoStoreModalProps> = ({ 
   isOpen, 
   onClose,
-  url = 'https://www.monsternotebook.com.tr/'
+  url = 'https://www.novatech.com.tr/'
 }) => {
   if (!isOpen) return null;
 
@@ -23,7 +23,7 @@ export const DemoStoreModal: React.FC<DemoStoreModalProps> = ({
               <Globe className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-sm font-bold">Monster Notebook - Canlı E-Ticaret Hedefi</h3>
+              <h3 className="text-sm font-bold">NovaTech - Canlı E-Ticaret Hedefi</h3>
               <span className="text-[10px] text-slate-400 font-mono">{url}</span>
             </div>
           </div>
@@ -46,7 +46,7 @@ export const DemoStoreModal: React.FC<DemoStoreModalProps> = ({
         <div className="flex-1 w-full h-full bg-slate-100 relative">
           <iframe 
             src={url} 
-            title="Monster Notebook Live"
+            title="NovaTech Live"
             className="w-full h-full border-none"
           />
         </div>

@@ -31,7 +31,7 @@ export const translations = {
     redo: 'İleri Al',
     activeWorkflow: 'Aktif İş Akışı',
     workflowsOverview: 'E-Ticaret Test Akışları Özeti',
-    targetStore: 'Monster Notebook',
+    targetStore: 'NovaTech E-Ticaret',
     openStore: 'Canlı Mağazayı Aç',
     saveWorkflow: 'İş Akışını Kaydet',
     runAutomation: 'Otomasyonu Başlat',
@@ -53,7 +53,7 @@ export const translations = {
     coverageText: 'Gerçek Test Geçme Oranı: ',
     flowObjectives: 'Akış Yapı Taşları (Flow Objectives)',
     addStepToFlow: 'Akışa eklemek için tıklayın',
-    liveScreenshots: 'Canlı Monster Notebook Ekran Görüntüleri',
+    liveScreenshots: 'Canlı E-Ticaret Ekran Görüntüleri',
     
     // Scenario Browser View
     scenarioCatalogTitle: 'E-Ticaret Test Senaryosu Kütüphanesi',
@@ -99,7 +99,7 @@ export const translations = {
     redo: 'Redo',
     activeWorkflow: 'Active Workflow',
     workflowsOverview: 'Overview of E-Commerce Testing Workflows',
-    targetStore: 'Monster Notebook',
+    targetStore: 'NovaTech E-Commerce',
     openStore: 'Open Live Store',
     saveWorkflow: 'Save Workflow',
     runAutomation: 'Run Automation',
@@ -121,7 +121,7 @@ export const translations = {
     coverageText: 'Live Test Pass Rate: ',
     flowObjectives: 'Flow Objectives (Step Blocks)',
     addStepToFlow: 'Click to add step block to active flow',
-    liveScreenshots: 'Live Monster Notebook Captured Screenshots',
+    liveScreenshots: 'Live E-Commerce Captured Screenshots',
     
     // Scenario Browser View
     scenarioCatalogTitle: 'E-Commerce Test Scenario Catalog',

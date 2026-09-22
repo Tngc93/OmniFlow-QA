@@ -8,8 +8,8 @@ async function main() {
   const context = await browser.newContext({ viewport: { width: 1600, height: 1000 } });
   const page = await context.newPage();
 
-  console.log('Navigating to http://localhost:5173 ...');
-  await page.goto('http://localhost:5173', { waitUntil: 'networkidle', timeout: 30000 });
+  console.log('Navigating to http://localhost:5000 ...');
+  await page.goto('http://localhost:5000', { waitUntil: 'networkidle', timeout: 30000 });
   await page.waitForTimeout(2000);
 
   // Switch to "Genel Tüm Otomasyonlar" tab
@@ -18,15 +18,15 @@ async function main() {
   await masterTab.click();
   await page.waitForTimeout(1500);
 
-  // 1. Check Monster TR
-  console.log('Selecting monsternotebook.com.tr...');
-  const monsterTrBtn = page.locator('[data-testid="domain-btn-monster-tr"]');
-  if (await monsterTrBtn.isVisible()) {
-    await monsterTrBtn.click();
+  // 1. Check NovaTech TR
+  console.log('Selecting novatech.com.tr...');
+  const trBtn = page.locator('[data-testid="domain-btn-novatech-tr"]');
+  if (await trBtn.isVisible()) {
+    await trBtn.click();
     await page.waitForTimeout(1000);
   }
 
-  // Zoom/Fit view if available or capture screenshot of Monster TR
+  // Zoom/Fit view if available or capture screenshot of NovaTech TR
   const fitViewBtn = page.locator('.react-flow__controls-fitview');
   if (await fitViewBtn.isVisible()) {
     await fitViewBtn.click();
@@ -37,10 +37,10 @@ async function main() {
   await page.screenshot({ path: screen1 });
   console.log('Saved feat_10_monster_tr_master_screens.png');
 
-  // 2. Switch to Tulpar DE
-  console.log('Selecting tulparnotebook.de...');
-  const tulparDeBtn = page.locator('[data-testid="domain-btn-tulpar-de"]');
-  await tulparDeBtn.click();
+  // 2. Switch to NovaTech DE
+  console.log('Selecting novatech.de...');
+  const deBtn = page.locator('[data-testid="domain-btn-novatech-de"]');
+  await deBtn.click();
   await page.waitForTimeout(1500);
 
   if (await fitViewBtn.isVisible()) {

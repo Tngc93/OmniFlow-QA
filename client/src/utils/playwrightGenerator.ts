@@ -3,10 +3,10 @@ import { Scenario } from '../types';
 export function generatePlaywrightCode(
   scenario: Scenario | null,
   viewport: 'desktop' | 'mobile' | 'tablet' = 'desktop',
-  creds = { email: 'berk.testuser@monsternotebook-qa.com', password: 'MonsterQA!2026Secure' }
+  creds = { email: 'qa.testuser@novatech.com.tr', password: 'NovaTechQA!2026Secure' }
 ): string {
   const scenarioTitle = scenario?.title || 'E-Commerce Test Automation Flow';
-  const targetUrl = scenario?.targetUrl || 'https://www.monsternotebook.com.tr';
+  const targetUrl = scenario?.targetUrl || 'https://www.novatech.com.tr';
   const nodes = scenario?.nodes || [];
 
   let viewportWidth = 1920;
@@ -22,7 +22,7 @@ export function generatePlaywrightCode(
     viewportHeight = 1180;
   }
 
-  const isTulpar = targetUrl.includes('tulpar') || (scenario?.id && scenario.id.includes('tulpar'));
+  const isDe = targetUrl.includes('.de') || (scenario?.id && scenario.id.includes('-de'));
 
   // Build step-by-step statements
   const stepStatements = nodes.map((node, index) => {
@@ -35,7 +35,7 @@ export function generatePlaywrightCode(
         return `    // Step ${index + 1}: ${nodeName}
     await test.step('${nodeName}', async () => {
       await page.goto('${targetUrl}', { waitUntil: 'networkidle' });
-      await expect(page).toHaveTitle(/Monster|Tulpar|Notebook/i);
+      await expect(page).toHaveTitle(/NovaTech|Horizon|Titan|Notebook/i);
     });\n`;
       } else {
         return `    // Step ${index + 1}: ${nodeName}
@@ -48,7 +48,7 @@ export function generatePlaywrightCode(
     }
 
     if (lower.includes('search') || lower.includes('arama')) {
-      const query = isTulpar ? 'Tulpar' : 'Oyun Bilgisayarı';
+      const query = isDe ? 'Titan' : 'Horizon';
       return `    // Step ${index + 1}: ${nodeName}
     await test.step('${nodeName}', async () => {
       const searchInput = page.locator('input[type="search"], input[name="q"], input.search-input').first();
@@ -73,7 +73,7 @@ export function generatePlaywrightCode(
     if (lower.includes('pdp') || lower.includes('ürün') || lower.includes('laptop') || lower.includes('configur')) {
       return `    // Step ${index + 1}: ${nodeName}
     await test.step('${nodeName}', async () => {
-      const productCard = page.locator('.product-item, .product-card, a[href*="tulpar"], a[href*="laptop"]').first();
+      const productCard = page.locator('.product-item, .product-card, a[href*="horizon"], a[href*="titan"], a[href*="laptop"]').first();
       await productCard.click();
       await page.waitForLoadState('networkidle');
       await expect(page.locator('h1')).toBeVisible();

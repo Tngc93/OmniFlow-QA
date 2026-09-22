@@ -1,11 +1,11 @@
 [
   {
     "id": "jira-1789990477707",
-    "key": "MONS-487",
-    "summary": "[E-Commerce QA] Tulpar E2E Test - Sepete Ekleme Doğrulaması Hatası",
-    "description": "Playwright E2E Otomasyonu sırasında tespit edilen hata kaydı:\n\n• Senaryo: Tulpar E2E Test\n• Hatalı Adım: Sepete Ekleme Doğrulaması\n• Hata Detayı: Stok kontrolü zaman aşımına uğradı\n• Hedef URL: https://www.monsternotebook.com.tr/\n• Tarayıcı: Playwright Chromium Headless\n• Ekran Görüntüsü Ekli: /screenshots/monster_tulpar_pdp.png\n• Raporlayan: OmniFlow Jira MCP Köprüsü\n• Tarih: 21.09.2026 14:34:37",
-    "screenshotUrl": "/screenshots/monster_tulpar_pdp.png",
-    "projectKey": "MONS",
+    "key": "NOVA-487",
+    "summary": "[E-Commerce QA] NovaTech Horizon E2E Test - Sepete Ekleme Doğrulaması Hatası",
+    "description": "Playwright E2E Otomasyonu sırasında tespit edilen hata kaydı:\n\n• Senaryo: NovaTech Horizon E2E Test\n• Hatalı Adım: Sepete Ekleme Doğrulaması\n• Hata Detayı: Stok kontrolü zaman aşımına uğradı\n• Hedef URL: https://www.novatech.com.tr/\n• Tarayıcı: Playwright Chromium Headless\n• Ekran Görüntüsü Ekli: /screenshots/novatech_pdp.png\n• Raporlayan: OmniFlow Jira MCP Köprüsü\n• Tarih: 21.09.2026 14:34:37",
+    "screenshotUrl": "/screenshots/novatech_pdp.png",
+    "projectKey": "NOVA",
     "board": "BOARD-104 (QA Automation Sprint)",
     "issueType": "Bug",
     "priority": "High",
@@ -15,11 +15,11 @@
   },
   {
     "id": "jira-101",
-    "key": "MONS-412",
-    "summary": "[E2E QA] Tulpar PDP: RTX 4070 Varyant Seçiminde Sepet Senkronizasyon Gecikmesi",
-    "description": "Playwright E2E Otomasyonu sırasında Tulpar T7 v20.5 modelinde donanım seçildiğinde DOM sepet güncellemesi 2500ms üzerinde sürdü.\n\n• Hedef: https://www.monsternotebook.com.tr/tulpar/\n• Adım: Action Trigger (PDP Specs)\n• Beklenen: 1500ms altında sepet response\n• Alınan: Timeout uyarısı ve geç DOM render\n• Ortam: Chromium Headless\n• Zaman: 2026-09-21T13:42:10.000Z",
-    "screenshotUrl": "/screenshots/monster_tulpar_pdp.png",
-    "projectKey": "MONS",
+    "key": "NOVA-412",
+    "summary": "[E2E QA] NovaTech PDP: RTX 4070 Varyant Seçiminde Sepet Senkronizasyon Gecikmesi",
+    "description": "Playwright E2E Otomasyonu sırasında Titan X17 modelinde donanım seçildiğinde DOM sepet güncellemesi 2500ms üzerinde sürdü.\n\n• Hedef: https://www.novatech.com.tr/horizon-x15/\n• Adım: Action Trigger (PDP Specs)\n• Beklenen: 1500ms altında sepet response\n• Alınan: Timeout uyarısı ve geç DOM render\n• Ortam: Chromium Headless\n• Zaman: 2026-09-21T13:42:10.000Z",
+    "screenshotUrl": "/screenshots/novatech_pdp.png",
+    "projectKey": "NOVA",
     "board": "BOARD-104 (QA Automation Sprint)",
     "issueType": "Bug",
     "priority": "High",
@@ -29,16 +29,16 @@
   },
   {
     "id": "jira-102",
-    "key": "MONS-415",
+    "key": "NOVA-415",
     "summary": "[Kupon Testi] İndirim Kuponu Geçersiz Kod Girişinde Hata Mesajı Konumu Kayması",
-    "description": "Sepet sayfasında 'GECERSIZ50' kodu girildiğinde banner z-index hatası nedeniyle ödeme butonunu perdeledi.\n\n• Hedef: https://www.monsternotebook.com.tr/sepet/\n• Adım: Validate Coupon Decline\n• Ekran Görüntüsü: monster_tulpar_pdp.png\n• Ortam: WebKit Mobile Viewport",
-    "screenshotUrl": "/screenshots/monster_home_live.png",
-    "projectKey": "MONS",
+    "description": "Sepet sayfasında 'GECERSIZ50' kodu girildiğinde banner z-index hatası nedeniyle ödeme butonunu perdeledi.\n\n• Hedef: https://www.novatech.com.tr/sepet/\n• Adım: Validate Coupon Decline\n• Ekran Görüntüsü: novatech_pdp.png\n• Ortam: WebKit Mobile Viewport",
+    "screenshotUrl": "/screenshots/novatech_home_live.png",
+    "projectKey": "NOVA",
     "board": "BOARD-104 (QA Automation Sprint)",
     "issueType": "Bug",
     "priority": "Medium",
     "status": "To Do",
     "reporter": "OmniFlow Jira MCP Bot",
-    "createdAt": "Bugün 12:15"
+    "createdAt": "Dün 16:15"
   }
 ]

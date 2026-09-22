@@ -58,15 +58,15 @@ async function run() {
     console.log('--- 3. Testing Google Core Web Vitals & Lighthouse Modal ---');
     const webVitalsBtn = page.locator('[data-testid="open-web-vitals-btn"]').first();
     await webVitalsBtn.click();
-    await page.waitForSelector('text=Google Core Web Vitals & Lighthouse', { timeout: 5000 });
+    await page.waitForSelector('text=Google Core Web Vitals', { timeout: 5000 });
     await page.waitForTimeout(600);
 
-    // Capture Monster TR Web Vitals
+    // Capture NovaTech TR Web Vitals
     await page.screenshot({ path: path.join(ARTIFACT_DIR, 'feat_15_web_vitals_monster.png'), fullPage: false });
 
-    // Switch to Tulpar DE in Web Vitals Modal
-    const tulparToggle = page.locator('button:has-text("Tulpar DE")').first();
-    await tulparToggle.click();
+    // Switch to NovaTech DE in Web Vitals Modal
+    const deToggle = page.locator('[data-testid="store-vitals-de"], button:has-text("NovaTech DE")').first();
+    await deToggle.click();
     await page.waitForTimeout(400);
     await page.screenshot({ path: path.join(ARTIFACT_DIR, 'feat_16_web_vitals_tulpar.png'), fullPage: false });
 

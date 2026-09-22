@@ -20,9 +20,9 @@ Built with **React 19, @xyflow/react, and Playwright**, OmniFlow QA bridges the 
 ### 1. Multi-Store Master Pipelines (Turkey 🇹🇷 & Germany 🇩🇪)
 > Dual-engine e-commerce pipeline orchestration with authentic localized routes, currencies (TRY ₺ / EUR €), payment methods (Garanti 3D Secure / Klarna & PayPal), and regional compliance (KVKK / DSGVO Cookiebot).
 
-| 🇹🇷 Monster Notebook Türkiye | 🇩🇪 Tulpar Notebook Deutschland |
+| 🇹🇷 NovaTech Türkiye | 🇩🇪 NovaTech Deutschland |
 |:---:|:---:|
-| ![Monster TR Pipeline](docs/screenshots/01_monster_tr_master_pipeline.png) | ![Tulpar DE Pipeline](docs/screenshots/02_tulpar_de_master_pipeline.png) |
+| ![NovaTech TR Pipeline](docs/screenshots/01_novatech_tr_master_pipeline.png) | ![NovaTech DE Pipeline](docs/screenshots/02_novatech_de_master_pipeline.png) |
 
 #### 🌐 Global E2E Dual-Engine Architecture
 Paralleled comparative execution across cross-border stores feeding a centralized BI & Omnichannel QA audit node.
@@ -206,7 +206,7 @@ node scratch/verify_code_and_healing.js
 OmniFlow QA is architected for extensible **Multimodal AI Integration** (Gemini 2.0 / OpenAI / Claude):
 
 1. **Prompt-to-Pipeline (Natural Language Test Generator)**:
-   - Type: *"Test the Tulpar A7 laptop configuration with 32GB RAM, add to cart, and verify German DHL Packstation checkout."*
+   - Type: *"Test the NovaTech Titan X17 laptop configuration with 32GB RAM, add to cart, and verify German DHL Packstation checkout."*
    - AI generates the visual node graph, connections, target URLs, and assertions automatically.
 2. **Multimodal Visual Anomaly Detection**:
    - Vision AI analyzes step screenshots to detect visual bugs invisible to DOM selectors (overlapping text, banner clipping, z-index glitches, wrong currency symbol).

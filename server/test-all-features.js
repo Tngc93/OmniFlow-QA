@@ -91,7 +91,7 @@ async function testAllFeatures() {
   await newFolderBtn.click();
   await page.waitForTimeout(400);
 
-  const urlInput = page.locator('input[placeholder*="monsternotebook"]').first();
+  const urlInput = page.locator('input[placeholder*="novatech"], input[type="url"]').first();
   await urlInput.fill('https://www.hepsiburada.com');
   // Wait for debounced smart URL scanner to finish
   await page.waitForTimeout(1000);

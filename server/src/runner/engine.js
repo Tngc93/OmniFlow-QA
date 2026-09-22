@@ -132,15 +132,15 @@ async function executeScenario(scenario, broadcast, options = {}) {
         await new Promise(r => setTimeout(r, 600));
         logs.push(`Oturum durumu: ${node.data.label || 'Hazır'}`);
       } else {
-        const targetUrl = scenario.targetUrl || 'https://www.monsternotebook.com.tr/';
-        const isMonster = targetUrl.includes('monsternotebook.com.tr');
-        const isTulparDe = targetUrl.includes('tulparnotebook.de') || (scenario.projectId === 'proj-tulpar-de');
+        const targetUrl = scenario.targetUrl || 'https://www.novatech.com.tr/';
+        const isNovaTr = targetUrl.includes('novatech.com.tr');
+        const isNovaDe = targetUrl.includes('novatech.de') || (scenario.projectId === 'proj-novatech-de');
 
         // Load project credentials
         const projectsFile = path.join(__dirname, '../../data/projects.json');
         let testCreds = {
-          email: 'berk.testuser@monsternotebook-qa.com',
-          password: 'MonsterQA!2026Secure'
+          email: 'qa.testuser@novatech.com.tr',
+          password: 'NovaTechQA!2026Secure'
         };
         try {
           if (fs.existsSync(projectsFile)) {
@@ -154,19 +154,19 @@ async function executeScenario(scenario, broadcast, options = {}) {
         } catch (e) {}
 
         if (isPlaywrightActive && page) {
-          if (isTulparDe) {
-            // Real Tulpar Notebook Deutschland (Europe) Steps
+          if (isNovaDe) {
+            // Real NovaTech Deutschland (Europe) Steps
             if (i === 1) {
-              logs.push(`Tulpar Notebook Deutschland mağazasına bağlanılıyor: ${targetUrl}`);
+              logs.push(`NovaTech Deutschland mağazasına bağlanılıyor: ${targetUrl}`);
               await page.goto(targetUrl, { waitUntil: 'domcontentloaded', timeout: 25000 }).catch(() => {});
-              logs.push(`HTTP 200 OK alındı. Sayfa: Tulpar Gaming Notebooks Germany`);
+              logs.push(`HTTP 200 OK alındı. Sayfa: NovaTech Gaming Notebooks Germany`);
               logs.push(`DSGVO / GDPR Çerez Onayı: Cookie banner kabul edildi, OneTrust scripti yüklendi.`);
             } else if (i === 2) {
-              logs.push(`Gaming Laptops arama ve kategori kataloğu taranıyor: query="Tulpar T7"`);
+              logs.push(`Gaming Laptops arama ve kategori kataloğu taranıyor: query="Titan X17"`);
               logs.push(`RTX 4070 ve Core i7 Gaming Laptop listesi ve Euro (€) fiyatları doğrulandı.`);
               await page.waitForTimeout(600);
             } else if (i === 3) {
-              logs.push(`Tulpar T7 Ürün Detay Sayfası (PDP) ve Euro fiyat matrahı inceleniyor...`);
+              logs.push(`NovaTech Titan X17 Ürün Detay Sayfası (PDP) ve Euro fiyat matrahı inceleniyor...`);
               logs.push(`€1.899,00 KDV Dahil (Inkl. MwSt.) fiyatı ve QWERTZ Almanca klavye seçeneği teyit edildi.`);
             } else if (i === 4) {
               logs.push(`Sepete ekleme ve %19 Alman KDV (MwSt.) vergi hesabı kontrol ediliyor...`);
@@ -176,25 +176,25 @@ async function executeScenario(scenario, broadcast, options = {}) {
               logs.push(`Klarna Sofortüberweisung, PayPal ve DHL lojistik seçenekleri doğrulandı.`);
               logs.push(`PSD2 Strong Customer Authentication (SCA 3DS 2.0) güvenlik protokolü onaylandı.`);
             }
-          } else if (isMonster) {
-            // Real Monster Notebook Steps
+          } else if (isNovaTr) {
+            // Real NovaTech Türkiye Steps
             if (i === 1) {
-              logs.push(`Monster Notebook ana sayfasına bağlanılıyor: ${targetUrl}`);
+              logs.push(`NovaTech Türkiye ana sayfasına bağlanılıyor: ${targetUrl}`);
               await page.goto(targetUrl, { waitUntil: 'domcontentloaded', timeout: 25000 }).catch(() => {});
-              logs.push(`HTTP 200 OK alındı. Sayfa Başlığı: ${await page.title().catch(() => 'Monster Notebook')}`);
+              logs.push(`HTTP 200 OK alındı. Sayfa Başlığı: ${await page.title().catch(() => 'NovaTech Türkiye')}`);
             } else if (i === 2) {
-              logs.push(`Arama kutusu tetikleniyor: query="Tulpar"`);
+              logs.push(`Arama kutusu tetikleniyor: query="Horizon"`);
               await page.waitForSelector('input[name="q"], .search-input', { timeout: 4000 }).catch(() => {});
-              await page.fill('input[name="q"], .search-input', 'Tulpar').catch(() => {});
-              logs.push(`Arama inputuna 'Tulpar' yazıldı.`);
+              await page.fill('input[name="q"], .search-input', 'Horizon').catch(() => {});
+              logs.push(`Arama inputuna 'Horizon' yazıldı.`);
               await page.waitForTimeout(600);
             } else if (i === 3) {
               logs.push(`Oyun Bilgisayarları kategorisi kontrol ediliyor...`);
-              await page.goto('https://www.monsternotebook.com.tr/oyun-bilgisayarlari/', { waitUntil: 'domcontentloaded', timeout: 25000 }).catch(() => {});
+              await page.goto('https://www.novatech.com.tr/oyun-bilgisayarlari/', { waitUntil: 'domcontentloaded', timeout: 25000 }).catch(() => {});
               logs.push(`Kategori listelemesi ve fiyat etiketleri doğrulandı.`);
             } else if (i === 4) {
-              logs.push(`Tulpar serisi Ürün Detay Sayfası (PDP) inceleniyor...`);
-              await page.goto('https://www.monsternotebook.com.tr/tulpar-t7/', { waitUntil: 'domcontentloaded', timeout: 25000 }).catch(() => {});
+              logs.push(`NovaTech Horizon serisi Ürün Detay Sayfası (PDP) inceleniyor...`);
+              await page.goto('https://www.novatech.com.tr/horizon-x15/', { waitUntil: 'domcontentloaded', timeout: 25000 }).catch(() => {});
               logs.push(`Teknik donanım özellikleri ve ekran boyutları doğrulandı.`);
             } else if (i === 5) {
               logs.push(`Sepet ve teslimat aksiyonu kontrol ediliyor...`);

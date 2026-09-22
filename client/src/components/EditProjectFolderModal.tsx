@@ -100,18 +100,18 @@ export const EditProjectFolderModal: React.FC<EditProjectFolderModalProps> = ({
       setName(project.name || '');
       setBaseUrl(project.baseUrl || '');
       setCategory(project.category || 'Gaming & PC Electronics');
-      setTestEmail(project.testCustomerEmail || 'berk.testuser@monsternotebook-qa.com');
-      setTestPassword(project.testCustomerPassword || 'MonsterQA!2026Secure');
+      setTestEmail(project.testCustomerEmail || 'qa.testuser@novatech.com.tr');
+      setTestPassword(project.testCustomerPassword || 'NovaTechQA!2026Secure');
       setOtpCode(project.otpCode || '123456');
-      setSessionToken(project.sessionToken || 'Bearer monster_qa_session_jwt_2026');
+      setSessionToken(project.sessionToken || 'Bearer novatech_tr_session_jwt_2026');
       setAutoLogin(project.autoLogin !== undefined ? project.autoLogin : true);
 
       const ep = project.scannedEndpoints || {};
       setEndpoints({
         storefront: ep.storefront || `${project.baseUrl}/`,
-        search: ep.search || `${project.baseUrl}/arama?q=tulpar`,
+        search: ep.search || `${project.baseUrl}/arama?q=horizon`,
         category: ep.category || `${project.baseUrl}/oyun-bilgisayarlari`,
-        pdp: ep.pdp || `${project.baseUrl}/tulpar-t7-v20-8-1-intel-core-i7-14700hx-16gb-ram-1tb-ssd-rtx4070-freedos-17-3-fhd-144hz/`,
+        pdp: ep.pdp || `${project.baseUrl}/horizon-x15-intel-core-i7-14700hx-16gb-ram-1tb-ssd-rtx4070-15-6-fhd-144hz/`,
         cart: ep.cart || `${project.baseUrl}/sepet/`,
         checkout: ep.checkout || `${project.baseUrl}/odeme/`,
         login: ep.login || `${project.baseUrl}/uye-girisi/`,
@@ -254,7 +254,7 @@ export const EditProjectFolderModal: React.FC<EditProjectFolderModalProps> = ({
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Monster Notebook Resmi Mağazası"
+                  placeholder="NovaTech Türkiye Resmi Mağazası"
                   className="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-semibold text-slate-900 dark:text-white focus:outline-none focus:border-indigo-500 transition-all"
                 />
               </div>
@@ -285,7 +285,7 @@ export const EditProjectFolderModal: React.FC<EditProjectFolderModalProps> = ({
                   required
                   value={baseUrl}
                   onChange={(e) => setBaseUrl(e.target.value)}
-                  placeholder="https://www.monsternotebook.com.tr"
+                  placeholder="https://www.novatech.com.tr"
                   className="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-mono text-slate-900 dark:text-white focus:outline-none focus:border-indigo-500 transition-all"
                 />
               </div>
@@ -327,7 +327,7 @@ export const EditProjectFolderModal: React.FC<EditProjectFolderModalProps> = ({
                   required
                   value={testEmail}
                   onChange={(e) => setTestEmail(e.target.value)}
-                  placeholder="berk.testuser@monsternotebook-qa.com"
+                  placeholder="qa.testuser@novatech.com.tr"
                   className="w-full px-3.5 py-2.5 bg-white dark:bg-slate-900 border border-indigo-200 dark:border-indigo-800 rounded-xl text-xs font-mono text-slate-900 dark:text-white focus:outline-none focus:border-indigo-600 transition-all shadow-2xs"
                 />
               </div>

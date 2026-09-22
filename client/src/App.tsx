@@ -36,23 +36,29 @@ export function App() {
 
   // Canvas Tabs State (Master Pipeline + Open Scenario Tabs)
   const [openScenarioTabIds, setOpenScenarioTabIds] = useState<string[]>([
-    'scenario-monster-e2e',
-    'scenario-tulpar-de-e2e',
-    'scenario-tulpar-de-configurator'
+    'scenario-novatech-tr-e2e',
+    'scenario-novatech-de-e2e',
+    'scenario-novatech-de-configurator'
   ]);
   const [activeCanvasTabId, setActiveCanvasTabId] = useState<string>('master-pipeline');
-  const [selectedMasterDomain, setSelectedMasterDomain] = useState<'monster-tr' | 'tulpar-de' | 'all'>('monster-tr');
+  const [selectedMasterDomain, setSelectedMasterDomain] = useState<'novatech-tr' | 'novatech-de' | 'all'>('novatech-tr');
 
   // Projects / Site Folders State
   const [projects, setProjects] = useState<any[]>([
     {
-      id: 'proj-monster',
-      name: 'Monster Notebook Resmi Mağazası',
-      baseUrl: 'https://www.monsternotebook.com.tr',
-      scenariosCount: 12
+      id: 'proj-novatech-tr',
+      name: 'NovaTech Türkiye Resmi Mağazası',
+      baseUrl: 'https://www.novatech.com.tr',
+      scenariosCount: 20
+    },
+    {
+      id: 'proj-novatech-de',
+      name: 'NovaTech Deutschland (Europe)',
+      baseUrl: 'https://www.novatech.de',
+      scenariosCount: 18
     }
   ]);
-  const [activeProjectId, setActiveProjectId] = useState<string>('proj-monster');
+  const [activeProjectId, setActiveProjectId] = useState<string>('proj-novatech-tr');
 
   // Language & Dark Mode Theme State
   const [lang, setLang] = useState<Language>(() => {
@@ -150,7 +156,7 @@ export function App() {
         // Initialize with Master Pipeline by default on Kontrol Paneli
         setActiveScenarioId('master-pipeline');
         setActiveCanvasTabId('master-pipeline');
-        const initialMaster = getMasterPipeline('monster-tr');
+        const initialMaster = getMasterPipeline('novatech-tr');
         setNodes(initialMaster.nodes as Node[]);
         setEdges(initialMaster.edges as Edge[]);
       } catch (err) {
@@ -278,17 +284,17 @@ export function App() {
   }, [scenarios, selectedMasterDomain, setNodes, setEdges]);
 
   // Master Pipeline Domain Switcher Handler
-  const handleSelectMasterDomain = (domainId: 'monster-tr' | 'tulpar-de' | 'all') => {
+  const handleSelectMasterDomain = (domainId: 'novatech-tr' | 'novatech-de' | 'all') => {
     setSelectedMasterDomain(domainId);
     const masterScenario = getMasterPipeline(domainId);
     if (activeCanvasTabId === 'master-pipeline') {
       setNodes(masterScenario.nodes as Node[]);
       setEdges(masterScenario.edges as Edge[]);
     }
-    if (domainId === 'tulpar-de') {
-      setActiveProjectId('proj-tulpar-de');
-    } else if (domainId === 'monster-tr') {
-      setActiveProjectId('proj-monster');
+    if (domainId === 'novatech-de' || (domainId as any) === 'tulpar-de') {
+      setActiveProjectId('proj-novatech-de');
+    } else if (domainId === 'novatech-tr' || (domainId as any) === 'monster-tr') {
+      setActiveProjectId('proj-novatech-tr');
     }
   };
 
@@ -552,8 +558,8 @@ export function App() {
                   isDarkMode={isDarkMode}
                   activeScenarioTitle={activeScenario?.title}
                   targetUrl={activeScenario?.targetUrl || activeProject?.baseUrl}
-                  domainFlag={isMasterTab ? currentMasterDomain.flag : (activeProject?.baseUrl?.includes('tulpar') ? '🇩🇪' : '🇹🇷')}
-                  domainBadge={isMasterTab ? currentMasterDomain.domain : (activeProject?.baseUrl?.includes('tulpar') ? 'tulparnotebook.de' : 'monsternotebook.com.tr')}
+                  domainFlag={isMasterTab ? currentMasterDomain.flag : (activeProject?.baseUrl?.includes('.de') ? '🇩🇪' : '🇹🇷')}
+                  domainBadge={isMasterTab ? currentMasterDomain.domain : (activeProject?.baseUrl?.includes('.de') ? 'novatech.de' : 'novatech.com.tr')}
                   onOpenTrainingGuide={() => setIsTrainingGuideModalOpen(true)}
                   lang={lang}
                   viewport={activeViewport}
@@ -654,16 +660,16 @@ export function App() {
         isOpen={isWebVitalsOpen}
         onClose={() => setIsWebVitalsOpen(false)}
         lang={lang}
-        initialStore={selectedMasterDomain === 'tulpar-de' || activeProject?.baseUrl?.includes('tulpar') ? 'tulparDe' : 'monsterTr'}
+        initialStore={selectedMasterDomain === 'novatech-de' || (selectedMasterDomain as any) === 'tulpar-de' || activeProject?.baseUrl?.includes('.de') ? 'novaDe' : 'novaTr'}
       />
 
       <VisualRegressionModal
         isOpen={isVisualDiffOpen}
         onClose={() => setIsVisualDiffOpen(false)}
-        baselineUrl={visualDiffData.screenshot || '/screenshots/monster_home_live.png'}
-        currentUrl={visualDiffData.screenshot || '/screenshots/monster_home_live.png'}
+        baselineUrl={visualDiffData.screenshot || '/screenshots/novatech_home_live.png'}
+        currentUrl={visualDiffData.screenshot || '/screenshots/novatech_home_live.png'}
         stepName={visualDiffData.stepName || 'Storefront & Layout Visual Regression'}
-        targetDomain={selectedMasterDomain === 'tulpar-de' ? 'tulparnotebook.de' : 'monsternotebook.com.tr'}
+        targetDomain={selectedMasterDomain === 'novatech-de' || (selectedMasterDomain as any) === 'tulpar-de' ? 'novatech.de' : 'novatech.com.tr'}
         lang={lang}
       />
 

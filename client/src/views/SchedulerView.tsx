@@ -22,10 +22,10 @@ export const SchedulerView: React.FC<SchedulerViewProps> = ({
   const [schedules, setSchedules] = useState<ScheduledJob[]>([
     {
       id: 'sch-1',
-      title: isTr ? 'Günlük Gece Monster Notebook Sanity Testi' : 'Daily Midnight Monster Notebook Sanity Check',
+      title: isTr ? 'Günlük Gece NovaTech TR Sanity Testi' : 'Daily Midnight NovaTech TR Sanity Check',
       cron: '0 0 * * * (Her gece 00:00)',
-      target: 'Monster Notebook E2E',
-      scenarioId: 'scenario-monster-e2e',
+      target: 'NovaTech TR E2E',
+      scenarioId: 'scenario-novatech-tr-e2e',
       nextRun: isTr ? 'Bu Gece 00:00' : 'Tonight 00:00',
       active: true,
       lastStatus: 'passed'
@@ -34,8 +34,8 @@ export const SchedulerView: React.FC<SchedulerViewProps> = ({
       id: 'sch-2',
       title: isTr ? 'Black Friday Saatlik Yük & Sepet Kontrolü' : 'Hourly High-Spike Checkout Health Audit',
       cron: '0 * * * * (Her saat başı)',
-      target: 'Tulpar & Sepet Akışı',
-      scenarioId: 'scenario-monster-category',
+      target: 'Horizon & Sepet Akışı',
+      scenarioId: 'scenario-novatech-tr-category',
       nextRun: isTr ? '1 saat sonra' : 'In 1 hour',
       active: true,
       lastStatus: 'passed'
@@ -45,7 +45,7 @@ export const SchedulerView: React.FC<SchedulerViewProps> = ({
       title: isTr ? 'Haftalık Mobil Viewport Uyumluluk Taraması' : 'Weekly Mobile Responsive Cross-Device Sweep',
       cron: '0 9 * * 1 (Her Pazartesi 09:00)',
       target: 'iPhone 14 / Android',
-      scenarioId: 'scenario-monster-mobile',
+      scenarioId: 'scenario-novatech-tr-mobile',
       nextRun: isTr ? 'Gelecek Pazartesi 09:00' : 'Next Monday 09:00',
       active: true,
       lastStatus: 'passed'

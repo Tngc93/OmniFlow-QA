@@ -250,40 +250,40 @@ export const RepositoryView: React.FC<ViewProps> = ({ lang }) => {
 
   const files = [
     {
-      name: 'monster_home_live.png',
+      name: 'novatech_home_live.png',
       type: isTr ? 'Full HD Canlı Ekran Görüntüsü' : 'Full HD Live Screenshot',
       size: '507 KB',
       time: 'Bugün 13:43',
-      scenarioTitle: 'Monster Notebook: Tulpar E2E Arama ve İnceleme',
+      scenarioTitle: 'NovaTech TR: Horizon X15 E2E Arama ve İnceleme',
       stepName: isTr ? 'Ana Sayfa Yükleme & Başlık Doğrulama' : 'Storefront Landing & Title Verification',
-      url: 'https://www.monsternotebook.com.tr/',
+      url: 'https://www.novatech.com.tr/',
       status: 'passed',
       duration: '2.1s',
-      screenshotUrl: '/screenshots/monster_home_live.png',
+      screenshotUrl: '/screenshots/novatech_home_live.png',
       description: isTr 
-        ? 'Playwright Chromium motoruyla Monster Notebook ana sayfası yüklendi. Sayfa başlığı (<title>) ve navigasyon bileşenleri başarıyla doğrulandı.' 
-        : 'Monster Notebook storefront rendered with Chromium engine. Page title and top navigation elements verified successfully.',
+        ? 'Playwright Chromium motoruyla NovaTech TR ana sayfası yüklendi. Sayfa başlığı (<title>) ve navigasyon bileşenleri başarıyla doğrulandı.' 
+        : 'NovaTech TR storefront rendered with Chromium engine. Page title and top navigation elements verified successfully.',
       assertions: [
         { text: 'HTTP 200 OK yanıtı alındı', passed: true },
-        { text: 'DOM Başlığı: "Monster Notebook | Performans Tutkunlarına Özel Notebook\'lar" doğrulandı', passed: true },
+        { text: 'DOM Başlığı: "NovaTech TR | Performans Tutkunlarına Özel Notebook\'lar" doğrulandı', passed: true },
         { text: 'Çerez onay bannerı tespit edildi ve tıklandı', passed: true },
         { text: 'Arama kutusu (.search-bar) görünür ve aktif', passed: true }
       ]
     },
     {
-      name: 'monster_tulpar_pdp.png',
-      type: isTr ? 'Tulpar Ürün Detayı (PDP) Ekranı' : 'Tulpar Product Detail Page (PDP)',
+      name: 'novatech_pdp.png',
+      type: isTr ? 'NovaTech Horizon Ürün Detayı (PDP) Ekranı' : 'NovaTech Product Detail Page (PDP)',
       size: '408 KB',
       time: 'Bugün 13:43',
-      scenarioTitle: 'Monster Notebook: Tulpar E2E Arama ve İnceleme',
-      stepName: isTr ? 'Tulpar Serisi Donanım & Fiyat Doğrulama (PDP)' : 'Tulpar Hardware & Pricing Verification (PDP)',
-      url: 'https://www.monsternotebook.com.tr/tulpar/',
+      scenarioTitle: 'NovaTech TR: Horizon X15 E2E Arama ve İnceleme',
+      stepName: isTr ? 'Horizon X15 Donanım & Fiyat Doğrulama (PDP)' : 'Horizon Hardware & Pricing Verification (PDP)',
+      url: 'https://www.novatech.com.tr/tulpar/',
       status: 'passed',
       duration: '1.9s',
-      screenshotUrl: '/screenshots/monster_tulpar_pdp.png',
+      screenshotUrl: '/screenshots/novatech_pdp.png',
       description: isTr 
-        ? 'Tulpar serisi oyuncu laptopu PDP sayfası tarandı. Intel Core i7 işlemci, RTX 4070 ekran kartı donanımı, ürün fiyatı ve Sepete Ekle butonu teyit edildi.' 
-        : 'Tulpar gaming laptop product detail page inspected. Hardware specifications, price tag, and Add to Cart button verified.',
+        ? 'NovaTech Horizon serisi oyuncu laptopu PDP sayfası tarandı. Intel Core i7 işlemci, RTX 4070 ekran kartı donanımı, ürün fiyatı ve Sepete Ekle butonu teyit edildi.' 
+        : 'NovaTech gaming laptop product detail page inspected. Hardware specifications, price tag, and Add to Cart button verified.',
       assertions: [
         { text: 'Ürün başlığı (#product-name) görünür', passed: true },
         { text: 'Donanım özellikleri: Intel Core i7 & RTX 4070 teyit edildi', passed: true },
@@ -292,16 +292,16 @@ export const RepositoryView: React.FC<ViewProps> = ({ lang }) => {
       ]
     },
     {
-      name: 'monster_category.png',
+      name: 'novatech_category.png',
       type: isTr ? 'Oyun Bilgisayarları Kategori Ekranı' : 'Gaming Laptops Category Grid',
       size: '413 KB',
       time: 'Bugün 13:43',
-      scenarioTitle: 'Monster Notebook: Kategori ve Filtreleme Testi',
+      scenarioTitle: 'NovaTech TR: Kategori ve Filtreleme Testi',
       stepName: isTr ? 'Oyun Bilgisayarları Ürün Listelemesi & Filtreleme' : 'Gaming Laptops Listing & Filter Assertions',
-      url: 'https://www.monsternotebook.com.tr/oyun-bilgisayarlari/',
+      url: 'https://www.novatech.com.tr/oyun-bilgisayarlari/',
       status: 'passed',
       duration: '2.4s',
-      screenshotUrl: '/screenshots/monster_category.png',
+      screenshotUrl: '/screenshots/novatech_category.png',
       description: isTr 
         ? 'Oyun Bilgisayarları kategorisinde 24 adet laptop kartı listelendi, RTX 4060 filtresi uygulandı ve fiyat sıralaması doğrulandı.' 
         : 'Gaming laptops catalog grid rendered with 24 items. Filters and price sorting verified.',
@@ -312,16 +312,16 @@ export const RepositoryView: React.FC<ViewProps> = ({ lang }) => {
       ]
     },
     {
-      name: 'monster_checkout_3dsecure_fail.png',
+      name: 'novatech_checkout_3dsecure_fail.png',
       type: isTr ? 'Ödeme & 3D Secure Hata İzi (Failed Trace)' : 'Checkout & 3D Secure Defect Trace',
       size: '482 KB',
       time: 'Bugün 12:15',
-      scenarioTitle: 'Monster Notebook: Checkout & 3D Secure Güvenlik Doğrulaması',
+      scenarioTitle: 'NovaTech TR: Checkout & 3D Secure Güvenlik Doğrulaması',
       stepName: isTr ? 'Ödeme Ağ Geçidi & 3D Secure Doğrulama' : 'Payment Gateway & 3D Secure Validation',
-      url: 'https://www.monsternotebook.com.tr/odeme/',
+      url: 'https://www.novatech.com.tr/odeme/',
       status: 'failed',
       duration: '5.2s',
-      screenshotUrl: '/screenshots/monster_category.png',
+      screenshotUrl: '/screenshots/novatech_category.png',
       description: isTr 
         ? 'Ödeme onay aşamasında banka 3D Secure iframe modülünün yüklenmesi beklendi fakat API zaman aşımına uğradı.' 
         : 'Payment gateway iframe was expected on checkout step, but the payment provider API returned a timeout.',
@@ -370,7 +370,7 @@ export const RepositoryView: React.FC<ViewProps> = ({ lang }) => {
           scenarioTitle: file.scenarioTitle,
           stepName: file.stepName,
           errorMessage: file.errorTitle || 'Step Trace Inspection',
-          screenshot: file.screenshotUrl || '/screenshots/monster_home_live.png'
+          screenshot: file.screenshotUrl || '/screenshots/novatech_home_live.png'
         }
       })
     );

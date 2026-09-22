@@ -2,21 +2,21 @@
   "jira": {
     "name": "Jira MCP Defect Tracker",
     "connected": true,
-    "domain": "https://monsternotebook.atlassian.net",
-    "email": "berk.arcak@monsternotebook-qa.com",
-    "projectKey": "MONS",
+    "domain": "https://novatech-qa.atlassian.net",
+    "email": "qa.engineer@novatech-ecom.io",
+    "projectKey": "NOVA",
     "boardId": "BOARD-104 (QA Automation Sprint)",
     "issueType": "Bug",
     "autoCreateOnFailure": false
   },
   "github": {
-    "repo": "monsternotebook/ecommerce-automation-suite",
+    "repo": "Tngc93/OmniFlow-QA",
     "workflow": "playwright-e2e.yml",
     "connected": true
   },
   "slack": {
     "webhookUrl": "https://hooks.slack.com/services/T01234/B5678/XYZ9876",
-    "channel": "#qa-monsternotebook-alerts",
+    "channel": "#qa-novatech-alerts",
     "connected": true
   },
   "playwright": {

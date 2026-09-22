@@ -1,14 +1,14 @@
 [
   {
-    "id": "scenario-monster-e2e",
-    "title": "Monster Notebook: Tulpar E2E Arama ve İnceleme",
-    "category": "Monster Notebook Canlı Testleri",
-    "description": "Monster Notebook resmi sitesinde Tulpar serisi arama, listeleme, PDP teknik özellik ve fiyat doğrulaması.",
+    "id": "scenario-novatech-tr-e2e",
+    "title": "NovaTech TR: Tulpar E2E Arama ve İnceleme",
+    "category": "NovaTech TR Canlı Testleri",
+    "description": "NovaTech TR resmi sitesinde Tulpar serisi arama, listeleme, PDP teknik özellik ve fiyat doğrulaması.",
     "criticality": "Critical",
     "componentsCount": 28,
     "lastRunDuration": "13.8s",
     "status": "passed",
-    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "targetUrl": "https://www.novatech.com.tr/",
     "nodes": [
       {
         "id": "node-init",
@@ -35,9 +35,9 @@
           "stepIndex": 1,
           "name": "Data Collection",
           "subtext": "Gathering Storefront Data",
-          "action": "navigate_monster",
+          "action": "navigate_novatech",
           "selector": "body",
-          "expected": "Monster Notebook Ana Sayfası Yüklendi (HTTP 200)",
+          "expected": "NovaTech TR Ana Sayfası Yüklendi (HTTP 200)",
           "components": 11,
           "metricTime": "2.1s",
           "metricPassed": 41,
@@ -45,7 +45,7 @@
           "isAutomated": true,
           "status": "passed",
           "previewType": "search",
-          "screenshot": "/screenshots/monster_home_live.png"
+          "screenshot": "/screenshots/novatech_home_live.png"
         }
       },
       {
@@ -59,7 +59,7 @@
           "stepIndex": 2,
           "name": "Trigger Automation",
           "subtext": "Search Query: Tulpar Gaming",
-          "action": "search_monster",
+          "action": "search_novatech",
           "selector": "input[name=\"q\"]",
           "value": "Tulpar",
           "expected": "Arama inputuna 'Tulpar' girildi ve arama tetiklendi",
@@ -70,7 +70,7 @@
           "isAutomated": true,
           "status": "passed",
           "previewType": "search",
-          "screenshot": "/screenshots/monster_home_live.png"
+          "screenshot": "/screenshots/novatech_home_live.png"
         }
       },
       {
@@ -94,7 +94,7 @@
           "isAutomated": true,
           "status": "passed",
           "previewType": "pdp",
-          "screenshot": "/screenshots/monster_category.png"
+          "screenshot": "/screenshots/novatech_category.png"
         }
       },
       {
@@ -118,7 +118,7 @@
           "isAutomated": true,
           "status": "passed",
           "previewType": "pdp",
-          "screenshot": "/screenshots/monster_tulpar_pdp.png"
+          "screenshot": "/screenshots/novatech_pdp.png"
         }
       },
       {
@@ -142,7 +142,7 @@
           "isAutomated": true,
           "status": "passed",
           "previewType": "cart",
-          "screenshot": "/screenshots/monster_tulpar_pdp.png"
+          "screenshot": "/screenshots/novatech_pdp.png"
         }
       },
       {
@@ -216,18 +216,18 @@
         "animated": true
       }
     ],
-    "projectId": "proj-monster"
+    "projectId": "proj-novatech-tr"
   },
   {
-    "id": "scenario-monster-category",
-    "title": "Monster Notebook: Oyun Bilgisayarları Kategori & Filtre",
-    "category": "Monster Notebook Canlı Testleri",
+    "id": "scenario-novatech-tr-category",
+    "title": "NovaTech TR: Oyun Bilgisayarları Kategori & Filtre",
+    "category": "NovaTech TR Canlı Testleri",
     "description": "Oyun bilgisayarları kategori sayfasında Abra ve Tulpar modellerinin listelenmesi ve fiyat filtreleme doğrulaması.",
     "criticality": "High",
     "componentsCount": 18,
     "lastRunDuration": "6.2s",
     "status": "passed",
-    "targetUrl": "https://www.monsternotebook.com.tr/oyun-bilgisayarlari/",
+    "targetUrl": "https://www.novatech.com.tr/oyun-bilgisayarlari/",
     "nodes": [
       {
         "id": "node-cat-init",
@@ -261,7 +261,7 @@
           "isAutomated": true,
           "status": "passed",
           "previewType": "search",
-          "screenshot": "/screenshots/monster_category.png"
+          "screenshot": "/screenshots/novatech_category.png"
         }
       },
       {
@@ -282,7 +282,7 @@
           "isAutomated": true,
           "status": "passed",
           "previewType": "pdp",
-          "screenshot": "/screenshots/monster_category.png"
+          "screenshot": "/screenshots/novatech_category.png"
         }
       },
       {
@@ -323,18 +323,18 @@
         "animated": true
       }
     ],
-    "projectId": "proj-monster"
+    "projectId": "proj-novatech-tr"
   },
   {
-    "id": "scenario-monster-mobile",
-    "title": "Monster Notebook: Mobil Responsive & Menü",
+    "id": "scenario-novatech-tr-mobile",
+    "title": "NovaTech TR: Mobil Responsive & Menü",
     "category": "Mobil & Uyumluluk",
-    "description": "Monster Notebook mobil görünümde (iPhone 14 / 390x844) menü, arama ve dokunmatik sepet butonları testi.",
+    "description": "NovaTech TR mobil görünümde (iPhone 14 / 390x844) menü, arama ve dokunmatik sepet butonları testi.",
     "criticality": "High",
     "componentsCount": 16,
     "lastRunDuration": "5.8s",
     "status": "passed",
-    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "targetUrl": "https://www.novatech.com.tr/",
     "nodes": [
       {
         "id": "node-mob-init",
@@ -368,7 +368,7 @@
           "isAutomated": true,
           "status": "passed",
           "previewType": "search",
-          "screenshot": "/screenshots/monster_home_live.png"
+          "screenshot": "/screenshots/novatech_home_live.png"
         }
       },
       {
@@ -389,7 +389,7 @@
           "isAutomated": true,
           "status": "passed",
           "previewType": "pdp",
-          "screenshot": "/screenshots/monster_home_live.png"
+          "screenshot": "/screenshots/novatech_home_live.png"
         }
       },
       {
@@ -430,7 +430,7 @@
         "animated": true
       }
     ],
-    "projectId": "proj-monster"
+    "projectId": "proj-novatech-tr"
   },
   {
     "id": "scenario-coupon-engine",
@@ -441,7 +441,7 @@
     "componentsCount": 20,
     "lastRunDuration": "4.2s",
     "status": "passed",
-    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "targetUrl": "https://www.novatech.com.tr/",
     "nodes": [
       {
         "id": "node-c-init",
@@ -535,7 +535,7 @@
         "animated": true
       }
     ],
-    "projectId": "proj-monster"
+    "projectId": "proj-novatech-tr"
   },
   {
     "id": "scenario-inventory-limits",
@@ -546,7 +546,7 @@
     "componentsCount": 15,
     "lastRunDuration": "3.8s",
     "status": "passed",
-    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "targetUrl": "https://www.novatech.com.tr/",
     "nodes": [
       {
         "id": "node-inv-init",
@@ -640,7 +640,7 @@
         "animated": true
       }
     ],
-    "projectId": "proj-monster"
+    "projectId": "proj-novatech-tr"
   },
   {
     "id": "scenario-payment-fallback",
@@ -651,7 +651,7 @@
     "componentsCount": 24,
     "lastRunDuration": "5.4s",
     "status": "passed",
-    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "targetUrl": "https://www.novatech.com.tr/",
     "nodes": [
       {
         "id": "node-pay-init",
@@ -745,7 +745,7 @@
         "animated": true
       }
     ],
-    "projectId": "proj-monster"
+    "projectId": "proj-novatech-tr"
   },
   {
     "id": "scenario-guest-checkout",
@@ -756,7 +756,7 @@
     "componentsCount": 16,
     "lastRunDuration": "4.1s",
     "status": "passed",
-    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "targetUrl": "https://www.novatech.com.tr/",
     "nodes": [
       {
         "id": "node-g-init",
@@ -823,11 +823,11 @@
         "animated": true
       }
     ],
-    "projectId": "proj-monster"
+    "projectId": "proj-novatech-tr"
   },
   {
     "id": "scenario-shipping-tax",
-    "projectId": "proj-monster",
+    "projectId": "proj-novatech-tr",
     "title": "Dinamik Kargo ve Ücretsiz Kargo Barı",
     "category": "Lojistik & Kargo",
     "description": "Sepet tutarına göre ücretsiz kargo eşiğinin ('X TL kaldı' barı) dinamik hesaplanması ve kargo firması seçimi.",
@@ -835,7 +835,7 @@
     "componentsCount": 14,
     "lastRunDuration": "3.5s",
     "status": "passed",
-    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "targetUrl": "https://www.novatech.com.tr/",
     "nodes": [
       {
         "id": "node-s-init",
@@ -905,7 +905,7 @@
   },
   {
     "id": "scenario-auth-kyc",
-    "projectId": "proj-monster",
+    "projectId": "proj-novatech-tr",
     "title": "Üye Kaydı, Şifremi Unuttum ve Güvenli Giriş",
     "category": "Kullanıcı & Hesap",
     "description": "E-posta format denetimi, parola karmaşıklığı, KVKK rıza metni onayı ve oturum açma akışı testi.",
@@ -913,7 +913,7 @@
     "componentsCount": 18,
     "lastRunDuration": "4.1s",
     "status": "passed",
-    "targetUrl": "https://www.monsternotebook.com.tr/uye-girisi/",
+    "targetUrl": "https://www.novatech.com.tr/uye-girisi/",
     "nodes": [
       {
         "id": "node-auth-init",
@@ -1010,7 +1010,7 @@
   },
   {
     "id": "scenario-search-fuzzy",
-    "projectId": "proj-monster",
+    "projectId": "proj-novatech-tr",
     "title": "Arama Otomatik Tamamlama & Hatalı Yazım Toleransı",
     "category": "Arama & Keşif",
     "description": "Kullanıcının 'tulpr' veya 'oyn blgisayarı' gibi yazım hatalarında öneri algoritması (Did you mean?) ve sıfır sonuç kurtarma akışı.",
@@ -1018,7 +1018,7 @@
     "componentsCount": 22,
     "lastRunDuration": "3.9s",
     "status": "passed",
-    "targetUrl": "https://www.monsternotebook.com.tr/arama?q=tulpr",
+    "targetUrl": "https://www.novatech.com.tr/arama?q=tulpr",
     "nodes": [
       {
         "id": "node-fuzzy-init",
@@ -1115,7 +1115,7 @@
   },
   {
     "id": "scenario-wishlist-cart",
-    "projectId": "proj-monster",
+    "projectId": "proj-novatech-tr",
     "title": "Favori Listesi (Wishlist) ve Tek Tıkla Sepete Taşıma",
     "category": "Müşteri Deneyimi",
     "description": "Ürünü favorilere ekleme, oturum açtıktan sonra favorilerin saklanması ve stok durumuna göre doğrudan sepete aktarılması.",
@@ -1123,7 +1123,7 @@
     "componentsCount": 16,
     "lastRunDuration": "4.4s",
     "status": "passed",
-    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "targetUrl": "https://www.novatech.com.tr/",
     "nodes": [
       {
         "id": "node-wish-init",
@@ -1220,7 +1220,7 @@
   },
   {
     "id": "scenario-security-tamper",
-    "projectId": "proj-monster",
+    "projectId": "proj-novatech-tr",
     "title": "Sepet Fiyat Manipülasyonu & XSS Enjeksiyon Savunması",
     "category": "Siber Güvenlik & PCI-DSS",
     "description": "Tarayıcı DevTools üzerinden sepet fiyatını değiştirme (Client-Side Tampering) girişimlerinin sunucu tarafında anında reddedilmesi ve XSS yükü denetimi.",
@@ -1228,7 +1228,7 @@
     "componentsCount": 26,
     "lastRunDuration": "5.6s",
     "status": "passed",
-    "targetUrl": "https://www.monsternotebook.com.tr/sepet/",
+    "targetUrl": "https://www.novatech.com.tr/sepet/",
     "nodes": [
       {
         "id": "node-sec-init",
@@ -1359,7 +1359,7 @@
   },
   {
     "id": "scenario-order-return-cancel",
-    "projectId": "proj-monster",
+    "projectId": "proj-novatech-tr",
     "title": "Sipariş İptal, İade & RMA Yönetim Akışı",
     "category": "Sipariş & İade Yönetimi",
     "description": "Müşteri siparişler listesinden teslim edilen ürünün iadesini başlatır, iade nedeni seçilir, kargo takip barkodu üretilir ve kredi kartı iade tutarı doğrulanır.",
@@ -1367,7 +1367,7 @@
     "componentsCount": 5,
     "lastRunDuration": "2.8s",
     "status": "idle",
-    "targetUrl": "https://www.monsternotebook.com.tr/hesabim/siparislerim/",
+    "targetUrl": "https://www.novatech.com.tr/hesabim/siparislerim/",
     "nodes": [
       {
         "id": "node-ret-init",
@@ -1491,7 +1491,7 @@
   },
   {
     "id": "scenario-installment-matrix",
-    "projectId": "proj-monster",
+    "projectId": "proj-novatech-tr",
     "title": "Kredi Kartı Taksit Seçenekleri & Komisyon Matrisi",
     "category": "Ödeme & Bankacılık",
     "description": "Bonus, Maximum, World, Axess kartları için 3, 6, 9 ve 12 taksit komisyon oranları ve peşin fiyatına taksit rozetleri matematiksel olarak doğrulanır.",
@@ -1499,7 +1499,7 @@
     "componentsCount": 5,
     "lastRunDuration": "3.1s",
     "status": "idle",
-    "targetUrl": "https://www.monsternotebook.com.tr/odeme/",
+    "targetUrl": "https://www.novatech.com.tr/odeme/",
     "nodes": [
       {
         "id": "node-inst-init",
@@ -1623,7 +1623,7 @@
   },
   {
     "id": "scenario-corporate-invoice",
-    "projectId": "proj-monster",
+    "projectId": "proj-novatech-tr",
     "title": "Kurumsal E-Fatura, VKN & Vergi Dairesi Doğrulaması",
     "category": "Fatura & Muhasebe",
     "description": "Kurumsal fatura seçiminde Şirket Unvanı, Vergi Dairesi ve 10 haneli Vergi Kimlik Numarası (VKN) algoritması teyit edilir.",
@@ -1631,7 +1631,7 @@
     "componentsCount": 4,
     "lastRunDuration": "2.4s",
     "status": "idle",
-    "targetUrl": "https://www.monsternotebook.com.tr/odeme/",
+    "targetUrl": "https://www.novatech.com.tr/odeme/",
     "nodes": [
       {
         "id": "node-corp-init",
@@ -1728,7 +1728,7 @@
   },
   {
     "id": "scenario-address-multi",
-    "projectId": "proj-monster",
+    "projectId": "proj-novatech-tr",
     "title": "Çoklu Teslimat & Farklı Fatura Adresi Yönetimi",
     "category": "Lojistik & Adres",
     "description": "Kargo teslimat noktası/otomatı ve mağazadan teslim seçimi, fatura adresinin teslimat adresinden bağımsız tanımlanması.",
@@ -1736,7 +1736,7 @@
     "componentsCount": 4,
     "lastRunDuration": "2.5s",
     "status": "idle",
-    "targetUrl": "https://www.monsternotebook.com.tr/odeme/",
+    "targetUrl": "https://www.novatech.com.tr/odeme/",
     "nodes": [
       {
         "id": "node-addr-init",
@@ -1833,7 +1833,7 @@
   },
   {
     "id": "scenario-cart-persistence",
-    "projectId": "proj-monster",
+    "projectId": "proj-novatech-tr",
     "title": "Sepet Terk Etme & Tarayıcılar Arası Oturum Kurtarma",
     "category": "Kullanıcı Deneyimi & Dönüşüm",
     "description": "Sepete laptop ve aksesuar eklendikten sonra tarayıcı oturumu kapatılır; yeniden açıldığında sepet öğelerinin ve kuponun korunduğu teyit edilir.",
@@ -1841,7 +1841,7 @@
     "componentsCount": 4,
     "lastRunDuration": "3.4s",
     "status": "idle",
-    "targetUrl": "https://www.monsternotebook.com.tr/sepet/",
+    "targetUrl": "https://www.novatech.com.tr/sepet/",
     "nodes": [
       {
         "id": "node-pers-init",
@@ -1867,7 +1867,7 @@
         "data": {
           "stepIndex": 1,
           "name": "Sepete Laptop Ekleme & Kupon Uygulama",
-          "subtext": "Tulpar T7 + \"MONSTER1000\" kuponu",
+          "subtext": "Titan X17 + \"NOVATECH1000\" kuponu",
           "components": 9,
           "metricTime": "1.5s",
           "metricPassed": 22,
@@ -1938,7 +1938,7 @@
   },
   {
     "id": "scenario-core-web-vitals",
-    "projectId": "proj-monster",
+    "projectId": "proj-novatech-tr",
     "title": "Core Web Vitals, Hız Skoru & Kırık Link Denetimi",
     "category": "Performans & SEO",
     "description": "Ana sayfa ve PDP için LCP (<2.5s), CLS (<0.1), INP etkileşim gecikmesi ve 404 kırık link taraması.",
@@ -1946,7 +1946,7 @@
     "componentsCount": 4,
     "lastRunDuration": "2.1s",
     "status": "idle",
-    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "targetUrl": "https://www.novatech.com.tr/",
     "nodes": [
       {
         "id": "node-cwv-init",
@@ -2043,7 +2043,7 @@
   },
   {
     "id": "scenario-bundle-crosssell",
-    "projectId": "proj-monster",
+    "projectId": "proj-novatech-tr",
     "title": "Birlikte Al (Bundle) & Aksesuar Çapraz Satış İndirimi",
     "category": "Fiyatlandırma & Kampanya",
     "description": "Laptop yanında çanta ve oyuncu faresi seçildiğinde %15 sepet çapraz satış indiriminin uygulanması ve stok kontrolü.",
@@ -2051,7 +2051,7 @@
     "componentsCount": 4,
     "lastRunDuration": "2.6s",
     "status": "idle",
-    "targetUrl": "https://www.monsternotebook.com.tr/oyun-bilgisayarlari/",
+    "targetUrl": "https://www.novatech.com.tr/oyun-bilgisayarlari/",
     "nodes": [
       {
         "id": "node-bnd-init",
@@ -2076,7 +2076,7 @@
         },
         "data": {
           "stepIndex": 1,
-          "name": "Laptop + Pusat Çanta + Mouse Seçimi",
+          "name": "Laptop + NovaPulse Çanta + Mouse Seçimi",
           "subtext": "\"Birlikte Al\" rozetleri aktif",
           "components": 8,
           "metricTime": "1.2s",
@@ -2148,7 +2148,7 @@
   },
   {
     "id": "scenario-multicurrency",
-    "projectId": "proj-monster",
+    "projectId": "proj-novatech-tr",
     "title": "Çoklu Para Birimi (TRY/USD/EUR) & Kur Dönüşüm Hesaplaması",
     "category": "Uluslararası Ticaret",
     "description": "Para birimi değiştiricisi ile ürün fiyatlarının TCMB döviz kuruna göre anlık dönüştürülmesi ve KDV matrahı doğrulaması.",
@@ -2156,7 +2156,7 @@
     "componentsCount": 4,
     "lastRunDuration": "2.0s",
     "status": "idle",
-    "targetUrl": "https://www.monsternotebook.com.tr/",
+    "targetUrl": "https://www.novatech.com.tr/",
     "nodes": [
       {
         "id": "node-cur-init",
@@ -2252,16 +2252,16 @@
     ]
   },
   {
-    "id": "scenario-tulpar-de-e2e",
+    "id": "scenario-novatech-de-e2e",
     "projectId": "proj-tulpar-de",
-    "title": "Tulpar DE: E2E Gaming Laptop Arama & Sepet (EUR Fiyat & 19% MwSt.)",
+    "title": "NovaTech DE: E2E Gaming Laptop Arama & Sepet (EUR Fiyat & 19% MwSt.)",
     "category": "Tulpar DE Canlı Testleri",
-    "description": "Tulpar Notebook Almanya mağazasında Tulpar T7 modeli aranır, Euro fiyatı ve %19 Alman MwSt. vergi kalemi sepette doğrulanır.",
+    "description": "NovaTech DE Almanya mağazasında Titan X17 modeli aranır, Euro fiyatı ve %19 Alman MwSt. vergi kalemi sepette doğrulanır.",
     "criticality": "Critical",
     "componentsCount": 6,
     "lastRunDuration": "3.6s",
     "status": "idle",
-    "targetUrl": "https://www.tulparnotebook.de/",
+    "targetUrl": "https://www.novatech.de/",
     "nodes": [
       {
         "id": "node-tde-init",
@@ -2287,7 +2287,7 @@
         "data": {
           "stepIndex": 1,
           "name": "Ana Sayfa & DSGVO Çerez Onayı",
-          "subtext": "https://www.tulparnotebook.de/",
+          "subtext": "https://www.novatech.de/",
           "components": 12,
           "metricTime": "1.4s",
           "metricPassed": 24,
@@ -2307,7 +2307,7 @@
         "data": {
           "stepIndex": 2,
           "name": "Gaming Laptops Arama & PLP Kataloğu",
-          "subtext": "q=\"Tulpar T7 Gaming\" / RTX 4070",
+          "subtext": "q=\"Titan X17 Gaming\" / RTX 4070",
           "components": 16,
           "metricTime": "1.8s",
           "metricPassed": 30,
@@ -2326,7 +2326,7 @@
         },
         "data": {
           "stepIndex": 3,
-          "name": "Tulpar T7 PDP Euro Fiyatı & Donanım Teyidi",
+          "name": "Titan X17 PDP Euro Fiyatı & Donanım Teyidi",
           "subtext": "€1.899,00 KDV Dahil (Inkl. MwSt.)",
           "components": 14,
           "metricTime": "1.5s",
@@ -2411,16 +2411,16 @@
     ]
   },
   {
-    "id": "scenario-tulpar-de-klarna-sofort",
+    "id": "scenario-novatech-de-klarna-sofort",
     "projectId": "proj-tulpar-de",
-    "title": "Tulpar DE: Klarna Sofort, PayPal & EU Kart Doğrulaması",
+    "title": "NovaTech DE: Klarna Sofort, PayPal & EU Kart Doğrulaması",
     "category": "Ödeme & Güvenlik (EU)",
     "description": "Almanya ve AB pazarında yaygın olan Klarna Pay Now, Sofort ve PayPal ödeme modülleri, PSD2 SCA 3D Secure 2.0 güvenlik adımıyla test edilir.",
     "criticality": "Critical",
     "componentsCount": 5,
     "lastRunDuration": "3.2s",
     "status": "idle",
-    "targetUrl": "https://www.tulparnotebook.de/checkout/",
+    "targetUrl": "https://www.novatech.de/checkout/",
     "nodes": [
       {
         "id": "node-kl-init",
@@ -2543,16 +2543,16 @@
     ]
   },
   {
-    "id": "scenario-tulpar-de-dsgvo-cookie",
+    "id": "scenario-novatech-de-dsgvo-cookie",
     "projectId": "proj-tulpar-de",
-    "title": "Tulpar DE: DSGVO / GDPR Çerez İzni, Impressum & Datenschutz",
+    "title": "NovaTech DE: DSGVO / GDPR Çerez İzni, Impressum & Datenschutz",
     "category": "Hukuki & Uyumluluk (EU)",
     "description": "Alman e-ticaret yasalarına uygun olarak Cookiebot/OneTrust çerez reddetme, zorunlu Impressum tüzel kişi bilgileri ve Datenschutz gizlilik politikası denetlenir.",
     "criticality": "High",
     "componentsCount": 4,
     "lastRunDuration": "2.4s",
     "status": "idle",
-    "targetUrl": "https://www.tulparnotebook.de/",
+    "targetUrl": "https://www.novatech.de/",
     "nodes": [
       {
         "id": "node-dsg-init",
@@ -2648,16 +2648,16 @@
     ]
   },
   {
-    "id": "scenario-tulpar-de-widerruf-return",
+    "id": "scenario-novatech-de-widerruf-return",
     "projectId": "proj-tulpar-de",
-    "title": "Tulpar DE: 14 Günlük Yasal Cayma (Widerruf) & DHL İade Akışı",
+    "title": "NovaTech DE: 14 Günlük Yasal Cayma (Widerruf) & DHL İade Akışı",
     "category": "Sipariş & İade (EU)",
     "description": "Alman Tüketici Kanunu (§ 312g BGB) uyarınca 14 günlük koşulsuz cayma formu doldurma ve DHL iade kargo etiketi üretimi doğrulanır.",
     "criticality": "High",
     "componentsCount": 4,
     "lastRunDuration": "2.7s",
     "status": "idle",
-    "targetUrl": "https://www.tulparnotebook.de/my-account/orders/",
+    "targetUrl": "https://www.novatech.de/my-account/orders/",
     "nodes": [
       {
         "id": "node-wid-init",
@@ -2753,16 +2753,16 @@
     ]
   },
   {
-    "id": "scenario-tulpar-de-b2b-vat",
+    "id": "scenario-novatech-de-b2b-vat",
     "projectId": "proj-tulpar-de",
-    "title": "Tulpar DE: B2B EU Reverse Charge & USt-IdNr. Muafiyet Kontrolü",
+    "title": "NovaTech DE: B2B EU Reverse Charge & USt-IdNr. Muafiyet Kontrolü",
     "category": "B2B & Muhasebe (EU)",
     "description": "Avrupa Birliği içi (Intra-Community) kurumsal alımlarda VIES sisteminden USt-IdNr. doğrulaması yapılır ve %0 KDV ters ibraz uygulanır.",
     "criticality": "Medium",
     "componentsCount": 4,
     "lastRunDuration": "2.5s",
     "status": "idle",
-    "targetUrl": "https://www.tulparnotebook.de/checkout/",
+    "targetUrl": "https://www.novatech.de/checkout/",
     "nodes": [
       {
         "id": "node-b2b-init",
@@ -2858,16 +2858,16 @@
     ]
   },
   {
-    "id": "scenario-tulpar-de-dhl-shipping",
+    "id": "scenario-novatech-de-dhl-shipping",
     "projectId": "proj-tulpar-de",
-    "title": "Tulpar DE: DHL Paket & Express DACH Lojistik Süre Hesaplama",
+    "title": "NovaTech DE: DHL Paket & Express DACH Lojistik Süre Hesaplama",
     "category": "Lojistik & Kargo (EU)",
     "description": "Almanya içi (1-2 gün) ve DACH sınır ötesi DHL kargo ücreti, ücretsiz kargo barı (€100+ üzeri) ve Packstation dolap seçimi test edilir.",
     "criticality": "Medium",
     "componentsCount": 4,
     "lastRunDuration": "2.1s",
     "status": "idle",
-    "targetUrl": "https://www.tulparnotebook.de/cart/",
+    "targetUrl": "https://www.novatech.de/cart/",
     "nodes": [
       {
         "id": "node-dhl-init",
@@ -2963,16 +2963,16 @@
     ]
   },
   {
-    "id": "scenario-tulpar-de-configurator",
+    "id": "scenario-novatech-de-configurator",
     "projectId": "proj-tulpar-de",
-    "title": "Tulpar DE: Donanım Konfigüratörü (RAM, SSD & QWERTZ Klavye)",
+    "title": "NovaTech DE: Donanım Konfigüratörü (RAM, SSD & QWERTZ Klavye)",
     "category": "Ürün & Donanım Konfigürasyonu",
     "description": "Tulpar Gaming Laptop ürün sayfasında RAM yükseltme (16GB -> 32GB DDR5), NVMe SSD ilavesi (1TB -> 2TB) ve Almanca QWERTZ klavye seçimi sepet tutarına dinamik yansıtılır.",
     "criticality": "Critical",
     "componentsCount": 5,
     "lastRunDuration": "3.4s",
     "status": "passed",
-    "targetUrl": "https://www.tulparnotebook.de/gaming-laptops/",
+    "targetUrl": "https://www.novatech.de/gaming-laptops/",
     "nodes": [
       {
         "id": "node-cfg-init",
@@ -3095,16 +3095,16 @@
     ]
   },
   {
-    "id": "scenario-tulpar-de-klarna-ratenkauf",
+    "id": "scenario-novatech-de-klarna-ratenkauf",
     "projectId": "proj-tulpar-de",
-    "title": "Tulpar DE: Klarna Ratenkauf (Taksitli Ödeme) & Kredi Skoru Kontrolü",
+    "title": "NovaTech DE: Klarna Ratenkauf (Taksitli Ödeme) & Kredi Skoru Kontrolü",
     "category": "Ödeme & Finansman (EU)",
     "description": "€1.899 sepet tutarı için 6/12/24 ay vadeli Klarna Ratenkauf seçimi, aylık taksit hesaplama, yasal yıllık faiz (Effektiver Jahreszins) ve Schufa onay simülasyonu.",
     "criticality": "High",
     "componentsCount": 4,
     "lastRunDuration": "2.8s",
     "status": "passed",
-    "targetUrl": "https://www.tulparnotebook.de/checkout/",
+    "targetUrl": "https://www.novatech.de/checkout/",
     "nodes": [
       {
         "id": "node-rat-init",
@@ -3200,16 +3200,16 @@
     ]
   },
   {
-    "id": "scenario-tulpar-de-guest-checkout",
+    "id": "scenario-novatech-de-guest-checkout",
     "projectId": "proj-tulpar-de",
-    "title": "Tulpar DE: Misafir Alışverişi (Gast-Bestellung) & Hızlı Kasa Akışı",
+    "title": "NovaTech DE: Misafir Alışverişi (Gast-Bestellung) & Hızlı Kasa Akışı",
     "category": "Kullanıcı Deneyimi & Dönüşüm",
     "description": "Hesap oluşturmadan (Als Gast bestellen) isim, Almanya teslimat adresi ve e-posta ile 2 dakikada sipariş tamamlama ve sipariş teyit numarası üretimi.",
     "criticality": "Critical",
     "componentsCount": 4,
     "lastRunDuration": "2.5s",
     "status": "passed",
-    "targetUrl": "https://www.tulparnotebook.de/checkout/",
+    "targetUrl": "https://www.novatech.de/checkout/",
     "nodes": [
       {
         "id": "node-gst-init",
@@ -3305,16 +3305,16 @@
     ]
   },
   {
-    "id": "scenario-tulpar-de-omnibus-pricing",
+    "id": "scenario-novatech-de-omnibus-pricing",
     "projectId": "proj-tulpar-de",
-    "title": "Tulpar DE: AB Omnibus Direktifi & İndirim Doğruluğu (Son 30 Gün Referans Fiyatı)",
+    "title": "NovaTech DE: AB Omnibus Direktifi & İndirim Doğruluğu (Son 30 Gün Referans Fiyatı)",
     "category": "Hukuki & Uyumluluk (EU)",
     "description": "AB Direktifi (EU) 2019/2161 uyarınca uygulanan indirim oranının, son 30 günün en düşük satış fiyatı (Niedrigster Preis der letzten 30 Tage) üzerinden hesaplandığının doğrulanması.",
     "criticality": "High",
     "componentsCount": 3,
     "lastRunDuration": "1.9s",
     "status": "passed",
-    "targetUrl": "https://www.tulparnotebook.de/",
+    "targetUrl": "https://www.novatech.de/",
     "nodes": [
       {
         "id": "node-omn-init",
@@ -3383,16 +3383,16 @@
     ]
   },
   {
-    "id": "scenario-tulpar-de-apple-google-pay",
+    "id": "scenario-novatech-de-apple-google-pay",
     "projectId": "proj-tulpar-de",
-    "title": "Tulpar DE: Apple Pay & Google Pay Tek Tıkla Cüzdan Ödemesi",
+    "title": "NovaTech DE: Apple Pay & Google Pay Tek Tıkla Cüzdan Ödemesi",
     "category": "Mobil & Dijital Cüzdan",
     "description": "Mobil Safari ve Chrome tarayıcılarında entegre dijital cüzdan (Payment Request API) ile adres ve kart girmeden anında ödeme akışı.",
     "criticality": "High",
     "componentsCount": 3,
     "lastRunDuration": "2.1s",
     "status": "passed",
-    "targetUrl": "https://www.tulparnotebook.de/cart/",
+    "targetUrl": "https://www.novatech.de/cart/",
     "nodes": [
       {
         "id": "node-wlt-init",
@@ -3461,16 +3461,16 @@
     ]
   },
   {
-    "id": "scenario-tulpar-de-cross-border-eu",
+    "id": "scenario-novatech-de-cross-border-eu",
     "projectId": "proj-tulpar-de",
-    "title": "Tulpar DE: AB Sınır Ötesi Teslimat (Avusturya & Benelüks) & Dinamik KDV (OSS)",
+    "title": "NovaTech DE: AB Sınır Ötesi Teslimat (Avusturya & Benelüks) & Dinamik KDV (OSS)",
     "category": "Lojistik & Kargo (EU)",
     "description": "Teslimat ülkesi Avusturya (%20 KDV) veya Hollanda (%21 KDV) seçildiğinde AB One-Stop Shop (OSS) KDV oranının ve uluslararası DHL kargo farkının sepete anlık yansıtılması.",
     "criticality": "Medium",
     "componentsCount": 4,
     "lastRunDuration": "2.4s",
     "status": "passed",
-    "targetUrl": "https://www.tulparnotebook.de/checkout/",
+    "targetUrl": "https://www.novatech.de/checkout/",
     "nodes": [
       {
         "id": "node-oss-init",
@@ -3566,16 +3566,16 @@
     ]
   },
   {
-    "id": "scenario-tulpar-de-stock-alert",
+    "id": "scenario-novatech-de-stock-alert",
     "projectId": "proj-tulpar-de",
-    "title": "Tulpar DE: Stok Tükendi & Gelince Haber Ver (Back in Stock Alert)",
+    "title": "NovaTech DE: Stok Tükendi & Gelince Haber Ver (Back in Stock Alert)",
     "category": "Katalog & Envanter",
     "description": "Stokta bulunmayan üst segment RTX 4080 modelinde Benachrichtigen wenn verfügbar e-posta aboneliği oluşturma ve stok kilitleme kontrolü.",
     "criticality": "Medium",
     "componentsCount": 3,
     "lastRunDuration": "1.7s",
     "status": "passed",
-    "targetUrl": "https://www.tulparnotebook.de/gaming-laptops/",
+    "targetUrl": "https://www.novatech.de/gaming-laptops/",
     "nodes": [
       {
         "id": "node-stk-init",
@@ -3601,7 +3601,7 @@
         "data": {
           "stepIndex": 1,
           "name": "E-Posta Stok Alarmı Kaydı",
-          "subtext": "qa.testuser@tulparnotebook.de bildirim listesine eklendi",
+          "subtext": "qa.testuser@novatech.de bildirim listesine eklendi",
           "components": 6,
           "metricTime": "0.7s",
           "metricPassed": 18,
@@ -3644,16 +3644,16 @@
     ]
   },
   {
-    "id": "scenario-tulpar-de-cart-tampering",
+    "id": "scenario-novatech-de-cart-tampering",
     "projectId": "proj-tulpar-de",
-    "title": "Tulpar DE: EUR Fiyat Manipülasyonu & Güvenli Sepet Hash Savunması",
+    "title": "NovaTech DE: EUR Fiyat Manipülasyonu & Güvenli Sepet Hash Savunması",
     "category": "Siber Güvenlik & PCI-DSS",
     "description": "İstemci tarafında DOM üzerinden laptop fiyatını €1.899 yerine €1,00 olarak değiştirip ödeme isteği gönderme girişiminin backend sepet hash doğrulamasında bloke edilmesi.",
     "criticality": "Critical",
     "componentsCount": 3,
     "lastRunDuration": "2.0s",
     "status": "passed",
-    "targetUrl": "https://www.tulparnotebook.de/checkout/",
+    "targetUrl": "https://www.novatech.de/checkout/",
     "nodes": [
       {
         "id": "node-tam-init",
@@ -3722,16 +3722,16 @@
     ]
   },
   {
-    "id": "scenario-tulpar-de-cookiebot-reject",
+    "id": "scenario-novatech-de-cookiebot-reject",
     "projectId": "proj-tulpar-de",
-    "title": "Tulpar DE: DSGVO Çerez Reddi (Alle ablehnen) & Fonksiyonel Sepet İzolasyonu",
+    "title": "NovaTech DE: DSGVO Çerez Reddi (Alle ablehnen) & Fonksiyonel Sepet İzolasyonu",
     "category": "Hukuki & Uyumluluk (EU)",
     "description": "Kullanıcı Alle ablehnen (Tümünü reddet) seçtiğinde pazarlama çerezlerinin durdurulması, ancak e-ticaret sepet oturumunun bozulmadan çalışmaya devam etmesi.",
     "criticality": "High",
     "componentsCount": 3,
     "lastRunDuration": "1.8s",
     "status": "passed",
-    "targetUrl": "https://www.tulparnotebook.de/",
+    "targetUrl": "https://www.novatech.de/",
     "nodes": [
       {
         "id": "node-cok-init",
@@ -3800,16 +3800,16 @@
     ]
   },
   {
-    "id": "scenario-tulpar-de-core-web-vitals",
+    "id": "scenario-novatech-de-core-web-vitals",
     "projectId": "proj-tulpar-de",
-    "title": "Tulpar DE: Core Web Vitals Hız Skoru & 404 Kırık Link Crawler",
+    "title": "NovaTech DE: Core Web Vitals Hız Skoru & 404 Kırık Link Crawler",
     "category": "Performans & SEO",
     "description": "Tulpar DE vitrin ve ürün sayfalarında LCP < 2.5s, CLS < 0.1, INP metrikleri ve mağaza içi linklerin taranarak 404/500 HTTP hata denetimi.",
     "criticality": "Medium",
     "componentsCount": 3,
     "lastRunDuration": "2.6s",
     "status": "passed",
-    "targetUrl": "https://www.tulparnotebook.de/",
+    "targetUrl": "https://www.novatech.de/",
     "nodes": [
       {
         "id": "node-cwv-init",
@@ -3878,16 +3878,16 @@
     ]
   },
   {
-    "id": "scenario-tulpar-de-voucher-promo",
+    "id": "scenario-novatech-de-voucher-promo",
     "projectId": "proj-tulpar-de",
-    "title": "Tulpar DE: İndirim Kuponu & Promosyon Çeki (Gutscheincode Doğrulama)",
+    "title": "NovaTech DE: İndirim Kuponu & Promosyon Çeki (Gutscheincode Doğrulama)",
     "category": "Fiyatlandırma & Kampanya",
     "description": "TULPAR-EU-50 kuponu ile €50 sepet indirimi uygulanması, geçersiz kuponlarda net Almanca hata mesajı ve minimum sipariş tutarı kontrolü.",
     "criticality": "High",
     "componentsCount": 3,
     "lastRunDuration": "1.9s",
     "status": "passed",
-    "targetUrl": "https://www.tulparnotebook.de/cart/",
+    "targetUrl": "https://www.novatech.de/cart/",
     "nodes": [
       {
         "id": "node-vch-init",
@@ -3956,16 +3956,16 @@
     ]
   },
   {
-    "id": "scenario-tulpar-de-mobile-responsive",
+    "id": "scenario-novatech-de-mobile-responsive",
     "projectId": "proj-tulpar-de",
-    "title": "Tulpar DE: Mobil Görünüm, Hamburger Menü & Dokunmatik Sepet",
+    "title": "NovaTech DE: Mobil Görünüm, Hamburger Menü & Dokunmatik Sepet",
     "category": "Mobil & Uyumluluk",
     "description": "Akıllı telefon ekranında (390x844) Almanca navigasyon menüsü, filtre çekmecesi, sticky sepete ekle çubuğu ve dokunmatik ürün resim galerisi testi.",
     "criticality": "High",
     "componentsCount": 4,
     "lastRunDuration": "2.7s",
     "status": "passed",
-    "targetUrl": "https://www.tulparnotebook.de/",
+    "targetUrl": "https://www.novatech.de/",
     "nodes": [
       {
         "id": "node-mob-init",
@@ -4069,7 +4069,7 @@
     "componentsCount": 5,
     "lastRunDuration": "Not executed yet",
     "status": "idle",
-    "targetUrl": "https://www.monsternotebook.com.tr",
+    "targetUrl": "https://www.novatech.com.tr",
     "nodes": [
       {
         "id": "node-start",
@@ -4145,13 +4145,13 @@
       "Mobil & Uyumluluk",
       "Lojistik & Kargo"
     ],
-    "projectId": "proj-monster",
+    "projectId": "proj-novatech-tr",
     "description": "Kullanıcı tanımlı özel e-ticaret test senaryosu.",
     "criticality": "Critical",
     "componentsCount": 5,
     "lastRunDuration": "Not executed yet",
     "status": "idle",
-    "targetUrl": "https://www.monsternotebook.com.tr",
+    "targetUrl": "https://www.novatech.com.tr",
     "nodes": [
       {
         "id": "node-start",

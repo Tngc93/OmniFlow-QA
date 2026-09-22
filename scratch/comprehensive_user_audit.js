@@ -49,13 +49,13 @@ async function runAudit() {
   await masterTab.click();
   await page.waitForTimeout(1000);
 
-  // Switch to Tulpar DE
-  await page.locator('[data-testid="domain-btn-tulpar-de"]').click();
+  // Switch to NovaTech DE
+  await page.locator('[data-testid="domain-btn-novatech-de"]').click();
   await page.waitForTimeout(1000);
   await page.screenshot({ path: path.join(artifactDir, 'audit_02_tulpar_master.png') });
 
   // Test "Otomasyonu Başlat"
-  console.log('Testing "Otomasyonu Başlat" on Tulpar Master...');
+  console.log('Testing "Otomasyonu Başlat" on NovaTech Master...');
   const startBtn = page.locator('button:has-text("Otomasyonu Başlat")');
   if (await startBtn.isVisible()) {
     await startBtn.click();
@@ -104,7 +104,7 @@ async function runAudit() {
   // Test Project Selection: switch between Monster and Tulpar via select dropdown
   const projectSelect = page.locator('select').first();
   if (await projectSelect.isVisible({ timeout: 3000 }).catch(() => false)) {
-    await projectSelect.selectOption('proj-tulpar-de');
+    await projectSelect.selectOption('proj-novatech-de');
     await page.waitForTimeout(1000);
     await page.screenshot({ path: path.join(artifactDir, 'audit_06_tulpar_scenarios.png') });
     testResults.push({ feature: 'Project Folder Switching', status: 'PASS' });

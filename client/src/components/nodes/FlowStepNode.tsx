@@ -115,7 +115,7 @@ export const FlowStepNode: React.FC<FlowStepNodeProps> = ({ id, data, selected }
           scenarioTitle: data.name,
           stepName: data.name,
           errorMessage: data.expected || 'Step validation defect',
-          screenshot: data.screenshot || '/screenshots/monster_home_live.png'
+          screenshot: data.screenshot || '/screenshots/novatech_home_live.png'
         }
       })
     );
@@ -128,7 +128,7 @@ export const FlowStepNode: React.FC<FlowStepNodeProps> = ({ id, data, selected }
       new CustomEvent('open-visual-diff', {
         detail: {
           stepName: data.name || 'E-Ticaret Arayüz Adımı',
-          screenshot: data.screenshot || '/screenshots/monster_home_live.png'
+          screenshot: data.screenshot || '/screenshots/novatech_home_live.png'
         }
       })
     );
@@ -139,7 +139,7 @@ export const FlowStepNode: React.FC<FlowStepNodeProps> = ({ id, data, selected }
     const name = (data.name || '').toLowerCase();
     if (name.includes('data') || name.includes('collect') || name.includes('init')) return <Database className="w-4 h-4 text-indigo-500" />;
     if (name.includes('search') || name.includes('arama') || name.includes('filter')) return <Search className="w-4 h-4 text-sky-500" />;
-    if (name.includes('pdp') || name.includes('laptop') || name.includes('item') || name.includes('tulpar')) return <ShoppingBag className="w-4 h-4 text-emerald-500" />;
+    if (name.includes('pdp') || name.includes('laptop') || name.includes('item') || name.includes('horizon') || name.includes('titan')) return <ShoppingBag className="w-4 h-4 text-emerald-500" />;
     if (name.includes('cart') || name.includes('sepet') || name.includes('output')) return <Layers className="w-4 h-4 text-orange-500" />;
     if (name.includes('trigger') || name.includes('action') || name.includes('execute')) return <Zap className="w-4 h-4 text-amber-500" />;
     return <CreditCard className="w-4 h-4 text-purple-500" />;

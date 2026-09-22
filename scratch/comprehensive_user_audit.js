@@ -49,13 +49,13 @@ async function runAudit() {
   await masterTab.click();
   await page.waitForTimeout(1000);
 
-  // Switch to NovaTech DE
-  await page.locator('[data-testid="domain-btn-novatech-de"]').click();
+  // Switch to flowshop DE
+  await page.locator('[data-testid="domain-btn-flowshop-de"]').click();
   await page.waitForTimeout(1000);
-  await page.screenshot({ path: path.join(artifactDir, 'audit_02_tulpar_master.png') });
+  await page.screenshot({ path: path.join(artifactDir, 'audit_02_flowshop_master.png') });
 
   // Test "Otomasyonu Başlat"
-  console.log('Testing "Otomasyonu Başlat" on NovaTech Master...');
+  console.log('Testing "Otomasyonu Başlat" on flowshop Master...');
   const startBtn = page.locator('button:has-text("Otomasyonu Başlat")');
   if (await startBtn.isVisible()) {
     await startBtn.click();
@@ -101,12 +101,12 @@ async function runAudit() {
   await page.waitForTimeout(1500);
   await page.screenshot({ path: path.join(artifactDir, 'audit_05_scenarios_catalog.png') });
 
-  // Test Project Selection: switch between Monster and Tulpar via select dropdown
+  // Test Project Selection: switch between flowshop and flowshop via select dropdown
   const projectSelect = page.locator('select').first();
   if (await projectSelect.isVisible({ timeout: 3000 }).catch(() => false)) {
-    await projectSelect.selectOption('proj-novatech-de');
+    await projectSelect.selectOption('proj-flowshop-de');
     await page.waitForTimeout(1000);
-    await page.screenshot({ path: path.join(artifactDir, 'audit_06_tulpar_scenarios.png') });
+    await page.screenshot({ path: path.join(artifactDir, 'audit_06_flowshop_scenarios.png') });
     testResults.push({ feature: 'Project Folder Switching', status: 'PASS' });
   }
 

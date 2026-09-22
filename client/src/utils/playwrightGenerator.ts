@@ -3,10 +3,10 @@ import { Scenario } from '../types';
 export function generatePlaywrightCode(
   scenario: Scenario | null,
   viewport: 'desktop' | 'mobile' | 'tablet' = 'desktop',
-  creds = { email: 'qa.testuser@novatech.com.tr', password: 'NovaTechQA!2026Secure' }
+  creds = { email: 'qa.testuser@flowshop.mock', password: 'FlowShopQA!2026Secure' }
 ): string {
   const scenarioTitle = scenario?.title || 'E-Commerce Test Automation Flow';
-  const targetUrl = scenario?.targetUrl || 'https://www.novatech.com.tr';
+  const targetUrl = scenario?.targetUrl || 'https://flowshop-tr.mock';
   const nodes = scenario?.nodes || [];
 
   let viewportWidth = 1920;
@@ -35,7 +35,7 @@ export function generatePlaywrightCode(
         return `    // Step ${index + 1}: ${nodeName}
     await test.step('${nodeName}', async () => {
       await page.goto('${targetUrl}', { waitUntil: 'networkidle' });
-      await expect(page).toHaveTitle(/NovaTech|Horizon|Titan|Notebook/i);
+      await expect(page).toHaveTitle(/FlowShop/i);
     });\n`;
       } else {
         return `    // Step ${index + 1}: ${nodeName}

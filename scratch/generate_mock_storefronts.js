@@ -78,19 +78,19 @@ const commonCss = `
 
 // Define the 12 templates
 const templates = [
-  // 1. novatech_home_live.png (NovaTech TR Homepage)
+  // 1. flowshop_home_live.png (flowshop TR Homepage)
   {
-    filename: 'novatech_home_live.png',
+    filename: 'flowshop_home_live.png',
     viewport: { width: 1440, height: 900 },
     html: `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${commonCss}</style></head><body>
       <div class="top-strip">
-        <span>🚀 <strong>NovaTech Türkiye</strong> Resmi Mağazası | Tüm Siparişlerde Ücretsiz Kargo & 2 Yıl Yerinde Garanti</span>
+        <span>🚀 <strong>flowshop Türkiye</strong> Resmi Mağazası | Tüm Siparişlerde Ücretsiz Kargo & 2 Yıl Yerinde Garanti</span>
         <span>📞 Müşteri Destek: 0850 444 66 82 | TR - Türkçe</span>
       </div>
       <header>
         <div class="logo">
           <div class="logo-icon">NT</div>
-          <span>NovaTech<span class="logo-badge badge-tr">TR</span></span>
+          <span>flowshop<span class="logo-badge badge-tr">TR</span></span>
         </div>
         <nav>
           <a href="#" class="active">Ana Sayfa</a>
@@ -148,7 +148,7 @@ const templates = [
       </div>
 
       <div class="cookie-bar">
-        <span>🍪 NovaTech Türkiye olarak sizlere daha iyi bir alışveriş deneyimi sunabilmek için KVKK ve çerez politikamıza uygun çerezler kullanıyoruz.</span>
+        <span>🍪 flowshop Türkiye olarak sizlere daha iyi bir alışveriş deneyimi sunabilmek için KVKK ve çerez politikamıza uygun çerezler kullanıyoruz.</span>
         <div>
           <button class="cookie-btn-settings">Tercihleri Yönet</button>
           <button class="cookie-btn-accept">Tümünü Kabul Et</button>
@@ -157,9 +157,9 @@ const templates = [
     </body></html>`
   },
 
-  // 2. novatech_category.png (NovaTech TR PLP)
+  // 2. flowshop_category.png (flowshop TR PLP)
   {
-    filename: 'novatech_category.png',
+    filename: 'flowshop_category.png',
     viewport: { width: 1440, height: 900 },
     html: `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${commonCss}
       .plp-layout { display: grid; grid-template-columns: 280px 1fr; gap: 32px; padding: 32px 48px; }
@@ -172,7 +172,7 @@ const templates = [
       <header>
         <div class="logo">
           <div class="logo-icon">NT</div>
-          <span>NovaTech<span class="logo-badge badge-tr">TR</span></span>
+          <span>flowshop<span class="logo-badge badge-tr">TR</span></span>
         </div>
         <nav>
           <a href="#">Ana Sayfa</a>
@@ -214,7 +214,7 @@ const templates = [
 
         <div>
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
-            <h2 style="font-size: 22px; font-weight: 800; color: white;">NovaTech Horizon & Apex Oyun Dizüstüleri</h2>
+            <h2 style="font-size: 22px; font-weight: 800; color: white;">flowshop Horizon & Apex Oyun Dizüstüleri</h2>
             <span style="font-size: 13px; color: #94a3b8;">Sıralama: <strong>Fiyat (Düşükten Yükseğe)</strong></span>
           </div>
 
@@ -222,7 +222,7 @@ const templates = [
             <div class="card">
               <span class="card-badge">Çok Satan</span>
               <div class="card-img-placeholder"><span style="font-size: 36px;">💻</span></div>
-              <div class="card-title">NovaTech Horizon X15 v2.1</div>
+              <div class="card-title">flowshop Horizon X15 v2.1</div>
               <div class="card-specs">Intel i7-14700HX &bull; RTX 4070 8GB &bull; 16GB DDR5 &bull; 1TB Gen4 SSD &bull; 15.6" 165Hz QHD IPS</div>
               <div class="card-price">₺54.999 <span class="card-old-price">₺59.999</span></div>
               <button class="card-btn">Özelleştir & Satın Al</button>
@@ -231,7 +231,7 @@ const templates = [
             <div class="card">
               <span class="card-badge" style="background: #10b981;">Stokta Var</span>
               <div class="card-img-placeholder"><span style="font-size: 36px;">💻</span></div>
-              <div class="card-title">NovaTech Horizon X17 Max</div>
+              <div class="card-title">flowshop Horizon X17 Max</div>
               <div class="card-specs">Intel i9-14900HX &bull; RTX 4080 12GB &bull; 32GB DDR5 &bull; 2TB Gen4 SSD &bull; 17.3" 240Hz QHD</div>
               <div class="card-price">₺79.499 <span class="card-old-price">₺84.999</span></div>
               <button class="card-btn">Özelleştir & Satın Al</button>
@@ -240,7 +240,7 @@ const templates = [
             <div class="card">
               <span class="card-badge" style="background: #8b5cf6;">E-Spor Özel</span>
               <div class="card-img-placeholder"><span style="font-size: 36px;">💻</span></div>
-              <div class="card-title">NovaTech Apex Pro 16</div>
+              <div class="card-title">flowshop Apex Pro 16</div>
               <div class="card-specs">AMD Ryzen 9 7945HX &bull; RTX 4070 8GB &bull; 32GB DDR5 &bull; 1TB Gen4 SSD &bull; 16" 240Hz OLED</div>
               <div class="card-price">₺62.999</div>
               <button class="card-btn">Özelleştir & Satın Al</button>
@@ -251,9 +251,9 @@ const templates = [
     </body></html>`
   },
 
-  // 3. novatech_pdp.png (NovaTech TR Horizon X15 PDP)
+  // 3. flowshop_pdp.png (flowshop TR Horizon X15 PDP)
   {
-    filename: 'novatech_pdp.png',
+    filename: 'flowshop_pdp.png',
     viewport: { width: 1440, height: 900 },
     html: `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${commonCss}
       .pdp-container { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding: 40px 48px; }
@@ -268,7 +268,7 @@ const templates = [
       <header>
         <div class="logo">
           <div class="logo-icon">NT</div>
-          <span>NovaTech<span class="logo-badge badge-tr">TR</span></span>
+          <span>flowshop<span class="logo-badge badge-tr">TR</span></span>
         </div>
         <nav>
           <a href="#">Ana Sayfa</a>
@@ -300,7 +300,7 @@ const templates = [
 
         <div>
           <span style="color: #10b981; font-size: 12px; font-weight: 700; text-transform: uppercase;">✓ Stokta Var - Aynı Gün Kargo</span>
-          <h1 style="font-size: 32px; font-weight: 900; margin: 8px 0 12px 0;">NovaTech Horizon X15 Gaming Laptop</h1>
+          <h1 style="font-size: 32px; font-weight: 900; margin: 8px 0 12px 0;">flowshop Horizon X15 Gaming Laptop</h1>
           <p style="font-size: 14px; color: #94a3b8; line-height: 1.6; margin-bottom: 20px;">Intel Core i7-14700HX, RTX 4070 8GB GDDR6 140W, 16GB DDR5 5600MHz, 1TB Gen4 NVMe M.2 SSD, 15.6" 165Hz QHD 100% sRGB.</p>
           
           <div style="font-size: 36px; font-weight: 900; color: #38bdf8; margin-bottom: 24px;">
@@ -327,9 +327,9 @@ const templates = [
     </body></html>`
   },
 
-  // 4. novatech_cart_live.png (NovaTech TR Cart)
+  // 4. flowshop_cart_live.png (flowshop TR Cart)
   {
-    filename: 'novatech_cart_live.png',
+    filename: 'flowshop_cart_live.png',
     viewport: { width: 1440, height: 900 },
     html: `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${commonCss}
       .cart-container { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; padding: 40px 48px; }
@@ -342,7 +342,7 @@ const templates = [
       <header>
         <div class="logo">
           <div class="logo-icon">NT</div>
-          <span>NovaTech<span class="logo-badge badge-tr">TR</span></span>
+          <span>flowshop<span class="logo-badge badge-tr">TR</span></span>
         </div>
         <nav><a href="#">Alışverişe Devam Et</a></nav>
         <div class="header-actions">
@@ -358,9 +358,9 @@ const templates = [
             <div style="display: flex; gap: 16px; align-items: center;">
               <div style="width: 70px; height: 70px; background: #1e293b; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 32px;">💻</div>
               <div>
-                <h4 style="font-size: 16px; font-weight: 700; color: white;">NovaTech Horizon X15 Gaming Laptop</h4>
+                <h4 style="font-size: 16px; font-weight: 700; color: white;">flowshop Horizon X15 Gaming Laptop</h4>
                 <p style="font-size: 12px; color: #94a3b8;">Intel i7-14700HX / RTX 4070 / 16GB RAM / 1TB SSD</p>
-                <span style="font-size: 11px; color: #10b981;">✓ 2 Yıl NovaTech Garantisi Dahil</span>
+                <span style="font-size: 11px; color: #10b981;">✓ 2 Yıl flowshop Garantisi Dahil</span>
               </div>
             </div>
             <div style="text-align: right;">
@@ -371,7 +371,7 @@ const templates = [
 
           <div style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); border-radius: 8px; padding: 12px; display: flex; align-items: center; gap: 12px; color: #34d399; font-size: 13px;">
             <span>🎁</span>
-            <span>Tebrikler! Siparişinize özel <strong>NovaTech Titan Pro Gaming Sırt Çantası</strong> sepetinize hediye olarak eklendi!</span>
+            <span>Tebrikler! Siparişinize özel <strong>flowshop Titan Pro Gaming Sırt Çantası</strong> sepetinize hediye olarak eklendi!</span>
           </div>
         </div>
 
@@ -397,9 +397,9 @@ const templates = [
     </body></html>`
   },
 
-  // 5. novatech_checkout_live.png (NovaTech TR Checkout)
+  // 5. flowshop_checkout_live.png (flowshop TR Checkout)
   {
-    filename: 'novatech_checkout_live.png',
+    filename: 'flowshop_checkout_live.png',
     viewport: { width: 1440, height: 900 },
     html: `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${commonCss}
       .checkout-grid { display: grid; grid-template-columns: 1.8fr 1.2fr; gap: 32px; padding: 40px 48px; }
@@ -411,7 +411,7 @@ const templates = [
       <header>
         <div class="logo">
           <div class="logo-icon">NT</div>
-          <span>NovaTech<span class="logo-badge badge-tr">TR</span></span>
+          <span>flowshop<span class="logo-badge badge-tr">TR</span></span>
         </div>
         <div style="font-size: 14px; font-weight: 700; color: #38bdf8;">Adım 2: Güvenli Ödeme & Teslimat</div>
         <div class="header-actions"><span style="font-size: 13px; color: #94a3b8;">Sipariş Tutarı: ₺52.999</span></div>
@@ -447,7 +447,7 @@ const templates = [
 
         <div class="panel" style="height: fit-content;">
           <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 16px; color: white;">Sipariş Özeti</h3>
-          <p style="font-size: 14px; font-weight: 600; color: white; margin-bottom: 4px;">NovaTech Horizon X15 Gaming Laptop</p>
+          <p style="font-size: 14px; font-weight: 600; color: white; margin-bottom: 4px;">flowshop Horizon X15 Gaming Laptop</p>
           <p style="font-size: 12px; color: #94a3b8; margin-bottom: 16px;">Intel i7-14700HX &bull; RTX 4070 &bull; 16GB RAM &bull; 1TB SSD</p>
           <div style="border-top: 1px solid #1e293b; padding-top: 12px; font-size: 13px; color: #94a3b8; display: flex; justify-content: space-between;">
             <span>Toplam Tutar:</span>
@@ -458,19 +458,19 @@ const templates = [
     </body></html>`
   },
 
-  // 6. novatech_de_home_live.png (NovaTech DE Homepage)
+  // 6. flowshop_de_home_live.png (flowshop DE Homepage)
   {
-    filename: 'novatech_de_home_live.png',
+    filename: 'flowshop_de_home_live.png',
     viewport: { width: 1440, height: 900 },
     html: `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${commonCss}</style></head><body>
       <div class="top-strip">
-        <span>🇪🇺 <strong>NovaTech Deutschland & Europe</strong> | Kostenloser Versand nach Deutschland & Österreich | 3 Jahre Vor-Ort-Garantie</span>
+        <span>🇪🇺 <strong>flowshop Deutschland & Europe</strong> | Kostenloser Versand nach Deutschland & Österreich | 3 Jahre Vor-Ort-Garantie</span>
         <span>📞 DE Hotline: +49 (0) 30 890 120 44 | EUR (€) - Deutsch</span>
       </div>
       <header>
         <div class="logo">
           <div class="logo-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">NT</div>
-          <span>NovaTech<span class="logo-badge badge-de">DE</span></span>
+          <span>flowshop<span class="logo-badge badge-de">DE</span></span>
         </div>
         <nav>
           <a href="#" class="active">Startseite</a>
@@ -528,7 +528,7 @@ const templates = [
       </div>
 
       <div class="cookie-bar">
-        <span>🍪 NovaTech Deutschland nutzt Cookies zur Personalisierung und Analyse gemäß DSGVO. Sie haben die volle Kontrolle über Ihre Privatsphäre.</span>
+        <span>🍪 flowshop Deutschland nutzt Cookies zur Personalisierung und Analyse gemäß DSGVO. Sie haben die volle Kontrolle über Ihre Privatsphäre.</span>
         <div>
           <button class="cookie-btn-settings">Einstellungen</button>
           <button class="cookie-btn-accept" style="background: #f59e0b; color: black; font-weight: bold;">Alle Akzeptieren</button>
@@ -537,15 +537,15 @@ const templates = [
     </body></html>`
   },
 
-  // 7. novatech_de_search_live.png (NovaTech DE Search Results)
+  // 7. flowshop_de_search_live.png (flowshop DE Search Results)
   {
-    filename: 'novatech_de_search_live.png',
+    filename: 'flowshop_de_search_live.png',
     viewport: { width: 1440, height: 900 },
     html: `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${commonCss}</style></head><body>
       <header>
         <div class="logo">
           <div class="logo-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">NT</div>
-          <span>NovaTech<span class="logo-badge badge-de">DE</span></span>
+          <span>flowshop<span class="logo-badge badge-de">DE</span></span>
         </div>
         <nav>
           <a href="#">Startseite</a>
@@ -570,7 +570,7 @@ const templates = [
           <div class="card">
             <span class="card-badge" style="background: #f59e0b; color: black;">Top Bestseller</span>
             <div class="card-img-placeholder"><span style="font-size: 40px;">💻</span></div>
-            <div class="card-title">NovaTech Titan X17 Pro</div>
+            <div class="card-title">flowshop Titan X17 Pro</div>
             <div class="card-specs">Intel Core i9-14900HX &bull; RTX 4080 12GB &bull; 32GB DDR5 &bull; 2TB NVMe SSD &bull; 17.3" QHD 240Hz</div>
             <div class="card-price" style="color: #facc15;">2.499,00 € <span class="card-old-price">2.699,00 €</span></div>
             <button class="card-btn">Konfigurieren & Kaufen</button>
@@ -579,7 +579,7 @@ const templates = [
           <div class="card">
             <span class="card-badge" style="background: #10b981;">Sofort Lieferbar</span>
             <div class="card-img-placeholder"><span style="font-size: 40px;">💻</span></div>
-            <div class="card-title">NovaTech Titan X16 Ultra</div>
+            <div class="card-title">flowshop Titan X16 Ultra</div>
             <div class="card-specs">Intel Core i7-14700HX &bull; RTX 4070 8GB &bull; 16GB DDR5 &bull; 1TB NVMe SSD &bull; 16" 165Hz IPS</div>
             <div class="card-price" style="color: #facc15;">1.999,00 €</div>
             <button class="card-btn">Konfigurieren & Kaufen</button>
@@ -588,7 +588,7 @@ const templates = [
           <div class="card">
             <span class="card-badge" style="background: #8b5cf6;">Extreme Edition</span>
             <div class="card-img-placeholder"><span style="font-size: 40px;">💻</span></div>
-            <div class="card-title">NovaTech Titan Apex 18</div>
+            <div class="card-title">flowshop Titan Apex 18</div>
             <div class="card-specs">Intel Core i9-14900HX &bull; RTX 4090 16GB &bull; 64GB DDR5 &bull; 4TB SSD &bull; 18" 4K Mini-LED</div>
             <div class="card-price" style="color: #facc15;">3.799,00 €</div>
             <button class="card-btn">Konfigurieren & Kaufen</button>
@@ -598,15 +598,15 @@ const templates = [
     </body></html>`
   },
 
-  // 8. novatech_de_plp_live.png (NovaTech DE Catalog)
+  // 8. flowshop_de_plp_live.png (flowshop DE Catalog)
   {
-    filename: 'novatech_de_plp_live.png',
+    filename: 'flowshop_de_plp_live.png',
     viewport: { width: 1440, height: 900 },
     html: `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${commonCss}</style></head><body>
       <header>
         <div class="logo">
           <div class="logo-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">NT</div>
-          <span>NovaTech<span class="logo-badge badge-de">DE</span></span>
+          <span>flowshop<span class="logo-badge badge-de">DE</span></span>
         </div>
         <nav>
           <a href="#">Startseite</a>
@@ -623,7 +623,7 @@ const templates = [
       <div style="padding: 40px 48px;">
         <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 28px;">
           <div>
-            <h1 style="font-size: 28px; font-weight: 800; color: white;">NovaTech Gaming Laptops Übersicht</h1>
+            <h1 style="font-size: 28px; font-weight: 800; color: white;">flowshop Gaming Laptops Übersicht</h1>
             <p style="color: #94a3b8; font-size: 14px; margin-top: 6px;">Individuell konfigurierbar mit 3 Jahren Garantie in ganz Europa.</p>
           </div>
           <span style="font-size: 13px; color: #cbd5e1;">Preise inkl. 19% MwSt. zzgl. Versand</span>
@@ -633,7 +633,7 @@ const templates = [
           <div class="card">
             <span class="card-badge" style="background: #f59e0b; color: black;">Empfehlung</span>
             <div class="card-img-placeholder"><span style="font-size: 40px;">💻</span></div>
-            <div class="card-title">NovaTech Titan X17 Gaming Notebook</div>
+            <div class="card-title">flowshop Titan X17 Gaming Notebook</div>
             <div class="card-specs">Intel Core i7-14700HX &bull; RTX 4070 8GB &bull; 16GB DDR5 &bull; 1TB SSD &bull; 17.3" QHD 165Hz</div>
             <div class="card-price" style="color: #facc15;">2.199,00 €</div>
             <button class="card-btn">In den Warenkorb</button>
@@ -642,7 +642,7 @@ const templates = [
           <div class="card">
             <span class="card-badge" style="background: #3b82f6;">Konfigurierbar</span>
             <div class="card-img-placeholder"><span style="font-size: 40px;">💻</span></div>
-            <div class="card-title">NovaTech Titan Pro 16</div>
+            <div class="card-title">flowshop Titan Pro 16</div>
             <div class="card-specs">Intel Core i9-14900HX &bull; RTX 4080 12GB &bull; 32GB DDR5 &bull; 2TB SSD &bull; 16" WQXGA 240Hz</div>
             <div class="card-price" style="color: #facc15;">2.799,00 €</div>
             <button class="card-btn">In den Warenkorb</button>
@@ -651,7 +651,7 @@ const templates = [
           <div class="card">
             <span class="card-badge" style="background: #10b981;">Sofort Verfügbar</span>
             <div class="card-img-placeholder"><span style="font-size: 40px;">💻</span></div>
-            <div class="card-title">NovaTech Stealth 15 Slim</div>
+            <div class="card-title">flowshop Stealth 15 Slim</div>
             <div class="card-specs">AMD Ryzen 7 8845HS &bull; RTX 4060 8GB &bull; 16GB DDR5 &bull; 1TB SSD &bull; 15.6" FHD 144Hz</div>
             <div class="card-price" style="color: #facc15;">1.599,00 €</div>
             <button class="card-btn">In den Warenkorb</button>
@@ -661,9 +661,9 @@ const templates = [
     </body></html>`
   },
 
-  // 9. novatech_de_pdp_live.png (NovaTech DE PDP & Configurator)
+  // 9. flowshop_de_pdp_live.png (flowshop DE PDP & Configurator)
   {
-    filename: 'novatech_de_pdp_live.png',
+    filename: 'flowshop_de_pdp_live.png',
     viewport: { width: 1440, height: 900 },
     html: `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${commonCss}
       .config-panel { background: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 24px; }
@@ -673,7 +673,7 @@ const templates = [
       <header>
         <div class="logo">
           <div class="logo-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">NT</div>
-          <span>NovaTech<span class="logo-badge badge-de">DE</span></span>
+          <span>flowshop<span class="logo-badge badge-de">DE</span></span>
         </div>
         <nav>
           <a href="#">Startseite</a>
@@ -732,9 +732,9 @@ const templates = [
     </body></html>`
   },
 
-  // 10. novatech_de_cart_live.png (NovaTech DE Cart)
+  // 10. flowshop_de_cart_live.png (flowshop DE Cart)
   {
-    filename: 'novatech_de_cart_live.png',
+    filename: 'flowshop_de_cart_live.png',
     viewport: { width: 1440, height: 900 },
     html: `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${commonCss}
       .cart-box { background: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 24px; }
@@ -742,7 +742,7 @@ const templates = [
       <header>
         <div class="logo">
           <div class="logo-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">NT</div>
-          <span>NovaTech<span class="logo-badge badge-de">DE</span></span>
+          <span>flowshop<span class="logo-badge badge-de">DE</span></span>
         </div>
         <div style="font-size: 14px; font-weight: 700; color: #facc15;">Warenkorb & Kasse</div>
         <div class="header-actions"><span style="font-size: 13px; color: #10b981;">🔒 SSL 256-Bit Verschlüsselung</span></div>
@@ -756,7 +756,7 @@ const templates = [
             <div style="display: flex; gap: 16px;">
               <div style="width: 70px; height: 70px; background: #1e293b; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 32px;">💻</div>
               <div>
-                <h4 style="font-size: 16px; font-weight: 700; color: white;">NovaTech Titan X17 Gaming Laptop</h4>
+                <h4 style="font-size: 16px; font-weight: 700; color: white;">flowshop Titan X17 Gaming Laptop</h4>
                 <p style="font-size: 12px; color: #94a3b8; margin: 4px 0;">Konfiguriert: 32GB RAM &bull; 2TB SSD &bull; DE Layout</p>
                 <span style="font-size: 11px; color: #10b981;">✓ 3 Jahre Europa Vor-Ort-Garantie</span>
               </div>
@@ -790,15 +790,15 @@ const templates = [
     </body></html>`
   },
 
-  // 11. novatech_de_auth_live.png (NovaTech DE Auth / Portal)
+  // 11. flowshop_de_auth_live.png (flowshop DE Auth / Portal)
   {
-    filename: 'novatech_de_auth_live.png',
+    filename: 'flowshop_de_auth_live.png',
     viewport: { width: 1440, height: 900 },
     html: `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${commonCss}</style></head><body>
       <header>
         <div class="logo">
           <div class="logo-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">NT</div>
-          <span>NovaTech<span class="logo-badge badge-de">DE</span></span>
+          <span>flowshop<span class="logo-badge badge-de">DE</span></span>
         </div>
         <div style="font-size: 14px; font-weight: 700; color: #cbd5e1;">Kundenportal & Anmeldung</div>
         <div class="header-actions"><a href="#" style="color: #facc15; font-size: 13px; text-decoration: none;">Hilfe & FAQ</a></div>
@@ -811,7 +811,7 @@ const templates = [
 
           <div style="margin-bottom: 16px;">
             <label style="font-size: 12px; color: #cbd5e1; display: block; margin-bottom: 6px; font-weight: 600;">E-Mail-Adresse</label>
-            <input class="search-input" style="width: 100%; padding-left: 14px;" value="qa.testuser@novatech.de" />
+            <input class="search-input" style="width: 100%; padding-left: 14px;" value="qa.testuser@flowshop-de.mock" />
           </div>
 
           <div style="margin-bottom: 20px;">
@@ -829,15 +829,15 @@ const templates = [
     </body></html>`
   },
 
-  // 12. novatech_de_rma_live.png (NovaTech DE RMA / Service)
+  // 12. flowshop_de_rma_live.png (flowshop DE RMA / Service)
   {
-    filename: 'novatech_de_rma_live.png',
+    filename: 'flowshop_de_rma_live.png',
     viewport: { width: 1440, height: 900 },
     html: `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${commonCss}</style></head><body>
       <header>
         <div class="logo">
           <div class="logo-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">NT</div>
-          <span>NovaTech<span class="logo-badge badge-de">DE</span></span>
+          <span>flowshop<span class="logo-badge badge-de">DE</span></span>
         </div>
         <div style="font-size: 14px; font-weight: 700; color: #facc15;">Service- & Garantieportal</div>
         <div class="header-actions"><span style="font-size: 13px; color: #10b981;">3 Jahre Europa Garantie</span></div>
@@ -892,20 +892,20 @@ async function generateAll() {
   }
 
   // Now overwrite all existing run-*.png images with clean mock images
-  console.log('Sanitizing and overwriting run-*.png files to eliminate all old Monster/Tulpar frames...');
+  console.log('Sanitizing and overwriting run-*.png files to eliminate all old flowshop/flowshop frames...');
   const allClientFiles = fs.readdirSync(clientScreenshotsDir);
   for (const f of allClientFiles) {
     if (f.startsWith('run-') && f.endsWith('.png')) {
       // Pick a clean mock image based on suffix
-      let sourceFile = 'novatech_home_live.png';
-      if (f.includes('cart')) sourceFile = 'novatech_cart_live.png';
-      else if (f.includes('checkout') || f.includes('payment') || f.includes('sca')) sourceFile = 'novatech_checkout_live.png';
-      else if (f.includes('pdp') || f.includes('cfg')) sourceFile = 'novatech_pdp.png';
-      else if (f.includes('search')) sourceFile = 'novatech_category.png';
-      else if (f.includes('tde-home')) sourceFile = 'novatech_de_home_live.png';
-      else if (f.includes('tde-pdp')) sourceFile = 'novatech_de_pdp_live.png';
-      else if (f.includes('tde-cart')) sourceFile = 'novatech_de_cart_live.png';
-      else if (f.includes('tde-search')) sourceFile = 'novatech_de_search_live.png';
+      let sourceFile = 'flowshop_home_live.png';
+      if (f.includes('cart')) sourceFile = 'flowshop_cart_live.png';
+      else if (f.includes('checkout') || f.includes('payment') || f.includes('sca')) sourceFile = 'flowshop_checkout_live.png';
+      else if (f.includes('pdp') || f.includes('cfg')) sourceFile = 'flowshop_pdp.png';
+      else if (f.includes('search')) sourceFile = 'flowshop_category.png';
+      else if (f.includes('tde-home')) sourceFile = 'flowshop_de_home_live.png';
+      else if (f.includes('tde-pdp')) sourceFile = 'flowshop_de_pdp_live.png';
+      else if (f.includes('tde-cart')) sourceFile = 'flowshop_de_cart_live.png';
+      else if (f.includes('tde-search')) sourceFile = 'flowshop_de_search_live.png';
 
       const srcBuffer = fs.readFileSync(path.join(clientScreenshotsDir, sourceFile));
       fs.writeFileSync(path.join(clientScreenshotsDir, f), srcBuffer);
@@ -915,15 +915,15 @@ async function generateAll() {
   const allServerFiles = fs.readdirSync(serverScreenshotsDir);
   for (const f of allServerFiles) {
     if (f.startsWith('run-') && f.endsWith('.png')) {
-      let sourceFile = 'novatech_home_live.png';
-      if (f.includes('cart')) sourceFile = 'novatech_cart_live.png';
-      else if (f.includes('checkout') || f.includes('payment') || f.includes('sca')) sourceFile = 'novatech_checkout_live.png';
-      else if (f.includes('pdp') || f.includes('cfg')) sourceFile = 'novatech_pdp.png';
-      else if (f.includes('search')) sourceFile = 'novatech_category.png';
-      else if (f.includes('tde-home')) sourceFile = 'novatech_de_home_live.png';
-      else if (f.includes('tde-pdp')) sourceFile = 'novatech_de_pdp_live.png';
-      else if (f.includes('tde-cart')) sourceFile = 'novatech_de_cart_live.png';
-      else if (f.includes('tde-search')) sourceFile = 'novatech_de_search_live.png';
+      let sourceFile = 'flowshop_home_live.png';
+      if (f.includes('cart')) sourceFile = 'flowshop_cart_live.png';
+      else if (f.includes('checkout') || f.includes('payment') || f.includes('sca')) sourceFile = 'flowshop_checkout_live.png';
+      else if (f.includes('pdp') || f.includes('cfg')) sourceFile = 'flowshop_pdp.png';
+      else if (f.includes('search')) sourceFile = 'flowshop_category.png';
+      else if (f.includes('tde-home')) sourceFile = 'flowshop_de_home_live.png';
+      else if (f.includes('tde-pdp')) sourceFile = 'flowshop_de_pdp_live.png';
+      else if (f.includes('tde-cart')) sourceFile = 'flowshop_de_cart_live.png';
+      else if (f.includes('tde-search')) sourceFile = 'flowshop_de_search_live.png';
 
       const srcBuffer = fs.readFileSync(path.join(serverScreenshotsDir, sourceFile));
       fs.writeFileSync(path.join(serverScreenshotsDir, f), srcBuffer);

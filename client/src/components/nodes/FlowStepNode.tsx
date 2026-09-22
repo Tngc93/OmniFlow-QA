@@ -115,7 +115,7 @@ export const FlowStepNode: React.FC<FlowStepNodeProps> = ({ id, data, selected }
           scenarioTitle: data.name,
           stepName: data.name,
           errorMessage: data.expected || 'Step validation defect',
-          screenshot: data.screenshot || '/screenshots/novatech_home_live.png'
+          screenshot: data.screenshot || '/screenshots/flowshop_home_live.png'
         }
       })
     );
@@ -128,7 +128,7 @@ export const FlowStepNode: React.FC<FlowStepNodeProps> = ({ id, data, selected }
       new CustomEvent('open-visual-diff', {
         detail: {
           stepName: data.name || 'E-Ticaret Arayüz Adımı',
-          screenshot: data.screenshot || '/screenshots/novatech_home_live.png'
+          screenshot: data.screenshot || '/screenshots/flowshop_home_live.png'
         }
       })
     );

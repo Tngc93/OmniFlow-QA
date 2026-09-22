@@ -18,28 +18,28 @@ async function main() {
   await masterTab.click();
   await page.waitForTimeout(1500);
 
-  // 1. Check NovaTech TR
-  console.log('Selecting novatech.com.tr...');
-  const trBtn = page.locator('[data-testid="domain-btn-novatech-tr"]');
+  // 1. Check flowshop TR
+  console.log('Selecting flowshop-tr.mock...');
+  const trBtn = page.locator('[data-testid="domain-btn-flowshop-tr"]');
   if (await trBtn.isVisible()) {
     await trBtn.click();
     await page.waitForTimeout(1000);
   }
 
-  // Zoom/Fit view if available or capture screenshot of NovaTech TR
+  // Zoom/Fit view if available or capture screenshot of flowshop TR
   const fitViewBtn = page.locator('.react-flow__controls-fitview');
   if (await fitViewBtn.isVisible()) {
     await fitViewBtn.click();
     await page.waitForTimeout(1000);
   }
 
-  const screen1 = path.join(artifactDir, 'feat_10_monster_tr_master_screens.png');
+  const screen1 = path.join(artifactDir, 'feat_10_flowshop_tr_master_screens.png');
   await page.screenshot({ path: screen1 });
-  console.log('Saved feat_10_monster_tr_master_screens.png');
+  console.log('Saved feat_10_flowshop_tr_master_screens.png');
 
-  // 2. Switch to NovaTech DE
-  console.log('Selecting novatech.de...');
-  const deBtn = page.locator('[data-testid="domain-btn-novatech-de"]');
+  // 2. Switch to flowshop DE
+  console.log('Selecting flowshop-de.mock...');
+  const deBtn = page.locator('[data-testid="domain-btn-flowshop-de"]');
   await deBtn.click();
   await page.waitForTimeout(1500);
 
@@ -48,20 +48,20 @@ async function main() {
     await page.waitForTimeout(1000);
   }
 
-  const screen2 = path.join(artifactDir, 'feat_11_tulpar_de_master_authentic_screens.png');
+  const screen2 = path.join(artifactDir, 'feat_11_flowshop_de_master_authentic_screens.png');
   await page.screenshot({ path: screen2 });
-  console.log('Saved feat_11_tulpar_de_master_authentic_screens.png');
+  console.log('Saved feat_11_flowshop_de_master_authentic_screens.png');
 
   // 3. Test clicking a screenshot thumbnail to open modal
-  console.log('Clicking screenshot thumbnail on Tulpar node...');
+  console.log('Clicking screenshot thumbnail on flowshop node...');
   const thumbnail = page.locator('[data-testid="node-screenshot-thumb"]').first();
   if (await thumbnail.isVisible({ timeout: 5000 }).catch(() => false)) {
     await thumbnail.click({ force: true });
     await page.waitForTimeout(1500);
 
-    const screen3 = path.join(artifactDir, 'feat_12_tulpar_screenshot_modal.png');
+    const screen3 = path.join(artifactDir, 'feat_12_flowshop_screenshot_modal.png');
     await page.screenshot({ path: screen3 });
-    console.log('Saved feat_12_tulpar_screenshot_modal.png');
+    console.log('Saved feat_12_flowshop_screenshot_modal.png');
 
     // Close modal by clicking close button
     const closeBtn = page.locator('[data-testid="modal-close-btn"]');

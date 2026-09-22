@@ -19,22 +19,22 @@ interface WebVitalsModalProps {
   isOpen: boolean;
   onClose: () => void;
   lang?: Language;
-  initialStore?: 'novaTr' | 'novaDe' | 'monsterTr' | 'tulparDe';
+  initialStore?: 'flowTr' | 'flowDe';
 }
 
 export const WebVitalsModal: React.FC<WebVitalsModalProps> = ({
   isOpen,
   onClose,
   lang = 'tr',
-  initialStore = 'novaTr'
+  initialStore = 'flowTr'
 }) => {
-  const normalizedInitial = (initialStore === 'tulparDe' || initialStore === 'novaDe') ? 'novaDe' : 'novaTr';
-  const [selectedStore, setSelectedStore] = useState<'novaTr' | 'novaDe'>(normalizedInitial);
+  const normalizedInitial = initialStore === 'flowDe' ? 'flowDe' : 'flowTr';
+  const [selectedStore, setSelectedStore] = useState<'flowTr' | 'flowDe'>(normalizedInitial);
   const [isAuditing, setIsAuditing] = useState(false);
   const isTr = lang === 'tr';
 
   useEffect(() => {
-    setSelectedStore((initialStore === 'tulparDe' || initialStore === 'novaDe') ? 'novaDe' : 'novaTr');
+    setSelectedStore(initialStore === 'flowDe' ? 'flowDe' : 'flowTr');
   }, [initialStore]);
 
   useEffect(() => {
@@ -55,9 +55,9 @@ export const WebVitalsModal: React.FC<WebVitalsModalProps> = ({
     }, 1200);
   };
 
-  const storeData = selectedStore === 'novaTr' ? {
-    domain: 'novatech.com.tr',
-    name: 'NovaTech Türkiye',
+  const storeData = selectedStore === 'flowTr' ? {
+    domain: 'flowshop-tr.mock',
+    name: 'FlowShop TR (Mock Store)',
     flag: '🇹🇷',
     currency: 'TRY (₺)',
     scores: {
@@ -78,8 +78,8 @@ export const WebVitalsModal: React.FC<WebVitalsModalProps> = ({
       ? 'Mevcut LCP ve CLS hız puanı sepet terk oranını %14 azaltmakta, dönüşüm oranını ise tahmini %8.2 artırmaktadır.'
       : 'Current LCP and CLS scores reduce cart abandonment by ~14% and improve checkout conversion by +8.2%.'
   } : {
-    domain: 'novatech.de',
-    name: 'NovaTech Deutschland',
+    domain: 'flowshop-de.mock',
+    name: 'FlowShop DE (Mock Store)',
     flag: '🇩🇪',
     currency: 'EUR (€)',
     scores: {
@@ -89,8 +89,8 @@ export const WebVitalsModal: React.FC<WebVitalsModalProps> = ({
       seo: 99
     },
     vitals: [
-      { key: 'LCP', name: isTr ? 'En Büyük İçerikli Boyama' : 'Largest Contentful Paint', value: '1.12s', target: '< 2.5s', status: 'good', score: 99, desc: isTr ? 'NovaTech Titan X17 ürün görseli & WebP' : 'NovaTech Titan X17 visual & WebP load' },
-      { key: 'INP', name: isTr ? 'Sonraki Boyamayla Etkileşim' : 'Interaction to Next Paint', value: '68ms', target: '< 200ms', status: 'good', score: 98, desc: isTr ? 'Konfigüratör RAM/SSD seçim tepkisi' : 'Configurator RAM/SSD switch latency' },
+      { key: 'LCP', name: isTr ? 'En Büyük İçerikli Boyama' : 'Largest Contentful Paint', value: '1.12s', target: '< 2.5s', status: 'good', score: 99, desc: isTr ? 'FlowShop Studio Wireless ürün görseli & WebP' : 'FlowShop Studio Wireless visual & WebP load' },
+      { key: 'INP', name: isTr ? 'Sonraki Boyamayla Etkileşim' : 'Interaction to Next Paint', value: '68ms', target: '< 200ms', status: 'good', score: 98, desc: isTr ? 'Konfigüratör varyant seçim tepkisi' : 'Configurator variant switch latency' },
       { key: 'CLS', name: isTr ? 'Kümülatif Düzen Kayması' : 'Cumulative Layout Shift', value: '0.008', target: '< 0.10', status: 'good', score: 100, desc: isTr ? 'Cookiebot DSGVO & sepet çekmecesi' : 'Cookiebot DSGVO & cart drawer stability' },
       { key: 'FCP', name: isTr ? 'İlk İçerikli Boyama' : 'First Contentful Paint', value: '0.65s', target: '< 1.8s', status: 'good', score: 98, desc: isTr ? 'Avrupa AWS Frankfurt Edge noktası' : 'Frankfurt AWS CloudFront Edge point' },
       { key: 'TTFB', name: isTr ? 'İlk Bayta Kadar Geçen Süre' : 'Time to First Byte', value: '118ms', target: '< 800ms', status: 'good', score: 97, desc: isTr ? 'Nginx + HTTP/3 sunucu yanıt süresi' : 'Nginx + HTTP/3 server response time' },
@@ -138,27 +138,27 @@ export const WebVitalsModal: React.FC<WebVitalsModalProps> = ({
             <div className="flex items-center bg-slate-200/80 dark:bg-slate-800 p-1 rounded-xl text-xs font-bold">
               <button
                 data-testid="store-vitals-tr"
-                onClick={() => setSelectedStore('novaTr')}
+                onClick={() => setSelectedStore('flowTr')}
                 className={`px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 ${
-                  selectedStore === 'novaTr'
+                  selectedStore === 'flowTr'
                     ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-xs'
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
                 }`}
               >
                 <span>🇹🇷</span>
-                <span>NovaTech TR</span>
+                <span>FlowShop TR</span>
               </button>
               <button
                 data-testid="store-vitals-de"
-                onClick={() => setSelectedStore('novaDe')}
+                onClick={() => setSelectedStore('flowDe')}
                 className={`px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 ${
-                  selectedStore === 'novaDe'
+                  selectedStore === 'flowDe'
                     ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-xs'
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
                 }`}
               >
                 <span>🇩🇪</span>
-                <span>NovaTech DE</span>
+                <span>FlowShop DE</span>
               </button>
             </div>
 

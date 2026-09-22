@@ -1,44 +1,44 @@
 [
   {
     "id": "jira-1789990477707",
-    "key": "NOVA-487",
-    "summary": "[E-Commerce QA] NovaTech Audio E2E Test - Sepete Ekleme Doğrulaması Hatası",
-    "description": "Playwright E2E Otomasyonu sırasında tespit edilen hata kaydı:\n\n• Senaryo: NovaTech Audio E2E Test\n• Hatalı Adım: Sepete Ekleme Doğrulaması\n• Model: Noise Cancelling Headphones Pro\n• Hata Detayı: Stok kontrolü zaman aşımına uğradı\n• Hedef URL: https://www.novatech.com.tr/headphones-pro/\n• Tarayıcı: Playwright Chromium Headless\n• Ekran Görüntüsü Ekli: /screenshots/novatech_pdp.png\n• Raporlayan: OmniFlow Jira MCP Köprüsü\n• Tarih: 21.09.2026 14:34:37",
-    "screenshotUrl": "/screenshots/novatech_pdp.png",
-    "projectKey": "NOVA",
+    "key": "FLOW-487",
+    "summary": "[E-Commerce QA] FlowShop Audio E2E Test - Add to Cart Validation Issue",
+    "description": "Playwright E2E automation captured defect on mock storefront:\n\n• Scenario: FlowShop Audio E2E Test\n• Step: Add to Cart Assertion\n• Product: Noise Cancelling Headphones Pro\n• Issue: Stock check timed out during high volume test\n• Target URL: https://flowshop-tr.mock/products/studio-wireless/\n• Browser: Playwright Chromium Headless\n• Screenshot: Attached\n• Reporter: OmniFlow Jira MCP Connector\n• Timestamp: 21.09.2026 14:34:37",
+    "screenshotUrl": "/screenshots/flowshop_pdp.png",
+    "projectKey": "FLOW",
     "board": "BOARD-104 (QA Automation Sprint)",
     "issueType": "Bug",
     "priority": "High",
     "status": "To Do",
     "reporter": "OmniFlow Jira MCP Bot",
-    "createdAt": "Az önce"
+    "createdAt": "Just now"
   },
   {
     "id": "jira-101",
-    "key": "NOVA-412",
-    "summary": "[E2E QA] NovaTech PDP: Renk Varyant Seçiminde Sepet Senkronizasyon Gecikmesi",
-    "description": "Playwright E2E Otomasyonu sırasında Noise Cancelling Headphones Pro modelinde 'Midnight Black' seçildiğinde DOM sepet güncellemesi 2500ms üzerinde sürdü.\n\n• Hedef: https://www.novatech.com.tr/headphones-pro/\n• Adım: Action Trigger (PDP Specs)\n• Beklenen: 1500ms altında sepet response\n• Alınan: Timeout uyarısı ve geç DOM render\n• Ortam: Chromium Headless\n• Zaman: 2026-09-21T13:42:10.000Z",
-    "screenshotUrl": "/screenshots/novatech_pdp.png",
-    "projectKey": "NOVA",
+    "key": "FLOW-412",
+    "summary": "[E2E QA] FlowShop PDP: Color Variant Selection Latency Exceeded",
+    "description": "During Playwright E2E automation on FlowShop Studio Wireless, selecting 'Midnight Black' variant took >2500ms for DOM cart state update.\n\n• Target: https://flowshop-tr.mock/products/studio-wireless/\n• Step: Action Trigger (PDP Specs)\n• Expected: <1500ms cart response\n• Received: Timeout alert and delayed hydration\n• Environment: Chromium Headless\n• Timestamp: 2026-09-21T13:42:10.000Z",
+    "screenshotUrl": "/screenshots/flowshop_pdp.png",
+    "projectKey": "FLOW",
     "board": "BOARD-104 (QA Automation Sprint)",
     "issueType": "Bug",
     "priority": "High",
     "status": "In Progress",
     "reporter": "OmniFlow Jira MCP Bot",
-    "createdAt": "Bugün 13:42"
+    "createdAt": "Today 13:42"
   },
   {
     "id": "jira-102",
-    "key": "NOVA-415",
-    "summary": "[Kupon Testi] İndirim Kuponu Geçersiz Kod Girişinde Hata Mesajı Konumu Kayması",
-    "description": "Sepet çekmecesinde 'GECERSIZ50' kodu girildiğinde banner z-index hatası nedeniyle ödeme butonunu perdeledi.\n\n• Hedef: https://www.novatech.com.tr/cart/\n• Adım: Validate Coupon Decline\n• Ekran Görüntüsü: novatech_cart_live.png\n• Ortam: WebKit Mobile Viewport",
-    "screenshotUrl": "/screenshots/novatech_cart_live.png",
-    "projectKey": "NOVA",
+    "key": "FLOW-415",
+    "summary": "[Coupon Test] Invalid Coupon Code Warning Position Z-Index Drift",
+    "description": "When invalid code 'INVALID50' is entered in cart drawer, error banner z-index overlaps checkout CTA.\n\n• Target: https://flowshop-tr.mock/cart/\n• Step: Validate Coupon Decline\n• Screenshot: Attached\n• Environment: WebKit Mobile Viewport",
+    "screenshotUrl": "/screenshots/flowshop_cart_live.png",
+    "projectKey": "FLOW",
     "board": "BOARD-104 (QA Automation Sprint)",
     "issueType": "Bug",
     "priority": "Medium",
     "status": "To Do",
     "reporter": "OmniFlow Jira MCP Bot",
-    "createdAt": "Dün 16:15"
+    "createdAt": "Yesterday 16:15"
   }
 ]

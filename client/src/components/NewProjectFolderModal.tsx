@@ -41,8 +41,8 @@ export const NewProjectFolderModal: React.FC<NewProjectFolderModalProps> = ({
   const [scannedRoutes, setScannedRoutes] = useState<any>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const [testCustomerEmail, setTestCustomerEmail] = useState('qa.testuser@novatech.com.tr');
-  const [testCustomerPassword, setTestCustomerPassword] = useState('NovaTechQA!2026Secure');
+  const [testCustomerEmail, setTestCustomerEmail] = useState('qa.testuser@flowshop.mock');
+  const [testCustomerPassword, setTestCustomerPassword] = useState('FlowShopQA!2026Secure');
   const [showPassword, setShowPassword] = useState(false);
 
   // Auto-scan URL on debounced typing
@@ -165,7 +165,7 @@ export const NewProjectFolderModal: React.FC<NewProjectFolderModalProps> = ({
               <input
                 type="text"
                 required
-                placeholder="https://www.novatech.com.tr"
+                placeholder="https://flowshop-tr.mock"
                 value={baseUrl}
                 onChange={(e) => setBaseUrl(e.target.value)}
                 className="w-full pl-8 pr-8 py-2.5 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 rounded-xl font-mono focus:outline-none focus:border-indigo-500 text-slate-800 dark:text-slate-100 font-bold"
@@ -176,7 +176,7 @@ export const NewProjectFolderModal: React.FC<NewProjectFolderModalProps> = ({
               )}
             </div>
             <p className="text-[10px] text-slate-400 mt-1">
-              {isTr ? 'Örn: https://www.novatech.com.tr veya herhangi bir e-ticaret sitesi' : 'e.g. https://www.novatech.com.tr or any e-commerce URL'}
+              {isTr ? 'Örn: https://flowshop-tr.mock veya herhangi bir e-ticaret sitesi' : 'e.g. https://flowshop-tr.mock or any e-commerce URL'}
             </p>
           </div>
 
@@ -187,7 +187,7 @@ export const NewProjectFolderModal: React.FC<NewProjectFolderModalProps> = ({
             <input
               type="text"
               required
-              placeholder={isTr ? 'Örn: NovaTech' : 'e.g. NovaTech'}
+              placeholder={isTr ? 'Örn: FlowShop TR' : 'e.g. FlowShop TR'}
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="w-full px-3 py-2 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 rounded-xl focus:outline-none focus:border-indigo-500 text-slate-800 dark:text-slate-100"

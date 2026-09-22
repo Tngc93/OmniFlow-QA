@@ -63,8 +63,8 @@ export const TrainingGuideModal: React.FC<TrainingGuideModalProps> = ({
         <div className="space-y-4 text-xs">
           <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
             {isTr 
-              ? 'Sol menüden "+ Yeni Klasör" butonuna basarak mağazanızın adresini girin (örn: https://www.novatech.com.tr). Akıllı URL Tarayıcı, siteyi anında analiz ederek arama, kategori, ürün detay (PDP), sepet, ödeme ve üye girişi yollarını otomatik ayrıştırır.'
-              : 'Click "+ New Folder" and provide your target storefront URL (e.g. https://www.novatech.com.tr). The built-in scanner detects storefront, search, PDP, cart, checkout, and login endpoints in real time.'}
+              ? 'Sol menüden "+ Yeni Klasör" butonuna basarak mağazanızın adresini girin (örn: https://flowshop-tr.mock). Akıllı URL Tarayıcı, siteyi anında analiz ederek arama, kategori, ürün detay (PDP), sepet, ödeme ve üye girişi yollarını otomatik ayrıştırır.'
+              : 'Click "+ New Folder" and provide your target storefront URL (e.g. https://flowshop-tr.mock). The built-in scanner detects storefront, search, PDP, cart, checkout, and login endpoints in real time.'}
           </p>
 
           {/* Visual Route Discovery Blueprint */}
@@ -81,7 +81,7 @@ export const TrainingGuideModal: React.FC<TrainingGuideModalProps> = ({
             <div className="grid grid-cols-2 gap-2 text-[10px]">
               <div className="p-2 rounded-lg bg-slate-800/80 border border-slate-700">
                 <span className="text-slate-400 block text-[9px]">STOREFRONT:</span>
-                <span className="text-indigo-300">https://www.novatech.com.tr/</span>
+                <span className="text-indigo-300">https://flowshop-tr.mock/</span>
               </div>
               <div className="p-2 rounded-lg bg-slate-800/80 border border-slate-700">
                 <span className="text-slate-400 block text-[9px]">SEARCH:</span>
@@ -137,11 +137,11 @@ export const TrainingGuideModal: React.FC<TrainingGuideModalProps> = ({
             <div className="grid grid-cols-2 gap-3 font-mono text-[11px]">
               <div className="p-2.5 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700">
                 <span className="text-[9px] text-slate-400 font-sans block">Test Müşteri E-Postası:</span>
-                <span className="text-slate-800 dark:text-slate-100 font-bold">qa.testuser@novatech.com.tr</span>
+                <span className="text-slate-800 dark:text-slate-100 font-bold">qa.testuser@flowshop.mock</span>
               </div>
               <div className="p-2.5 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700">
                 <span className="text-[9px] text-slate-400 font-sans block">Test Müşteri Şifresi:</span>
-                <span className="text-slate-800 dark:text-slate-100 font-bold">••••••••••••• (NovaTechQA!2026Secure)</span>
+                <span className="text-slate-800 dark:text-slate-100 font-bold">••••••••••••• (FlowShopQA!2026Secure)</span>
               </div>
             </div>
           </div>
@@ -263,15 +263,15 @@ export const TrainingGuideModal: React.FC<TrainingGuideModalProps> = ({
             <div className="space-y-1.5 text-[11px]">
               <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300 font-medium">
                 <Check className="w-3.5 h-3.5 text-emerald-600" />
-                <span>NovaTech TR: Studio Wireless E2E Flow</span>
+                <span>FlowShop TR: Studio Wireless E2E Flow</span>
               </div>
               <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300 font-medium">
                 <Check className="w-3.5 h-3.5 text-emerald-600" />
-                <span>NovaTech TR: Audio Gear Category & Filters</span>
+                <span>FlowShop TR: Audio Gear Category & Filters</span>
               </div>
               <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300 font-medium">
                 <Check className="w-3.5 h-3.5 text-emerald-600" />
-                <span>NovaTech TR: Mobil Responsive & Menü</span>
+                <span>FlowShop TR: Mobil Responsive & Menü</span>
               </div>
             </div>
           </div>
@@ -298,7 +298,7 @@ export const TrainingGuideModal: React.FC<TrainingGuideModalProps> = ({
             <div className="space-y-1 min-w-0 flex-1">
               <div className="flex items-center gap-2">
                 <span className="px-2 py-0.5 rounded bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-400 font-mono font-bold text-xs">
-                  NOVA-412
+                  FLOW-412
                 </span>
                 <span className="px-2 py-0.5 rounded bg-rose-50 text-rose-700 dark:bg-rose-950 dark:text-rose-400 text-[10px] font-bold">
                   Bug (Defect)
@@ -306,7 +306,7 @@ export const TrainingGuideModal: React.FC<TrainingGuideModalProps> = ({
                 <span className="text-slate-400 text-[10px]">BOARD-104 QA Sprint</span>
               </div>
               <h5 className="font-bold text-xs text-slate-900 dark:text-white">
-                [E2E QA] NovaTech PDP: Active ANC Hybrid Toggle Latency on Studio Wireless
+                [E2E QA] FlowShop PDP: Active ANC Hybrid Toggle Latency on Studio Wireless
               </h5>
               <p className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-2">
                 During Playwright E2E automation on FlowShop Studio Wireless, DOM cart state update exceeded 2500ms threshold.
@@ -315,7 +315,7 @@ export const TrainingGuideModal: React.FC<TrainingGuideModalProps> = ({
 
             <div className="flex flex-col items-center gap-1 flex-shrink-0">
               <img
-                src="/screenshots/novatech_pdp.png"
+                src="/screenshots/flowshop_pdp.png"
                 alt="Jira Bug"
                 className="w-16 h-12 rounded-lg object-cover border border-slate-200 dark:border-slate-700 shadow-2xs"
               />

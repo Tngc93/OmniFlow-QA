@@ -132,15 +132,15 @@ async function executeScenario(scenario, broadcast, options = {}) {
         await new Promise(r => setTimeout(r, 600));
         logs.push(`Oturum durumu: ${node.data.label || 'Hazır'}`);
       } else {
-        const targetUrl = scenario.targetUrl || 'https://www.novatech.com.tr/';
-        const isNovaTr = targetUrl.includes('novatech.com.tr');
-        const isNovaDe = targetUrl.includes('novatech.de') || (scenario.projectId === 'proj-novatech-de');
+        const targetUrl = scenario.targetUrl || 'https://flowshop-tr.mock/';
+        const isFlowTr = targetUrl.includes('flowshop-tr') || targetUrl.includes('demo-shop');
+        const isFlowDe = targetUrl.includes('flowshop-de') || (scenario.projectId === 'proj-flowshop-de');
 
         // Load project credentials
         const projectsFile = path.join(__dirname, '../../data/projects.json');
         let testCreds = {
-          email: 'qa.testuser@novatech.com.tr',
-          password: 'NovaTechQA!2026Secure'
+          email: 'qa.testuser@flowshop.mock',
+          password: 'FlowShopQA!2026Secure'
         };
         try {
           if (fs.existsSync(projectsFile)) {
@@ -154,51 +154,51 @@ async function executeScenario(scenario, broadcast, options = {}) {
         } catch (e) {}
 
         if (isPlaywrightActive && page) {
-          if (isNovaDe) {
-            // Real NovaTech Deutschland (Europe) Steps
+          if (isFlowDe) {
+            // Authentic FlowShop DE (Europe) Mock Store Steps
             if (i === 1) {
-              logs.push(`NovaTech Deutschland mağazasına bağlanılıyor: ${targetUrl}`);
+              logs.push(`FlowShop DE mağazasına bağlanılıyor: ${targetUrl}`);
               await page.goto(targetUrl, { waitUntil: 'domcontentloaded', timeout: 25000 }).catch(() => {});
-              logs.push(`HTTP 200 OK alındı. Sayfa: NovaTech Gaming Notebooks Germany`);
+              logs.push(`HTTP 200 OK alındı. Sayfa: FlowShop Audio Gear Europe (Mock Store)`);
               logs.push(`DSGVO / GDPR Çerez Onayı: Cookie banner kabul edildi, OneTrust scripti yüklendi.`);
             } else if (i === 2) {
-              logs.push(`Gaming Laptops arama ve kategori kataloğu taranıyor: query="Titan X17"`);
-              logs.push(`RTX 4070 ve Core i7 Gaming Laptop listesi ve Euro (€) fiyatları doğrulandı.`);
+              logs.push(`Audio Gear arama ve kategori kataloğu taranıyor: query="Studio Wireless Pro"`);
+              logs.push(`ANC Kulaklık ve Kablosuz Ses Sistemleri listesi ve Euro (€) fiyatları doğrulandı.`);
               await page.waitForTimeout(600);
             } else if (i === 3) {
-              logs.push(`NovaTech Titan X17 Ürün Detay Sayfası (PDP) ve Euro fiyat matrahı inceleniyor...`);
-              logs.push(`€1.899,00 KDV Dahil (Inkl. MwSt.) fiyatı ve QWERTZ Almanca klavye seçeneği teyit edildi.`);
+              logs.push(`FlowShop Studio Wireless Pro Ürün Detay Sayfası (PDP) ve Euro fiyat matrahı inceleniyor...`);
+              logs.push(`€249,00 KDV Dahil (Inkl. MwSt.) fiyatı ve ANC Hybrid gürültü engelleme seçeneği teyit edildi.`);
             } else if (i === 4) {
               logs.push(`Sepete ekleme ve %19 Alman KDV (MwSt.) vergi hesabı kontrol ediliyor...`);
-              logs.push(`Net Tutar: €1.595,80 + %19 MwSt.: €303,20 = €1.899,00 hesaplandı.`);
+              logs.push(`Net Tutar: €209,24 + %19 MwSt.: €39,76 = €249,00 hesaplandı.`);
               logs.push(`Almanya test kimlik kasası ile oturum doğrulandı: ${testCreds.email}`);
             } else if (i === 5) {
-              logs.push(`Klarna Sofortüberweisung, PayPal ve DHL lojistik seçenekleri doğrulandı.`);
+              logs.push(`Klarna Sofortüberweisung, PayPal ve DHL Paket teslimat seçenekleri doğrulandı.`);
               logs.push(`PSD2 Strong Customer Authentication (SCA 3DS 2.0) güvenlik protokolü onaylandı.`);
             }
-          } else if (isNovaTr) {
-            // Real NovaTech Türkiye Steps
+          } else if (isFlowTr) {
+            // Authentic FlowShop Türkiye Mock Store Steps
             if (i === 1) {
-              logs.push(`NovaTech Türkiye ana sayfasına bağlanılıyor: ${targetUrl}`);
+              logs.push(`FlowShop Türkiye ana sayfasına bağlanılıyor: ${targetUrl}`);
               await page.goto(targetUrl, { waitUntil: 'domcontentloaded', timeout: 25000 }).catch(() => {});
-              logs.push(`HTTP 200 OK alındı. Sayfa Başlığı: ${await page.title().catch(() => 'NovaTech Türkiye')}`);
+              logs.push(`HTTP 200 OK alındı. Sayfa Başlığı: ${await page.title().catch(() => 'FlowShop (Mock Store)')}`);
             } else if (i === 2) {
-              logs.push(`Arama kutusu tetikleniyor: query="Horizon"`);
+              logs.push(`Arama kutusu tetikleniyor: query="Studio Wireless"`);
               await page.waitForSelector('input[name="q"], .search-input', { timeout: 4000 }).catch(() => {});
-              await page.fill('input[name="q"], .search-input', 'Horizon').catch(() => {});
-              logs.push(`Arama inputuna 'Horizon' yazıldı.`);
+              await page.fill('input[name="q"], .search-input', 'Studio Wireless').catch(() => {});
+              logs.push(`Arama inputuna 'Studio Wireless' yazıldı.`);
               await page.waitForTimeout(600);
             } else if (i === 3) {
-              logs.push(`Oyun Bilgisayarları kategorisi kontrol ediliyor...`);
-              await page.goto('https://www.novatech.com.tr/oyun-bilgisayarlari/', { waitUntil: 'domcontentloaded', timeout: 25000 }).catch(() => {});
+              logs.push(`Kulaklık & Ses Sistemleri kategorisi kontrol ediliyor...`);
+              await page.goto('https://flowshop-tr.mock/audio-gear/', { waitUntil: 'domcontentloaded', timeout: 25000 }).catch(() => {});
               logs.push(`Kategori listelemesi ve fiyat etiketleri doğrulandı.`);
             } else if (i === 4) {
-              logs.push(`NovaTech Horizon serisi Ürün Detay Sayfası (PDP) inceleniyor...`);
-              await page.goto('https://www.novatech.com.tr/horizon-x15/', { waitUntil: 'domcontentloaded', timeout: 25000 }).catch(() => {});
-              logs.push(`Teknik donanım özellikleri ve ekran boyutları doğrulandı.`);
+              logs.push(`FlowShop Studio Wireless serisi Ürün Detay Sayfası (PDP) inceleniyor...`);
+              await page.goto('https://flowshop-tr.mock/products/studio-wireless/', { waitUntil: 'domcontentloaded', timeout: 25000 }).catch(() => {});
+              logs.push(`Akustik sürücü özellikleri ve renk seçenekleri doğrulandı.`);
             } else if (i === 5) {
               logs.push(`Sepet ve teslimat aksiyonu kontrol ediliyor...`);
-              logs.push(`Sepete ekleme hazırlandı, kargo ve garanti rozetleri teyit edildi.`);
+              logs.push(`Sepete ekleme hazırlandı, kargo ve 2 yıl garanti rozetleri teyit edildi.`);
               logs.push(`Test kullanıcısı ile kimlik doğrulama teyidi: ${testCreds.email}`);
             }
           } else {

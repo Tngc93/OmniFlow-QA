@@ -54,13 +54,13 @@ export const ScenariosView: React.FC<ScenariosViewProps> = ({
   scenarios,
   projects = [
     {
-      id: 'proj-novatech-tr',
-      name: 'NovaTech Türkiye Resmi Mağazası',
-      baseUrl: 'https://www.novatech.com.tr',
+      id: 'proj-flowshop-tr',
+      name: 'FlowShop TR (Mock Store)',
+      baseUrl: 'https://flowshop-tr.mock',
       scenariosCount: 20
     }
   ],
-  activeProjectId = 'proj-novatech-tr',
+  activeProjectId = 'proj-flowshop-tr',
   onSelectProject,
   onOpenNewProjectModal,
   onSelectAndLoadScenario,
@@ -81,11 +81,11 @@ export const ScenariosView: React.FC<ScenariosViewProps> = ({
   // Filter scenarios for active project if projectId is specified
   const projectScenarios = scenarios.filter(s => {
     if (activeProjectId === 'all') return true;
-    if (activeProjectId === 'proj-novatech-de') {
-      return s.projectId === 'proj-novatech-de';
+    if (activeProjectId === 'proj-flowshop-de') {
+      return s.projectId === 'proj-flowshop-de';
     }
-    if (activeProjectId === 'proj-novatech-tr') {
-      return !s.projectId || s.projectId === 'proj-novatech-tr';
+    if (activeProjectId === 'proj-flowshop-tr') {
+      return !s.projectId || s.projectId === 'proj-flowshop-tr';
     }
     return s.projectId === activeProjectId;
   });
@@ -186,17 +186,17 @@ export const ScenariosView: React.FC<ScenariosViewProps> = ({
               </span>
             </div>
             <h3 className="font-extrabold text-sm text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-              {activeProject?.name || 'NovaTech Türkiye Resmi Mağazası'}
+              {activeProject?.name || 'FlowShop TR (Mock Store)'}
             </h3>
             <div className="flex flex-wrap items-center gap-3 mt-1 text-[11px]">
               <div className="flex items-center gap-1 text-indigo-600 dark:text-indigo-400 font-mono font-medium">
                 <Globe className="w-3 h-3" />
-                <span>{activeProject?.baseUrl || 'https://www.novatech.com.tr'}</span>
+                <span>{activeProject?.baseUrl || 'https://flowshop-tr.mock'}</span>
               </div>
               <span className="text-slate-300 dark:text-slate-700">•</span>
               <div className="flex items-center gap-1 text-slate-500 dark:text-slate-400 font-mono">
                 <UserCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                <span>{activeProject?.testCustomerEmail || 'qa.testuser@novatech.com.tr'}</span>
+                <span>{activeProject?.testCustomerEmail || 'qa.testuser@flowshop.mock'}</span>
               </div>
             </div>
           </div>

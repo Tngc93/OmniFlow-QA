@@ -23,8 +23,8 @@ interface CanvasTabBarProps {
   onOpenScenarioInTab: (scenarioId: string) => void;
   scenarios: Scenario[];
   lang: Language;
-  selectedMasterDomain?: 'novatech-tr' | 'novatech-de' | 'all' | 'monster-tr' | 'tulpar-de';
-  onSelectMasterDomain?: (domainId: 'novatech-tr' | 'novatech-de' | 'all') => void;
+  selectedMasterDomain?: 'flowshop-tr' | 'flowshop-de' | 'all';
+  onSelectMasterDomain?: (domainId: 'flowshop-tr' | 'flowshop-de' | 'all') => void;
 }
 
 export const CanvasTabBar: React.FC<CanvasTabBarProps> = ({
@@ -35,7 +35,7 @@ export const CanvasTabBar: React.FC<CanvasTabBarProps> = ({
   onOpenScenarioInTab,
   scenarios,
   lang,
-  selectedMasterDomain = 'novatech-tr',
+  selectedMasterDomain = 'flowshop-tr',
   onSelectMasterDomain
 }) => {
   const isTr = lang === 'tr';

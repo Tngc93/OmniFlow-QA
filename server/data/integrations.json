@@ -2,9 +2,9 @@
   "jira": {
     "name": "Jira MCP Defect Tracker",
     "connected": true,
-    "domain": "https://novatech-qa.atlassian.net",
-    "email": "qa.engineer@novatech-ecom.io",
-    "projectKey": "NOVA",
+    "domain": "https://flowshop-qa.atlassian.net",
+    "email": "qa.engineer@flowshop.mock",
+    "projectKey": "FLOW",
     "boardId": "BOARD-104 (QA Automation Sprint)",
     "issueType": "Bug",
     "autoCreateOnFailure": false
@@ -16,7 +16,7 @@
   },
   "slack": {
     "webhookUrl": "https://hooks.slack.com/services/T01234/B5678/XYZ9876",
-    "channel": "#qa-novatech-alerts",
+    "channel": "#qa-flowshop-alerts",
     "connected": true
   },
   "playwright": {

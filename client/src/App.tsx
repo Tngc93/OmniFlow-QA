@@ -37,29 +37,29 @@ export function App() {
 
   // Canvas Tabs State (Master Pipeline + Open Scenario Tabs)
   const [openScenarioTabIds, setOpenScenarioTabIds] = useState<string[]>([
-    'scenario-novatech-tr-e2e',
-    'scenario-novatech-de-e2e',
-    'scenario-novatech-de-configurator'
+    'scenario-flowshop-tr-e2e',
+    'scenario-flowshop-de-e2e',
+    'scenario-flowshop-de-configurator'
   ]);
   const [activeCanvasTabId, setActiveCanvasTabId] = useState<string>('master-pipeline');
-  const [selectedMasterDomain, setSelectedMasterDomain] = useState<'novatech-tr' | 'novatech-de' | 'all'>('novatech-tr');
+  const [selectedMasterDomain, setSelectedMasterDomain] = useState<'flowshop-tr' | 'flowshop-de' | 'all'>('flowshop-tr');
 
   // Projects / Site Folders State
   const [projects, setProjects] = useState<any[]>([
     {
-      id: 'proj-novatech-tr',
-      name: 'NovaTech Store (TR)',
-      baseUrl: 'https://www.novatech.com.tr',
+      id: 'proj-flowshop-tr',
+      name: 'FlowShop TR (Mock Store)',
+      baseUrl: 'https://flowshop-tr.mock',
       scenariosCount: 20
     },
     {
-      id: 'proj-novatech-de',
-      name: 'NovaTech Deutschland (EU)',
-      baseUrl: 'https://www.novatech.de',
+      id: 'proj-flowshop-de',
+      name: 'FlowShop DE (Mock Store)',
+      baseUrl: 'https://flowshop-de.mock',
       scenariosCount: 18
     }
   ]);
-  const [activeProjectId, setActiveProjectId] = useState<string>('proj-novatech-tr');
+  const [activeProjectId, setActiveProjectId] = useState<string>('proj-flowshop-tr');
 
   // Language & Dark Mode Theme State
   const [lang, setLang] = useState<Language>(() => {
@@ -161,7 +161,7 @@ export function App() {
         // Initialize with Master Pipeline by default on Kontrol Paneli
         setActiveScenarioId('master-pipeline');
         setActiveCanvasTabId('master-pipeline');
-        const initialMaster = getMasterPipeline('novatech-tr');
+        const initialMaster = getMasterPipeline('flowshop-tr');
         setNodes(initialMaster.nodes as Node[]);
         setEdges(initialMaster.edges as Edge[]);
       } catch (err) {
@@ -289,17 +289,17 @@ export function App() {
   }, [scenarios, selectedMasterDomain, setNodes, setEdges]);
 
   // Master Pipeline Domain Switcher Handler
-  const handleSelectMasterDomain = (domainId: 'novatech-tr' | 'novatech-de' | 'all') => {
+  const handleSelectMasterDomain = (domainId: 'flowshop-tr' | 'flowshop-de' | 'all') => {
     setSelectedMasterDomain(domainId);
     const masterScenario = getMasterPipeline(domainId);
     if (activeCanvasTabId === 'master-pipeline') {
       setNodes(masterScenario.nodes as Node[]);
       setEdges(masterScenario.edges as Edge[]);
     }
-    if (domainId === 'novatech-de' || (domainId as any) === 'tulpar-de') {
-      setActiveProjectId('proj-novatech-de');
-    } else if (domainId === 'novatech-tr' || (domainId as any) === 'monster-tr') {
-      setActiveProjectId('proj-novatech-tr');
+    if (domainId === 'flowshop-de') {
+      setActiveProjectId('proj-flowshop-de');
+    } else if (domainId === 'flowshop-tr') {
+      setActiveProjectId('proj-flowshop-tr');
     }
   };
 
@@ -564,7 +564,7 @@ export function App() {
                   activeScenarioTitle={activeScenario?.title}
                   targetUrl={activeScenario?.targetUrl || activeProject?.baseUrl}
                   domainFlag={isMasterTab ? currentMasterDomain.flag : (activeProject?.baseUrl?.includes('.de') ? '🇩🇪' : '🇹🇷')}
-                  domainBadge={isMasterTab ? currentMasterDomain.domain : (activeProject?.baseUrl?.includes('.de') ? 'novatech.de' : 'novatech.com.tr')}
+                  domainBadge={isMasterTab ? currentMasterDomain.domain : (activeProject?.baseUrl?.includes('.de') ? 'flowshop-de.mock' : 'flowshop-tr.mock')}
                   onOpenTrainingGuide={() => setIsTrainingGuideModalOpen(true)}
                   lang={lang}
                   viewport={activeViewport}
@@ -676,16 +676,16 @@ export function App() {
         isOpen={isWebVitalsOpen}
         onClose={() => setIsWebVitalsOpen(false)}
         lang={lang}
-        initialStore={selectedMasterDomain === 'novatech-de' || activeProject?.baseUrl?.includes('.de') ? 'novaDe' : 'novaTr'}
+        initialStore={selectedMasterDomain === 'flowshop-de' || activeProject?.baseUrl?.includes('.de') ? 'flowDe' : 'flowTr'}
       />
 
       <VisualRegressionModal
         isOpen={isVisualDiffOpen}
         onClose={() => setIsVisualDiffOpen(false)}
-        baselineUrl={visualDiffData.screenshot || '/screenshots/novatech_home_live.png'}
-        currentUrl={visualDiffData.screenshot || '/screenshots/novatech_home_live.png'}
+        baselineUrl={visualDiffData.screenshot || '/screenshots/flowshop_home_live.png'}
+        currentUrl={visualDiffData.screenshot || '/screenshots/flowshop_home_live.png'}
         stepName={visualDiffData.stepName || 'Storefront & Layout Visual Regression'}
-        targetDomain={selectedMasterDomain === 'novatech-de' ? 'novatech.de' : 'novatech.com.tr'}
+        targetDomain={selectedMasterDomain === 'flowshop-de' ? 'flowshop-de.mock' : 'flowshop-tr.mock'}
         lang={lang}
       />
 

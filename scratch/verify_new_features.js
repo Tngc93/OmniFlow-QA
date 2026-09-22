@@ -61,14 +61,14 @@ async function run() {
     await page.waitForSelector('text=Google Core Web Vitals', { timeout: 5000 });
     await page.waitForTimeout(600);
 
-    // Capture NovaTech TR Web Vitals
-    await page.screenshot({ path: path.join(ARTIFACT_DIR, 'feat_15_web_vitals_monster.png'), fullPage: false });
+    // Capture flowshop TR Web Vitals
+    await page.screenshot({ path: path.join(ARTIFACT_DIR, 'feat_15_web_vitals_flowshop.png'), fullPage: false });
 
-    // Switch to NovaTech DE in Web Vitals Modal
-    const deToggle = page.locator('[data-testid="store-vitals-de"], button:has-text("NovaTech DE")').first();
+    // Switch to flowshop DE in Web Vitals Modal
+    const deToggle = page.locator('[data-testid="store-vitals-de"], button:has-text("flowshop DE")').first();
     await deToggle.click();
     await page.waitForTimeout(400);
-    await page.screenshot({ path: path.join(ARTIFACT_DIR, 'feat_16_web_vitals_tulpar.png'), fullPage: false });
+    await page.screenshot({ path: path.join(ARTIFACT_DIR, 'feat_16_web_vitals_flowshop.png'), fullPage: false });
 
     // Test Refresh Button
     const refreshBtn = page.locator('button:has-text("Yenile"), button:has-text("Refresh")').first();

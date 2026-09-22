@@ -67,9 +67,9 @@ app.get('/api/vitals', (req, res) => {
     timestamp: new Date().toISOString(),
     globalScore: 96,
     stores: {
-      novaTr: {
-        domain: 'novatech.com.tr',
-        name: 'NovaTech Türkiye',
+      flowTr: {
+        domain: 'flowshop-tr.mock',
+        name: 'FlowShop TR (Mock Store)',
         flag: '🇹🇷',
         lighthouse: {
           performance: 94,
@@ -91,9 +91,9 @@ app.get('/api/vitals', (req, res) => {
           { type: 'info', text: 'Sepet ve ödeme adımlarında layout shift riski minimum (CLS: 0.014).' }
         ]
       },
-      novaDe: {
-        domain: 'novatech.de',
-        name: 'NovaTech Deutschland',
+      flowDe: {
+        domain: 'flowshop-de.mock',
+        name: 'FlowShop DE (Mock Store)',
         flag: '🇩🇪',
         lighthouse: {
           performance: 97,
@@ -134,19 +134,19 @@ function smartScanUrl(rawUrl) {
   }
   base = base.replace(/\/+$/, '');
 
-  const isNovaTech = base.includes('novatech');
-  const isTr = base.includes('.tr') || base.includes('hepsiburada') || base.includes('trendyol');
+  const isFlowShop = base.includes('flowshop') || base.includes('demo-shop');
+  const isTr = base.includes('.tr') || base.includes('hepsiburada') || base.includes('trendyol') || base.includes('-tr');
 
-  if (isNovaTech) {
+  if (isFlowShop) {
     return {
       baseUrl: base,
       storefront: `${base}/`,
-      search: `${base}/arama?q=horizon`,
-      category: `${base}/oyun-bilgisayarlari`,
-      pdp: `${base}/horizon-x15-intel-core-i7-14700hx-16gb-ram-1tb-ssd-rtx4070-15-6-fhd-144hz/`,
-      cart: `${base}/sepet/`,
-      checkout: `${base}/odeme/`,
-      login: `${base}/uye-girisi/`
+      search: `${base}/search?q=headphones`,
+      category: `${base}/audio-gear/`,
+      pdp: `${base}/products/studio-wireless/`,
+      cart: `${base}/cart/`,
+      checkout: `${base}/checkout/`,
+      login: `${base}/login/`
     };
   }
 
@@ -209,8 +209,8 @@ app.post('/api/projects', (req, res) => {
       baseUrl: scannedEndpoints.baseUrl,
       description: description || `${scannedEndpoints.baseUrl} için otomatik taranmış e-ticaret test klasörü.`,
       category: category || 'E-Commerce Storefront',
-      testCustomerEmail: testCustomerEmail || 'qa.testuser@novatech.com.tr',
-      testCustomerPassword: testCustomerPassword || 'NovaTechQA!2026Secure',
+      testCustomerEmail: testCustomerEmail || 'qa.testuser@flowshop.mock',
+      testCustomerPassword: testCustomerPassword || 'FlowShopQA!2026Secure',
       scannedEndpoints,
       scenariosCount: 6,
       lastAuditPassRate: '100%',
@@ -423,7 +423,7 @@ app.get('/api/metrics', (req, res) => {
     flowObjectives: [
       {
         id: 'obj-1',
-        title: 'NovaTech Storefront Init',
+        title: 'FlowShop Storefront Init',
         subtitle: 'Connect & Accept Cookies',
         pills: { task: 11, time: '2.1s', passed: 41, automated: 72 }
       },
@@ -511,15 +511,15 @@ app.post('/api/integrations/jira/issue', (req, res) => {
       key: `${pKey}-${issueNumber}`,
       summary: `[E-Commerce QA] ${scenarioTitle || 'Canlı Test'} - ${stepName || 'Doğrulama'} Hatası`,
       description: `Playwright E2E Otomasyonu sırasında tespit edilen hata kaydı:\n\n` +
-        `• Senaryo: ${scenarioTitle || 'NovaTech E2E'}\n` +
+        `• Senaryo: ${scenarioTitle || 'FlowShop E2E'}\n` +
         `• Hatalı Adım: ${stepName || 'Bilinmeyen Adım'}\n` +
         `• Hata Detayı: ${errorMessage || 'Doğrulama (Assertion) başarısız oldu'}\n` +
-        `• Hedef URL: https://www.novatech.com.tr/\n` +
+        `• Hedef URL: https://flowshop-tr.mock/\n` +
         `• Tarayıcı: Playwright Chromium Headless\n` +
-        `• Ekran Görüntüsü Ekli: ${screenshot || '/screenshots/novatech_home_live.png'}\n` +
+        `• Ekran Görüntüsü Ekli: ${screenshot || '/screenshots/flowshop_home_live.png'}\n` +
         `• Raporlayan: OmniFlow Jira MCP Köprüsü\n` +
         `• Tarih: ${new Date().toLocaleString('tr-TR')}`,
-      screenshotUrl: screenshot || '/screenshots/novatech_home_live.png',
+      screenshotUrl: screenshot || '/screenshots/flowshop_home_live.png',
       projectKey: pKey,
       board: boardId || jiraConfig.boardId || 'BOARD-104 (QA Automation Sprint)',
       issueType: issueType || jiraConfig.issueType || 'Bug',
@@ -564,7 +564,7 @@ app.post('/api/integrations/test', (req, res) => {
   } else if (type === 'slack') {
     return res.json({
       success: true,
-      message: 'Slack Incoming Webhook testi başarılı: #qa-novatech-alerts'
+      message: 'Slack Incoming Webhook testi başarılı: #qa-flowshop-alerts'
     });
   }
   res.json({ success: true, message: 'Entegrasyon bağlantısı aktif.' });
@@ -594,14 +594,14 @@ app.post('/api/ai/omnimind', (req, res) => {
 
   if (action === 'prompt_to_pipeline') {
     const isDe = (prompt || '').toLowerCase().includes('de') || (prompt || '').toLowerCase().includes('germany') || (prompt || '').toLowerCase().includes('klarna');
-    const domainPrefix = isDe ? 'novatech_de' : 'novatech';
-    const baseUrl = isDe ? 'https://www.novatech.de' : 'https://www.novatech.com.tr';
+    const domainPrefix = isDe ? 'flowshop_de' : 'flowshop';
+    const baseUrl = isDe ? 'https://flowshop-de.mock' : 'https://flowshop-tr.mock';
     const currencySymbol = isDe ? '€' : '₺';
-    const productName = isDe ? 'Titan X17 Gaming Laptop' : 'Horizon X15 Gaming Laptop';
+    const productName = isDe ? 'Studio Wireless Pro ANC' : 'Studio Wireless Headphone';
 
     const pipelineTitle = isDe 
-      ? 'NovaTech DE: Otonom Titan X17 E2E Doğrulama Hattı' 
-      : 'NovaTech TR: Otonom Horizon X15 E2E Doğrulama Hattı';
+      ? 'FlowShop DE: Otonom Studio Wireless Pro E2E Doğrulama Hattı' 
+      : 'FlowShop TR: Otonom Studio Wireless E2E Doğrulama Hattı';
 
     const nodes = [
       {
@@ -617,7 +617,7 @@ app.post('/api/ai/omnimind', (req, res) => {
           screenshot: `/screenshots/${domainPrefix}_home_live.png`,
           duration: '620ms',
           action: `goto('${baseUrl}/')`,
-          assertion: 'expect(page).toHaveTitle(/NovaTech/)'
+          assertion: 'expect(page).toHaveTitle(/FlowShop/)'
         }
       },
       {
@@ -628,11 +628,11 @@ app.post('/api/ai/omnimind', (req, res) => {
           label: isTr ? 'Arama & Filtreleme' : 'Search & Filter',
           title: isTr ? 'Arama & Filtreleme' : 'Search & Filter',
           type: 'action',
-          subtext: isDe ? 'Suchbegriff: "Titan X17"' : 'Arama Sorgusu: "Horizon X15"',
+          subtext: isDe ? 'Suchbegriff: "Studio Pro"' : 'Arama Sorgusu: "Studio Wireless"',
           status: 'success',
-          screenshot: `/screenshots/${isDe ? 'novatech_de_search_live.png' : 'novatech_category.png'}`,
+          screenshot: `/screenshots/${isDe ? 'flowshop_de_search_live.png' : 'flowshop_category.png'}`,
           duration: '840ms',
-          action: `locator('input[placeholder*="search"]').fill('${isDe ? 'Titan' : 'Horizon'}')`,
+          action: `locator('input[placeholder*="search"]').fill('${isDe ? 'Studio' : 'Wireless'}')`,
           assertion: 'expect(locator(".product-card")).toHaveCount(3)'
         }
       },
@@ -644,9 +644,9 @@ app.post('/api/ai/omnimind', (req, res) => {
           label: isTr ? 'Donanım Konfigürasyonu (PDP)' : 'Hardware Config (PDP)',
           title: isTr ? 'Donanım Konfigürasyonu (PDP)' : 'Hardware Config (PDP)',
           type: 'action',
-          subtext: isDe ? '32GB DDR5 + 2TB SSD' : '16GB DDR5 + 1TB SSD',
+          subtext: isDe ? 'Midnight Black + ANC Hybrid' : 'Space Gray + ANC Active',
           status: 'success',
-          screenshot: `/screenshots/${isDe ? 'novatech_de_pdp_live.png' : 'novatech_pdp.png'}`,
+          screenshot: `/screenshots/${isDe ? 'flowshop_de_pdp_live.png' : 'flowshop_pdp.png'}`,
           duration: '1.2s',
           action: 'locator(".config-option").first().click()',
           assertion: `expect(locator(".price-tag")).toContainText('${currencySymbol}')`
@@ -660,9 +660,9 @@ app.post('/api/ai/omnimind', (req, res) => {
           label: isTr ? 'Sepete Ekle & Kupon Doğrulama' : 'Add to Cart & Coupon Check',
           title: isTr ? 'Sepete Ekle & Kupon Doğrulama' : 'Add to Cart & Coupon Check',
           type: 'validate',
-          subtext: isDe ? 'Gutschein: NOVATECH-EU-50' : 'Kupon Kodu: NOVAPRO20',
+          subtext: isDe ? 'Gutschein: FLOW-EU-50' : 'Kupon Kodu: SAVE20',
           status: 'success',
-          screenshot: `/screenshots/${isDe ? 'novatech_de_cart_live.png' : 'novatech_cart_live.png'}`,
+          screenshot: `/screenshots/${isDe ? 'flowshop_de_cart_live.png' : 'flowshop_cart_live.png'}`,
           duration: '980ms',
           action: 'locator("button.add-to-cart").click()',
           assertion: 'expect(locator(".cart-count")).toHaveText("1")'
@@ -678,7 +678,7 @@ app.post('/api/ai/omnimind', (req, res) => {
           type: 'output',
           subtext: isDe ? 'Klarna / PayPal Express & DSGVO' : 'İyziPay 3D Secure Doğrulama',
           status: 'success',
-          screenshot: `/screenshots/${isDe ? 'novatech_de_auth_live.png' : 'novatech_checkout_live.png'}`,
+          screenshot: `/screenshots/${isDe ? 'flowshop_de_auth_live.png' : 'flowshop_checkout_live.png'}`,
           duration: '1.4s',
           action: 'locator("button.checkout-btn").click()',
           assertion: 'expect(page).toHaveURL(/checkout/)'
@@ -781,8 +781,8 @@ await targetBtn.click();`
         : 'Best Playwright locator hierarchy for e-commerce: 1) `getByTestId()`, 2) `getByRole()`, 3) `filter({ hasText })`. Avoid brittle hierarchical XPath / long CSS chains.';
     } else {
       reply = isTr
-        ? `OmniMind AI sistem analizini tamamladı. NovaTech otomasyon hattı %100 kapsama ve yeşil geçiş oranına sahip. Yeni bir senaryo sentezlememi veya sentetik veri üretmemi ister misiniz?`
-        : `OmniMind AI completed pipeline telemetry analysis. All NovaTech E2E automation suites are running optimally with zero critical defects. What would you like to build next?`;
+        ? `OmniMind AI sistem analizini tamamladı. FlowShop otomasyon hattı %100 kapsama ve yeşil geçiş oranına sahip. Yeni bir senaryo sentezlememi veya sentetik veri üretmemi ister misiniz?`
+        : `OmniMind AI completed pipeline telemetry analysis. All FlowShop E2E automation suites are running optimally with zero critical defects. What would you like to build next?`;
     }
     return res.json({ reply });
   }
@@ -804,5 +804,5 @@ if (fs.existsSync(clientDist)) {
 
 server.listen(PORT, () => {
   console.log(`[OmniFlow QA Server] Running on http://localhost:${PORT}`);
-  console.log(`[OmniFlow QA Server] Target: NovaTech Dual-Engine (https://www.novatech.com.tr / https://www.novatech.de)`);
+  console.log(`[OmniFlow QA Server] Target: FlowShop Dual-Engine (https://flowshop-tr.mock / https://flowshop-de.mock)`);
 });

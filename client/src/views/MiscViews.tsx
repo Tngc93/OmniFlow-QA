@@ -250,58 +250,58 @@ export const RepositoryView: React.FC<ViewProps> = ({ lang }) => {
 
   const files = [
     {
-      name: 'novatech_home_live.png',
+      name: 'flowshop_home_live.png',
       type: isTr ? 'Full HD Canlı Ekran Görüntüsü' : 'Full HD Live Screenshot',
       size: '507 KB',
       time: 'Bugün 13:43',
-      scenarioTitle: isTr ? 'NovaTech TR: FlowShop Studio Wireless E2E Arama ve İnceleme' : 'NovaTech TR: Studio Wireless E2E Flow',
+      scenarioTitle: isTr ? 'FlowShop TR: FlowShop Studio Wireless E2E Arama ve İnceleme' : 'FlowShop TR: Studio Wireless E2E Flow',
       stepName: isTr ? 'Ana Sayfa Yükleme & Başlık Doğrulama' : 'Storefront Landing & Title Verification',
-      url: 'https://www.novatech.com.tr/',
+      url: 'https://flowshop-tr.mock/',
       status: 'passed',
       duration: '2.1s',
-      screenshotUrl: '/screenshots/novatech_home_live.png',
+      screenshotUrl: '/screenshots/flowshop_home_live.png',
       description: isTr 
-        ? 'Playwright Chromium motoruyla NovaTech TR ana sayfası yüklendi. Sayfa başlığı (<title>) ve navigasyon bileşenleri başarıyla doğrulandı.' 
-        : 'NovaTech TR storefront rendered with Chromium engine. Page title and top navigation elements verified successfully.',
+        ? 'Playwright Chromium motoruyla FlowShop TR ana sayfası yüklendi. Sayfa başlığı (<title>) ve navigasyon bileşenleri başarıyla doğrulandı.' 
+        : 'FlowShop TR storefront rendered with Chromium engine. Page title and top navigation elements verified successfully.',
       assertions: [
         { text: isTr ? 'HTTP 200 OK yanıtı alındı' : 'HTTP 200 OK response received', passed: true },
-        { text: isTr ? 'DOM Başlığı: "NovaTech Audio Store | FlowShop Gear"' : 'DOM Title: "NovaTech Audio Store | FlowShop Gear"', passed: true },
+        { text: isTr ? 'DOM Başlığı: "FlowShop - QA Automation Demo Store"' : 'DOM Title: "FlowShop - QA Automation Demo Store"', passed: true },
         { text: isTr ? 'Çerez onay bannerı tespit edildi ve onaylandı' : 'Cookie consent banner detected and accepted', passed: true },
-        { text: isTr ? 'Arama kutusu (.search-bar) görünür ve aktif' : 'Search input (.search-bar) visible and active', passed: true }
+        { text: isTr ? 'Arama kutusu (#search-input) görünür ve aktif' : 'Search input (#search-input) visible and active', passed: true }
       ]
     },
     {
-      name: 'novatech_pdp.png',
+      name: 'flowshop_pdp.png',
       type: isTr ? 'FlowShop Studio Wireless Ürün Detayı (PDP) Ekranı' : 'FlowShop Studio Wireless PDP View',
       size: '408 KB',
       time: 'Bugün 13:43',
-      scenarioTitle: isTr ? 'NovaTech TR: Studio Wireless E2E Akışı' : 'NovaTech TR: Studio Wireless E2E Flow',
+      scenarioTitle: isTr ? 'FlowShop TR: Studio Wireless E2E Akışı' : 'FlowShop TR: Studio Wireless E2E Flow',
       stepName: isTr ? 'Studio Wireless Donanım & Fiyat Doğrulama (PDP)' : 'Studio Wireless Specs & Pricing (PDP)',
-      url: 'https://www.novatech.com.tr/products/studio-wireless/',
+      url: 'https://flowshop-tr.mock/products/studio-wireless/',
       status: 'passed',
       duration: '1.9s',
-      screenshotUrl: '/screenshots/novatech_pdp.png',
+      screenshotUrl: '/screenshots/flowshop_pdp.png',
       description: isTr 
-        ? 'NovaTech FlowShop kablosuz kulaklık PDP sayfası tarandı. Hibrit Aktif Gürültü Engelleme (ANC), 40mm dinamik sürücüler, ürün fiyatı ve Sepete Ekle butonu teyit edildi.' 
-        : 'NovaTech FlowShop wireless headphone product detail page inspected. Hybrid ANC, 40mm drivers, pricing, and Add to Cart button verified.',
+        ? 'FlowShop kablosuz kulaklık PDP sayfası tarandı. Hibrit Aktif Gürültü Engelleme (ANC), 40mm dinamik sürücüler, ürün fiyatı ve Sepete Ekle butonu teyit edildi.' 
+        : 'FlowShop wireless headphone product detail page inspected. Hybrid ANC, 40mm drivers, pricing, and Add to Cart button verified.',
       assertions: [
-        { text: isTr ? 'Ürün başlığı (#product-name) görünür' : 'Product heading (#product-name) visible', passed: true },
+        { text: isTr ? 'Ürün başlığı (#product-title) görünür' : 'Product heading (#product-title) visible', passed: true },
         { text: isTr ? 'Donanım özellikleri: Hibrit ANC & 40mm Sürücü teyit edildi' : 'Hardware specs: Hybrid ANC & 40mm Drivers verified', passed: true },
-        { text: isTr ? 'Stok durumu "Hemen Teslim" doğrulandı' : 'Stock status "In Stock" verified', passed: true },
+        { text: isTr ? 'Stok durumu "In Stock" doğrulandı' : 'Stock status "In Stock" verified', passed: true },
         { text: isTr ? 'Sepete Ekle butonu tıklanabilir durumda' : 'Add to Cart CTA clickable', passed: true }
       ]
     },
     {
-      name: 'novatech_category.png',
+      name: 'flowshop_category.png',
       type: isTr ? 'Ses Sistemleri Kategori Ekranı' : 'Audio Gear Category Grid',
       size: '413 KB',
       time: 'Bugün 13:43',
-      scenarioTitle: isTr ? 'NovaTech TR: Kategori ve Filtreleme Testi' : 'NovaTech TR: Category & Filter Suite',
+      scenarioTitle: isTr ? 'FlowShop TR: Kategori ve Filtreleme Testi' : 'FlowShop TR: Category & Filter Suite',
       stepName: isTr ? 'Ses Sistemleri Ürün Listelemesi & Filtreleme' : 'Audio Gear Listing & Filter Assertions',
-      url: 'https://www.novatech.com.tr/audio-gear/',
+      url: 'https://flowshop-tr.mock/audio-gear/',
       status: 'passed',
       duration: '2.4s',
-      screenshotUrl: '/screenshots/novatech_category.png',
+      screenshotUrl: '/screenshots/flowshop_category.png',
       description: isTr 
         ? 'Ses Sistemleri kategorisinde kulaklık ve hoparlör kartları listelendi, Kablosuz filtresi uygulandı ve fiyat sıralaması doğrulandı.' 
         : 'Audio Gear catalog grid rendered. Wireless filter and price sorting verified.',
@@ -312,21 +312,21 @@ export const RepositoryView: React.FC<ViewProps> = ({ lang }) => {
       ]
     },
     {
-      name: 'novatech_checkout_3dsecure_fail.png',
+      name: 'flowshop_checkout_3dsecure_fail.png',
       type: isTr ? 'Ödeme & 3D Secure Hata İzi (Failed Trace)' : 'Checkout & 3D Secure Defect Trace',
       size: '482 KB',
       time: 'Bugün 12:15',
-      scenarioTitle: 'NovaTech TR: Checkout & 3D Secure Güvenlik Doğrulaması',
+      scenarioTitle: 'FlowShop TR: Checkout & 3D Secure Güvenlik Doğrulaması',
       stepName: isTr ? 'Ödeme Ağ Geçidi & 3D Secure Doğrulama' : 'Payment Gateway & 3D Secure Validation',
-      url: 'https://www.novatech.com.tr/odeme/',
+      url: 'https://flowshop-tr.mock/checkout/',
       status: 'failed',
       duration: '5.2s',
-      screenshotUrl: '/screenshots/novatech_category.png',
+      screenshotUrl: '/screenshots/flowshop_category.png',
       description: isTr 
         ? 'Ödeme onay aşamasında banka 3D Secure iframe modülünün yüklenmesi beklendi fakat API zaman aşımına uğradı.' 
         : 'Payment gateway iframe was expected on checkout step, but the payment provider API returned a timeout.',
       errorTitle: 'AssertionError: Expected 3D Secure frame to load within 5000ms',
-      errorDescription: isTr
+      errorDescription: isTr 
         ? 'Playwright motoru ödeme aşamasında "#payment-gateway-iframe" seçicisini 5000ms boyunca bekledi. Banka entegrasyonu HTTP 504 Gateway Timeout döndürdüğü için assertion başarısız oldu.'
         : 'Playwright engine timed out after 5000ms waiting for "#payment-gateway-iframe". The payment gateway API returned HTTP 504 Gateway Timeout.',
       errorStack: `Error: page.waitForSelector: Timeout 5000ms exceeded.
@@ -335,7 +335,7 @@ export const RepositoryView: React.FC<ViewProps> = ({ lang }) => {
   at async runScenarioStep (runner.js:89:9)
   at async executePipeline (runner/engine.js:210:12)`,
       assertions: [
-        { text: 'Sepet toplamı ₺48.999 doğrulandı', passed: true },
+        { text: 'Sepet toplamı ₺4.999 doğrulandı', passed: true },
         { text: 'Teslimat adresi formu dolduruldu', passed: true },
         { text: '3D Secure iframe modülü (#payment-gateway-iframe) yüklendi', passed: false }
       ]
@@ -370,7 +370,7 @@ export const RepositoryView: React.FC<ViewProps> = ({ lang }) => {
           scenarioTitle: file.scenarioTitle,
           stepName: file.stepName,
           errorMessage: file.errorTitle || 'Step Trace Inspection',
-          screenshot: file.screenshotUrl || '/screenshots/novatech_home_live.png'
+          screenshot: file.screenshotUrl || '/screenshots/flowshop_home_live.png'
         }
       })
     );

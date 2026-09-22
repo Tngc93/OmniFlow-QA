@@ -65,10 +65,10 @@ async function run() {
     await page.waitForTimeout(600);
 
     // Verify healed cards
-    const isNovaTechTrHealedVisible = await page.locator('text=NovaTech TR Sepete Ekle Butonu').isVisible();
-    const isNovaTechDeHealedVisible = await page.locator('text=NovaTech DE QWERTZ Klavye Konfigüratörü').isVisible();
-    console.log('NovaTech TR Healed Selector Visible:', isNovaTechTrHealedVisible);
-    console.log('NovaTech DE Healed Selector Visible:', isNovaTechDeHealedVisible);
+    const isflowshopTrHealedVisible = await page.locator('text=flowshop TR Sepete Ekle Butonu').isVisible();
+    const isflowshopDeHealedVisible = await page.locator('text=flowshop DE QWERTZ Klavye Konfigüratörü').isVisible();
+    console.log('flowshop TR Healed Selector Visible:', isflowshopTrHealedVisible);
+    console.log('flowshop DE Healed Selector Visible:', isflowshopDeHealedVisible);
 
     // Screenshot Self-Healing Modal
     await page.screenshot({ path: path.join(ARTIFACT_DIR, 'feat_21_self_healing_modal.png'), fullPage: false });
@@ -106,8 +106,8 @@ async function run() {
     fs.writeFileSync(path.join(ARTIFACT_DIR, 'code_and_healing_audit.json'), JSON.stringify({
       timestamp: new Date().toISOString(),
       playwrightCodeVisible: isCodeVisible,
-      novaTechTrHealedVisible: isNovaTechTrHealedVisible,
-      novaTechDeHealedVisible: isNovaTechDeHealedVisible,
+      flowshopTrHealedVisible: isflowshopTrHealedVisible,
+      flowshopDeHealedVisible: isflowshopDeHealedVisible,
       consoleErrors,
       networkWarnings
     }, null, 2));

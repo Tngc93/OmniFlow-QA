@@ -52,8 +52,8 @@ export const SelfHealingModal: React.FC<SelfHealingModalProps> = ({
   const healedRecords = [
     {
       id: 'heal-1',
-      title: isTr ? 'NovaTech TR Sepete Ekle Butonu' : 'NovaTech TR Add to Cart CTA',
-      store: '🇹🇷 novatech.com.tr',
+      title: isTr ? 'FlowShop TR Sepete Ekle Butonu' : 'FlowShop TR Add to Cart CTA',
+      store: '🇹🇷 flowshop-tr.mock',
       brokenSelector: 'button#btn-add-cart-2026_x8a92',
       healedSelector: 'button[data-testid="pdp-add-to-cart"], button:has-text("Sepete Ekle")',
       reason: isTr ? 'Tailwind derlemesi sonrası dinamik hash ve React element ID değişimi' : 'Tailwind build CSS class hash mutation and dynamic React ID drift',
@@ -63,8 +63,8 @@ export const SelfHealingModal: React.FC<SelfHealingModalProps> = ({
     },
     {
       id: 'heal-2',
-      title: isTr ? 'NovaTech DE Aktif Gürültü Engelleme (ANC) Seçimi' : 'NovaTech DE Active ANC Toggle Option',
-      store: '🇩🇪 novatech.de',
+      title: isTr ? 'FlowShop DE Aktif Gürültü Engelleme (ANC) Seçimi' : 'FlowShop DE Active ANC Toggle Option',
+      store: '🇩🇪 flowshop-de.mock',
       brokenSelector: 'div.configurator-anc-toggle > div:nth-child(2)',
       healedSelector: '[data-qa="spec-anc-hybrid"], label:has-text("Active Noise Cancelling")',
       reason: isTr ? 'A/B test varyantı ile DOM kapsayıcı hiyerarşisinin yer değiştirmesi' : 'Container layout shifted due to A/B test marketing variant',
@@ -74,8 +74,8 @@ export const SelfHealingModal: React.FC<SelfHealingModalProps> = ({
     },
     {
       id: 'heal-3',
-      title: isTr ? 'NovaTech TR Yurtiçi Kargo Teslimat Seçimi' : 'NovaTech TR Yurtiçi Shipping Radio',
-      store: '🇹🇷 novatech.com.tr',
+      title: isTr ? 'FlowShop TR Yurtiçi Kargo Teslimat Seçimi' : 'FlowShop TR Yurtiçi Shipping Radio',
+      store: '🇹🇷 flowshop-tr.mock',
       brokenSelector: 'input#cargo-provider-yurtici',
       healedSelector: 'input[name="shipping_method"][value*="yurtici"]',
       reason: isTr ? 'Ödeme altyapısı güncellemesi sonrası öznitelik isim değişikliği' : 'Checkout payment SDK vendor update renamed input ID attribute',

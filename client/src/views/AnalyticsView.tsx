@@ -66,8 +66,8 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
   const defaultHistoricalRuns: TestRunRecord[] = useMemo(() => [
     {
       runId: 'RUN-2026-0921-01',
-      scenarioId: 'scenario-novatech-tr-e2e',
-      scenarioTitle: isTr ? 'NovaTech TR: FlowShop Studio Wireless E2E Arama ve İnceleme' : 'NovaTech TR: Studio Wireless E2E Flow',
+      scenarioId: 'scenario-flowshop-tr-e2e',
+      scenarioTitle: isTr ? 'FlowShop TR: FlowShop Studio Wireless E2E Arama ve İnceleme' : 'FlowShop TR: Studio Wireless E2E Flow',
       category: isTr ? 'PDP & Arama' : 'PDP & Search',
       status: 'passed',
       totalDuration: '11.4s',
@@ -79,7 +79,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
       summaryText: isTr 
         ? 'Ana sayfa, kulaklık araması, ürün detay ve sepet rotası tüm assertion kontrollerinden tam puanla geçti.' 
         : 'Storefront, audio search query, PDP acoustic specs verification, and cart actions passed all assertions.',
-      screenshotUrl: '/screenshots/novatech_home_live.png',
+      screenshotUrl: '/screenshots/flowshop_home_live.png',
       stepResults: [
         { name: isTr ? 'Tarayıcı Oturumu Başlatma' : 'Launch Chromium Session', status: 'passed', duration: '0.6s' },
         { name: isTr ? 'Ana Sayfa & Başlık Doğrulama' : 'Storefront Landing & Title Check', status: 'passed', duration: '2.5s' },
@@ -92,8 +92,8 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
     },
     {
       runId: 'RUN-2026-0921-02',
-      scenarioId: 'scenario-novatech-tr-cart',
-      scenarioTitle: 'NovaTech TR: Sepet, Kupon Kodu & Dinamik Fiyatlama',
+      scenarioId: 'scenario-flowshop-tr-cart',
+      scenarioTitle: 'FlowShop TR: Sepet, Kupon Kodu & Dinamik Fiyatlama',
       category: 'Sepet & Kupon',
       status: 'passed',
       totalDuration: '9.8s',
@@ -105,7 +105,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
       summaryText: isTr 
         ? 'İndirim kuponu tanımlandı, sepet ara toplamı ve KDV tutarları matematiksel olarak doğrulandı.' 
         : 'Discount voucher applied, subtotal and tax amounts validated mathematically.',
-      screenshotUrl: '/screenshots/novatech_pdp.png',
+      screenshotUrl: '/screenshots/flowshop_pdp.png',
       stepResults: [
         { name: 'Ürün Sepete Ekleme', status: 'passed', duration: '1.8s' },
         { name: 'Kupon Girişi (#voucher-input)', status: 'passed', duration: '1.2s' },
@@ -116,7 +116,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
     {
       runId: 'RUN-2026-0920-03',
       scenarioId: 'scenario-checkout-3ds',
-      scenarioTitle: 'NovaTech TR: 3D Secure Ödeme Ağ Geçidi Entegrasyonu',
+      scenarioTitle: 'FlowShop TR: 3D Secure Ödeme Ağ Geçidi Entegrasyonu',
       category: 'Ödeme & Güvenlik',
       status: 'failed',
       totalDuration: '5.4s',
@@ -136,7 +136,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
   waiting for locator("#payment-gateway-iframe") to be visible
   at CheckoutFlow.verifyPaymentGateway (engine.js:142:15)
   at async runScenarioStep (runner.js:89:9)`,
-      screenshotUrl: '/screenshots/novatech_category.png',
+      screenshotUrl: '/screenshots/flowshop_category.png',
       stepResults: [
         { name: 'Teslimat Adresi Seçimi', status: 'passed', duration: '1.2s' },
         { name: 'Fatura Bilgileri Doğrulama', status: 'passed', duration: '1.0s' },
@@ -147,7 +147,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
     {
       runId: 'RUN-2026-0919-04',
       scenarioId: 'scenario-auth-vault',
-      scenarioTitle: 'NovaTech TR: Müşteri Oturumu Açma & Auth Vault',
+      scenarioTitle: 'FlowShop TR: Müşteri Oturumu Açma & Auth Vault',
       category: 'Kimlik Doğrulama',
       status: 'passed',
       totalDuration: '7.2s',
@@ -159,12 +159,12 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
       summaryText: isTr 
         ? 'Test Müşterisi Kasasındaki (Auth Vault) şifreli kimlik bilgileriyle başarılı oturum açıldı.' 
         : 'Authenticated test customer session created using Auth Vault credentials.',
-      screenshotUrl: '/screenshots/novatech_home_live.png'
+      screenshotUrl: '/screenshots/flowshop_home_live.png'
     },
     {
       runId: 'RUN-2026-0918-05',
       scenarioId: 'scenario-category-filters',
-      scenarioTitle: 'NovaTech TR: RTX 40 Serisi Laptop Filtreleme',
+      scenarioTitle: 'FlowShop TR: Ses Ekipmanları & Kulaklık Filtreleme',
       category: 'PDP & Arama',
       status: 'passed',
       totalDuration: '8.6s',
@@ -174,14 +174,14 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
       completedAt: '3 gün önce 09:40',
       dateKey: '2026-09-18',
       summaryText: isTr 
-        ? 'Oyun bilgisayarları kategori listesinde RTX 4070 ve 32GB RAM filtreleri sorunsuz uygulandı.' 
-        : 'Category grid filters applied: RTX 4070 & 32GB RAM, verified product cards count.',
-      screenshotUrl: '/screenshots/novatech_category.png'
+        ? 'Kulaklık ve ses kategori listesinde ANC ve Studio Wireless filtreleri sorunsuz uygulandı.' 
+        : 'Category grid filters applied: ANC & Studio Wireless, verified product cards count.',
+      screenshotUrl: '/screenshots/flowshop_category.png'
     },
     {
       runId: 'RUN-2026-0917-06',
       scenarioId: 'scenario-stock-badge',
-      scenarioTitle: 'NovaTech TR: Hızlı Teslimat & Stok Rozeti Doğrulama',
+      scenarioTitle: 'FlowShop TR: Hızlı Teslimat & Stok Rozeti Doğrulama',
       category: 'Stok & Lojistik',
       status: 'passed',
       totalDuration: '6.9s',
@@ -193,12 +193,12 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
       summaryText: isTr 
         ? 'Hemen Teslim rozetleri ve kargo süresi vaatleri DOM üzerinden teyit edildi.' 
         : 'Fast delivery badges and shipping timelines verified in DOM.',
-      screenshotUrl: '/screenshots/novatech_pdp.png'
+      screenshotUrl: '/screenshots/flowshop_pdp.png'
     },
     {
       runId: 'RUN-2026-0916-07',
       scenarioId: 'scenario-checkout-guest',
-      scenarioTitle: 'NovaTech TR: Misafir Alışveriş Akışı & Adres Doğrulama',
+      scenarioTitle: 'FlowShop TR: Misafir Alışveriş Akışı & Adres Doğrulama',
       category: 'Ödeme & Güvenlik',
       status: 'passed',
       totalDuration: '10.1s',
@@ -210,7 +210,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
       summaryText: isTr 
         ? 'Üyeliksiz misafir checkout akışı il, ilçe ve vergi numarası validasyonlarını geçti.' 
         : 'Guest checkout flow completed with district and tax validation.',
-      screenshotUrl: '/screenshots/novatech_home_live.png'
+      screenshotUrl: '/screenshots/flowshop_home_live.png'
     }
   ], [isTr]);
 
@@ -223,8 +223,8 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
         // Map backend real runs and merge with historical runs
         const mapped: TestRunRecord[] = realRuns.map((r: any) => ({
           runId: r.runId?.startsWith('RUN-') ? r.runId : `RUN-${r.runId || 'LIVE'}`,
-          scenarioId: r.scenarioId || 'scenario-novatech-tr-e2e',
-          scenarioTitle: r.scenarioTitle || 'NovaTech TR: Canlı E2E Koşusu',
+          scenarioId: r.scenarioId || 'scenario-flowshop-tr-e2e',
+          scenarioTitle: r.scenarioTitle || 'FlowShop TR: Canlı E2E Koşusu',
           category: 'Canlı Yürütme',
           status: r.status === 'failed' ? 'failed' : 'passed',
           totalDuration: r.totalDuration || '12.0s',
@@ -236,7 +236,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
           summaryText: isTr 
             ? `Playwright motoru tarafından icra edildi. ${r.stepsPassed || 7}/${r.stepsTotal || 7} adım doğrulandı.` 
             : `Executed with Playwright. ${r.stepsPassed || 7}/${r.stepsTotal || 7} steps verified.`,
-          screenshotUrl: r.stepResults?.find((s: any) => s.screenshotUrl)?.screenshotUrl || '/screenshots/novatech_home_live.png',
+          screenshotUrl: r.stepResults?.find((s: any) => s.screenshotUrl)?.screenshotUrl || '/screenshots/flowshop_home_live.png',
           stepResults: r.stepResults
         }));
 
@@ -308,7 +308,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ lang }) => {
           scenarioTitle: run.scenarioTitle,
           stepName: run.errorTitle || 'Automated Step Execution Defect',
           errorMessage: run.errorDescription || run.summaryText,
-          screenshot: run.screenshotUrl || '/screenshots/novatech_home_live.png'
+          screenshot: run.screenshotUrl || '/screenshots/flowshop_home_live.png'
         }
       })
     );

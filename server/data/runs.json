@@ -1,8 +1,8 @@
 [
   {
     "runId": "run-8f577944",
-    "scenarioId": "scenario-novatech-de-klarna-sofort",
-    "scenarioTitle": "NovaTech DE: Klarna Sofort, PayPal & EU Kart Doğrulaması",
+    "scenarioId": "scenario-flowshop-de-klarna-sofort",
+    "scenarioTitle": "FlowShop DE: Klarna Sofort, PayPal & EU Kart Doğrulaması",
     "status": "passed",
     "totalDuration": "11.7s",
     "stepsTotal": 5,
@@ -28,8 +28,8 @@
         "duration": "2.67s",
         "screenshotUrl": "/screenshots/run-8f577944_node-kl-select.png",
         "logs": [
-          "NovaTech Deutschland mağazasına bağlanılıyor: https://www.novatech.de/checkout/",
-          "HTTP 200 OK alındı. Sayfa: NovaTech Gaming Notebooks Germany",
+          "FlowShop DE (Mock Store) mağazasına bağlanılıyor: https://flowshop-de.mock/checkout/",
+          "HTTP 200 OK alındı. Sayfa: FlowShop Gaming Notebooks Germany",
           "DSGVO / GDPR Çerez Onayı: Cookie banner kabul edildi, OneTrust scripti yüklendi.",
           "Ekran görüntüsü yakalandı: /screenshots/run-8f577944_node-kl-select.png"
         ],
@@ -76,8 +76,8 @@
   },
   {
     "runId": "run-bda23acb",
-    "scenarioId": "scenario-novatech-de-configurator",
-    "scenarioTitle": "NovaTech DE: Donanım Konfigüratörü (RAM, SSD & QWERTZ Klavye)",
+    "scenarioId": "scenario-flowshop-de-configurator",
+    "scenarioTitle": "FlowShop DE: Donanım Konfigüratörü (RAM, SSD & QWERTZ Klavye)",
     "status": "passed",
     "totalDuration": "8.8s",
     "stepsTotal": 5,
@@ -103,8 +103,8 @@
         "duration": "1.75s",
         "screenshotUrl": "/screenshots/run-bda23acb_node-cfg-ram.png",
         "logs": [
-          "NovaTech Deutschland mağazasına bağlanılıyor: https://www.novatech.de/gaming-laptops/",
-          "HTTP 200 OK alındı. Sayfa: NovaTech Gaming Notebooks Germany",
+          "FlowShop DE (Mock Store) mağazasına bağlanılıyor: https://flowshop-de.mock/gaming-laptops/",
+          "HTTP 200 OK alındı. Sayfa: FlowShop Gaming Notebooks Germany",
           "DSGVO / GDPR Çerez Onayı: Cookie banner kabul edildi, OneTrust scripti yüklendi.",
           "Ekran görüntüsü yakalandı: /screenshots/run-bda23acb_node-cfg-ram.png"
         ],
@@ -151,8 +151,8 @@
   },
   {
     "runId": "run-2b1205ed",
-    "scenarioId": "scenario-novatech-de-e2e",
-    "scenarioTitle": "NovaTech DE: E2E Gaming Laptop Arama & Sepet (EUR Fiyat & 19% MwSt.)",
+    "scenarioId": "scenario-flowshop-de-e2e",
+    "scenarioTitle": "FlowShop DE: E2E Gaming Laptop Arama & Sepet (EUR Fiyat & 19% MwSt.)",
     "status": "passed",
     "totalDuration": "12.1s",
     "stepsTotal": 6,
@@ -178,8 +178,8 @@
         "duration": "1.95s",
         "screenshotUrl": "/screenshots/run-2b1205ed_node-tde-home.png",
         "logs": [
-          "NovaTech Deutschland mağazasına bağlanılıyor: https://www.novatech.de/",
-          "HTTP 200 OK alındı. Sayfa: NovaTech Gaming Notebooks Germany",
+          "FlowShop DE (Mock Store) mağazasına bağlanılıyor: https://flowshop-de.mock/",
+          "HTTP 200 OK alındı. Sayfa: FlowShop Gaming Notebooks Germany",
           "DSGVO / GDPR Çerez Onayı: Cookie banner kabul edildi, OneTrust scripti yüklendi.",
           "Ekran görüntüsü yakalandı: /screenshots/run-2b1205ed_node-tde-home.png"
         ],
@@ -220,7 +220,7 @@
         "logs": [
           "Sepete ekleme ve %19 Alman KDV (MwSt.) vergi hesabı kontrol ediliyor...",
           "Net Tutar: €1.595,80 + %19 MwSt.: €303,20 = €1.899,00 hesaplandı.",
-          "Almanya test kimlik kasası ile oturum doğrulandı: qa.testuser@novatech.de",
+          "Almanya test kimlik kasası ile oturum doğrulandı: qa.testuser@flowshop-de.mock",
           "Ekran görüntüsü yakalandı: /screenshots/run-2b1205ed_node-tde-cart.png"
         ],
         "timestamp": "16:15:32"
@@ -240,8 +240,8 @@
   },
   {
     "runId": "run-098612d1",
-    "scenarioId": "scenario-novatech-de-e2e",
-    "scenarioTitle": "NovaTech DE: E2E Gaming Laptop Arama & Sepet (EUR Fiyat & 19% MwSt.)",
+    "scenarioId": "scenario-flowshop-de-e2e",
+    "scenarioTitle": "FlowShop DE: E2E Gaming Laptop Arama & Sepet (EUR Fiyat & 19% MwSt.)",
     "status": "passed",
     "totalDuration": "13.7s",
     "stepsTotal": 6,
@@ -267,8 +267,8 @@
         "duration": "2.16s",
         "screenshotUrl": "/screenshots/run-098612d1_node-tde-home.png",
         "logs": [
-          "NovaTech Deutschland mağazasına bağlanılıyor: https://www.novatech.de/",
-          "HTTP 200 OK alındı. Sayfa: NovaTech Gaming Notebooks Germany",
+          "FlowShop DE (Mock Store) mağazasına bağlanılıyor: https://flowshop-de.mock/",
+          "HTTP 200 OK alındı. Sayfa: FlowShop Gaming Notebooks Germany",
           "DSGVO / GDPR Çerez Onayı: Cookie banner kabul edildi, OneTrust scripti yüklendi.",
           "Ekran görüntüsü yakalandı: /screenshots/run-098612d1_node-tde-home.png"
         ],
@@ -309,7 +309,7 @@
         "logs": [
           "Sepete ekleme ve %19 Alman KDV (MwSt.) vergi hesabı kontrol ediliyor...",
           "Net Tutar: €1.595,80 + %19 MwSt.: €303,20 = €1.899,00 hesaplandı.",
-          "Almanya test kimlik kasası ile oturum doğrulandı: qa.testuser@novatech.de",
+          "Almanya test kimlik kasası ile oturum doğrulandı: qa.testuser@flowshop-de.mock",
           "Ekran görüntüsü yakalandı: /screenshots/run-098612d1_node-tde-cart.png"
         ],
         "timestamp": "15:28:28"
@@ -329,8 +329,8 @@
   },
   {
     "runId": "run-0a75bda6",
-    "scenarioId": "scenario-novatech-de-e2e",
-    "scenarioTitle": "NovaTech DE: E2E Gaming Laptop Arama & Sepet (EUR Fiyat & 19% MwSt.)",
+    "scenarioId": "scenario-flowshop-de-e2e",
+    "scenarioTitle": "FlowShop DE: E2E Gaming Laptop Arama & Sepet (EUR Fiyat & 19% MwSt.)",
     "status": "passed",
     "totalDuration": "12.0s",
     "stepsTotal": 6,
@@ -356,8 +356,8 @@
         "duration": "1.97s",
         "screenshotUrl": "/screenshots/run-0a75bda6_node-tde-home.png",
         "logs": [
-          "NovaTech Deutschland mağazasına bağlanılıyor: https://www.novatech.de/",
-          "HTTP 200 OK alındı. Sayfa: NovaTech Gaming Notebooks Germany",
+          "FlowShop DE (Mock Store) mağazasına bağlanılıyor: https://flowshop-de.mock/",
+          "HTTP 200 OK alındı. Sayfa: FlowShop Gaming Notebooks Germany",
           "DSGVO / GDPR Çerez Onayı: Cookie banner kabul edildi, OneTrust scripti yüklendi.",
           "Ekran görüntüsü yakalandı: /screenshots/run-0a75bda6_node-tde-home.png"
         ],
@@ -398,7 +398,7 @@
         "logs": [
           "Sepete ekleme ve %19 Alman KDV (MwSt.) vergi hesabı kontrol ediliyor...",
           "Net Tutar: €1.595,80 + %19 MwSt.: €303,20 = €1.899,00 hesaplandı.",
-          "Almanya test kimlik kasası ile oturum doğrulandı: qa.testuser@novatech.de",
+          "Almanya test kimlik kasası ile oturum doğrulandı: qa.testuser@flowshop-de.mock",
           "Ekran görüntüsü yakalandı: /screenshots/run-0a75bda6_node-tde-cart.png"
         ],
         "timestamp": "15:26:53"
@@ -418,8 +418,8 @@
   },
   {
     "runId": "run-ed69a402",
-    "scenarioId": "scenario-novatech-tr-e2e",
-    "scenarioTitle": "NovaTech TR: NovaTech E2E Arama ve İnceleme",
+    "scenarioId": "scenario-flowshop-tr-e2e",
+    "scenarioTitle": "FlowShop TR: FlowShop E2E Arama ve İnceleme",
     "status": "passed",
     "totalDuration": "12.5s",
     "stepsTotal": 7,
@@ -445,8 +445,8 @@
         "duration": "2.39s",
         "screenshotUrl": "/screenshots/run-ed69a402_node-collect.png",
         "logs": [
-          "NovaTech TR ana sayfasına bağlanılıyor: https://www.novatech.com.tr/",
-          "HTTP 200 OK alındı. Sayfa Başlığı: NovaTech TR | Performans Tutkunlarına Özel Notebook'lar",
+          "FlowShop TR ana sayfasına bağlanılıyor: https://flowshop-tr.mock/",
+          "HTTP 200 OK alındı. Sayfa Başlığı: FlowShop TR | Performans Tutkunlarına Özel Notebook'lar",
           "Ekran görüntüsü yakalandı: /screenshots/run-ed69a402_node-collect.png"
         ],
         "timestamp": "15:06:20"
@@ -458,8 +458,8 @@
         "duration": "1.44s",
         "screenshotUrl": "/screenshots/run-ed69a402_node-trigger.png",
         "logs": [
-          "Arama kutusu tetikleniyor: query=\"NovaTech\"",
-          "Arama inputuna 'NovaTech' yazıldı.",
+          "Arama kutusu tetikleniyor: query=\"FlowShop\"",
+          "Arama inputuna 'FlowShop' yazıldı.",
           "Ekran görüntüsü yakalandı: /screenshots/run-ed69a402_node-trigger.png"
         ],
         "timestamp": "15:06:22"
@@ -484,7 +484,7 @@
         "duration": "1.11s",
         "screenshotUrl": "/screenshots/run-ed69a402_node-action.png",
         "logs": [
-          "NovaTech serisi Ürün Detay Sayfası (PDP) inceleniyor...",
+          "FlowShop serisi Ürün Detay Sayfası (PDP) inceleniyor...",
           "Teknik donanım özellikleri ve ekran boyutları doğrulandı.",
           "Ekran görüntüsü yakalandı: /screenshots/run-ed69a402_node-action.png"
         ],
@@ -518,8 +518,8 @@
   },
   {
     "runId": "run-0d7b533c",
-    "scenarioId": "scenario-novatech-tr-e2e",
-    "scenarioTitle": "NovaTech TR: NovaTech E2E Arama ve İnceleme",
+    "scenarioId": "scenario-flowshop-tr-e2e",
+    "scenarioTitle": "FlowShop TR: FlowShop E2E Arama ve İnceleme",
     "status": "passed",
     "totalDuration": "13.0s",
     "stepsTotal": 7,
@@ -545,8 +545,8 @@
         "duration": "2.55s",
         "screenshotUrl": "/screenshots/run-0d7b533c_node-collect.png",
         "logs": [
-          "NovaTech TR ana sayfasına bağlanılıyor: https://www.novatech.com.tr/",
-          "HTTP 200 OK alındı. Sayfa Başlığı: NovaTech TR | Performans Tutkunlarına Özel Notebook'lar",
+          "FlowShop TR ana sayfasına bağlanılıyor: https://flowshop-tr.mock/",
+          "HTTP 200 OK alındı. Sayfa Başlığı: FlowShop TR | Performans Tutkunlarına Özel Notebook'lar",
           "Ekran görüntüsü yakalandı: /screenshots/run-0d7b533c_node-collect.png"
         ],
         "timestamp": "14:19:55"
@@ -558,8 +558,8 @@
         "duration": "1.43s",
         "screenshotUrl": "/screenshots/run-0d7b533c_node-trigger.png",
         "logs": [
-          "Arama kutusu tetikleniyor: query=\"NovaTech\"",
-          "Arama inputuna 'NovaTech' yazıldı.",
+          "Arama kutusu tetikleniyor: query=\"FlowShop\"",
+          "Arama inputuna 'FlowShop' yazıldı.",
           "Ekran görüntüsü yakalandı: /screenshots/run-0d7b533c_node-trigger.png"
         ],
         "timestamp": "14:19:57"
@@ -584,7 +584,7 @@
         "duration": "1.42s",
         "screenshotUrl": "/screenshots/run-0d7b533c_node-action.png",
         "logs": [
-          "NovaTech serisi Ürün Detay Sayfası (PDP) inceleniyor...",
+          "FlowShop serisi Ürün Detay Sayfası (PDP) inceleniyor...",
           "Teknik donanım özellikleri ve ekran boyutları doğrulandı.",
           "Ekran görüntüsü yakalandı: /screenshots/run-0d7b533c_node-action.png"
         ],
@@ -618,8 +618,8 @@
   },
   {
     "runId": "run-c824afc9",
-    "scenarioId": "scenario-novatech-tr-e2e",
-    "scenarioTitle": "NovaTech TR: NovaTech E2E Arama ve İnceleme",
+    "scenarioId": "scenario-flowshop-tr-e2e",
+    "scenarioTitle": "FlowShop TR: FlowShop E2E Arama ve İnceleme",
     "status": "passed",
     "totalDuration": "11.4s",
     "stepsTotal": 7,
@@ -645,8 +645,8 @@
         "duration": "2.60s",
         "screenshotUrl": "/screenshots/run-c824afc9_node-collect.png",
         "logs": [
-          "NovaTech TR ana sayfasına bağlanılıyor: https://www.novatech.com.tr/",
-          "HTTP 200 OK alındı. Sayfa Başlığı: NovaTech TR | Performans Tutkunlarına Özel Notebook'lar",
+          "FlowShop TR ana sayfasına bağlanılıyor: https://flowshop-tr.mock/",
+          "HTTP 200 OK alındı. Sayfa Başlığı: FlowShop TR | Performans Tutkunlarına Özel Notebook'lar",
           "Ekran görüntüsü yakalandı: /screenshots/run-c824afc9_node-collect.png"
         ],
         "timestamp": "14:11:58"
@@ -658,8 +658,8 @@
         "duration": "1.38s",
         "screenshotUrl": "/screenshots/run-c824afc9_node-trigger.png",
         "logs": [
-          "Arama kutusu tetikleniyor: query=\"NovaTech\"",
-          "Arama inputuna 'NovaTech' yazıldı.",
+          "Arama kutusu tetikleniyor: query=\"FlowShop\"",
+          "Arama inputuna 'FlowShop' yazıldı.",
           "Ekran görüntüsü yakalandı: /screenshots/run-c824afc9_node-trigger.png"
         ],
         "timestamp": "14:12:00"
@@ -684,7 +684,7 @@
         "duration": "0.98s",
         "screenshotUrl": "/screenshots/run-c824afc9_node-action.png",
         "logs": [
-          "NovaTech serisi Ürün Detay Sayfası (PDP) inceleniyor...",
+          "FlowShop serisi Ürün Detay Sayfası (PDP) inceleniyor...",
           "Teknik donanım özellikleri ve ekran boyutları doğrulandı.",
           "Ekran görüntüsü yakalandı: /screenshots/run-c824afc9_node-action.png"
         ],
@@ -718,8 +718,8 @@
   },
   {
     "runId": "run-6d9c27be",
-    "scenarioId": "scenario-novatech-tr-e2e",
-    "scenarioTitle": "NovaTech TR: NovaTech E2E Arama ve İnceleme",
+    "scenarioId": "scenario-flowshop-tr-e2e",
+    "scenarioTitle": "FlowShop TR: FlowShop E2E Arama ve İnceleme",
     "status": "passed",
     "totalDuration": "12.5s",
     "stepsTotal": 7,
@@ -745,8 +745,8 @@
         "duration": "2.79s",
         "screenshotUrl": "/screenshots/run-6d9c27be_node-collect.png",
         "logs": [
-          "NovaTech TR ana sayfasına bağlanılıyor: https://www.novatech.com.tr/",
-          "HTTP 200 OK alındı. Sayfa Başlığı: NovaTech TR | Performans Tutkunlarına Özel Notebook'lar",
+          "FlowShop TR ana sayfasına bağlanılıyor: https://flowshop-tr.mock/",
+          "HTTP 200 OK alındı. Sayfa Başlığı: FlowShop TR | Performans Tutkunlarına Özel Notebook'lar",
           "Ekran görüntüsü yakalandı: /screenshots/run-6d9c27be_node-collect.png"
         ],
         "timestamp": "13:55:00"
@@ -758,8 +758,8 @@
         "duration": "1.43s",
         "screenshotUrl": "/screenshots/run-6d9c27be_node-trigger.png",
         "logs": [
-          "Arama kutusu tetikleniyor: query=\"NovaTech\"",
-          "Arama inputuna 'NovaTech' yazıldı.",
+          "Arama kutusu tetikleniyor: query=\"FlowShop\"",
+          "Arama inputuna 'FlowShop' yazıldı.",
           "Ekran görüntüsü yakalandı: /screenshots/run-6d9c27be_node-trigger.png"
         ],
         "timestamp": "13:55:02"
@@ -784,7 +784,7 @@
         "duration": "1.19s",
         "screenshotUrl": "/screenshots/run-6d9c27be_node-action.png",
         "logs": [
-          "NovaTech serisi Ürün Detay Sayfası (PDP) inceleniyor...",
+          "FlowShop serisi Ürün Detay Sayfası (PDP) inceleniyor...",
           "Teknik donanım özellikleri ve ekran boyutları doğrulandı.",
           "Ekran görüntüsü yakalandı: /screenshots/run-6d9c27be_node-action.png"
         ],
@@ -818,8 +818,8 @@
   },
   {
     "runId": "run-8ff37927",
-    "scenarioId": "scenario-novatech-tr-e2e",
-    "scenarioTitle": "NovaTech TR: NovaTech E2E Arama ve İnceleme",
+    "scenarioId": "scenario-flowshop-tr-e2e",
+    "scenarioTitle": "FlowShop TR: FlowShop E2E Arama ve İnceleme",
     "status": "passed",
     "totalDuration": "13.8s",
     "stepsTotal": 7,
@@ -845,8 +845,8 @@
         "duration": "3.97s",
         "screenshotUrl": "/screenshots/run-8ff37927_node-collect.png",
         "logs": [
-          "NovaTech TR ana sayfasına bağlanılıyor: https://www.novatech.com.tr/",
-          "HTTP 200 OK alındı. Sayfa Başlığı: NovaTech TR | Performans Tutkunlarına Özel Notebook'lar",
+          "FlowShop TR ana sayfasına bağlanılıyor: https://flowshop-tr.mock/",
+          "HTTP 200 OK alındı. Sayfa Başlığı: FlowShop TR | Performans Tutkunlarına Özel Notebook'lar",
           "Ekran görüntüsü yakalandı: /screenshots/run-8ff37927_node-collect.png"
         ],
         "timestamp": "13:43:32"
@@ -858,8 +858,8 @@
         "duration": "1.43s",
         "screenshotUrl": "/screenshots/run-8ff37927_node-trigger.png",
         "logs": [
-          "Arama kutusu tetikleniyor: query=\"NovaTech\"",
-          "Arama inputuna 'NovaTech' yazıldı.",
+          "Arama kutusu tetikleniyor: query=\"FlowShop\"",
+          "Arama inputuna 'FlowShop' yazıldı.",
           "Ekran görüntüsü yakalandı: /screenshots/run-8ff37927_node-trigger.png"
         ],
         "timestamp": "13:43:33"
@@ -884,7 +884,7 @@
         "duration": "1.04s",
         "screenshotUrl": "/screenshots/run-8ff37927_node-action.png",
         "logs": [
-          "NovaTech serisi Ürün Detay Sayfası (PDP) inceleniyor...",
+          "FlowShop serisi Ürün Detay Sayfası (PDP) inceleniyor...",
           "Teknik donanım özellikleri ve ekran boyutları doğrulandı.",
           "Ekran görüntüsü yakalandı: /screenshots/run-8ff37927_node-action.png"
         ],
@@ -917,9 +917,9 @@
     ]
   },
   {
-    "runId": "run-novatech-001",
-    "scenarioId": "scenario-novatech-tr-e2e",
-    "scenarioTitle": "NovaTech TR: NovaTech E2E Arama ve İnceleme",
+    "runId": "run-flowshop-001",
+    "scenarioId": "scenario-flowshop-tr-e2e",
+    "scenarioTitle": "FlowShop TR: FlowShop E2E Arama ve İnceleme",
     "status": "passed",
     "totalDuration": "8.5s",
     "stepsTotal": 6,
@@ -943,11 +943,11 @@
         "name": "Data Collection",
         "status": "passed",
         "duration": "2.1s",
-        "screenshotUrl": "/screenshots/novatech_home_live.png",
+        "screenshotUrl": "/screenshots/flowshop_home_live.png",
         "logs": [
-          "NovaTech TR ana sayfası yüklendi: https://www.novatech.com.tr/",
+          "FlowShop TR ana sayfası yüklendi: https://flowshop-tr.mock/",
           "HTTP 200 OK alındı",
-          "Ekran görüntüsü kaydedildi: /screenshots/novatech_home_live.png"
+          "Ekran görüntüsü kaydedildi: /screenshots/flowshop_home_live.png"
         ],
         "timestamp": "13:37:34"
       },
@@ -956,9 +956,9 @@
         "name": "Trigger Automation",
         "status": "passed",
         "duration": "1.8s",
-        "screenshotUrl": "/screenshots/novatech_home_live.png",
+        "screenshotUrl": "/screenshots/flowshop_home_live.png",
         "logs": [
-          "Arama inputuna 'NovaTech' yazıldı",
+          "Arama inputuna 'FlowShop' yazıldı",
           "Arama isteği gönderildi"
         ],
         "timestamp": "13:37:36"
@@ -968,10 +968,10 @@
         "name": "Data Validation",
         "status": "passed",
         "duration": "2.4s",
-        "screenshotUrl": "/screenshots/novatech_category.png",
+        "screenshotUrl": "/screenshots/flowshop_category.png",
         "logs": [
           "Oyun bilgisayarları listelendi",
-          "NovaTech modelleri ve fiyatlar doğrulandı"
+          "FlowShop modelleri ve fiyatlar doğrulandı"
         ],
         "timestamp": "13:37:38"
       },
@@ -980,7 +980,7 @@
         "name": "Action Trigger",
         "status": "passed",
         "duration": "1.9s",
-        "screenshotUrl": "/screenshots/novatech_pdp.png",
+        "screenshotUrl": "/screenshots/flowshop_pdp.png",
         "logs": [
           "Ürün detay sayfası açıldı",
           "Intel Core i7/i9 ve RTX 4070/4080 özellikleri kontrol edildi"
@@ -992,7 +992,7 @@
         "name": "Output Generation",
         "status": "passed",
         "duration": "1.2s",
-        "screenshotUrl": "/screenshots/novatech_pdp.png",
+        "screenshotUrl": "/screenshots/flowshop_pdp.png",
         "logs": [
           "Sepet aksiyonu hazırlandı",
           "Stok ve kargo rozetleri teyit edildi"

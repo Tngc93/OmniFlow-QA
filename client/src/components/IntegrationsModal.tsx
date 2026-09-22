@@ -52,10 +52,10 @@ export const IntegrationsModal: React.FC<IntegrationsModalProps> = ({
   const [activeTab, setActiveTab] = useState<'jira' | 'github' | 'slack' | 'playwright'>(initialTab);
 
   // Jira Form State
-  const [jiraDomain, setJiraDomain] = useState('https://novatech-qa.atlassian.net');
-  const [jiraEmail, setJiraEmail] = useState('qa.engineer@novatech-ecom.io');
+  const [jiraDomain, setJiraDomain] = useState('https://flowshop-qa.atlassian.net');
+  const [jiraEmail, setJiraEmail] = useState('qa.engineer@flowshop.mock');
   const [jiraToken, setJiraToken] = useState('ATATT3xFfGF0SecureApiToken-QAAutomationSuite');
-  const [jiraProjectKey, setJiraProjectKey] = useState('NOVA');
+  const [jiraProjectKey, setJiraProjectKey] = useState('FLOW');
   const [jiraBoardId, setJiraBoardId] = useState('BOARD-104 (QA Automation Sprint)');
   const [jiraIssueType, setJiraIssueType] = useState('Bug');
   const [autoCreateOnFailure, setAutoCreateOnFailure] = useState(true);
@@ -65,7 +65,7 @@ export const IntegrationsModal: React.FC<IntegrationsModalProps> = ({
   const [ghRepo, setGhRepo] = useState('Tngc93/OmniFlow-QA');
   const [ghWorkflow, setGhWorkflow] = useState('playwright-e2e.yml');
   const [slackWebhook, setSlackWebhook] = useState('https://hooks.slack.com/services/T01234/B5678/XYZ9876');
-  const [slackChannel, setSlackChannel] = useState('#qa-novatech-alerts');
+  const [slackChannel, setSlackChannel] = useState('#qa-flowshop-alerts');
 
   // Status & Feedback
   const [testStatus, setTestStatus] = useState<string | null>(null);
@@ -128,10 +128,10 @@ export const IntegrationsModal: React.FC<IntegrationsModalProps> = ({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          scenarioTitle: 'NovaTech Horizon E2E Arama ve İnceleme',
+          scenarioTitle: 'FlowShop Studio Wireless E2E Arama ve İnceleme',
           stepName: 'Sepete Ekleme & Kargo Rozeti Doğrulaması',
-          errorMessage: 'Sepet toplamı kargo tutarı ile eşleşmedi (Assertion Error: ₺48.999 != ₺49.049)',
-          screenshot: '/screenshots/novatech_pdp.png',
+          errorMessage: 'Sepet toplamı kargo tutarı ile eşleşmedi (Assertion Error: ₺4.999 != ₺5.049)',
+          screenshot: '/screenshots/flowshop_pdp.png',
           projectKey: jiraProjectKey,
           boardId: jiraBoardId,
           issueType: jiraIssueType,
@@ -351,7 +351,7 @@ export const IntegrationsModal: React.FC<IntegrationsModalProps> = ({
                         {activeTooltip === 'domain' && (
                           <div className="absolute right-0 bottom-full mb-1.5 z-50 w-64 p-2.5 bg-slate-900 text-white rounded-xl shadow-xl text-[10px] leading-relaxed border border-slate-700 pointer-events-none animate-in fade-in zoom-in-95">
                             <span className="font-bold text-indigo-400 block mb-0.5">ℹ️ Jira Cloud Domain Nedir?</span>
-                            Şirketinizin Atlassian bulut adresidir. Jira'yı açtığınızda adres çubuğundaki ana URL'dir (örn: https://novatech-qa.atlassian.net). Otomasyon biletleri buraya iletir.
+                            Şirketinizin Atlassian bulut adresidir. Jira'yı açtığınızda adres çubuğundaki ana URL'dir (örn: https://flowshop-qa.atlassian.net). Otomasyon biletleri buraya iletir.
                           </div>
                         )}
                       </div>
@@ -359,7 +359,7 @@ export const IntegrationsModal: React.FC<IntegrationsModalProps> = ({
                     <input
                       type="text"
                       value={jiraDomain}
-                      placeholder="https://novatech-qa.atlassian.net"
+                      placeholder="https://flowshop-qa.atlassian.net"
                       onChange={(e) => setJiraDomain(e.target.value)}
                       className="w-full px-3 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-800 dark:text-slate-200 focus:outline-none focus:border-indigo-500"
                     />
@@ -393,7 +393,7 @@ export const IntegrationsModal: React.FC<IntegrationsModalProps> = ({
                     <input
                       type="email"
                       value={jiraEmail}
-                      placeholder="qa.engineer@novatech-ecom.io"
+                      placeholder="qa.engineer@flowshop.mock"
                       onChange={(e) => setJiraEmail(e.target.value)}
                       className="w-full px-3 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-800 dark:text-slate-200 focus:outline-none focus:border-indigo-500"
                     />
@@ -457,7 +457,7 @@ export const IntegrationsModal: React.FC<IntegrationsModalProps> = ({
                           {activeTooltip === 'projectKey' && (
                             <div className="absolute right-0 bottom-full mb-1.5 z-50 w-56 p-2 bg-slate-900 text-white rounded-xl shadow-xl text-[10px] leading-relaxed border border-slate-700 pointer-events-none animate-in fade-in zoom-in-95">
                               <span className="font-bold text-indigo-400 block mb-0.5">🏷️ Proje Anahtarı Nedir?</span>
-                              Jira projenizin 2-4 harfli kodudur (örn: NOVA, QA). Biletlerin başlığını belirler (örn: NOVA-101).
+                              Jira projenizin 2-4 harfli kodudur (örn: FLOW, QA). Biletlerin başlığını belirler (örn: FLOW-101).
                             </div>
                           )}
                         </div>
@@ -465,7 +465,7 @@ export const IntegrationsModal: React.FC<IntegrationsModalProps> = ({
                       <input
                         type="text"
                         value={jiraProjectKey}
-                        placeholder="NOVA"
+                        placeholder="FLOW"
                         onChange={(e) => setJiraProjectKey(e.target.value)}
                         className="w-full px-3 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-800 dark:text-slate-200 font-mono font-bold focus:outline-none focus:border-indigo-500 uppercase"
                       />

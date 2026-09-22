@@ -33,22 +33,22 @@ async function recaptureAll() {
   await page.reload({ waitUntil: 'networkidle' });
   await page.waitForTimeout(1000);
 
-  // 1. NovaTech TR Master Pipeline
-  console.log('1. Capturing 01_novatech_tr_master_pipeline.png...');
+  // 1. FlowShop TR Master Pipeline
+  console.log('1. Capturing 01_flowshop_tr_master_pipeline.png...');
   const masterTab = page.locator('[data-testid="tab-master-pipeline"]').first();
   if (await masterTab.isVisible()) await masterTab.click();
   await page.waitForTimeout(400);
-  const trBtn = page.locator('[data-testid="domain-btn-novatech-tr"]').first();
+  const trBtn = page.locator('[data-testid="domain-btn-flowshop-tr"]').first();
   if (await trBtn.isVisible()) await trBtn.click();
   await page.waitForTimeout(800);
-  await page.screenshot({ path: path.join(DOCS_DIR, '01_novatech_tr_master_pipeline.png') });
+  await page.screenshot({ path: path.join(DOCS_DIR, '01_flowshop_tr_master_pipeline.png') });
 
-  // 2. NovaTech DE Master Pipeline
-  console.log('2. Capturing 02_novatech_de_master_pipeline.png...');
-  const deBtn = page.locator('[data-testid="domain-btn-novatech-de"]').first();
+  // 2. FlowShop DE Master Pipeline
+  console.log('2. Capturing 02_flowshop_de_master_pipeline.png...');
+  const deBtn = page.locator('[data-testid="domain-btn-flowshop-de"]').first();
   if (await deBtn.isVisible()) await deBtn.click();
   await page.waitForTimeout(800);
-  await page.screenshot({ path: path.join(DOCS_DIR, '02_novatech_de_master_pipeline.png') });
+  await page.screenshot({ path: path.join(DOCS_DIR, '02_flowshop_de_master_pipeline.png') });
 
   // 3. Global Dual Engine Pipeline
   console.log('3. Capturing 03_global_dual_engine_pipeline.png...');

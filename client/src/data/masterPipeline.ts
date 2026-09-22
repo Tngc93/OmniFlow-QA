@@ -1,7 +1,7 @@
 import { Scenario } from '../types';
 
 export interface MasterDomainOption {
-  id: 'novatech-tr' | 'novatech-de' | 'all';
+  id: 'flowshop-tr' | 'flowshop-de' | 'all';
   name: string;
   domain: string;
   flag: string;
@@ -11,51 +11,51 @@ export interface MasterDomainOption {
 
 export const MASTER_DOMAINS: MasterDomainOption[] = [
   {
-    id: 'novatech-tr',
-    name: 'NovaTech Türkiye',
-    domain: 'novatech.com.tr',
+    id: 'flowshop-tr',
+    name: 'FlowShop TR (Mock Store)',
+    domain: 'flowshop-tr.mock',
     flag: '🇹🇷',
-    badge: 'TRY (₺) • KVKK',
-    baseUrl: 'https://www.novatech.com.tr'
+    badge: 'TRY (₺) • Mock Store',
+    baseUrl: 'https://flowshop-tr.mock'
   },
   {
-    id: 'novatech-de',
-    name: 'NovaTech Deutschland',
-    domain: 'novatech.de',
+    id: 'flowshop-de',
+    name: 'FlowShop DE (Mock Store)',
+    domain: 'flowshop-de.mock',
     flag: '🇩🇪',
-    badge: 'EUR (€) • DSGVO / MwSt',
-    baseUrl: 'https://www.novatech.de'
+    badge: 'EUR (€) • Mock Store',
+    baseUrl: 'https://flowshop-de.mock'
   },
   {
     id: 'all',
-    name: 'Multi-Store Global Pipeline',
-    domain: 'Global E2E (TR & DE)',
+    name: 'FlowShop Global (Multi-Store Mock)',
+    domain: 'Global E2E (TR & DE Mock)',
     flag: '🌐',
     badge: 'Multi-Store Comparison',
-    baseUrl: 'https://www.novatech.com.tr / https://www.novatech.de'
+    baseUrl: 'https://flowshop-tr.mock / https://flowshop-de.mock'
   }
 ];
 
-// 1. NovaTech TR Master Pipeline (Spacious layout, Turkey-specific flows & real TR screenshots)
-export const MASTER_PIPELINE_NOVATECH_TR: Scenario = {
-  id: 'master-pipeline-novatech-tr',
-  title: 'NovaTech TR (novatech.com.tr) - Genel Master Pipeline',
+// 1. FlowShop TR Master Pipeline (Spacious layout, Turkey-specific flows & real TR screenshots)
+export const MASTER_PIPELINE_FLOWSHOP_TR: Scenario = {
+  id: 'master-pipeline-flowshop-tr',
+  title: 'FlowShop TR (flowshop-tr.mock) - Master Pipeline',
   category: 'Bütünleşik Master Mimari',
   categories: ['Temel Dönüşüm (Checkout)', 'Ödeme & Güvenlik', 'Lojistik & Kargo', 'Siber Güvenlik & PCI-DSS'],
-  description: 'NovaTech Türkiye mağazasında mağaza açılışından arama motoruna, donanım özelleştirmeden ₺1000 sepet indirimi, üye kasası, Garanti/İş Bankası 3D Secure taksit ve Yurtiçi Kargo teslimatına kadar tam otomatik test döngüsü.',
+  description: 'FlowShop Türkiye mock storefront end-to-end testing cycle from catalog exploration, sound profile filter, cart promo discount, to checkout and delivery assertions.',
   criticality: 'Critical',
   componentsCount: 12,
   lastRunDuration: '24.2s',
   status: 'passed',
-  targetUrl: 'https://www.novatech.com.tr',
+  targetUrl: 'https://flowshop-tr.mock',
   nodes: [
     {
       id: 'node-mp-tr-init',
       type: 'terminatorNode',
       position: { x: 520, y: 40 },
       data: {
-        label: 'NovaTech TR Test Initializer',
-        subtext: 'Playwright E2E Motoru (novatech.com.tr)',
+        label: 'FlowShop TR Test Initializer',
+        subtext: 'Playwright E2E Runner (flowshop-tr.mock)',
         status: 'passed',
         isStart: true
       }
@@ -75,7 +75,7 @@ export const MASTER_PIPELINE_NOVATECH_TR: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/novatech_home_live.png'
+        screenshot: '/screenshots/flowshop_home_live.png'
       }
     },
     // Branch 1: Search
@@ -85,8 +85,8 @@ export const MASTER_PIPELINE_NOVATECH_TR: Scenario = {
       position: { x: 140, y: 650 },
       data: {
         stepIndex: 2,
-        name: 'NovaTech Akıllı Arama & Fuzzy Search',
-        subtext: 'Horizon, Titan, Apex Pro modelleri ve sıfır sonuç önleme',
+        name: 'FlowShop Akıllı Arama & Fuzzy Search',
+        subtext: 'Studio Wireless, ANC Pro, Active Sound ve sıfır sonuç önleme',
         components: 9,
         metricTime: '0.8s',
         metricPassed: 27,
@@ -94,7 +94,7 @@ export const MASTER_PIPELINE_NOVATECH_TR: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/run-da2f5f7c_node-search.png'
+        screenshot: '/screenshots/flowshop_de_search_live.png'
       }
     },
     // Branch 2: Category PLP
@@ -104,8 +104,8 @@ export const MASTER_PIPELINE_NOVATECH_TR: Scenario = {
       position: { x: 900, y: 650 },
       data: {
         stepIndex: 3,
-        name: 'Oyun Bilgisayarları Kataloğu (PLP)',
-        subtext: 'RTX 4070, 32GB RAM, Fiyat aralığı ve sıralama motoru',
+        name: 'Ses ve Kulaklık Ekipmanları Kataloğu (PLP)',
+        subtext: 'ANC Kulaklık, Hi-Fi, Fiyat aralığı ve sıralama motoru',
         components: 14,
         metricTime: '1.0s',
         metricPassed: 32,
@@ -113,7 +113,7 @@ export const MASTER_PIPELINE_NOVATECH_TR: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/novatech_category.png'
+        screenshot: '/screenshots/flowshop_category.png'
       }
     },
     // Convergence: PDP & Configurator
@@ -123,8 +123,8 @@ export const MASTER_PIPELINE_NOVATECH_TR: Scenario = {
       position: { x: 520, y: 970 },
       data: {
         stepIndex: 4,
-        name: 'Horizon X15 V20.8 Donanım Konfigüratörü',
-        subtext: '16GB->32GB RAM, 1TB SSD, Türkçe Q Klavye & Canlı Stok Kontrolü',
+        name: 'FlowShop Studio Wireless HD Konfigüratörü',
+        subtext: 'Midnight Black, Aktif Gürültü Engelleme, Canlı Stok Kontrolü',
         components: 16,
         metricTime: '1.3s',
         metricPassed: 44,
@@ -132,7 +132,7 @@ export const MASTER_PIPELINE_NOVATECH_TR: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'pdp',
-        screenshot: '/screenshots/novatech_pdp.png'
+        screenshot: '/screenshots/flowshop_pdp.png'
       }
     },
     // Cart & Promotion
@@ -142,8 +142,8 @@ export const MASTER_PIPELINE_NOVATECH_TR: Scenario = {
       position: { x: 520, y: 1390 },
       data: {
         stepIndex: 5,
-        name: 'NovaTech Sepet & Kupon İndirim Matrisi',
-        subtext: 'Promosyon kodu, ₺1.000 üzeri Ücretsiz Kargo Barı & Çapraz Satış',
+        name: 'FlowShop Sepet & Kupon İndirim Matrisi',
+        subtext: 'SAVE20 kupon kodu, ₺500 üzeri Ücretsiz Kargo Barı & Çapraz Satış',
         components: 11,
         metricTime: '0.9s',
         metricPassed: 30,
@@ -151,7 +151,7 @@ export const MASTER_PIPELINE_NOVATECH_TR: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'cart',
-        screenshot: '/screenshots/novatech_cart_live.png'
+        screenshot: '/screenshots/flowshop_cart_live.png'
       }
     },
     // Checkout: User Auth or Guest
@@ -161,7 +161,7 @@ export const MASTER_PIPELINE_NOVATECH_TR: Scenario = {
       position: { x: 140, y: 1810 },
       data: {
         stepIndex: 6,
-        name: 'NovaTech Üye Girişi & Adres Kasası',
+        name: 'FlowShop Üye Girişi & Adres Kasası',
         subtext: 'Kayıtlı teslimat adresi veya şifresiz hızlı misafir alışverişi',
         components: 8,
         metricTime: '0.8s',
@@ -206,7 +206,7 @@ export const MASTER_PIPELINE_NOVATECH_TR: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'payment',
-        screenshot: '/screenshots/novatech_checkout_live.png'
+        screenshot: '/screenshots/flowshop_checkout_live.png'
       }
     },
     // Logistics & Fulfillment
@@ -251,7 +251,7 @@ export const MASTER_PIPELINE_NOVATECH_TR: Scenario = {
       type: 'terminatorNode',
       position: { x: 520, y: 2870 },
       data: {
-        label: 'NovaTech TR Master Pipeline Tamamlandı',
+        label: 'FlowShop TR Master Pipeline Tamamlandı',
         subtext: 'Tüm Türkiye Otomasyon Fazları Doğrulandı (%100 Başarılı)',
         status: 'passed',
         isEnd: true
@@ -262,7 +262,7 @@ export const MASTER_PIPELINE_NOVATECH_TR: Scenario = {
     { id: 'e-tr-1', source: 'node-mp-tr-init', target: 'node-mp-tr-storefront', label: 'Storefront Handshake', animated: true },
     { id: 'e-tr-2a', source: 'node-mp-tr-storefront', target: 'node-mp-tr-search', label: 'Query Search Pipeline', animated: true },
     { id: 'e-tr-2b', source: 'node-mp-tr-storefront', target: 'node-mp-tr-plp', label: 'Browse Category Catalog', animated: true },
-    { id: 'e-tr-3a', source: 'node-mp-tr-search', target: 'node-mp-tr-config', label: 'Select Laptop PDP', animated: true },
+    { id: 'e-tr-3a', source: 'node-mp-tr-search', target: 'node-mp-tr-config', label: 'Select Audio PDP', animated: true },
     { id: 'e-tr-3b', source: 'node-mp-tr-plp', target: 'node-mp-tr-config', label: 'Select Configured Model', animated: true },
     { id: 'e-tr-4', source: 'node-mp-tr-config', target: 'node-mp-tr-cart', label: 'Add Custom Build to Cart', animated: true },
     { id: 'e-tr-5a', source: 'node-mp-tr-cart', target: 'node-mp-tr-auth', label: 'Proceed as Member / Guest', animated: true },
@@ -276,26 +276,26 @@ export const MASTER_PIPELINE_NOVATECH_TR: Scenario = {
   ]
 };
 
-// 2. NovaTech DE Master Pipeline (Spacious layout, Germany/EU-specific flows & authentic DE live screenshots)
-export const MASTER_PIPELINE_NOVATECH_DE: Scenario = {
-  id: 'master-pipeline-novatech-de',
-  title: 'NovaTech DE (novatech.de) - Genel Master Pipeline',
+// 2. FlowShop DE Master Pipeline (Spacious layout, Germany/EU-specific flows & authentic DE live screenshots)
+export const MASTER_PIPELINE_FLOWSHOP_DE: Scenario = {
+  id: 'master-pipeline-flowshop-de',
+  title: 'FlowShop DE (flowshop-de.mock) - Master Pipeline',
   category: 'Bütünleşik Master Mimari',
   categories: ['Temel Dönüşüm (Checkout)', 'Ödeme & Güvenlik', 'Lojistik & Kargo', 'Siber Güvenlik & PCI-DSS'],
-  description: 'NovaTech Almanya ve Avrupa Birliği e-ticaret platformunda Cookiebot/DSGVO çerez izninden Almanca arama, GeForce RTX 50 PLP, QWERTZ konfigüratör, €100 kostenlose Lieferung, Klarna/PayPal, %19 MwSt. ve DHL Packstation 24/7 teslimatına kadar Avrupa odaklı otomasyon döngüsü.',
+  description: 'FlowShop Almanya ve Avrupa Birliği mock e-ticaret platformunda Cookiebot/DSGVO çerez izninden Almanca ses ekipmanları araması, Hi-Fi ANC kulaklıklar, SAVE20 kuponu, €100 kostenlose Lieferung, Klarna/PayPal ve DHL Packstation teslimatına kadar Avrupa odaklı otomasyon döngüsü.',
   criticality: 'Critical',
   componentsCount: 12,
   lastRunDuration: '26.8s',
   status: 'passed',
-  targetUrl: 'https://www.novatech.de',
+  targetUrl: 'https://flowshop-de.mock',
   nodes: [
     {
       id: 'node-tde-init',
       type: 'terminatorNode',
       position: { x: 520, y: 40 },
       data: {
-        label: 'NovaTech DE DACH/EU Test Initializer',
-        subtext: 'Playwright Browser Session (novatech.de)',
+        label: 'FlowShop DE DACH/EU Test Initializer',
+        subtext: 'Playwright Browser Session (flowshop-de.mock)',
         status: 'passed',
         isStart: true
       }
@@ -315,7 +315,7 @@ export const MASTER_PIPELINE_NOVATECH_DE: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/novatech_de_home_live.png'
+        screenshot: '/screenshots/flowshop_de_home_live.png'
       }
     },
     // Branch 1: Search
@@ -325,8 +325,8 @@ export const MASTER_PIPELINE_NOVATECH_DE: Scenario = {
       position: { x: 140, y: 650 },
       data: {
         stepIndex: 2,
-        name: 'NovaTech Suche & Autocomplete Engine',
-        subtext: "Almanca 'NovaTech' arama sorgusu, RTX 50-serisi önerileri",
+        name: 'FlowShop Suche & Autocomplete Engine',
+        subtext: "Almanca 'FlowShop Kopfhörer' arama sorgusu, ANC önerileri",
         components: 9,
         metricTime: '0.8s',
         metricPassed: 27,
@@ -334,7 +334,7 @@ export const MASTER_PIPELINE_NOVATECH_DE: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/novatech_de_search_live.png'
+        screenshot: '/screenshots/flowshop_de_search_live.png'
       }
     },
     // Branch 2: Category PLP
@@ -344,8 +344,8 @@ export const MASTER_PIPELINE_NOVATECH_DE: Scenario = {
       position: { x: 900, y: 650 },
       data: {
         stepIndex: 3,
-        name: 'Gaming Laptops PLP & Filter Drawer',
-        subtext: 'GeForce RTX 5050/5060/5070, Sortieren: NovaTech Wahl & Auf Lager',
+        name: 'Audio & Kopfhörer PLP & Filter Drawer',
+        subtext: 'Studio Wireless, ANC Pro, Sortieren: FlowShop Empfehlung & Auf Lager',
         components: 14,
         metricTime: '1.1s',
         metricPassed: 32,
@@ -353,7 +353,7 @@ export const MASTER_PIPELINE_NOVATECH_DE: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/novatech_de_plp_live.png'
+        screenshot: '/screenshots/flowshop_de_plp_live.png'
       }
     },
     // Convergence: PDP & Configurator
@@ -363,8 +363,8 @@ export const MASTER_PIPELINE_NOVATECH_DE: Scenario = {
       position: { x: 520, y: 970 },
       data: {
         stepIndex: 4,
-        name: 'NovaTech Titan X17 Gaming Laptop PDP',
-        subtext: '1.089,00 € (inkl. MwSt.), 100,00 € Rabatt, QWERTZ Tastatur Layout',
+        name: 'FlowShop Studio Wireless Kopfhörer PDP',
+        subtext: '149,00 € (inkl. MwSt.), 20,00 € Rabatt, Bluetooth 5.3 & ANC',
         components: 16,
         metricTime: '1.4s',
         metricPassed: 44,
@@ -372,7 +372,7 @@ export const MASTER_PIPELINE_NOVATECH_DE: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'pdp',
-        screenshot: '/screenshots/novatech_de_pdp_live.png'
+        screenshot: '/screenshots/flowshop_de_pdp_live.png'
       }
     },
     // Cart & Promotion
@@ -382,16 +382,16 @@ export const MASTER_PIPELINE_NOVATECH_DE: Scenario = {
       position: { x: 520, y: 1390 },
       data: {
         stepIndex: 5,
-        name: 'Warenkorb & Gutscheincode (€100 Barı)',
-        subtext: 'Warenkorb Validierung, NOVATECH-EU-50 Gutschein & Versandkostenfrei ab €100',
+        name: 'FlowShop Warenkorb & Gutschein-Matrix',
+        subtext: 'Warenkorb Validierung, SAVE20 Gutschein & Versandkostenfrei ab €100',
         components: 11,
-        metricTime: '1.0s',
+        metricTime: '0.9s',
         metricPassed: 30,
         metricAutomated: 30,
         isAutomated: true,
         status: 'passed',
         previewType: 'cart',
-        screenshot: '/screenshots/novatech_de_cart_live.png'
+        screenshot: '/screenshots/flowshop_de_cart_live.png'
       }
     },
     // Checkout: User Auth or Guest
@@ -401,29 +401,29 @@ export const MASTER_PIPELINE_NOVATECH_DE: Scenario = {
       position: { x: 140, y: 1810 },
       data: {
         stepIndex: 6,
-        name: 'Kundenkonto Login & Gast-Bestellung',
-        subtext: 'DSGVO-konforme Gast-Bestellung oder Kundenkonto mit 2FA',
+        name: 'FlowShop DACH Kundenkonto & Gast-Checkout',
+        subtext: 'Kunden-Login mit 2FA oder Express-Kauf ohne Registrierung',
         components: 8,
-        metricTime: '0.9s',
+        metricTime: '0.8s',
         metricPassed: 24,
         metricAutomated: 24,
         isAutomated: true,
         status: 'passed',
         previewType: 'checkout',
-        screenshot: '/screenshots/novatech_de_auth_live.png'
+        screenshot: '/screenshots/flowshop_de_auth_live.png'
       }
     },
-    // Tax & Corporate Invoice
+    // Tax & Corporate Invoice (EU B2B)
     {
       id: 'node-tde-tax',
       type: 'flowStepNode',
       position: { x: 900, y: 1810 },
       data: {
         stepIndex: 7,
-        name: '%19 MwSt. & USt-IdNr AB KDV Muafiyeti',
-        subtext: 'Deutsche 19% MwSt. Steuerberechnung, VIES B2B Reverse Charge Validierung',
+        name: 'EU USt-IdNr Validierung (VIES API & 19% MwSt.)',
+        subtext: 'Bundeszentralamt für Steuern VIES Abfrage, B2B Reverse Charge Validierung',
         components: 10,
-        metricTime: '1.1s',
+        metricTime: '1.2s',
         metricPassed: 28,
         metricAutomated: 28,
         isAutomated: true,
@@ -431,34 +431,34 @@ export const MASTER_PIPELINE_NOVATECH_DE: Scenario = {
         previewType: 'checkout'
       }
     },
-    // Payment Gateway & Security
+    // Payment Gateway & Security (Klarna & PayPal)
     {
       id: 'node-tde-pay',
       type: 'flowStepNode',
       position: { x: 520, y: 2130 },
       data: {
         stepIndex: 8,
-        name: 'Klarna Sofort, PayPal Express & PSD2 SCA 3DS',
-        subtext: 'Klarna Ratenkauf/Sofortüberweisung, PayPal Smart Buttons, 3D Secure 2.2',
+        name: 'Klarna Sofort, PayPal Express & 3DS2 SCA',
+        subtext: 'PSD2 Richtlinie SCA 2-Faktor, Klarna Ratenkauf & Käuferschutz Garantie',
         components: 20,
-        metricTime: '2.1s',
+        metricTime: '2.0s',
         metricPassed: 56,
         metricAutomated: 56,
         isAutomated: true,
         status: 'passed',
         previewType: 'payment',
-        screenshot: '/screenshots/run-a1524389_node-payment.png'
+        screenshot: '/screenshots/flowshop_de_checkout_live.png'
       }
     },
-    // Logistics & Fulfillment
+    // Logistics & DHL Packstation
     {
-      id: 'node-tde-dhl',
+      id: 'node-tde-logistics',
       type: 'flowStepNode',
       position: { x: 140, y: 2550 },
       data: {
         stepIndex: 9,
-        name: 'DHL Paket & Packstation 24/7 Abholstation',
-        subtext: 'Deutschlandweite Packstation 24/7 Auswahl, Postnummer & Sendungsverfolgung',
+        name: 'DHL Paket API, Packstation 24/7 & GoGreen',
+        subtext: 'Postnummer & Packstation 102 Validierung, Tracking-Nummer Generierung',
         components: 7,
         metricTime: '1.0s',
         metricPassed: 21,
@@ -468,23 +468,23 @@ export const MASTER_PIPELINE_NOVATECH_DE: Scenario = {
         previewType: 'checkout'
       }
     },
-    // Post-Purchase & Returns
+    // Post-Purchase & German RMA
     {
-      id: 'node-tde-rma',
+      id: 'node-tde-postpurchase',
       type: 'flowStepNode',
       position: { x: 900, y: 2550 },
       data: {
         stepIndex: 10,
-        name: 'BGB § 312g 14 Tage Gesetzliches Widerrufsrecht',
-        subtext: 'Widerrufsbelehrung, PDF Rechnung Download & DHL QR Retourenlabel',
+        name: 'Bestellbestätigung, Widerrufsrecht & RMA Retoure',
+        subtext: 'Rechnung PDF per E-Mail, 30 Tage Rückgaberecht & DHL Retourenlabel QR-Code',
         components: 9,
-        metricTime: '1.2s',
+        metricTime: '1.1s',
         metricPassed: 26,
         metricAutomated: 26,
         isAutomated: true,
         status: 'passed',
         previewType: 'confirmation',
-        screenshot: '/screenshots/novatech_de_rma_live.png'
+        screenshot: '/screenshots/flowshop_de_rma_live.png'
       }
     },
     // Finalization Terminator
@@ -493,28 +493,28 @@ export const MASTER_PIPELINE_NOVATECH_DE: Scenario = {
       type: 'terminatorNode',
       position: { x: 520, y: 2870 },
       data: {
-        label: 'NovaTech DE Master Pipeline Tamamlandı',
-        subtext: 'Alle europäischen DACH/EU E-Commerce Flows Erfolgreich Verifiziert (%100 Pass)',
+        label: 'FlowShop DE Master Pipeline Tamamlandı',
+        subtext: 'Alle DACH/EU-Phasen erfolgreich validiert (100% Passed)',
         status: 'passed',
         isEnd: true
       }
     }
   ],
   edges: [
-    { id: 'e-tde-1', source: 'node-tde-init', target: 'node-tde-storefront', label: 'Cookiebot DSGVO Consent', animated: true },
-    { id: 'e-tde-2a', source: 'node-tde-storefront', target: 'node-tde-search', label: 'Query Search Pipeline', animated: true },
-    { id: 'e-tde-2b', source: 'node-tde-storefront', target: 'node-tde-plp', label: 'Browse Category Catalog', animated: true },
-    { id: 'e-tde-3a', source: 'node-tde-search', target: 'node-tde-pdp', label: 'Select Gaming Laptop PDP', animated: true },
-    { id: 'e-tde-3b', source: 'node-tde-plp', target: 'node-tde-pdp', label: 'Select Configured Model', animated: true },
-    { id: 'e-tde-4', source: 'node-tde-pdp', target: 'node-tde-cart', label: 'In den Warenkorb Legen', animated: true },
-    { id: 'e-tde-5a', source: 'node-tde-cart', target: 'node-tde-auth', label: 'Zur Kasse (Gast/Login)', animated: true },
-    { id: 'e-tde-5b', source: 'node-tde-cart', target: 'node-tde-tax', label: '19% MwSt. & B2B Invoice', animated: true },
-    { id: 'e-tde-6a', source: 'node-tde-auth', target: 'node-tde-pay', label: 'Lieferadresse Bestätigt', animated: true },
-    { id: 'e-tde-6b', source: 'node-tde-tax', target: 'node-tde-pay', label: 'Steuerberechnung Gesperrt', animated: true },
-    { id: 'e-tde-7a', source: 'node-tde-pay', target: 'node-tde-dhl', label: 'Klarna/PayPal Freigegeben', animated: true },
-    { id: 'e-tde-7b', source: 'node-tde-pay', target: 'node-tde-rma', label: 'Bestellbestätigung Versendet', animated: true },
-    { id: 'e-tde-8a', source: 'node-tde-dhl', target: 'node-tde-end', label: 'DHL Tracking & Versand', animated: true },
-    { id: 'e-tde-8b', source: 'node-tde-rma', target: 'node-tde-end', label: '14 Tage Retourenschutz Bereit', animated: true }
+    { id: 'e-de-1', source: 'node-tde-init', target: 'node-tde-storefront', label: 'Storefront Handshake', animated: true },
+    { id: 'e-de-2a', source: 'node-tde-storefront', target: 'node-tde-search', label: 'Query Search Pipeline', animated: true },
+    { id: 'e-de-2b', source: 'node-tde-storefront', target: 'node-tde-plp', label: 'Browse Category Catalog', animated: true },
+    { id: 'e-de-3a', source: 'node-tde-search', target: 'node-tde-pdp', label: 'Select Audio Model', animated: true },
+    { id: 'e-de-3b', source: 'node-tde-plp', target: 'node-tde-pdp', label: 'Select Catalog Product', animated: true },
+    { id: 'e-de-4', source: 'node-tde-pdp', target: 'node-tde-cart', label: 'Add to Cart (€)', animated: true },
+    { id: 'e-de-5a', source: 'node-tde-cart', target: 'node-tde-auth', label: 'DACH Customer Session', animated: true },
+    { id: 'e-de-5b', source: 'node-tde-cart', target: 'node-tde-tax', label: 'B2B MwSt. Verification', animated: true },
+    { id: 'e-de-6a', source: 'node-tde-auth', target: 'node-tde-pay', label: 'Address & SCA Validated', animated: true },
+    { id: 'e-de-6b', source: 'node-tde-tax', target: 'node-tde-pay', label: 'VAT Tax Computed', animated: true },
+    { id: 'e-de-7a', source: 'node-tde-pay', target: 'node-tde-logistics', label: 'Klarna / PayPal Captured', animated: true },
+    { id: 'e-de-7b', source: 'node-tde-pay', target: 'node-tde-postpurchase', label: 'Emit Order & Invoice', animated: true },
+    { id: 'e-de-8a', source: 'node-tde-logistics', target: 'node-tde-end', label: 'DHL Tracking Generated', animated: true },
+    { id: 'e-de-8b', source: 'node-tde-postpurchase', target: 'node-tde-end', label: 'EU Post-Sale Lifecycle OK', animated: true }
   ]
 };
 
@@ -524,12 +524,12 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
   title: 'Global E-Ticaret Master Pipeline (Tüm Mağazalar & Pazarlar)',
   category: 'Bütünleşik Master Mimari',
   categories: ['Temel Dönüşüm (Checkout)', 'Ödeme & Güvenlik', 'Lojistik & Kargo', 'Siber Güvenlik & PCI-DSS'],
-  description: 'NovaTech Türkiye (TRY ₺, KVKK, 3DS) ve NovaTech Deutschland (EUR €, DSGVO, Klarna/DHL) platformlarının paralel dual-engine karşılaştırmalı uçtan uca otomasyon döngüsü.',
+  description: 'FlowShop Türkiye (TRY ₺, KVKK, 3DS) ve FlowShop Deutschland (EUR €, DSGVO, Klarna/DHL) platformlarının paralel dual-engine karşılaştırmalı uçtan uca otomasyon döngüsü.',
   criticality: 'Critical',
   componentsCount: 12,
   lastRunDuration: '31.5s',
   status: 'passed',
-  targetUrl: 'https://www.novatech.com.tr / https://www.novatech.de',
+  targetUrl: 'https://flowshop-tr.mock / https://flowshop-de.mock',
   nodes: [
     {
       id: 'node-gbl-init',
@@ -549,8 +549,8 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
       position: { x: 160, y: 260 },
       data: {
         stepIndex: 1,
-        name: '🇹🇷 NovaTech TR Storefront & KVKK',
-        subtext: 'novatech.com.tr, TRY (₺), KVKK & SSL 1.3',
+        name: '🇹🇷 FlowShop TR Storefront & KVKK',
+        subtext: 'flowshop-tr.mock, TRY (₺), KVKK & SSL 1.3',
         components: 12,
         metricTime: '1.1s',
         metricPassed: 38,
@@ -558,7 +558,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/novatech_home_live.png'
+        screenshot: '/screenshots/flowshop_home_live.png'
       }
     },
     {
@@ -567,8 +567,8 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
       position: { x: 880, y: 260 },
       data: {
         stepIndex: 2,
-        name: '🇩🇪 NovaTech DE Storefront & Cookiebot',
-        subtext: 'novatech.de, EUR (€), DSGVO & Cookiebot Consent',
+        name: '🇩🇪 FlowShop DE Storefront & Cookiebot',
+        subtext: 'flowshop-de.mock, EUR (€), DSGVO & Cookiebot Consent',
         components: 12,
         metricTime: '1.2s',
         metricPassed: 38,
@@ -576,7 +576,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/novatech_de_home_live.png'
+        screenshot: '/screenshots/flowshop_de_home_live.png'
       }
     },
     // Level 2: Catalogs side-by-side
@@ -586,8 +586,8 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
       position: { x: 160, y: 680 },
       data: {
         stepIndex: 3,
-        name: '🇹🇷 NovaTech TR Oyun Bilgisayarları',
-        subtext: '/oyun-bilgisayarlari, RTX 4070, Peşin Fiyatına 6 Taksit',
+        name: '🇹🇷 FlowShop TR Ses Ekipmanları',
+        subtext: '/audio-gear, ANC Kulaklık, Peşin Fiyatına 6 Taksit',
         components: 14,
         metricTime: '1.0s',
         metricPassed: 32,
@@ -595,7 +595,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/novatech_category.png'
+        screenshot: '/screenshots/flowshop_category.png'
       }
     },
     {
@@ -604,8 +604,8 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
       position: { x: 880, y: 680 },
       data: {
         stepIndex: 4,
-        name: '🇩🇪 NovaTech DE Gaming Laptops PLP',
-        subtext: '/gaming-laptops/, GeForce RTX 50-Serie, Auf Lager Filter',
+        name: '🇩🇪 FlowShop DE Audio & Kopfhörer PLP',
+        subtext: '/audio-gear/, Studio Wireless Serie, Auf Lager Filter',
         components: 14,
         metricTime: '1.1s',
         metricPassed: 32,
@@ -613,7 +613,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'search',
-        screenshot: '/screenshots/novatech_de_plp_live.png'
+        screenshot: '/screenshots/flowshop_de_plp_live.png'
       }
     },
     // Level 3: PDPs side-by-side
@@ -623,8 +623,8 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
       position: { x: 160, y: 1100 },
       data: {
         stepIndex: 5,
-        name: '🇹🇷 NovaTech Horizon X15 PDP (₺)',
-        subtext: 'Türkçe Q Klavye, RGB Aydınlatma, Canlı Stok Kontrolü',
+        name: '🇹🇷 FlowShop Studio Wireless PDP (₺)',
+        subtext: 'Midnight Black, Aktif Gürültü Engelleme, Canlı Stok Kontrolü',
         components: 16,
         metricTime: '1.3s',
         metricPassed: 44,
@@ -632,7 +632,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'pdp',
-        screenshot: '/screenshots/novatech_pdp.png'
+        screenshot: '/screenshots/flowshop_pdp.png'
       }
     },
     {
@@ -641,8 +641,8 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
       position: { x: 880, y: 1100 },
       data: {
         stepIndex: 6,
-        name: '🇩🇪 NovaTech Titan X17 Laptop (1.089€)',
-        subtext: 'Alman QWERTZ Tastatur, 100€ Rabatt, Konfigurieren & Kaufen',
+        name: '🇩🇪 FlowShop Studio Wireless PDP (149€)',
+        subtext: 'ANC Pro, 20€ Rabatt, Konfigurieren & Kaufen',
         components: 16,
         metricTime: '1.4s',
         metricPassed: 44,
@@ -650,7 +650,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'pdp',
-        screenshot: '/screenshots/novatech_de_pdp_live.png'
+        screenshot: '/screenshots/flowshop_de_pdp_live.png'
       }
     },
     // Level 4: Checkout side-by-side
@@ -669,7 +669,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'checkout',
-        screenshot: '/screenshots/novatech_checkout_live.png'
+        screenshot: '/screenshots/flowshop_checkout_live.png'
       }
     },
     {
@@ -687,7 +687,7 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
         isAutomated: true,
         status: 'passed',
         previewType: 'checkout',
-        screenshot: '/screenshots/novatech_de_cart_live.png'
+        screenshot: '/screenshots/flowshop_de_cart_live.png'
       }
     },
     // Convergence: Central BI & Analytics
@@ -735,17 +735,16 @@ export const MASTER_PIPELINE_GLOBAL: Scenario = {
   ]
 };
 
-// Default export alias for backward compatibility
-export const MASTER_PIPELINE_SCENARIO = MASTER_PIPELINE_NOVATECH_TR;
-export const MASTER_PIPELINE_MONSTER_TR = MASTER_PIPELINE_NOVATECH_TR;
-export const MASTER_PIPELINE_TULPAR_DE = MASTER_PIPELINE_NOVATECH_DE;
+// Default export aliases
+export const MASTER_PIPELINE_FLOWSHOP = MASTER_PIPELINE_FLOWSHOP_TR;
+export const MASTER_PIPELINE_SCENARIO = MASTER_PIPELINE_FLOWSHOP_TR;
 
-export function getMasterPipeline(domainId: string = 'novatech-tr'): Scenario {
-  if (domainId === 'novatech-de' || domainId === 'tulpar-de') {
-    return MASTER_PIPELINE_NOVATECH_DE;
+export function getMasterPipeline(domainId: string = 'flowshop-tr'): Scenario {
+  if (domainId === 'flowshop-de') {
+    return MASTER_PIPELINE_FLOWSHOP_DE;
   }
   if (domainId === 'all') {
     return MASTER_PIPELINE_GLOBAL;
   }
-  return MASTER_PIPELINE_NOVATECH_TR;
+  return MASTER_PIPELINE_FLOWSHOP_TR;
 }

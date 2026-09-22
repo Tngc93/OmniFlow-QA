@@ -53,16 +53,16 @@ export const OmniMindModal: React.FC<OmniMindModalProps> = ({
   // Preset Prompts
   const quickPrompts = [
     {
-      title: isTr ? 'NovaTech TR: Sepet, Kupon (NOVAPRO20) & 3D Secure' : 'NovaTech TR: Cart, Coupon & 3D Secure Checkout',
+      title: isTr ? 'FlowShop TR: Sepet, Kupon (SAVE20) & 3D Secure' : 'FlowShop TR: Cart, Coupon & 3D Secure Checkout',
       prompt: isTr
-        ? 'NovaTech TR üzerinde FlowShop Studio Wireless kulaklık ürününü sepete ekleyen, NOVAPRO20 kupon kodunu doğrulayan ve 3D Secure ödeme adımına ilerleyen uçtan uca senaryo oluştur.'
-        : 'Create an end-to-end scenario on NovaTech TR that adds FlowShop Studio Wireless Headphones to cart, verifies promo code NOVAPRO20, and proceeds to 3D Secure checkout.'
+        ? 'FlowShop TR üzerinde Studio Wireless kulaklık ürününü sepete ekleyen, SAVE20 kupon kodunu doğrulayan ve 3D Secure ödeme adımına ilerleyen uçtan uca senaryo oluştur.'
+        : 'Create an end-to-end scenario on FlowShop TR that adds Studio Wireless Headphones to cart, verifies promo code SAVE20, and proceeds to 3D Secure checkout.'
     },
     {
-      title: isTr ? 'NovaTech DE: Active ANC Seçimi & Klarna Pay' : 'NovaTech DE: Active ANC & Klarna Pay',
+      title: isTr ? 'FlowShop DE: Active ANC Seçimi & Klarna Pay' : 'FlowShop DE: Active ANC & Klarna Pay',
       prompt: isTr
-        ? 'NovaTech DE mağazasında Active ANC kulaklık seçip Klarna Später Bezahlen ve DSGVO çerez onayını doğrulayan pipeline oluştur.'
-        : 'Create a pipeline on NovaTech DE selecting Active ANC headphones, verifying Klarna Pay Later and DSGVO cookie compliance.'
+        ? 'FlowShop DE mağazasında Active ANC kulaklık seçip Klarna Später Bezahlen ve DSGVO çerez onayını doğrulayan pipeline oluştur.'
+        : 'Create a pipeline on FlowShop DE selecting Active ANC headphones, verifying Klarna Pay Later and DSGVO cookie compliance.'
     },
     {
       title: isTr ? 'Global E-Ticaret: Lighthouse & 404 Kırık Link Denetimi' : 'Global E-Com: Lighthouse & Broken Link Audit',
@@ -273,8 +273,8 @@ export const OmniMindModal: React.FC<OmniMindModalProps> = ({
                     value={promptInput}
                     onChange={(e) => setPromptInput(e.target.value)}
                     placeholder={isTr 
-                      ? 'Örn: NovaTech TR Horizon X15 ürününü sepete ekle, kupon uygula ve 3D secure adımına geç...'
-                      : 'E.g.: Add Horizon X15 to cart on NovaTech TR, apply coupon and test 3D secure payment...'}
+                      ? 'Örn: FlowShop TR Studio Wireless ürününü sepete ekle, kupon uygula ve 3D secure adımına geç...'
+                      : 'E.g.: Add Studio Wireless to cart on FlowShop TR, apply coupon and test 3D secure payment...'}
                     className="flex-1 bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-violet-500 transition-colors"
                     onKeyDown={(e) => e.key === 'Enter' && handleGeneratePipeline()}
                   />
@@ -450,7 +450,7 @@ await page.locator('[data-testid="add-to-cart"]:not([disabled])').click({ timeou
                         : 'bg-slate-800 text-slate-400 border-slate-700'
                     }`}
                   >
-                    🇹🇷 NovaTech TR
+                    🇹🇷 FlowShop TR
                   </button>
                   <button
                     onClick={() => handleGenerateSyntheticData('de')}
@@ -460,7 +460,7 @@ await page.locator('[data-testid="add-to-cart"]:not([disabled])').click({ timeou
                         : 'bg-slate-800 text-slate-400 border-slate-700'
                     }`}
                   >
-                    🇩🇪 NovaTech DE
+                    🇩🇪 FlowShop DE
                   </button>
                   <button
                     onClick={() => handleGenerateSyntheticData(dataCountry)}
@@ -570,7 +570,7 @@ await page.locator('[data-testid="add-to-cart"]:not([disabled])').click({ timeou
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
             <span>OmniMind Autonomous Engine v2.6 Online</span>
           </div>
-          <span>NovaTech E-Commerce QA Neural Platform</span>
+          <span>FlowShop E-Commerce QA Neural Platform</span>
         </div>
 
       </div>

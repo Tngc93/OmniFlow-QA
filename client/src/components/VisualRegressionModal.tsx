@@ -28,10 +28,10 @@ interface VisualRegressionModalProps {
 export const VisualRegressionModal: React.FC<VisualRegressionModalProps> = ({
   isOpen,
   onClose,
-  baselineUrl = '/screenshots/novatech_home_live.png',
-  currentUrl = '/screenshots/novatech_home_live.png',
+  baselineUrl = '/screenshots/flowshop_home_live.png',
+  currentUrl = '/screenshots/flowshop_home_live.png',
   stepName = 'Storefront & Hero Banner Layout',
-  targetDomain = 'novatech.com.tr',
+  targetDomain = 'flowshop-tr.mock',
   lang = 'tr'
 }) => {
   const [viewMode, setViewMode] = useState<'slider' | 'diff' | 'sideBySide'>('slider');

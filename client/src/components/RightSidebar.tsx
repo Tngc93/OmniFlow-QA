@@ -42,7 +42,7 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
   const objectives = metrics?.flowObjectives || [
     {
       id: 'obj-1',
-      title: 'NovaTech Storefront Init',
+      title: 'FlowShop Storefront Init',
       subtitle: 'Connect & Accept Cookies',
       pills: { task: 11, time: '2.1s', passed: 41, automated: 72 }
     },
@@ -189,7 +189,7 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
           <div className="flex items-center justify-between">
             <div>
               <h5 className="font-extrabold text-slate-900 dark:text-white text-xs">
-                {metrics?.workflowA.title || 'Workflow A (NovaTech E2E)'}
+                {metrics?.workflowA.title || 'Workflow A (FlowShop E2E)'}
               </h5>
               <span className="text-[10px] text-slate-400">
                 {isTr ? 'Canlı Kullanıcı Aksiyonları Tetiklendi' : 'Triggered by Real User Actions'}
@@ -320,20 +320,20 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
 
           <div className="grid grid-cols-2 gap-2">
             <div 
-              onClick={() => onOpenScreenshotModal('/screenshots/novatech_home_live.png')}
+              onClick={() => onOpenScreenshotModal('/screenshots/flowshop_home_live.png')}
               className="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 aspect-video cursor-pointer hover:opacity-90 relative group"
             >
-              <img src="/screenshots/novatech_home_live.png" alt="NovaTech Home" className="w-full h-full object-cover" />
+              <img src="/screenshots/flowshop_home_live.png" alt="FlowShop Home" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-[10px] text-white font-bold">
                 {isTr ? 'Canlı Ana Sayfa' : 'Storefront Live'}
               </div>
             </div>
 
             <div 
-              onClick={() => onOpenScreenshotModal('/screenshots/novatech_pdp.png')}
+              onClick={() => onOpenScreenshotModal('/screenshots/flowshop_pdp.png')}
               className="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 aspect-video cursor-pointer hover:opacity-90 relative group"
             >
-              <img src="/screenshots/novatech_pdp.png" alt="Studio Wireless PDP" className="w-full h-full object-cover" />
+              <img src="/screenshots/flowshop_pdp.png" alt="Studio Wireless PDP" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-[10px] text-white font-bold">
                 {isTr ? 'Kablosuz Kulaklık Detay' : 'Wireless Headphone PDP'}
               </div>
@@ -349,7 +349,7 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
                 new CustomEvent('open-visual-diff', {
                   detail: {
                     stepName: 'Storefront Layout Visual Regression',
-                    screenshot: '/screenshots/novatech_home_live.png'
+                    screenshot: '/screenshots/flowshop_home_live.png'
                   }
                 })
               );

@@ -44,7 +44,7 @@ async function verifyOmniMind() {
 
   // Test Prompt-to-Pipeline preset
   console.log('Testing Prompt-to-Pipeline synthesis...');
-  const firstPreset = page.locator('text=NovaTech TR: Sepet, Kupon (NOVAPRO20)');
+  const firstPreset = page.locator('text=flowshop TR: Sepet, Kupon (NOVAPRO20)');
   if (await firstPreset.isVisible()) {
     await firstPreset.click();
     await page.waitForTimeout(800);
@@ -88,21 +88,21 @@ async function verifyOmniMind() {
   }
 
   // Strict DOM scan for anonymization
-  console.log('Performing strict DOM anonymization check (ensuring no berk.arcak anywhere)...');
+  console.log('Performing strict DOM anonymization check (ensuring no qa.engineer anywhere)...');
   const bodyText = await page.evaluate(() => document.body.innerText);
-  const containsBerk = /berk[\s.]*arcak/i.test(bodyText);
-  const containsMonster = /monsternotebook\.com/i.test(bodyText);
-  const containsTulpar = /tulparnotebook\.de/i.test(bodyText);
+  const containsqa = /qa[\s.]*arcak/i.test(bodyText);
+  const containsflowshop = /flowshopnotebook\.com/i.test(bodyText);
+  const containsflowshop = /flowshopnotebook\.de/i.test(bodyText);
 
-  console.log(`DOM contains 'berk arcak': ${containsBerk}`);
-  console.log(`DOM contains 'monsternotebook.com': ${containsMonster}`);
-  console.log(`DOM contains 'tulparnotebook.de': ${containsTulpar}`);
+  console.log(`DOM contains 'QA Engineer': ${containsqa}`);
+  console.log(`DOM contains 'flowshopnotebook.com': ${containsflowshop}`);
+  console.log(`DOM contains 'flowshopnotebook.de': ${containsflowshop}`);
 
-  if (containsBerk) {
-    throw new Error('FAIL: berk arcak found in rendered DOM text!');
+  if (containsqa) {
+    throw new Error('FAIL: QA Engineer found in rendered DOM text!');
   }
-  if (containsMonster || containsTulpar) {
-    throw new Error('FAIL: monsternotebook or tulparnotebook URL found in rendered DOM text!');
+  if (containsflowshop || containsflowshop) {
+    throw new Error('FAIL: flowshopnotebook or flowshopnotebook URL found in rendered DOM text!');
   }
 
   console.log('✅ STRICT ANONYMIZATION CHECK PASSED 100%!');

@@ -19,7 +19,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
   <!-- Top announcement bar -->
-  <div class="bg-indigo-600 text-white text-xs font-semibold py-1.5 px-4 text-center tracking-wide">
+  <div id="announcement-bar" class="bg-indigo-600 text-white text-xs font-semibold py-1.5 px-4 text-center tracking-wide">
     🚀 Flash Sale: Use code <span class="bg-white/20 px-1.5 py-0.5 rounded font-mono font-bold">SAVE20</span> for 20% OFF!
   </div>
 
@@ -71,7 +71,7 @@
   <!-- Main Content Area -->
   <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
     <!-- Breadcrumb -->
-    <div class="text-xs text-slate-400 mb-6 flex items-center gap-2">
+    <div id="breadcrumb-bar" class="text-xs text-slate-400 mb-6 flex items-center gap-2">
       <span>Home</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
       <span>Audio Devices</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
       <span class="text-slate-700 font-semibold">Wireless Noise Cancelling Headphones</span>
@@ -84,7 +84,7 @@
         <div class="relative bg-gradient-to-tr from-slate-100 to-indigo-50/50 rounded-xl overflow-hidden aspect-square flex items-center justify-center border border-slate-100">
           <img id="main-product-img" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80" 
                alt="Noise Cancelling Headphones" class="object-cover w-4/5 h-4/5 drop-shadow-xl transition-all duration-300">
-          <span class="absolute top-4 left-4 bg-emerald-50 text-emerald-700 text-xs font-bold px-2.5 py-1 rounded-full border border-emerald-200 flex items-center gap-1">
+          <span id="stock-badge" class="absolute top-4 left-4 bg-emerald-50 text-emerald-700 text-xs font-bold px-2.5 py-1 rounded-full border border-emerald-200 flex items-center gap-1">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> In Stock
           </span>
         </div>
@@ -103,19 +103,19 @@
           <h1 id="product-title" class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
             Noise Cancelling Headphones Pro
           </h1>
-          <p class="text-sm text-slate-500 leading-relaxed mb-6">
+          <p id="product-desc" class="text-sm text-slate-500 leading-relaxed mb-6">
             Engineered with industry-leading Active Noise Cancellation (ANC), 40h battery endurance, spatial audio, and premium ultra-soft memory foam earcups.
           </p>
 
           <div class="flex items-baseline gap-3 mb-6">
             <span id="product-price" class="text-3xl font-extrabold text-slate-900">$199.99</span>
-            <span class="text-sm text-slate-400 line-through font-medium">$249.99</span>
-            <span class="text-xs bg-rose-50 text-rose-600 font-bold px-2 py-0.5 rounded border border-rose-100">20% OFF</span>
+            <span id="compare-price" class="text-sm text-slate-400 line-through font-medium">$249.99</span>
+            <span id="discount-badge" class="text-xs bg-rose-50 text-rose-600 font-bold px-2 py-0.5 rounded border border-rose-100">20% OFF</span>
           </div>
 
           <!-- Color Variant Selector -->
           <div class="mb-6">
-            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Color Variant</label>
+            <label id="variant-label" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Color Variant</label>
             <div class="flex items-center gap-3">
               <button onclick="selectVariant('Midnight Black', '#111827')" class="variant-color-black w-8 h-8 rounded-full bg-slate-900 border-2 border-indigo-600 ring-2 ring-indigo-200 transition-all"></button>
               <button onclick="selectVariant('Silver Cloud', '#94a3b8')" class="variant-color-silver w-8 h-8 rounded-full bg-slate-300 border-2 border-white hover:ring-2 hover:ring-slate-300 transition-all"></button>
@@ -126,7 +126,7 @@
 
           <!-- Quantity Selector -->
           <div class="mb-6">
-            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Quantity</label>
+            <label id="qty-label" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Quantity</label>
             <div class="flex items-center gap-3">
               <div class="flex items-center border border-slate-200 rounded-lg bg-slate-50">
                 <button onclick="changeQty(-1)" class="px-3 py-1.5 text-slate-600 hover:text-slate-900 font-bold">-</button>
@@ -155,7 +155,7 @@
 
     <!-- Related Products Grid (For inventory & alternative scenarios) -->
     <div class="mt-12">
-      <h2 class="text-lg font-bold text-slate-900 mb-4">Frequently Tested Products & Inventory Tests</h2>
+      <h2 id="related-title" class="text-lg font-bold text-slate-900 mb-4">Frequently Tested Products & Inventory Tests</h2>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
         <!-- Item 1 (Low stock) -->
         <div class="product-item-low-stock bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
@@ -551,6 +551,47 @@
       alert('Redirecting to PayPal Sandbox Express Checkout...');
       skipUpsell();
     }
+
+    function initLanguage() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const lang = urlParams.get('lang') || 'en';
+      if (lang === 'de') {
+        document.title = 'FlowShop Europe (DE) - QA Automation Demo Store';
+        const ann = document.getElementById('announcement-bar');
+        if (ann) ann.innerHTML = '🚀 Blitz-Sale: Verwenden Sie den Code <span class="bg-white/20 px-1.5 py-0.5 rounded font-mono font-bold">SAVE20</span> für 20% Rabatt!';
+        const bc = document.getElementById('breadcrumb-bar');
+        if (bc) bc.innerHTML = '<span>Startseite</span> <i class="fa-solid fa-chevron-right text-[10px]"></i> <span>Audiogeräte</span> <i class="fa-solid fa-chevron-right text-[10px]"></i> <span class="text-slate-700 font-semibold">Kabellose Noise-Cancelling-Kopfhörer</span>';
+        const stock = document.getElementById('stock-badge');
+        if (stock) stock.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> Auf Lager';
+        const title = document.getElementById('product-title');
+        if (title) title.innerText = 'Noise-Cancelling-Kopfhörer Pro';
+        const desc = document.getElementById('product-desc');
+        if (desc) desc.innerText = 'Entwickelt mit branchenführender aktiver Geräuschunterdrückung (ANC), 40 Std. Akkulaufzeit, 3D-Audio und ultraweichen Memory-Foam-Ohrpolstern.';
+        const price = document.getElementById('product-price');
+        if (price) price.innerText = '€189,99';
+        const comp = document.getElementById('compare-price');
+        if (comp) comp.innerText = '€239,99';
+        const disc = document.getElementById('discount-badge');
+        if (disc) disc.innerText = '20% RABATT';
+        const varLabel = document.getElementById('variant-label');
+        if (varLabel) varLabel.innerText = 'FARBAUSWAHL';
+        const selVar = document.getElementById('selected-variant-label');
+        if (selVar) selVar.innerText = 'Ausgewählt: Nachtschwarz';
+        const qtyLabel = document.getElementById('qty-label');
+        if (qtyLabel) qtyLabel.innerText = 'MENGE';
+        const addBtn = document.getElementById('btn-add-to-cart');
+        if (addBtn) addBtn.innerHTML = '<i class="fa-solid fa-cart-plus"></i> In den Warenkorb';
+        const relTitle = document.getElementById('related-title');
+        if (relTitle) relTitle.innerText = 'Häufig getestete Audiogeräte & Bestandstests';
+        const checkoutHead = document.querySelector('#checkout-container h2');
+        if (checkoutHead) checkoutHead.innerText = 'Sichere Kasse (DSGVO-konform)';
+        const placeOrderBtn = document.getElementById('btn-place-order');
+        if (placeOrderBtn) placeOrderBtn.innerHTML = '<i class="fa-solid fa-lock"></i> Zahlungspflichtig bestellen (€189,99)';
+        selectedPrice = 189.99;
+      }
+    }
+    window.addEventListener('DOMContentLoaded', initLanguage);
+    initLanguage();
 
     function resetDemoShop() {
       cart = [];

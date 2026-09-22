@@ -298,7 +298,7 @@ export const TrainingGuideModal: React.FC<TrainingGuideModalProps> = ({
             <div className="space-y-1 min-w-0 flex-1">
               <div className="flex items-center gap-2">
                 <span className="px-2 py-0.5 rounded bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-400 font-mono font-bold text-xs">
-                  MONS-412
+                  NOVA-412
                 </span>
                 <span className="px-2 py-0.5 rounded bg-rose-50 text-rose-700 dark:bg-rose-950 dark:text-rose-400 text-[10px] font-bold">
                   Bug (Defect)
@@ -306,7 +306,7 @@ export const TrainingGuideModal: React.FC<TrainingGuideModalProps> = ({
                 <span className="text-slate-400 text-[10px]">BOARD-104 QA Sprint</span>
               </div>
               <h5 className="font-bold text-xs text-slate-900 dark:text-white">
-                [E2E QA] Horizon PDP: RTX 4070 Varyant Seçiminde Sepet Senkronizasyon Gecikmesi
+                [E2E QA] NovaTech PDP: Renk Varyant Seçiminde Sepet Senkronizasyon Gecikmesi
               </h5>
               <p className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-2">
                 Playwright E2E Otomasyonu sırasında Titan X17 modelinde donanım seçildiğinde DOM sepet güncellemesi 2500ms üzerinde sürdü.

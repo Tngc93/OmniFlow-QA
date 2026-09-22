@@ -234,29 +234,34 @@ export const VisualRegressionModal: React.FC<VisualRegressionModalProps> = ({
 
           {viewMode === 'diff' && (
             <div className="w-full flex flex-col items-center">
-              <div className="relative w-full max-w-4xl aspect-[16/10] max-h-[56vh] rounded-2xl overflow-hidden border border-pink-500/40 shadow-2xl bg-slate-950 flex items-center justify-center">
+              <div className="relative aspect-[16/10] max-h-[56vh] w-auto max-w-4xl rounded-2xl overflow-hidden border border-pink-500/40 shadow-2xl bg-slate-950 flex items-center justify-center">
                 {/* Base Live Image darkened */}
                 <img 
                   src={currentUrl} 
                   alt="Base Live" 
-                  className="w-full h-full object-contain opacity-40 filter grayscale"
+                  className="w-full h-full object-cover opacity-40 filter grayscale"
                 />
 
                 {/* Neon Magenta Diff Highlight Layer */}
-                <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-                  <div className="relative w-full h-full max-w-4xl">
-                    {/* Simulated Diff Areas (Banners, Badges, Buttons) */}
-                    <div className="absolute top-[18%] left-[28%] w-[44%] h-[12%] border-2 border-pink-500 bg-pink-500/30 rounded-lg shadow-[0_0_15px_#ff007f] animate-pulse">
-                      <span className="absolute -top-5 left-1 font-mono text-[9px] font-bold text-pink-400 bg-slate-900/90 px-1.5 py-0.5 rounded border border-pink-500/50">
-                        Δ BANNER_TEXT (+0.18%)
-                      </span>
-                    </div>
+                <div className="absolute inset-0 pointer-events-none">
+                  {/* Diff Area 1: Top Flash Sale Banner Text */}
+                  <div 
+                    style={{ top: '0.4%', left: '26%', width: '48%', height: '3.4%' }}
+                    className="absolute border-2 border-pink-500 bg-pink-500/30 rounded shadow-[0_0_15px_#ff007f] animate-pulse"
+                  >
+                    <span className="absolute -bottom-5 left-1 font-mono text-[9px] font-bold text-pink-400 bg-slate-900/90 px-1.5 py-0.5 rounded border border-pink-500/50">
+                      Δ BANNER_TEXT (+0.18%)
+                    </span>
+                  </div>
 
-                    <div className="absolute top-[48%] right-[14%] w-[18%] h-[8%] border-2 border-pink-500 bg-pink-500/30 rounded-lg shadow-[0_0_15px_#ff007f] animate-pulse">
-                      <span className="absolute -top-5 left-1 font-mono text-[9px] font-bold text-pink-400 bg-slate-900/90 px-1.5 py-0.5 rounded border border-pink-500/50">
-                        Δ PRICE_BADGE (+0.14%)
-                      </span>
-                    </div>
+                  {/* Diff Area 2: Product Price & 20% OFF Badge */}
+                  <div 
+                    style={{ top: '37.2%', left: '51.2%', width: '18%', height: '4.4%' }}
+                    className="absolute border-2 border-pink-500 bg-pink-500/30 rounded-lg shadow-[0_0_15px_#ff007f] animate-pulse"
+                  >
+                    <span className="absolute -top-5 left-1 font-mono text-[9px] font-bold text-pink-400 bg-slate-900/90 px-1.5 py-0.5 rounded border border-pink-500/50">
+                      Δ PRICE_BADGE (+0.14%)
+                    </span>
                   </div>
                 </div>
 
@@ -287,8 +292,8 @@ export const VisualRegressionModal: React.FC<VisualRegressionModalProps> = ({
                 </div>
                 <div className="flex-1 p-2 flex items-center justify-center bg-slate-950/80 relative">
                   <img src={currentUrl} alt="Diff Mask" className="max-h-[38vh] w-auto object-contain rounded-lg opacity-40 filter grayscale" />
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="w-24 h-8 border-2 border-pink-500 bg-pink-500/40 rounded shadow-[0_0_12px_#ff007f]" />
+                  <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-[37.2%] left-[51.2%] w-[28%] h-[6%] border-2 border-pink-500 bg-pink-500/40 rounded shadow-[0_0_12px_#ff007f]" />
                   </div>
                 </div>
               </div>

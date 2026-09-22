@@ -55,7 +55,7 @@ export const IntegrationsModal: React.FC<IntegrationsModalProps> = ({
   const [jiraDomain, setJiraDomain] = useState('https://novatech-qa.atlassian.net');
   const [jiraEmail, setJiraEmail] = useState('qa.engineer@novatech-ecom.io');
   const [jiraToken, setJiraToken] = useState('ATATT3xFfGF0SecureApiToken-QAAutomationSuite');
-  const [jiraProjectKey, setJiraProjectKey] = useState('MONS');
+  const [jiraProjectKey, setJiraProjectKey] = useState('NOVA');
   const [jiraBoardId, setJiraBoardId] = useState('BOARD-104 (QA Automation Sprint)');
   const [jiraIssueType, setJiraIssueType] = useState('Bug');
   const [autoCreateOnFailure, setAutoCreateOnFailure] = useState(true);
@@ -457,7 +457,7 @@ export const IntegrationsModal: React.FC<IntegrationsModalProps> = ({
                           {activeTooltip === 'projectKey' && (
                             <div className="absolute right-0 bottom-full mb-1.5 z-50 w-56 p-2 bg-slate-900 text-white rounded-xl shadow-xl text-[10px] leading-relaxed border border-slate-700 pointer-events-none animate-in fade-in zoom-in-95">
                               <span className="font-bold text-indigo-400 block mb-0.5">🏷️ Proje Anahtarı Nedir?</span>
-                              Jira projenizin 2-4 harfli kodudur (örn: MONS, QA). Biletlerin başlığını belirler (örn: MONS-101).
+                              Jira projenizin 2-4 harfli kodudur (örn: NOVA, QA). Biletlerin başlığını belirler (örn: NOVA-101).
                             </div>
                           )}
                         </div>
@@ -465,7 +465,7 @@ export const IntegrationsModal: React.FC<IntegrationsModalProps> = ({
                       <input
                         type="text"
                         value={jiraProjectKey}
-                        placeholder="MONS"
+                        placeholder="NOVA"
                         onChange={(e) => setJiraProjectKey(e.target.value)}
                         className="w-full px-3 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-800 dark:text-slate-200 font-mono font-bold focus:outline-none focus:border-indigo-500 uppercase"
                       />

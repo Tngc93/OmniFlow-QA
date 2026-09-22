@@ -140,14 +140,19 @@ async function recaptureAll() {
 
   // 11. Jira MCP Defect Tracker
   console.log('11. Capturing 11_jira_mcp_defect_tracker.png...');
-  const jiraBtn = page.locator('button:has-text("Jira MCP"), button[title*="Jira"]').first();
-  if (await jiraBtn.isVisible()) {
-    await jiraBtn.click();
+  const intTab = page.locator('[data-testid="sidebar-tab-integrations"]').first();
+  if (await intTab.isVisible()) {
+    await intTab.click();
     await page.waitForTimeout(600);
-    await page.screenshot({ path: path.join(DOCS_DIR, '11_jira_mcp_defect_tracker.png') });
-    const closeJira = page.locator('button:has-text("Kapat"), button:has-text("✕")').first();
-    if (await closeJira.isVisible()) await closeJira.click();
-    await page.waitForTimeout(400);
+    const cfgBtn = page.locator('button:has-text("Entegrasyon Yapılandır"), [data-testid="integration-card-jira"]').first();
+    if (await cfgBtn.isVisible()) {
+      await cfgBtn.click();
+      await page.waitForTimeout(700);
+      await page.screenshot({ path: path.join(DOCS_DIR, '11_jira_mcp_defect_tracker.png') });
+      const closeJira = page.locator('[data-testid="close-integrations-modal"], button:has-text("Kapat"), button:has-text("✕")').first();
+      if (await closeJira.isVisible()) await closeJira.click();
+      await page.waitForTimeout(400);
+    }
   }
 
   // 12. Customer Auth Vault

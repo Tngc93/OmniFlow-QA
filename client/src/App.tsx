@@ -13,6 +13,7 @@ import { WebVitalsModal } from './components/WebVitalsModal';
 import { VisualRegressionModal } from './components/VisualRegressionModal';
 import { PlaywrightCodeModal } from './components/PlaywrightCodeModal';
 import { SelfHealingModal } from './components/SelfHealingModal';
+import { OmniMindModal } from './components/OmniMindModal';
 
 import { ScenariosView } from './views/ScenariosView';
 import { ComplianceView } from './views/ComplianceView';
@@ -113,9 +114,10 @@ export function App() {
   const [isVisualDiffOpen, setIsVisualDiffOpen] = useState(false);
   const [visualDiffData, setVisualDiffData] = useState<{ stepName?: string; screenshot?: string }>({});
 
-  // Playwright Code & Self-Healing Modals
+  // Playwright Code, Self-Healing & OmniMind AI Modals
   const [isPlaywrightCodeModalOpen, setIsPlaywrightCodeModalOpen] = useState(false);
   const [isSelfHealingModalOpen, setIsSelfHealingModalOpen] = useState(false);
+  const [isOmniMindOpen, setIsOmniMindOpen] = useState(false);
 
   useEffect(() => {
     const handleOpenVisualDiff = (e: any) => {
@@ -124,15 +126,18 @@ export function App() {
     };
     const handleOpenPlaywrightCode = () => setIsPlaywrightCodeModalOpen(true);
     const handleOpenSelfHealing = () => setIsSelfHealingModalOpen(true);
+    const handleOpenOmniMind = () => setIsOmniMindOpen(true);
 
     window.addEventListener('open-visual-diff', handleOpenVisualDiff);
     window.addEventListener('open-playwright-code', handleOpenPlaywrightCode);
     window.addEventListener('open-self-healing', handleOpenSelfHealing);
+    window.addEventListener('open-omnimind', handleOpenOmniMind);
 
     return () => {
       window.removeEventListener('open-visual-diff', handleOpenVisualDiff);
       window.removeEventListener('open-playwright-code', handleOpenPlaywrightCode);
       window.removeEventListener('open-self-healing', handleOpenSelfHealing);
+      window.removeEventListener('open-omnimind', handleOpenOmniMind);
     };
   }, []);
 
@@ -567,6 +572,7 @@ export function App() {
                   onOpenWebVitals={() => setIsWebVitalsOpen(true)}
                   onOpenPlaywrightCode={() => setIsPlaywrightCodeModalOpen(true)}
                   onOpenSelfHealing={() => setIsSelfHealingModalOpen(true)}
+                  onOpenOmniMind={() => setIsOmniMindOpen(true)}
                 />
               </div>
             </main>
@@ -583,6 +589,16 @@ export function App() {
             />
           </div>
         );
+    }
+  };
+
+  const handleApplyOmniMindPipeline = (genNodes: any[], genEdges: any[], pipelineTitle: string) => {
+    if (genNodes && genNodes.length > 0) {
+      setNodes(genNodes);
+      setEdges(genEdges || []);
+      if (activeScenario) {
+        activeScenario.title = pipelineTitle || activeScenario.title;
+      }
     }
   };
 
@@ -660,7 +676,7 @@ export function App() {
         isOpen={isWebVitalsOpen}
         onClose={() => setIsWebVitalsOpen(false)}
         lang={lang}
-        initialStore={selectedMasterDomain === 'novatech-de' || (selectedMasterDomain as any) === 'tulpar-de' || activeProject?.baseUrl?.includes('.de') ? 'novaDe' : 'novaTr'}
+        initialStore={selectedMasterDomain === 'novatech-de' || activeProject?.baseUrl?.includes('.de') ? 'novaDe' : 'novaTr'}
       />
 
       <VisualRegressionModal
@@ -669,7 +685,7 @@ export function App() {
         baselineUrl={visualDiffData.screenshot || '/screenshots/novatech_home_live.png'}
         currentUrl={visualDiffData.screenshot || '/screenshots/novatech_home_live.png'}
         stepName={visualDiffData.stepName || 'Storefront & Layout Visual Regression'}
-        targetDomain={selectedMasterDomain === 'novatech-de' || (selectedMasterDomain as any) === 'tulpar-de' ? 'novatech.de' : 'novatech.com.tr'}
+        targetDomain={selectedMasterDomain === 'novatech-de' ? 'novatech.de' : 'novatech.com.tr'}
         lang={lang}
       />
 
@@ -685,6 +701,14 @@ export function App() {
         isOpen={isSelfHealingModalOpen}
         onClose={() => setIsSelfHealingModalOpen(false)}
         lang={lang}
+      />
+
+      <OmniMindModal
+        isOpen={isOmniMindOpen}
+        onClose={() => setIsOmniMindOpen(false)}
+        lang={lang}
+        onApplyPipeline={handleApplyOmniMindPipeline}
+        currentNodes={nodes}
       />
 
       <DemoStoreModal

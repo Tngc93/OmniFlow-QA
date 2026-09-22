@@ -1,7 +1,7 @@
 [
   {
     "runId": "run-8f577944",
-    "scenarioId": "scenario-tulpar-de-klarna-sofort",
+    "scenarioId": "scenario-novatech-de-klarna-sofort",
     "scenarioTitle": "NovaTech DE: Klarna Sofort, PayPal & EU Kart Doğrulaması",
     "status": "passed",
     "totalDuration": "11.7s",
@@ -76,7 +76,7 @@
   },
   {
     "runId": "run-bda23acb",
-    "scenarioId": "scenario-tulpar-de-configurator",
+    "scenarioId": "scenario-novatech-de-configurator",
     "scenarioTitle": "NovaTech DE: Donanım Konfigüratörü (RAM, SSD & QWERTZ Klavye)",
     "status": "passed",
     "totalDuration": "8.8s",
@@ -151,7 +151,7 @@
   },
   {
     "runId": "run-2b1205ed",
-    "scenarioId": "scenario-tulpar-de-e2e",
+    "scenarioId": "scenario-novatech-de-e2e",
     "scenarioTitle": "NovaTech DE: E2E Gaming Laptop Arama & Sepet (EUR Fiyat & 19% MwSt.)",
     "status": "passed",
     "totalDuration": "12.1s",
@@ -240,7 +240,7 @@
   },
   {
     "runId": "run-098612d1",
-    "scenarioId": "scenario-tulpar-de-e2e",
+    "scenarioId": "scenario-novatech-de-e2e",
     "scenarioTitle": "NovaTech DE: E2E Gaming Laptop Arama & Sepet (EUR Fiyat & 19% MwSt.)",
     "status": "passed",
     "totalDuration": "13.7s",
@@ -329,7 +329,7 @@
   },
   {
     "runId": "run-0a75bda6",
-    "scenarioId": "scenario-tulpar-de-e2e",
+    "scenarioId": "scenario-novatech-de-e2e",
     "scenarioTitle": "NovaTech DE: E2E Gaming Laptop Arama & Sepet (EUR Fiyat & 19% MwSt.)",
     "status": "passed",
     "totalDuration": "12.0s",

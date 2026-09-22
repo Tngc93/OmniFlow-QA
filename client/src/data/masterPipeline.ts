@@ -276,7 +276,7 @@ export const MASTER_PIPELINE_NOVATECH_TR: Scenario = {
   ]
 };
 
-// 2. Tulpar Notebook DE Master Pipeline (Spacious layout, Germany/EU-specific flows & authentic DE live screenshots)
+// 2. NovaTech DE Master Pipeline (Spacious layout, Germany/EU-specific flows & authentic DE live screenshots)
 export const MASTER_PIPELINE_NOVATECH_DE: Scenario = {
   id: 'master-pipeline-novatech-de',
   title: 'NovaTech DE (novatech.de) - Genel Master Pipeline',

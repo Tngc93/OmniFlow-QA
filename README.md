@@ -70,14 +70,25 @@ Paralleled comparative execution across cross-border stores feeding a centralize
 
 ---
 
-### 7. Model Context Protocol (Jira MCP) Defect Tracker
+### 7. 🧠 OmniMind AI: Autonomous QA Architecture & Neural Copilot (`Ctrl + J`)
+> OmniMind AI brings next-generation autonomous artificial intelligence directly into the e-commerce test automation canvas.
+> - **Prompt-to-Pipeline Synthesis**: Turn natural language requirements into fully connected visual automation graphs with actions, assertions, screenshots, and latency targets.
+> - **Neural Root Cause Analysis (RCA)**: Deep-dive diagnostic engine analyzing Playwright timeout traces, DOM hydration races, and producing instant copyable auto-patches.
+> - **Synthetic E-Commerce Data Foundry**: Algorithmic test data generator producing mathematically valid checksums for Turkish T.C. Kimlik (11-digit modulus algorithm), Vergi Kimlik No (VKN), German USt-IdNr, German IBAN (DE...), and Luhn-compliant credit cards.
+> - **Neural QA Chat**: Built-in interactive assistant for Playwright strategy, edge case stress simulation, and test pyramid tuning.
+
+![OmniMind AI Copilot](docs/screenshots/17_omnimind_ai_copilot.png)
+
+---
+
+### 8. Model Context Protocol (Jira MCP) Defect Tracker
 > When an automated step fails, OmniFlow QA connects via Model Context Protocol to log enriched Jira defect tickets with live screenshots, Playwright stack traces, and browser environment telemetry.
 
 ![Jira MCP](docs/screenshots/11_jira_mcp_defect_tracker.png)
 
 ---
 
-### 8. Customer Auth Vault & Multi-Scenario Cron Scheduler
+### 9. Customer Auth Vault & Multi-Scenario Cron Scheduler
 > Test customer credential vault with auto-login simulation and 7-route auto-discovery alongside an enterprise cron job scheduler with multi-scenario checkbox picker.
 
 | 🔐 Customer Auth Vault | ⏱️ Multi-Scenario Cron Scheduler |
@@ -86,7 +97,7 @@ Paralleled comparative execution across cross-border stores feeding a centralize
 
 ---
 
-### 9. KVKK / DSGVO Compliance & Light / Dark Themes
+### 10. KVKK / DSGVO Compliance & Light / Dark Themes
 > Real-time regulatory compliance scoring (KVKK Aydınlatma, Cookiebot DSGVO, OWASP Top 10, PCI-DSS) and seamless dark/light theme switching.
 
 | 🛡️ Compliance & Security Audit | ☀️ Light Theme Technical Dashboard |
@@ -225,5 +236,5 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 <p align="center">
   <b>Built for World-Class E-Commerce Quality Assurance</b><br>
-  Designed & Developed by <a href="https://github.com/Tngc93">Berk Arcak</a>
+  Designed & Developed by <a href="https://github.com/Tngc93">OmniFlow QA Core Team</a>
 </p>

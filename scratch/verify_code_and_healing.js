@@ -2,7 +2,7 @@ const path = require('path');
 const { chromium } = require(require.resolve('playwright', { paths: [path.join(__dirname, '..', 'server')] }));
 const fs = require('fs');
 
-const ARTIFACT_DIR = 'C:/Users/BERK.ARCAK/.gemini/antigravity/brain/84aa1859-793a-450d-9ba7-d9c7a6265edd';
+const ARTIFACT_DIR = path.join(process.env.USERPROFILE || 'C:/Users/QA', '.gemini', 'antigravity', 'brain', '84aa1859-793a-450d-9ba7-d9c7a6265edd');
 
 async function run() {
   console.log('=== STARTING VERIFICATION FOR PLAYWRIGHT CODE & SELF-HEALING ===');

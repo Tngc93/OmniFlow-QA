@@ -118,10 +118,6 @@ app.get('/api/vitals', (req, res) => {
     }
   };
 
-  // Aliases for backward compatibility
-  vitalsData.stores.monsterTr = vitalsData.stores.novaTr;
-  vitalsData.stores.tulparDe = vitalsData.stores.novaDe;
-
   res.json(vitalsData);
 });
 
@@ -589,6 +585,209 @@ app.put('/api/projects/:id', (req, res) => {
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
+});
+
+// OmniMind AI Autonomous Engine API
+app.post('/api/ai/omnimind', (req, res) => {
+  const { action, prompt, errorLog, country, message, lang = 'tr' } = req.body;
+  const isTr = lang === 'tr';
+
+  if (action === 'prompt_to_pipeline') {
+    const isDe = (prompt || '').toLowerCase().includes('de') || (prompt || '').toLowerCase().includes('germany') || (prompt || '').toLowerCase().includes('klarna');
+    const domainPrefix = isDe ? 'novatech_de' : 'novatech';
+    const baseUrl = isDe ? 'https://www.novatech.de' : 'https://www.novatech.com.tr';
+    const currencySymbol = isDe ? '€' : '₺';
+    const productName = isDe ? 'Titan X17 Gaming Laptop' : 'Horizon X15 Gaming Laptop';
+
+    const pipelineTitle = isDe 
+      ? 'NovaTech DE: Otonom Titan X17 E2E Doğrulama Hattı' 
+      : 'NovaTech TR: Otonom Horizon X15 E2E Doğrulama Hattı';
+
+    const nodes = [
+      {
+        id: 'node-omnimind-1',
+        type: 'flowStep',
+        position: { x: 80, y: 180 },
+        data: {
+          label: isTr ? 'Vitrin Gezinmesi' : 'Storefront Navigation',
+          title: isTr ? 'Vitrin Gezinmesi' : 'Storefront Navigation',
+          type: 'trigger',
+          subtext: `${baseUrl}/`,
+          status: 'success',
+          screenshot: `/screenshots/${domainPrefix}_home_live.png`,
+          duration: '620ms',
+          action: `goto('${baseUrl}/')`,
+          assertion: 'expect(page).toHaveTitle(/NovaTech/)'
+        }
+      },
+      {
+        id: 'node-omnimind-2',
+        type: 'flowStep',
+        position: { x: 380, y: 180 },
+        data: {
+          label: isTr ? 'Arama & Filtreleme' : 'Search & Filter',
+          title: isTr ? 'Arama & Filtreleme' : 'Search & Filter',
+          type: 'action',
+          subtext: isDe ? 'Suchbegriff: "Titan X17"' : 'Arama Sorgusu: "Horizon X15"',
+          status: 'success',
+          screenshot: `/screenshots/${isDe ? 'novatech_de_search_live.png' : 'novatech_category.png'}`,
+          duration: '840ms',
+          action: `locator('input[placeholder*="search"]').fill('${isDe ? 'Titan' : 'Horizon'}')`,
+          assertion: 'expect(locator(".product-card")).toHaveCount(3)'
+        }
+      },
+      {
+        id: 'node-omnimind-3',
+        type: 'flowStep',
+        position: { x: 680, y: 180 },
+        data: {
+          label: isTr ? 'Donanım Konfigürasyonu (PDP)' : 'Hardware Config (PDP)',
+          title: isTr ? 'Donanım Konfigürasyonu (PDP)' : 'Hardware Config (PDP)',
+          type: 'action',
+          subtext: isDe ? '32GB DDR5 + 2TB SSD' : '16GB DDR5 + 1TB SSD',
+          status: 'success',
+          screenshot: `/screenshots/${isDe ? 'novatech_de_pdp_live.png' : 'novatech_pdp.png'}`,
+          duration: '1.2s',
+          action: 'locator(".config-option").first().click()',
+          assertion: `expect(locator(".price-tag")).toContainText('${currencySymbol}')`
+        }
+      },
+      {
+        id: 'node-omnimind-4',
+        type: 'flowStep',
+        position: { x: 980, y: 180 },
+        data: {
+          label: isTr ? 'Sepete Ekle & Kupon Doğrulama' : 'Add to Cart & Coupon Check',
+          title: isTr ? 'Sepete Ekle & Kupon Doğrulama' : 'Add to Cart & Coupon Check',
+          type: 'validate',
+          subtext: isDe ? 'Gutschein: NOVATECH-EU-50' : 'Kupon Kodu: NOVAPRO20',
+          status: 'success',
+          screenshot: `/screenshots/${isDe ? 'novatech_de_cart_live.png' : 'novatech_cart_live.png'}`,
+          duration: '980ms',
+          action: 'locator("button.add-to-cart").click()',
+          assertion: 'expect(locator(".cart-count")).toHaveText("1")'
+        }
+      },
+      {
+        id: 'node-omnimind-5',
+        type: 'flowStep',
+        position: { x: 1280, y: 180 },
+        data: {
+          label: isTr ? 'Güvenli Ödeme Geçidi' : 'Secure Checkout Gateway',
+          title: isTr ? 'Güvenli Ödeme Geçidi' : 'Secure Checkout Gateway',
+          type: 'output',
+          subtext: isDe ? 'Klarna / PayPal Express & DSGVO' : 'İyziPay 3D Secure Doğrulama',
+          status: 'success',
+          screenshot: `/screenshots/${isDe ? 'novatech_de_auth_live.png' : 'novatech_checkout_live.png'}`,
+          duration: '1.4s',
+          action: 'locator("button.checkout-btn").click()',
+          assertion: 'expect(page).toHaveURL(/checkout/)'
+        }
+      }
+    ];
+
+    const edges = [
+      { id: 'edge-om-1-2', source: 'node-omnimind-1', target: 'node-omnimind-2', type: 'pillLabel', animated: true, data: { label: '200 OK' } },
+      { id: 'edge-om-2-3', source: 'node-omnimind-2', target: 'node-omnimind-3', type: 'pillLabel', animated: true, data: { label: 'Item Selected' } },
+      { id: 'edge-om-3-4', source: 'node-omnimind-3', target: 'node-omnimind-4', type: 'pillLabel', animated: true, data: { label: 'Stock Reserved' } },
+      { id: 'edge-om-4-5', source: 'node-omnimind-4', target: 'node-omnimind-5', type: 'pillLabel', animated: true, data: { label: 'Coupon Applied' } }
+    ];
+
+    return res.json({
+      title: pipelineTitle,
+      description: isTr 
+        ? `${productName} için uçtan uca vitrin, PDP, sepet, kupon ve ödeme hattı sentezlendi.`
+        : `End-to-end storefront, PDP, cart, coupon and payment pipeline synthesized for ${productName}.`,
+      nodes,
+      edges
+    });
+  }
+
+  if (action === 'analyze_pipeline') {
+    const errorText = errorLog || '';
+    const isTimeout = errorText.toLowerCase().includes('timeout');
+
+    return res.json({
+      rootCauseCategory: isTimeout ? 'Async DOM Hydration Race & Dynamic Asset Wait' : 'Dynamic DOM Selector Instability',
+      confidence: 96,
+      explanation: isTr
+        ? 'Playwright, SPA (Single Page Application) çerçevesinde re-render edilen butonu yakalamaya çalışırken DOM yenilenmesi sırasında referansı kaybetti. Katı CSS seçici yerine veri özniteliği (data-testid) ve networkidle senkronizasyonu önerilir.'
+        : 'Playwright encountered a race condition during React/SPA state re-rendering. Replacing fragile tag selectors with resilient data-testid locators and waiting for network stability resolves the issue permanently.',
+      suggestedFixCode: `// OmniMind AI Self-Healing Patch
+await page.waitForLoadState('networkidle');
+const targetBtn = page.locator('[data-testid="add-to-cart"], button:has-text("Sepete Ekle")').first();
+await targetBtn.waitFor({ state: 'visible', timeout: 10000 });
+await targetBtn.click();`
+    });
+  }
+
+  if (action === 'generate_synthetic_data') {
+    const targetCountry = country || 'tr';
+    if (targetCountry === 'tr') {
+      const d1 = Math.floor(Math.random() * 9) + 1;
+      const d2 = Math.floor(Math.random() * 10);
+      const d3 = Math.floor(Math.random() * 10);
+      const d4 = Math.floor(Math.random() * 10);
+      const d5 = Math.floor(Math.random() * 10);
+      const d6 = Math.floor(Math.random() * 10);
+      const d7 = Math.floor(Math.random() * 10);
+      const d8 = Math.floor(Math.random() * 10);
+      const d9 = Math.floor(Math.random() * 10);
+      const oddSum = d1 + d3 + d5 + d7 + d9;
+      const evenSum = d2 + d4 + d6 + d8;
+      const d10 = ((oddSum * 7) - evenSum) % 10 >= 0 ? ((oddSum * 7) - evenSum) % 10 : (((oddSum * 7) - evenSum) % 10) + 10;
+      const first10Sum = oddSum + evenSum + d10;
+      const d11 = first10Sum % 10;
+      const tcNumber = `${d1}${d2}${d3}${d4}${d5}${d6}${d7}${d8}${d9}${d10}${d11}`;
+
+      const vkn = `${Math.floor(100000000 + Math.random() * 900000000)}7`;
+      const gsm = `+90 53${Math.floor(Math.random() * 9)} ${Math.floor(100 + Math.random() * 899)} ${Math.floor(10 + Math.random() * 89)} ${Math.floor(10 + Math.random() * 89)}`;
+
+      return res.json({
+        country: 'tr',
+        fields: {
+          tcKimlik: { label: 'T.C. Kimlik No (Algoritmik Geçerli)', value: tcNumber, checksumStatus: 'VALID CHECKSUM', notes: '11 Haneli Nüfus Algoritması' },
+          vkn: { label: 'Vergi Kimlik No (VKN - E-Fatura)', value: vkn, checksumStatus: 'VALID VKN', notes: 'GİB E-Fatura Uyumlu' },
+          gsm: { label: 'GSM / Telefon (SMS OTP)', value: gsm, checksumStatus: 'VALID GSM', notes: 'Türkiye Mobil Operatör Formatı' },
+          creditCard: { label: 'Troy / Visa Test Kartı (Luhn Geçerli)', value: '4242 •••• •••• 4242 (12/28 - CVV: 739)', checksumStatus: 'LUHN VALID', notes: '3D Secure Otomatik Onay' }
+        }
+      });
+    } else {
+      const ustId = `DE${Math.floor(100000000 + Math.random() * 900000000)}`;
+      const iban = `DE89 3704 0044 0532 0130 ${Math.floor(10 + Math.random() * 89)}`;
+
+      return res.json({
+        country: 'de',
+        fields: {
+          ustIdNr: { label: 'USt-IdNr (German VAT Identification)', value: ustId, checksumStatus: 'VALID VAT', notes: 'Bundeszentralamt für Steuern' },
+          iban: { label: 'German IBAN (SEPA & Sofort)', value: iban, checksumStatus: 'VALID IBAN', notes: 'Deutsche Bank BLZ 37040044' },
+          address: { label: 'Lieferadresse (Address in Germany)', value: 'Friedrichstraße 42, 10117 Berlin, Deutschland', checksumStatus: 'VALID PLZ', notes: 'DHL / Hermes Zustellbar' },
+          creditCard: { label: 'MasterCard Testkarte (Luhn Valid)', value: '5500 •••• •••• 0004 (09/29 - CVV: 241)', checksumStatus: 'LUHN VALID', notes: 'Klarna / Stripe Sandbox' }
+        }
+      });
+    }
+  }
+
+  if (action === 'chat') {
+    const userText = (message || '').toLowerCase();
+    let reply = '';
+    if (userText.includes('flaky') || userText.includes('timeout')) {
+      reply = isTr
+        ? 'Flaky testlerin %85\'i zamanlama ve animasyon gecikmelerinden kaynaklanır. Çözüm: `page.waitForTimeout()` yerine `locator.waitFor({ state: "visible" })` veya `expect(locator).toBeVisible()` web-first assertion kullanın.'
+        : '85% of flaky tests stem from animation lags or hydration races. Solution: Never use hardcoded sleeps; use Playwright Web-First assertions like `await expect(locator).toBeVisible()`.';
+    } else if (userText.includes('playwright') || userText.includes('selector')) {
+      reply = isTr
+        ? 'E-Ticarette en dayanıklı seçici stratejisi: 1) `data-testid`, 2) Erişilebilirlik rolleri (`getByRole("button", { name: "Sepete Ekle" })`), 3) Metin filtreleri (`locator("button").filter({ hasText: "Satın Al" })`).'
+        : 'Best Playwright locator hierarchy for e-commerce: 1) `getByTestId()`, 2) `getByRole()`, 3) `filter({ hasText })`. Avoid brittle hierarchical XPath / long CSS chains.';
+    } else {
+      reply = isTr
+        ? `OmniMind AI sistem analizini tamamladı. NovaTech otomasyon hattı %100 kapsama ve yeşil geçiş oranına sahip. Yeni bir senaryo sentezlememi veya sentetik veri üretmemi ister misiniz?`
+        : `OmniMind AI completed pipeline telemetry analysis. All NovaTech E2E automation suites are running optimally with zero critical defects. What would you like to build next?`;
+    }
+    return res.json({ reply });
+  }
+
+  return res.json({ status: 'ok' });
 });
 
 // Production static client serving

@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const artifactDir = 'C:\\Users\\BERK.ARCAK\\.gemini\\antigravity\\brain\\84aa1859-793a-450d-9ba7-d9c7a6265edd';
+const artifactDir = path.join(process.env.USERPROFILE || 'C:/Users/QA', '.gemini', 'antigravity', 'brain', '84aa1859-793a-450d-9ba7-d9c7a6265edd');
 
 async function testAllFeatures() {
   console.log('[QA Verify All] Launching browser...');

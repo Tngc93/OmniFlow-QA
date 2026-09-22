@@ -1,9 +1,9 @@
 [
   {
     "id": "scenario-novatech-tr-e2e",
-    "title": "NovaTech TR: Tulpar E2E Arama ve İnceleme",
+    "title": "NovaTech TR: Horizon E2E Arama ve İnceleme",
     "category": "NovaTech TR Canlı Testleri",
-    "description": "NovaTech TR resmi sitesinde Tulpar serisi arama, listeleme, PDP teknik özellik ve fiyat doğrulaması.",
+    "description": "NovaTech TR resmi sitesinde Horizon serisi arama, listeleme, PDP teknik özellik ve fiyat doğrulaması.",
     "criticality": "Critical",
     "componentsCount": 28,
     "lastRunDuration": "13.8s",
@@ -58,11 +58,11 @@
         "data": {
           "stepIndex": 2,
           "name": "Trigger Automation",
-          "subtext": "Search Query: Tulpar Gaming",
+          "subtext": "Search Query: Horizon Gaming",
           "action": "search_novatech",
           "selector": "input[name=\"q\"]",
-          "value": "Tulpar",
-          "expected": "Arama inputuna 'Tulpar' girildi ve arama tetiklendi",
+          "value": "Horizon",
+          "expected": "Arama inputuna 'Horizon' girildi ve arama tetiklendi",
           "components": 11,
           "metricTime": "1.8s",
           "metricPassed": 27,
@@ -86,7 +86,7 @@
           "subtext": "Ensuring Laptop Category Accuracy",
           "action": "validate_category",
           "selector": ".product-list, .prd-main",
-          "expected": "Tulpar serisi dizüstü modelleri ve fiyat etiketleri doğrulandı",
+          "expected": "Horizon serisi dizüstü modelleri ve fiyat etiketleri doğrulandı",
           "components": 91,
           "metricTime": "2.4s",
           "metricPassed": 18,
@@ -222,7 +222,7 @@
     "id": "scenario-novatech-tr-category",
     "title": "NovaTech TR: Oyun Bilgisayarları Kategori & Filtre",
     "category": "NovaTech TR Canlı Testleri",
-    "description": "Oyun bilgisayarları kategori sayfasında Abra ve Tulpar modellerinin listelenmesi ve fiyat filtreleme doğrulaması.",
+    "description": "Oyun bilgisayarları kategori sayfasında Abra ve Horizon modellerinin listelenmesi ve fiyat filtreleme doğrulaması.",
     "criticality": "High",
     "componentsCount": 18,
     "lastRunDuration": "6.2s",
@@ -274,7 +274,7 @@
         "data": {
           "stepIndex": 2,
           "name": "Model ve Donanım Filtreleme",
-          "subtext": "Abra & Tulpar Serisi",
+          "subtext": "Apex & Horizon Serisi",
           "components": 24,
           "metricTime": "1.9s",
           "metricPassed": 35,
@@ -1063,7 +1063,7 @@
         },
         "data": {
           "stepIndex": 2,
-          "name": "'Bunu mu demek istediniz: Tulpar' Önerisi",
+          "name": "'Bunu mu demek istediniz: Horizon' Önerisi",
           "subtext": "Fuzzy Matching & Alternatif Ürün Kartları",
           "components": 8,
           "metricTime": "1.6s",
@@ -2253,9 +2253,9 @@
   },
   {
     "id": "scenario-novatech-de-e2e",
-    "projectId": "proj-tulpar-de",
+    "projectId": "proj-novatech-de",
     "title": "NovaTech DE: E2E Gaming Laptop Arama & Sepet (EUR Fiyat & 19% MwSt.)",
-    "category": "Tulpar DE Canlı Testleri",
+    "category": "NovaTech DE Canlı Testleri",
     "description": "NovaTech DE Almanya mağazasında Titan X17 modeli aranır, Euro fiyatı ve %19 Alman MwSt. vergi kalemi sepette doğrulanır.",
     "criticality": "Critical",
     "componentsCount": 6,
@@ -2366,7 +2366,7 @@
         },
         "data": {
           "label": "Action Completion",
-          "subtext": "Tulpar DE Akışı Başarıyla Tamamlandı",
+          "subtext": "NovaTech DE Akışı Başarıyla Tamamlandı",
           "status": "idle",
           "isEnd": true
         }
@@ -2384,7 +2384,7 @@
         "id": "e-td2",
         "source": "node-tde-home",
         "target": "node-tde-search",
-        "label": "Search Tulpar Laptops",
+        "label": "Search Titan Laptops",
         "animated": true
       },
       {
@@ -2412,7 +2412,7 @@
   },
   {
     "id": "scenario-novatech-de-klarna-sofort",
-    "projectId": "proj-tulpar-de",
+    "projectId": "proj-novatech-de",
     "title": "NovaTech DE: Klarna Sofort, PayPal & EU Kart Doğrulaması",
     "category": "Ödeme & Güvenlik (EU)",
     "description": "Almanya ve AB pazarında yaygın olan Klarna Pay Now, Sofort ve PayPal ödeme modülleri, PSD2 SCA 3D Secure 2.0 güvenlik adımıyla test edilir.",
@@ -2544,7 +2544,7 @@
   },
   {
     "id": "scenario-novatech-de-dsgvo-cookie",
-    "projectId": "proj-tulpar-de",
+    "projectId": "proj-novatech-de",
     "title": "NovaTech DE: DSGVO / GDPR Çerez İzni, Impressum & Datenschutz",
     "category": "Hukuki & Uyumluluk (EU)",
     "description": "Alman e-ticaret yasalarına uygun olarak Cookiebot/OneTrust çerez reddetme, zorunlu Impressum tüzel kişi bilgileri ve Datenschutz gizlilik politikası denetlenir.",
@@ -2649,7 +2649,7 @@
   },
   {
     "id": "scenario-novatech-de-widerruf-return",
-    "projectId": "proj-tulpar-de",
+    "projectId": "proj-novatech-de",
     "title": "NovaTech DE: 14 Günlük Yasal Cayma (Widerruf) & DHL İade Akışı",
     "category": "Sipariş & İade (EU)",
     "description": "Alman Tüketici Kanunu (§ 312g BGB) uyarınca 14 günlük koşulsuz cayma formu doldurma ve DHL iade kargo etiketi üretimi doğrulanır.",
@@ -2754,7 +2754,7 @@
   },
   {
     "id": "scenario-novatech-de-b2b-vat",
-    "projectId": "proj-tulpar-de",
+    "projectId": "proj-novatech-de",
     "title": "NovaTech DE: B2B EU Reverse Charge & USt-IdNr. Muafiyet Kontrolü",
     "category": "B2B & Muhasebe (EU)",
     "description": "Avrupa Birliği içi (Intra-Community) kurumsal alımlarda VIES sisteminden USt-IdNr. doğrulaması yapılır ve %0 KDV ters ibraz uygulanır.",
@@ -2859,7 +2859,7 @@
   },
   {
     "id": "scenario-novatech-de-dhl-shipping",
-    "projectId": "proj-tulpar-de",
+    "projectId": "proj-novatech-de",
     "title": "NovaTech DE: DHL Paket & Express DACH Lojistik Süre Hesaplama",
     "category": "Lojistik & Kargo (EU)",
     "description": "Almanya içi (1-2 gün) ve DACH sınır ötesi DHL kargo ücreti, ücretsiz kargo barı (€100+ üzeri) ve Packstation dolap seçimi test edilir.",
@@ -2964,10 +2964,10 @@
   },
   {
     "id": "scenario-novatech-de-configurator",
-    "projectId": "proj-tulpar-de",
+    "projectId": "proj-novatech-de",
     "title": "NovaTech DE: Donanım Konfigüratörü (RAM, SSD & QWERTZ Klavye)",
     "category": "Ürün & Donanım Konfigürasyonu",
-    "description": "Tulpar Gaming Laptop ürün sayfasında RAM yükseltme (16GB -> 32GB DDR5), NVMe SSD ilavesi (1TB -> 2TB) ve Almanca QWERTZ klavye seçimi sepet tutarına dinamik yansıtılır.",
+    "description": "Horizon Gaming Laptop ürün sayfasında RAM yükseltme (16GB -> 32GB DDR5), NVMe SSD ilavesi (1TB -> 2TB) ve Almanca QWERTZ klavye seçimi sepet tutarına dinamik yansıtılır.",
     "criticality": "Critical",
     "componentsCount": 5,
     "lastRunDuration": "3.4s",
@@ -3096,7 +3096,7 @@
   },
   {
     "id": "scenario-novatech-de-klarna-ratenkauf",
-    "projectId": "proj-tulpar-de",
+    "projectId": "proj-novatech-de",
     "title": "NovaTech DE: Klarna Ratenkauf (Taksitli Ödeme) & Kredi Skoru Kontrolü",
     "category": "Ödeme & Finansman (EU)",
     "description": "€1.899 sepet tutarı için 6/12/24 ay vadeli Klarna Ratenkauf seçimi, aylık taksit hesaplama, yasal yıllık faiz (Effektiver Jahreszins) ve Schufa onay simülasyonu.",
@@ -3201,7 +3201,7 @@
   },
   {
     "id": "scenario-novatech-de-guest-checkout",
-    "projectId": "proj-tulpar-de",
+    "projectId": "proj-novatech-de",
     "title": "NovaTech DE: Misafir Alışverişi (Gast-Bestellung) & Hızlı Kasa Akışı",
     "category": "Kullanıcı Deneyimi & Dönüşüm",
     "description": "Hesap oluşturmadan (Als Gast bestellen) isim, Almanya teslimat adresi ve e-posta ile 2 dakikada sipariş tamamlama ve sipariş teyit numarası üretimi.",
@@ -3306,7 +3306,7 @@
   },
   {
     "id": "scenario-novatech-de-omnibus-pricing",
-    "projectId": "proj-tulpar-de",
+    "projectId": "proj-novatech-de",
     "title": "NovaTech DE: AB Omnibus Direktifi & İndirim Doğruluğu (Son 30 Gün Referans Fiyatı)",
     "category": "Hukuki & Uyumluluk (EU)",
     "description": "AB Direktifi (EU) 2019/2161 uyarınca uygulanan indirim oranının, son 30 günün en düşük satış fiyatı (Niedrigster Preis der letzten 30 Tage) üzerinden hesaplandığının doğrulanması.",
@@ -3384,7 +3384,7 @@
   },
   {
     "id": "scenario-novatech-de-apple-google-pay",
-    "projectId": "proj-tulpar-de",
+    "projectId": "proj-novatech-de",
     "title": "NovaTech DE: Apple Pay & Google Pay Tek Tıkla Cüzdan Ödemesi",
     "category": "Mobil & Dijital Cüzdan",
     "description": "Mobil Safari ve Chrome tarayıcılarında entegre dijital cüzdan (Payment Request API) ile adres ve kart girmeden anında ödeme akışı.",
@@ -3462,7 +3462,7 @@
   },
   {
     "id": "scenario-novatech-de-cross-border-eu",
-    "projectId": "proj-tulpar-de",
+    "projectId": "proj-novatech-de",
     "title": "NovaTech DE: AB Sınır Ötesi Teslimat (Avusturya & Benelüks) & Dinamik KDV (OSS)",
     "category": "Lojistik & Kargo (EU)",
     "description": "Teslimat ülkesi Avusturya (%20 KDV) veya Hollanda (%21 KDV) seçildiğinde AB One-Stop Shop (OSS) KDV oranının ve uluslararası DHL kargo farkının sepete anlık yansıtılması.",
@@ -3567,7 +3567,7 @@
   },
   {
     "id": "scenario-novatech-de-stock-alert",
-    "projectId": "proj-tulpar-de",
+    "projectId": "proj-novatech-de",
     "title": "NovaTech DE: Stok Tükendi & Gelince Haber Ver (Back in Stock Alert)",
     "category": "Katalog & Envanter",
     "description": "Stokta bulunmayan üst segment RTX 4080 modelinde Benachrichtigen wenn verfügbar e-posta aboneliği oluşturma ve stok kilitleme kontrolü.",
@@ -3645,7 +3645,7 @@
   },
   {
     "id": "scenario-novatech-de-cart-tampering",
-    "projectId": "proj-tulpar-de",
+    "projectId": "proj-novatech-de",
     "title": "NovaTech DE: EUR Fiyat Manipülasyonu & Güvenli Sepet Hash Savunması",
     "category": "Siber Güvenlik & PCI-DSS",
     "description": "İstemci tarafında DOM üzerinden laptop fiyatını €1.899 yerine €1,00 olarak değiştirip ödeme isteği gönderme girişiminin backend sepet hash doğrulamasında bloke edilmesi.",
@@ -3723,7 +3723,7 @@
   },
   {
     "id": "scenario-novatech-de-cookiebot-reject",
-    "projectId": "proj-tulpar-de",
+    "projectId": "proj-novatech-de",
     "title": "NovaTech DE: DSGVO Çerez Reddi (Alle ablehnen) & Fonksiyonel Sepet İzolasyonu",
     "category": "Hukuki & Uyumluluk (EU)",
     "description": "Kullanıcı Alle ablehnen (Tümünü reddet) seçtiğinde pazarlama çerezlerinin durdurulması, ancak e-ticaret sepet oturumunun bozulmadan çalışmaya devam etmesi.",
@@ -3801,10 +3801,10 @@
   },
   {
     "id": "scenario-novatech-de-core-web-vitals",
-    "projectId": "proj-tulpar-de",
+    "projectId": "proj-novatech-de",
     "title": "NovaTech DE: Core Web Vitals Hız Skoru & 404 Kırık Link Crawler",
     "category": "Performans & SEO",
-    "description": "Tulpar DE vitrin ve ürün sayfalarında LCP < 2.5s, CLS < 0.1, INP metrikleri ve mağaza içi linklerin taranarak 404/500 HTTP hata denetimi.",
+    "description": "NovaTech DE vitrin ve ürün sayfalarında LCP < 2.5s, CLS < 0.1, INP metrikleri ve mağaza içi linklerin taranarak 404/500 HTTP hata denetimi.",
     "criticality": "Medium",
     "componentsCount": 3,
     "lastRunDuration": "2.6s",
@@ -3879,10 +3879,10 @@
   },
   {
     "id": "scenario-novatech-de-voucher-promo",
-    "projectId": "proj-tulpar-de",
+    "projectId": "proj-novatech-de",
     "title": "NovaTech DE: İndirim Kuponu & Promosyon Çeki (Gutscheincode Doğrulama)",
     "category": "Fiyatlandırma & Kampanya",
-    "description": "TULPAR-EU-50 kuponu ile €50 sepet indirimi uygulanması, geçersiz kuponlarda net Almanca hata mesajı ve minimum sipariş tutarı kontrolü.",
+    "description": "NOVATECH-EU-50 kuponu ile €50 sepet indirimi uygulanması, geçersiz kuponlarda net Almanca hata mesajı ve minimum sipariş tutarı kontrolü.",
     "criticality": "High",
     "componentsCount": 3,
     "lastRunDuration": "1.9s",
@@ -3912,7 +3912,7 @@
         },
         "data": {
           "stepIndex": 1,
-          "name": "Gutscheincode TULPAR-EU-50 Uygulandı",
+          "name": "Gutscheincode NOVATECH-EU-50 Uygulandı",
           "subtext": "€50 indirim düşüldü ve %19 MwSt. matrahı güncellendi",
           "components": 7,
           "metricTime": "0.8s",
@@ -3957,7 +3957,7 @@
   },
   {
     "id": "scenario-novatech-de-mobile-responsive",
-    "projectId": "proj-tulpar-de",
+    "projectId": "proj-novatech-de",
     "title": "NovaTech DE: Mobil Görünüm, Hamburger Menü & Dokunmatik Sepet",
     "category": "Mobil & Uyumluluk",
     "description": "Akıllı telefon ekranında (390x844) Almanca navigasyon menüsü, filtre çekmecesi, sticky sepete ekle çubuğu ve dokunmatik ürün resim galerisi testi.",

@@ -277,7 +277,7 @@ export const RepositoryView: React.FC<ViewProps> = ({ lang }) => {
       time: 'Bugün 13:43',
       scenarioTitle: 'NovaTech TR: Horizon X15 E2E Arama ve İnceleme',
       stepName: isTr ? 'Horizon X15 Donanım & Fiyat Doğrulama (PDP)' : 'Horizon Hardware & Pricing Verification (PDP)',
-      url: 'https://www.novatech.com.tr/tulpar/',
+      url: 'https://www.novatech.com.tr/horizon/',
       status: 'passed',
       duration: '1.9s',
       screenshotUrl: '/screenshots/novatech_pdp.png',

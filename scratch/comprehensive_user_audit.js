@@ -3,7 +3,7 @@ const { chromium } = require(require.resolve('playwright', { paths: [path.join(_
 const fs = require('fs');
 
 async function runAudit() {
-  const artifactDir = 'C:\\Users\\BERK.ARCAK\\.gemini\\antigravity\\brain\\84aa1859-793a-450d-9ba7-d9c7a6265edd';
+  const artifactDir = path.join(process.env.USERPROFILE || 'C:/Users/QA', '.gemini', 'antigravity', 'brain', '84aa1859-793a-450d-9ba7-d9c7a6265edd');
   const errors = [];
   const warnings = [];
   const testResults = [];

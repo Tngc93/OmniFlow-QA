@@ -16,7 +16,7 @@ import { FlowStepNode } from './nodes/FlowStepNode';
 import { DecisionNode } from './nodes/DecisionNode';
 import { PillLabelEdge } from './edges/PillLabelEdge';
 import { Language } from '../locales/translations';
-import { Zap, Code2, Bot } from 'lucide-react';
+import { Zap, Code2, Bot, Sparkles } from 'lucide-react';
 
 interface FlowCanvasProps {
   nodes: Node[];
@@ -38,6 +38,7 @@ interface FlowCanvasProps {
   onOpenWebVitals?: () => void;
   onOpenPlaywrightCode?: () => void;
   onOpenSelfHealing?: () => void;
+  onOpenOmniMind?: () => void;
 }
 
 const AutoFitViewWatcher: React.FC<{ scenarioKey?: string; nodeCount?: number }> = ({ scenarioKey, nodeCount }) => {
@@ -72,9 +73,21 @@ const FlowCanvasInner: React.FC<FlowCanvasProps> = ({
   onViewportChange,
   onOpenWebVitals,
   onOpenPlaywrightCode,
-  onOpenSelfHealing
+  onOpenSelfHealing,
+  onOpenOmniMind
 }) => {
   const { fitView } = useReactFlow();
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'j') {
+        e.preventDefault();
+        if (onOpenOmniMind) onOpenOmniMind();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onOpenOmniMind]);
 
   const nodeTypes = useMemo(() => ({
     terminatorNode: TerminatorNode,
@@ -227,6 +240,22 @@ const FlowCanvasInner: React.FC<FlowCanvasProps> = ({
               >
                 <Code2 className="w-3 h-3 text-purple-500" />
                 <span>💾 spec.ts</span>
+              </button>
+            </>
+          )}
+
+          {onOpenOmniMind && (
+            <>
+              <span className="text-slate-400">|</span>
+              <button
+                type="button"
+                data-testid="open-omnimind-ai-btn"
+                onClick={onOpenOmniMind}
+                className="px-2.5 py-0.5 rounded-md bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 text-white font-extrabold hover:brightness-110 transition-all cursor-pointer flex items-center gap-1.5 shadow-sm shadow-violet-500/30 text-xs border border-violet-400/40"
+                title="OmniMind AI: Autonomous QA & Neural Copilot (Ctrl + J)"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-yellow-300 animate-pulse" />
+                <span>🧠 OmniMind AI</span>
               </button>
             </>
           )}

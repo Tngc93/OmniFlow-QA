@@ -1,9 +1,11 @@
 const path = require('path');
 const fs = require('fs');
-const { chromium } = require(require.resolve('playwright', { paths: [path.join(__dirname, '..', 'server')] }));
+const { chromium } = require(require.resolve('playwright', { paths: [path.join(__dirname, '..', '..', 'server')] }));
 
-const ARTIFACT_DIR = path.join(process.env.USERPROFILE || 'C:/Users/QA', '.gemini', 'antigravity', 'brain', '84aa1859-793a-450d-9ba7-d9c7a6265edd');
-const DOCS_DIR = path.join(__dirname, '..', 'docs', 'screenshots');
+const ARTIFACT_DIR = path.join(__dirname, '..', '..', 'test-results', 'qa-artifacts');
+
+require('fs').mkdirSync(ARTIFACT_DIR, { recursive: true });
+const DOCS_DIR = path.join(__dirname, '..', '..', 'docs', 'screenshots');
 
 if (!fs.existsSync(DOCS_DIR)) fs.mkdirSync(DOCS_DIR, { recursive: true });
 
@@ -91,17 +93,17 @@ async function verifyOmniMind() {
   console.log('Performing strict DOM anonymization check (ensuring no qa.engineer anywhere)...');
   const bodyText = await page.evaluate(() => document.body.innerText);
   const containsqa = /qa[\s.]*arcak/i.test(bodyText);
-  const containsflowshop = /flowshopnotebook\.com/i.test(bodyText);
-  const containsflowshop = /flowshopnotebook\.de/i.test(bodyText);
+  const containsComDomain = /flowshopnotebook\.com/i.test(bodyText);
+  const containsDeDomain = /flowshopnotebook\.de/i.test(bodyText);
 
   console.log(`DOM contains 'QA Engineer': ${containsqa}`);
-  console.log(`DOM contains 'flowshopnotebook.com': ${containsflowshop}`);
-  console.log(`DOM contains 'flowshopnotebook.de': ${containsflowshop}`);
+  console.log(`DOM contains 'flowshopnotebook.com': ${containsComDomain}`);
+  console.log(`DOM contains 'flowshopnotebook.de': ${containsDeDomain}`);
 
   if (containsqa) {
     throw new Error('FAIL: QA Engineer found in rendered DOM text!');
   }
-  if (containsflowshop || containsflowshop) {
+  if (containsComDomain || containsDeDomain) {
     throw new Error('FAIL: flowshopnotebook or flowshopnotebook URL found in rendered DOM text!');
   }
 

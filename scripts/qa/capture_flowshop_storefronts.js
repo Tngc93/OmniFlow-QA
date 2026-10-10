@@ -1,9 +1,9 @@
 const path = require('path');
 const fs = require('fs');
-const { chromium } = require(require.resolve('playwright', { paths: [path.join(__dirname, '..', 'server')] }));
+const { chromium } = require(require.resolve('playwright', { paths: [path.join(__dirname, '..', '..', 'server')] }));
 
-const clientScreenshotsDir = path.join(__dirname, '..', 'client', 'public', 'screenshots');
-const serverScreenshotsDir = path.join(__dirname, '..', 'server', 'public', 'screenshots');
+const clientScreenshotsDir = path.join(__dirname, '..', '..', 'client', 'public', 'screenshots');
+const serverScreenshotsDir = path.join(__dirname, '..', '..', 'server', 'public', 'screenshots');
 
 if (!fs.existsSync(clientScreenshotsDir)) fs.mkdirSync(clientScreenshotsDir, { recursive: true });
 if (!fs.existsSync(serverScreenshotsDir)) fs.mkdirSync(serverScreenshotsDir, { recursive: true });

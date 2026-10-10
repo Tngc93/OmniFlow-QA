@@ -1,8 +1,8 @@
 const path = require('path');
 const fs = require('fs');
-const { chromium } = require(require.resolve('playwright', { paths: [path.join(__dirname, '..', 'server')] }));
+const { chromium } = require(require.resolve('playwright', { paths: [path.join(__dirname, '..', '..', 'server')] }));
 
-const DOCS_DIR = path.join(__dirname, '..', 'docs', 'screenshots');
+const DOCS_DIR = path.join(__dirname, '..', '..', 'docs', 'screenshots');
 if (!fs.existsSync(DOCS_DIR)) fs.mkdirSync(DOCS_DIR, { recursive: true });
 
 async function recaptureAll() {

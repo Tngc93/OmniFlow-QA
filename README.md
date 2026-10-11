@@ -15,6 +15,15 @@ Built with **React 19, @xyflow/react, and Playwright**, OmniFlow QA bridges the 
 
 ---
 
+## How it works
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/how-it-works-dark.svg">
+  <img src="docs/assets/how-it-works-light.svg" alt="Animated diagram: a test flow built on the canvas is sent to the Express server, which starts a Playwright run with the chosen viewport, drives the storefront step by step, streams each step's status back over WebSocket to the canvas, captures a screenshot per step, compares captures with the baseline and turns failures into defect tickets" width="100%">
+</picture>
+
+---
+
 ## 📸 Executive Visual Showcase
 
 ### 1. Multi-Store Master Pipelines (Turkey 🇹🇷 & Germany 🇩🇪)

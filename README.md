@@ -1,4 +1,4 @@
-# ⚡ OmniFlow QA — Autonomous E-Commerce Test Orchestration & Visual Automation Platform
+# ⚡ OmniFlow QA — Visual E-Commerce Test Builder
 
 [![Playwright](https://img.shields.io/badge/Playwright-v1.42+-2EAD33?logo=playwright&logoColor=white)](https://playwright.dev/)
 [![React 19](https://img.shields.io/badge/React-19.x-61DAFB?logo=react&logoColor=black)](https://react.dev/)
@@ -9,7 +9,7 @@
 [![Lighthouse](https://img.shields.io/badge/Lighthouse-Core_Web_Vitals-F44B21?logo=googlechrome&logoColor=white)](https://developers.google.com/speed/docs/insights/v5/about)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-**OmniFlow QA** is an enterprise-grade, visual end-to-end test orchestration and quality assurance platform architected specifically for modern high-volume e-commerce storefronts. 
+**OmniFlow QA** is a visual end-to-end test builder for e-commerce storefronts. You draw checkout and catalogue flows on a canvas; it runs them with Playwright and reports visual regressions and Core Web Vitals. It is a working prototype, not a hardened product. 
 
 Built with **React 19, @xyflow/react, and Playwright**, OmniFlow QA bridges the gap between **no-code visual flowchart test authoring** and **pro-code TypeScript test engineering**. It features multi-store cross-border testing (Turkey 🇹🇷 & Germany 🇩🇪), interactive pixel-diff visual regression, real-time Google Core Web Vitals auditing, mobile/tablet viewport emulation, self-healing DOM selector heuristics, and native Model Context Protocol (Jira MCP) defect tracking.
 
@@ -66,25 +66,25 @@ Paralleled comparative execution across cross-border stores feeding a centralize
 ---
 
 ### 5. No-Code to Pro-Code: Live Playwright TypeScript Generator (`spec.ts`)
-> Instantly translates visual CAD flowchart scenarios into production-grade, executable Playwright TypeScript test scripts. Features syntax-highlighted IDE viewer, one-click clipboard copy, and `.spec.ts` file download for local CLI execution (`npx playwright test`).
+> Instantly translates visual CAD flowchart scenarios into executable Playwright TypeScript test scripts. Features syntax-highlighted IDE viewer, one-click clipboard copy, and `.spec.ts` file download for local CLI execution (`npx playwright test`).
 
 ![Playwright Spec Generator](docs/screenshots/09_playwright_spec_code_generator.png)
 
 ---
 
-### 6. AI Self-Healing Selector Engine (Zero-Maintenance Heuristics)
+### 6. Self-Healing Selector Engine (Heuristic Fallbacks)
 > Prevents flaky test failures when frontend builds mutate CSS class hashes (Tailwind/CSS-in-JS) or React component IDs. Uses a 4-tier heuristic recovery matrix (ARIA Semantic Tree, Coordinate Proximity, Fuzzy Text, Historical Sibling Traversal) with 98.6% match confidence.
 
 ![AI Self-Healing](docs/screenshots/10_ai_self_healing_heuristics.png)
 
 ---
 
-### 7. 🧠 OmniMind AI: Autonomous QA Architecture & Neural Copilot (`Ctrl + J`)
-> OmniMind AI brings next-generation autonomous artificial intelligence directly into the e-commerce test automation canvas.
+### 7. 🧠 OmniMind AI: QA Copilot (`Ctrl + J`)
+> OmniMind AI is an assistant panel inside the test canvas.
 > - **Prompt-to-Pipeline Synthesis**: Turn natural language requirements into fully connected visual automation graphs with actions, assertions, screenshots, and latency targets.
-> - **Neural Root Cause Analysis (RCA)**: Deep-dive diagnostic engine analyzing Playwright timeout traces, DOM hydration races, and producing instant copyable auto-patches.
+> - **Root Cause Analysis (RCA)**: Diagnostic helper analyzing Playwright timeout traces, DOM hydration races, and producing instant copyable auto-patches.
 > - **Synthetic E-Commerce Data Foundry**: Algorithmic test data generator producing mathematically valid checksums for Turkish T.C. Kimlik (11-digit modulus algorithm), Vergi Kimlik No (VKN), German USt-IdNr, German IBAN (DE...), and Luhn-compliant credit cards.
-> - **Neural QA Chat**: Built-in interactive assistant for Playwright strategy, edge case stress simulation, and test pyramid tuning.
+> - **QA Chat**: Built-in interactive assistant for Playwright strategy, edge case stress simulation, and test pyramid tuning.
 
 ![OmniMind AI Copilot](docs/screenshots/17_omnimind_ai_copilot.png)
 
@@ -206,18 +206,20 @@ Open **`http://localhost:5173`** in your browser.
 
 ## 🧪 Running Playwright E2E Tests via CLI
 
-OmniFlow QA can run headless in CI/CD environments without UI overhead:
+The QA scripts in `scripts/qa/` drive the app headlessly with Playwright. Start the server first (see Quick Start), then run, for example:
 
 ```bash
-# Run comprehensive 17-point pre-launch audit
-node scratch/comprehensive_user_audit.js
+# 17-point pre-launch audit of the UI
+node scripts/qa/comprehensive_user_audit.js
 
-# Run Web Vitals, Visual Regression & Device Emulation audit
-node scratch/verify_new_features.js
+# Web Vitals, visual regression and device emulation checks
+node scripts/qa/verify_new_features.js
 
-# Run Playwright Code Generator & AI Self-Healing audit
-node scratch/verify_code_and_healing.js
+# Playwright code generator and self-healing checks
+node scripts/qa/verify_code_and_healing.js
 ```
+
+Screenshots and logs are written to `test-results/qa-artifacts/` (git-ignored). These scripts are not yet wired into CI.
 
 ---
 
@@ -244,6 +246,6 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 ---
 
 <p align="center">
-  <b>Built for World-Class E-Commerce Quality Assurance</b><br>
+  <b>Built for e-commerce quality assurance</b><br>
   Designed & Developed by <a href="https://github.com/Tngc93">OmniFlow QA Core Team</a>
 </p>
